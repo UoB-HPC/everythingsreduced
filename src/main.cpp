@@ -48,7 +48,7 @@ int main(void) {
   auto teardown_stop = clock::now();
 
   // Print timings
-  std::cout
+  std::cout << std::endl
     << " Dot" << std::endl
     << "  Constructor: " << elapsed(construct_start, construct_stop) << std::endl
     << "  Setup:       " << elapsed(setup_start, setup_stop) << std::endl
