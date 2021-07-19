@@ -16,6 +16,13 @@ add_executable(Reduced main.cpp)
 
 if (MODEL STREQUAL "OpenMP")
   add_library(imp_omp omp/dot.cpp)
+
+  # Add OpenMP flags
+  find_package(OpenMP)
+  if(OpenMP_CXX_FOUND)
+    target_link_libraries(imp_omp PUBLIC OpenMP::OpenMP_CXX)
+  endif()
+
   target_link_libraries(Reduced PUBLIC imp_omp)
 
 elseif(MODEL STREQUAL "Kokkos")
