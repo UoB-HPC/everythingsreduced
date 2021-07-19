@@ -14,5 +14,12 @@ List of benchmark kernels, and their sources.
 
 ## Building ##
 
-TODO
+The benchmark is structured as a driver calling routines from a linked library.
+Each library implements the benchmark kernels.
+
+Build using CMake:
+
+    cmake -Bbuild -H. -DMODEL=<model>    # Valid: OpenMP, Kokkos
+    cmake --build buld
+
 
