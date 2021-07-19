@@ -4,7 +4,7 @@
 struct dot {
 
   // Problem size and data arrays
-  long N = 1024;//*1024*1024;
+  long N = 1024*1024*1024;
   double *A;
   double *B;
 
