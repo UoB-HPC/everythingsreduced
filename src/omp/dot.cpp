@@ -7,15 +7,44 @@
 
 #include "../dot.hpp"
 
-void dot::run() {
-  std::cout << "Hello from OpenMP dot" << std::endl;
-  int nthreads;
+dot::dot() {
+  int nthreads = 0;
 
-#pragma omp parallel
-{
-#pragma single
-  nthreads = omp_get_num_threads();
+  #pragma omp parallel
+  {
+    #pragma omp single
+    nthreads = omp_get_num_threads();
+  }
+
+  std::cout << "Dot is using OpenMP with "
+    << nthreads << " threads." << std::endl;
+
 }
-std::cout << "I had " << nthreads << " threads" << std::endl;
+
+void dot::setup() {
+  A = new double[N];
+  B = new double[N];
+
+  #pragma omp parallel for
+  for (long i = 0; i < N; ++i) {
+    A[i] = 0.01;
+    B[i] = 0.02;
+  }
+}
+
+double dot::run() {
+  double sum = 0.0;
+
+  #pragma omp parallel for reduction(+:sum)
+  for (long i = 0; i < N; ++i) {
+    sum += A[i] * B[i];
+  }
+
+  return sum;
+}
+
+void dot::teardown() {
+  delete[] A;
+  delete[] B;
 }
 
