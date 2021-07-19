@@ -7,6 +7,7 @@
 
 const auto LINE = "--------------------------------------------------------------------------------";
 
+#include "config.hpp"
 #include "dot.hpp"
 
 // Return elapsed time
@@ -18,6 +19,11 @@ int main(void) {
 
   // Shorten the standard clock name
   using clock = std::chrono::high_resolution_clock;
+
+  // Report version
+  std::cout << "Everything's Reduced "
+    << "(v" << Reduced_VERSION_MAJOR << "." << Reduced_VERSION_MINOR << ")"
+    << std::endl << std::endl;
 
   auto construct_start = clock::now();
   dot dotty;

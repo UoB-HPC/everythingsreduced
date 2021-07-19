@@ -1,0 +1,7 @@
+// Copyright (c) 2021 Everything's Reduced authors
+// SPDX-License-Identifier: MIT
+
+// the configured options and settings for Reduced
+#define Reduced_VERSION_MAJOR @Reduced_VERSION_MAJOR@
+#define Reduced_VERSION_MINOR @Reduced_VERSION_MINOR@
+

@@ -4,10 +4,14 @@
 cmake_minimum_required(VERSION 3.17)
 
 # set the project name
-project(Reduced)
+project(Reduced VERSION 0.1)
 
 # add the executable
 add_executable(Reduced main.cpp)
+
+# set benchmark version number
+configure_file(config.hpp.in config.hpp)
+target_include_directories(Reduced PUBLIC "${PROJECT_BINARY_DIR}")
 
 # The implementations of the kernels in different
 # programming models are linked in.
