@@ -20,6 +20,6 @@ Each library implements the benchmark kernels.
 Build using CMake:
 
     cmake -Bbuild -H. -DMODEL=<model>    # Valid: OpenMP, Kokkos
-    cmake --build buld
+    cmake --build build
 
 
