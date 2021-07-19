@@ -3,9 +3,14 @@
 
 #include <iostream>
 
+#include "dot.hpp"
+
 int main(void) {
 
   std::cout << "Hello\n" << std::endl;
+
+  dot dotty;
+  dotty.run();
 
   return EXIT_SUCCESS;
 }
