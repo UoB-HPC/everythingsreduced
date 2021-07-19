@@ -4,7 +4,10 @@
 cmake_minimum_required(VERSION 3.17)
 
 # set the project name
-project(Reduced VERSION 0.1)
+project(Reduced
+  VERSION 0.1
+  LANGUAGES CXX
+)
 
 # add the executable
 add_executable(Reduced main.cpp)
