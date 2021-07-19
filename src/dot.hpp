@@ -11,6 +11,9 @@ struct dot {
   // Constructor: set up any model initialisation (not data)
   dot();
 
+  // Deconstructor: set any model finalisation
+  ~dot();
+
   // Allocate and initalise benchmark data
   // A will be set to 1 * 1024 / N
   // B will be set to 2 * 1024 / N

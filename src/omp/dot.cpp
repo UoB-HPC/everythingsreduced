@@ -21,6 +21,8 @@ dot::dot() {
 
 }
 
+dot::~dot() = default;
+
 void dot::setup() {
   A = new double[N];
   B = new double[N];
