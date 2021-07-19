@@ -27,8 +27,8 @@ void dot::setup() {
 
   #pragma omp parallel for
   for (long i = 0; i < N; ++i) {
-    A[i] = 0.01;
-    B[i] = 0.02;
+    A[i] = 1.0 * 1024.0 / static_cast<double>(N);
+    B[i] = 2.0 * 1024.0 / static_cast<double>(N);
   }
 }
 
