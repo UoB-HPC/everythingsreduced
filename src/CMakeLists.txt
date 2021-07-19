@@ -34,6 +34,14 @@ if (MODEL STREQUAL "OpenMP")
 
 elseif(MODEL STREQUAL "Kokkos")
   add_library(imp_kokkos kokkos/dot.cpp)
+
+  # Build Kokkos inline
+  if (NOT DEFINED KOKKOS_SRC)
+    message(FATAL_ERROR "Please set KOKKOS_SRC path to kokkos source")
+  endif()
+  add_subdirectory("${KOKKOS_SRC}")
+  target_link_libraries(imp_kokkos Kokkos::kokkos)
+
   target_link_libraries(Reduced PUBLIC imp_kokkos)
 
 else()
