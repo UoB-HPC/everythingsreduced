@@ -7,7 +7,12 @@
 
 #include "../dot.hpp"
 
-dot::dot() {
+struct dot::data {
+  double *A;
+  double *B;
+};
+
+dot::dot() : pdata{std::make_unique<data>()} {
   int nthreads = 0;
 
   #pragma omp parallel
@@ -24,8 +29,11 @@ dot::dot() {
 dot::~dot() = default;
 
 void dot::setup() {
-  A = new double[N];
-  B = new double[N];
+  pdata->A = new double[N];
+  pdata->B = new double[N];
+
+  double * A = pdata->A;
+  double * B = pdata->B;
 
   #pragma omp parallel for
   for (long i = 0; i < N; ++i) {
@@ -35,6 +43,10 @@ void dot::setup() {
 }
 
 double dot::run() {
+
+  double *A = pdata->A;
+  double *B = pdata->B;
+
   double sum = 0.0;
 
   #pragma omp parallel for reduction(+:sum)
@@ -46,7 +58,7 @@ double dot::run() {
 }
 
 void dot::teardown() {
-  delete[] A;
-  delete[] B;
+  delete[] pdata->A;
+  delete[] pdata->B;
 }
 

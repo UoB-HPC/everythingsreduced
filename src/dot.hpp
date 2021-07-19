@@ -1,12 +1,15 @@
 // Copyright (c) 2021 Everything's Reduced authors
 // SPDX-License-Identifier: MIT
 
+#include <memory>
+
 struct dot {
 
   // Problem size and data arrays
+  // Data arrays use C++ PIMPL because different models store data with very different types
   long N = 1024*1024*1024;
-  double *A;
-  double *B;
+  struct data;
+  std::unique_ptr<data> pdata;
 
   // Constructor: set up any model initialisation (not data)
   dot();
