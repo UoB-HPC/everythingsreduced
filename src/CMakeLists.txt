@@ -22,8 +22,8 @@ target_include_directories(Reduced PUBLIC "${PROJECT_BINARY_DIR}")
 # and link in the one selected during CMake configure.
 
 if (MODEL STREQUAL "OpenMP")
-  file(GLOB omp_src CONFIGURE_DEPENDS omp/*.cpp)
-  add_library(imp_omp ${omp_src})
+  file(GLOB omp_bench_src CONFIGURE_DEPENDS omp/*.cpp)
+  add_library(imp_omp ${omp_bench_src})
 
   # Add OpenMP flags
   find_package(OpenMP)
@@ -34,7 +34,8 @@ if (MODEL STREQUAL "OpenMP")
   target_link_libraries(Reduced PUBLIC imp_omp)
 
 elseif(MODEL STREQUAL "Kokkos")
-  add_library(imp_kokkos kokkos/dot.cpp)
+  file(GLOB kokkos_bench_src CONFIGURE_DEPENDS kokkos/*.cpp)
+  add_library(imp_kokkos ${kokkos_bench_src})
 
   # Build Kokkos inline
   if (NOT DEFINED KOKKOS_SRC)
