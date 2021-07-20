@@ -22,4 +22,10 @@ Build using CMake:
     cmake -Bbuild -H. -DMODEL=<model>    # Valid: OpenMP, Kokkos
     cmake --build build
 
+### Kokkos version ###
+This code builds Kokkos inline.
+
+1. Download the Kokkos source.
+2. Add `-DKOKKOS_SRC=/path/to/downloaded/kokkos` to the CMake configure stage.
+3. Pass any Kokkos options to the CMake configure too: `-DKokkos_...`
 
