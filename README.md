@@ -7,10 +7,11 @@ This is a collection of key reduction kernel patterns collated from other benchm
 
 List of benchmark kernels, and their sources.
 
-| Reduction         | Original benchmark         |
-| ----------------- | -------------------------- |
-| r += a[i] * b[i]  | Dot product                |
-| r += c[i]         | Sum of complex numbers     |
+| Reduction         | Original benchmark                        |
+| ----------------- | ----------------------------------------- |
+| r += a[i] * b[i]  | Dot product                               |
+| r += c[i]         | Sum of complex numbers                    |
+| min(abs(c[i]))    | Minimum absolute value of complex numbers |
 
 ## Building ##
 
