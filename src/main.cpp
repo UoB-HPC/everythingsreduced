@@ -16,7 +16,8 @@ const auto LINE = "-------------------------------------------------------------
 
 // Return elapsed time
 double elapsed(std::chrono::high_resolution_clock::time_point start, std::chrono::high_resolution_clock::time_point stop) {
-  return std::chrono::duration_cast<std::chrono::duration<double> >(stop - start).count();
+  using timing = std::chrono::duration<double, std::milli>;
+  return timing{stop-start}.count();
 }
 
 int main(void) {
