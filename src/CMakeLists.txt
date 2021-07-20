@@ -22,7 +22,8 @@ target_include_directories(Reduced PUBLIC "${PROJECT_BINARY_DIR}")
 # and link in the one selected during CMake configure.
 
 if (MODEL STREQUAL "OpenMP")
-  add_library(imp_omp omp/dot.cpp)
+  file(GLOB omp_src CONFIGURE_DEPENDS omp/*.cpp)
+  add_library(imp_omp ${omp_src})
 
   # Add OpenMP flags
   find_package(OpenMP)
