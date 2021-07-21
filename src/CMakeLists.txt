@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.17)
 
 # select default build type
 if(NOT DEFINED CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE "Release")
+  set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build." FORCE)
 endif()
 message(STATUS "CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}")
 
