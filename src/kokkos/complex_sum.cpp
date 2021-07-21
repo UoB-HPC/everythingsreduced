@@ -33,6 +33,7 @@ void complex_sum::setup() {
     double v = 2.0 * 1024.0 / static_cast<double>(N);
     C(i) = Kokkos::complex<double>{v, v};
   });
+  Kokkos::fence();
 }
 
 void complex_sum::teardown() {

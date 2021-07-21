@@ -36,6 +36,7 @@ void dot::setup() {
     A(i) = 1.0 * 1024.0 / static_cast<double>(N);
     B(i) = 2.0 * 1024.0 / static_cast<double>(N);
   });
+  Kokkos::fence();
 }
 
 void dot::teardown() {

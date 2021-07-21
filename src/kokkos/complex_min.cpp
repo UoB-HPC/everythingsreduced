@@ -34,6 +34,7 @@ void complex_min::setup() {
     double v = std::abs(static_cast<double>(N)/2.0 - static_cast<double>(i));
     C(i) = Kokkos::complex<double>{v, v};
   });
+  Kokkos::fence();
 }
 
 void complex_min::teardown() {
