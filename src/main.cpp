@@ -22,6 +22,18 @@ double elapsed(std::chrono::high_resolution_clock::time_point start, std::chrono
   return timing{stop-start}.count();
 }
 
+// Print timings for a benchmark
+void print_timing(const char *name, const double constructor, const double setup, const double run, const double check, const double teardown) {
+    std::cout << std::endl
+      << " " << name << std::endl
+      << "  Constructor: " << constructor << std::endl
+      << "  Setup:       " << setup << std::endl
+      << "  Run:         " << run << std::endl
+      << "  Verify:      " << check << std::endl
+      << "  Teardown:    " << teardown << std::endl
+      << LINE << std::endl;
+}
+
 int main(void) {
 
   // Shorten the standard clock name
@@ -65,15 +77,13 @@ int main(void) {
     dotty.teardown();
     auto teardown_stop = clock::now();
 
-    // Print timings
-    std::cout << std::endl
-      << " Dot" << std::endl
-      << "  Constructor: " << elapsed(construct_start, construct_stop) << std::endl
-      << "  Setup:       " << elapsed(setup_start, setup_stop) << std::endl
-      << "  Run:         " << elapsed(run_start, run_stop) << std::endl
-      << "  Verify:      " << elapsed(check_start, check_stop) << std::endl
-      << "  Teardown:    " << elapsed(teardown_start, teardown_stop) << std::endl
-      << LINE << std::endl;
+    print_timing("Dot Product",
+      elapsed(construct_start, construct_stop),
+      elapsed(setup_start, setup_stop),
+      elapsed(run_start, run_stop),
+      elapsed(check_start, check_stop),
+      elapsed(teardown_start, teardown_stop)
+    );
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -108,15 +118,13 @@ int main(void) {
     csum.teardown();
     auto teardown_stop = clock::now();
 
-    // Print timings
-    std::cout << std::endl
-      << " Complex Sum" << std::endl
-      << "  Constructor: " << elapsed(construct_start, construct_stop) << std::endl
-      << "  Setup:       " << elapsed(setup_start, setup_stop) << std::endl
-      << "  Run:         " << elapsed(run_start, run_stop) << std::endl
-      << "  Verify:      " << elapsed(check_start, check_stop) << std::endl
-      << "  Teardown:    " << elapsed(teardown_start, teardown_stop) << std::endl
-      << LINE << std::endl;
+    print_timing("Complex Sum",
+      elapsed(construct_start, construct_stop),
+      elapsed(setup_start, setup_stop),
+      elapsed(run_start, run_stop),
+      elapsed(check_start, check_stop),
+      elapsed(teardown_start, teardown_stop)
+    );
   }
 
 
@@ -152,15 +160,13 @@ int main(void) {
     cmin.teardown();
     auto teardown_stop = clock::now();
 
-    // Print timings
-    std::cout << std::endl
-      << " Complex Min" << std::endl
-      << "  Constructor: " << elapsed(construct_start, construct_stop) << std::endl
-      << "  Setup:       " << elapsed(setup_start, setup_stop) << std::endl
-      << "  Run:         " << elapsed(run_start, run_stop) << std::endl
-      << "  Verify:      " << elapsed(check_start, check_stop) << std::endl
-      << "  Teardown:    " << elapsed(teardown_start, teardown_stop) << std::endl
-      << LINE << std::endl;
+    print_timing("Complex Min",
+      elapsed(construct_start, construct_stop),
+      elapsed(setup_start, setup_stop),
+      elapsed(run_start, run_stop),
+      elapsed(check_start, check_stop),
+      elapsed(teardown_start, teardown_stop)
+    );
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -219,15 +225,14 @@ int main(void) {
     summary.teardown();
     auto teardown_stop = clock::now();
 
-    // Print timings
-    std::cout << std::endl
-      << " Field Summary" << std::endl
-      << "  Constructor: " << elapsed(construct_start, construct_stop) << std::endl
-      << "  Setup:       " << elapsed(setup_start, setup_stop) << std::endl
-      << "  Run:         " << elapsed(run_start, run_stop) << std::endl
-      << "  Verify:      " << elapsed(check_start, check_stop) << std::endl
-      << "  Teardown:    " << elapsed(teardown_start, teardown_stop) << std::endl
-      << LINE << std::endl;
+    print_timing("Field Summary",
+      elapsed(construct_start, construct_stop),
+      elapsed(setup_start, setup_stop),
+      elapsed(run_start, run_stop),
+      elapsed(check_start, check_stop),
+      elapsed(teardown_start, teardown_stop)
+    );
+
   }
 
   return EXIT_SUCCESS;
