@@ -31,6 +31,8 @@ int main(void) {
     << "(v" << Reduced_VERSION_MAJOR << "." << Reduced_VERSION_MINOR << ")"
     << std::endl << std::endl;
 
+  std::cout << "Unit of time: milliseconds" << std::endl << std::endl;
+
   //////////////////////////////////////////////////////////////////////////////
   // Run Dot Product Benchmark
   //////////////////////////////////////////////////////////////////////////////
