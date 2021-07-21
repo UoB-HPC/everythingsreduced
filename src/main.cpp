@@ -183,31 +183,31 @@ int main(void) {
     // Check solution
     auto check_start = clock::now();
     field_summary::reduction_vars expected = summary.expect();
-    if (std::abs(r.vol - expected.vol) > 1.0E-11) {
+    if (std::abs(r.vol - expected.vol) > 1.0E-8) {
       std::cerr << "Field Summary: vol result incorrect" << std::endl
         << "Expected: " << expected.vol << std::endl
         << "Result: " << r.vol << std::endl
         << "Difference: " << std::abs(r.vol - expected.vol) << std::endl;
     }
-    if (std::abs(r.mass - expected.mass) > 1.0E-11) {
+    if (std::abs(r.mass - expected.mass) > 1.0E-8) {
       std::cerr << "Field Summary: mass result incorrect" << std::endl
         << "Expected: " << expected.mass << std::endl
         << "Result: " << r.mass << std::endl
         << "Difference: " << std::abs(r.mass - expected.mass) << std::endl;
     }
-    if (std::abs(r.ie - expected.ie) > 1.0E-11) {
+    if (std::abs(r.ie - expected.ie) > 1.0E-8) {
       std::cerr << "Field Summary: ie result incorrect" << std::endl
         << "Expected: " << expected.ie << std::endl
         << "Result: " << r.ie << std::endl
         << "Difference: " << std::abs(r.ie - expected.ie) << std::endl;
     }
-    if (std::abs(r.ke - expected.ke) > 1.0E-11) {
+    if (std::abs(r.ke - expected.ke) > 1.0E-8) {
       std::cerr << "Field Summary: ke result incorrect" << std::endl
         << "Expected: " << expected.ke << std::endl
         << "Result: " << r.ke << std::endl
         << "Difference: " << std::abs(r.ke - expected.ke) << std::endl;
     }
-    if (std::abs(r.press - expected.press) > 1.0E-11) {
+    if (std::abs(r.press - expected.press) > 1.0E-8) {
       std::cerr << "Field Summary: press result incorrect" << std::endl
         << "Expected: " << expected.press << std::endl
         << "Result: " << r.press << std::endl
