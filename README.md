@@ -12,6 +12,7 @@ List of benchmark kernels, and their sources.
 | r += a[i] * b[i]  | Dot product                               |
 | r += c[i]         | Sum of complex numbers                    |
 | min(abs(c[i]))    | Minimum absolute value of complex numbers |
+| Multiple Scalar   | CloverLeaf Field Summary                  |
 
 ## Building ##
 
