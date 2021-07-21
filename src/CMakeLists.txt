@@ -29,28 +29,28 @@ target_include_directories(Reduced PUBLIC "${PROJECT_BINARY_DIR}")
 
 if (MODEL STREQUAL "OpenMP")
   file(GLOB omp_bench_src CONFIGURE_DEPENDS omp/*.cpp)
-  add_library(imp_omp ${omp_bench_src})
+  add_library(implement_omp ${omp_bench_src})
 
   # Add OpenMP flags
   find_package(OpenMP)
   if(OpenMP_CXX_FOUND)
-    target_link_libraries(imp_omp PUBLIC OpenMP::OpenMP_CXX)
+    target_link_libraries(implement_omp PUBLIC OpenMP::OpenMP_CXX)
   endif()
 
-  target_link_libraries(Reduced PUBLIC imp_omp)
+  target_link_libraries(Reduced PUBLIC implement_omp)
 
 elseif(MODEL STREQUAL "Kokkos")
   file(GLOB kokkos_bench_src CONFIGURE_DEPENDS kokkos/*.cpp)
-  add_library(imp_kokkos ${kokkos_bench_src})
+  add_library(implement_kokkos ${kokkos_bench_src})
 
   # Build Kokkos inline
   if (NOT DEFINED KOKKOS_SRC)
     message(FATAL_ERROR "Please set KOKKOS_SRC path to kokkos source")
   endif()
   add_subdirectory("${KOKKOS_SRC}")
-  target_link_libraries(imp_kokkos Kokkos::kokkos)
+  target_link_libraries(implement_kokkos Kokkos::kokkos)
 
-  target_link_libraries(Reduced PUBLIC imp_kokkos)
+  target_link_libraries(Reduced PUBLIC implement_kokkos)
 
 else()
   message(FATAL_ERROR "Please select a model to build: -DMODEL=<model>")
