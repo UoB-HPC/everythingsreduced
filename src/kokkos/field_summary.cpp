@@ -78,65 +78,6 @@ void field_summary::teardown() {
   // NOTE: All the data has been destroyed!
 }
 
-
-// Kokkos requies creating custom reduction for this case
-// Following the Custom Reductions: Built In Reducers with Custom Scalar Types
-// https://github.com/kokkos/kokkos/wiki/Custom-Reductions%3A-Built-In-Reducers-with-Custom-Scalar-Types
-namespace custom { // namespace helps with name resolution in reduction identity 
-
-  struct variables {
-    double vol;
-    double mass;
-    double ie;
-    double ke;
-    double press;
-
-    // Default constructor - Initialize to 0's
-    KOKKOS_INLINE_FUNCTION
-    variables() : vol{0.0}, mass{0.0}, ie{0.0}, ke{0.0}, press{0.0} {}
-
-    // Copy constructor
-    variables(const variables & rhs) {
-      vol = rhs.vol;
-      mass = rhs.mass;
-      ie = rhs.ie;
-      ke = rhs.ke;
-      press = rhs.press;
-    }
-
-    // Add operator
-    variables& operator+= (const variables& src) {
-      vol += src.vol;
-      mass += src.mass;
-      ie += src.ie;
-      ke += src.ke;
-      press += src.press;
-
-      return *this;
-    }
-
-    // Volatile add operator
-    void operator+= (const volatile variables& src) volatile {
-      vol += src.vol;
-      mass += src.mass;
-      ie += src.ie;
-      ke += src.ke;
-      press += src.press;
-    }
-  };
-}
-
-// reduction identity must be defined in Kokkos namespace
-namespace Kokkos {
-  template<>
-  struct reduction_identity<custom::variables> {
-    KOKKOS_FORCEINLINE_FUNCTION static custom::variables sum() {
-      return custom::variables();
-    }
-  };
-}
-
-
 field_summary::reduction_vars field_summary::run() {
 
   auto& xvel = pdata->xvel;
@@ -147,10 +88,15 @@ field_summary::reduction_vars field_summary::run() {
   auto& pressure = pdata->pressure;
 
   // Reduction variables
-  custom::variables var;
+  double vol = 0.0;
+  double mass = 0.0;
+  double ie = 0.0;
+  double ke = 0.0;
+  double press = 0.0;
+
 
   Kokkos::parallel_reduce(Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0,0}, {nx,ny}),
-    KOKKOS_LAMBDA (const int j, const int k, custom::variables& var) {
+    KOKKOS_LAMBDA (const int j, const int k, double& vol, double& mass, double& ie, double& ke, double& press) {
       double vsqrd = 0.0;
       for (int kv = k; kv <= k+1; ++kv) {
         for (int jv = j; jv <= j+1; ++jv) {
@@ -159,14 +105,14 @@ field_summary::reduction_vars field_summary::run() {
       }
       double cell_volume = volume(j,k);
       double cell_mass = cell_volume * density(j,k);
-      var.vol += cell_volume;
-      var.mass += cell_mass;
-      var.ie += cell_mass * energy(j,k);
-      var.ke += cell_mass * 0.5 * vsqrd;
-      var.press += cell_volume * pressure(j,k);
-    }, Kokkos::Sum<custom::variables>(var));
+      vol += cell_volume;
+      mass += cell_mass;
+      ie += cell_mass * energy(j,k);
+      ke += cell_mass * 0.5 * vsqrd;
+      press += cell_volume * pressure(j,k);
+    }, vol, mass, ie, ke, press);
 
-  return {var.vol, var.mass, var.ie, var.ke, var.press};
+  return {vol, mass, ie, ke, press};
 }
 
 
