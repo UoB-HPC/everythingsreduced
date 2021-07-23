@@ -13,6 +13,7 @@ const auto LINE = "-------------------------------------------------------------
 // Benchmarks:
 #include "dot.hpp"
 #include "complex_sum.hpp"
+#include "complex_sum_soa.hpp"
 #include "complex_min.hpp"
 #include "field_summary.hpp"
 
@@ -127,6 +128,48 @@ int main(void) {
     );
   }
 
+  //////////////////////////////////////////////////////////////////////////////
+  // Run Complex Sum SoA Benchmark
+  //////////////////////////////////////////////////////////////////////////////
+  {
+    auto construct_start = clock::now();
+    complex_sum_soa csum;
+    auto construct_stop = clock::now();
+
+    auto setup_start = clock::now();
+    csum.setup();
+    auto setup_stop = clock::now();
+
+
+    auto run_start = clock::now();
+    std::tuple<double, double> r = csum.run();
+    auto run_stop = clock::now();
+
+    // Check solution
+    auto check_start = clock::now();
+    if (std::abs(std::get<0>(r) - std::get<0>(csum.expect())) > std::numeric_limits<double>::epsilon()*100.0 ||
+        std::abs(std::get<1>(r) - std::get<1>(csum.expect())) > std::numeric_limits<double>::epsilon()*100.0
+      ) {
+      std::cerr << "Complex Sum SoA: result incorrect" << std::endl
+        << "Expected: " << std::get<0>(csum.expect()) << "+ i" << std::get<1>(csum.expect()) << std::endl
+        << "Result:   " << std::get<0>(r) << "+ i" << std::get<1>(r) << std::endl
+        << "Difference: " << std::abs(std::get<0>(r) - std::get<0>(csum.expect())) << " and " << std::abs(std::get<1>(r) - std::get<1>(csum.expect())) << std::endl
+        << "Eps: " << std::numeric_limits<double>::epsilon() << std::endl;
+    }
+    auto check_stop = clock::now();
+
+    auto teardown_start = clock::now();
+    csum.teardown();
+    auto teardown_stop = clock::now();
+
+    print_timing("Complex Sum",
+      elapsed(construct_start, construct_stop),
+      elapsed(setup_start, setup_stop),
+      elapsed(run_start, run_stop),
+      elapsed(check_start, check_stop),
+      elapsed(teardown_start, teardown_stop)
+    );
+  }
 
   //////////////////////////////////////////////////////////////////////////////
   // Run Complex Min Benchmark
