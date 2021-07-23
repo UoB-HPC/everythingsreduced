@@ -44,7 +44,7 @@ void complex_sum::teardown() {
 
 std::complex<double> complex_sum::run() {
 
-  auto C = pdata->C;
+  auto& C = pdata->C;
 
   Kokkos::complex<double> sum {0.0, 0.0};
 

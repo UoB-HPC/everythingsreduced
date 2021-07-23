@@ -49,7 +49,7 @@ double abs (const Kokkos::complex<double>& c) {
 
 std::complex<double> complex_min::run() {
 
-  auto C = pdata->C;
+  auto& C = pdata->C;
 
   auto big = std::numeric_limits<double>::max();
   Kokkos::complex<double> smallest {big, big};

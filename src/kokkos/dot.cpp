@@ -45,8 +45,8 @@ void dot::teardown() {
 }
 
 double dot::run() {
-  auto A = pdata->A;
-  auto B = pdata->B;
+  auto& A = pdata->A;
+  auto& B = pdata->B;
 
   double sum = 0.0;
 
