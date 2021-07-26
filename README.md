@@ -32,6 +32,12 @@ This code builds Kokkos inline.
 2. Add `-DKOKKOS_SRC=/path/to/downloaded/kokkos` to the CMake configure stage.
 3. Pass any Kokkos options to the CMake configure too: `-DKokkos_...`
 
+### RAJA version ###
+
+1. Download the RAJA source.
+2. Add `-DRAJA_SRC=/path/to/downloaded/RAJA` to the CMake configure stage.
+3. Pass `-DENABLE_OpenMP=On` or other RAJA options too.
+
 
 ## Organisation ##
 
