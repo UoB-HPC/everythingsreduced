@@ -7,13 +7,13 @@ This is a collection of key reduction kernel patterns collated from other benchm
 
 List of benchmark kernels, and their sources.
 
-| Reduction                | Original benchmark                        |
-| ------------------------ | ----------------------------------------- |
-| r += a[i] * b[i]         | Dot product                               |
-| r += c[i]                | Sum of complex numbers                    |
-| (r1,r2) += (c1[i],c2[i]) | Sum of complex numbers, stored as SoA     |
-| min(abs(c[i]))           | Minimum absolute value of complex numbers |
-| Multiple Scalar          | CloverLeaf Field Summary                  |
+| Reduction                  | Original benchmark                        |
+| -------------------------- | ----------------------------------------- |
+| r += a[i] * b[i]           | Dot product                               |
+| r += c[i]                  | Sum of complex numbers                    |
+| (r1,r2) += (c1[i],c2[i])   | Sum of complex numbers, stored as SoA     |
+| min(abs(c[i]))             | Minimum absolute value of complex numbers |
+| count, min, max, mean, std | Pandas Series.Describe                    |
 
 ## Building ##
 

@@ -16,6 +16,7 @@ const auto LINE = "-------------------------------------------------------------
 #include "complex_sum_soa.hpp"
 #include "complex_min.hpp"
 #include "field_summary.hpp"
+#include "describe.hpp"
 
 // Return elapsed time
 double elapsed(std::chrono::high_resolution_clock::time_point start, std::chrono::high_resolution_clock::time_point stop) {
@@ -269,6 +270,76 @@ int main(void) {
     auto teardown_stop = clock::now();
 
     print_timing("Field Summary",
+      elapsed(construct_start, construct_stop),
+      elapsed(setup_start, setup_stop),
+      elapsed(run_start, run_stop),
+      elapsed(check_start, check_stop),
+      elapsed(teardown_start, teardown_stop)
+    );
+
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  // Describe Benchmark
+  //////////////////////////////////////////////////////////////////////////////
+  {
+    auto construct_start = clock::now();
+    describe d;
+    auto construct_stop = clock::now();
+
+    auto setup_start = clock::now();
+    d.setup();
+    auto setup_stop = clock::now();
+
+
+    auto run_start = clock::now();
+    describe::result r = d.run();
+    auto run_stop = clock::now();
+
+    // Check solution
+    auto check_start = clock::now();
+    describe::result expected = d.expect();
+    if (std::abs(r.count - expected.count) > std::numeric_limits<double>::epsilon()*100.0) {
+      std::cerr << "Describe: count result incorrect" << std::endl
+        << "Expected: " << expected.count << std::endl
+        << "Result: " << r.count << std::endl
+        << "Difference: " << std::abs(r.count - expected.count) << std::endl;
+    }
+    // Check this one to E-12 as computed analytically rather than large sum, and FP
+    // errors seem to accumulate
+    if (std::abs(r.mean - expected.mean) > 1.0E-12) {
+      std::cerr << "Describe: mean result incorrect" << std::endl
+        << "Expected: " << expected.mean << std::endl
+        << "Result: " << r.mean << std::endl
+        << "Difference: " << std::abs(r.mean - expected.mean) << std::endl;
+    }
+    // As it's a big sum, increase error tollerance to 1.0E-10 before the sqrt
+    // Only checking to 5 d.p, but all the data has only 1 d.p.
+    if (std::abs(r.std - expected.std) > std::sqrt(1.0E-10)) {
+      std::cerr << "Describe: std result incorrect" << std::endl
+        << "Expected: " << std::fixed << expected.std << std::endl
+        << "Result: " << std::fixed << r.std << std::endl
+        << "Difference: " << std::abs(r.std - expected.std) << std::endl;
+    }
+    if (std::abs(r.min - expected.min) > std::numeric_limits<double>::epsilon()*100.0) {
+      std::cerr << "Describe: min result incorrect" << std::endl
+        << "Expected: " << expected.min << std::endl
+        << "Result: " << r.min << std::endl
+        << "Difference: " << std::abs(r.min - expected.min) << std::endl;
+    }
+    if (std::abs(r.max - expected.max) > std::numeric_limits<double>::epsilon()*100.0) {
+      std::cerr << "Describe: max result incorrect" << std::endl
+        << "Expected: " << expected.max << std::endl
+        << "Result: " << r.max << std::endl
+        << "Difference: " << std::abs(r.max - expected.max) << std::endl;
+    }
+    auto check_stop = clock::now();
+
+    auto teardown_start = clock::now();
+    d.teardown();
+    auto teardown_stop = clock::now();
+
+    print_timing("Describe",
       elapsed(construct_start, construct_stop),
       elapsed(setup_start, setup_stop),
       elapsed(run_start, run_stop),
