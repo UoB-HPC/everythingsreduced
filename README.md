@@ -32,7 +32,7 @@ Each library implements the benchmark kernels.
 
 Build using CMake:
 
-    cmake -Bbuild -H. -DMODEL=<model>    # Valid: OpenMP, Kokkos
+    cmake -Bbuild -H. -DMODEL=<model>    # Valid: OpenMP, Kokkos, RAJA
     cmake --build build
 
 ### OpenMP version ###
@@ -67,6 +67,7 @@ The repository is arranged as follows:
             *.hpp               # Benchmark definition header files
             omp/*.cpp           # OpenMP implementations of the benchmarks
             kokkos/*.cpp        # Kokkos implementations of the benchmarks
+            raja/*.cpp          # RAJA implementations of the benchmarks
 
 
 Each benchmark follows a standardised interface:
