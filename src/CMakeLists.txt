@@ -55,6 +55,29 @@ elseif(MODEL STREQUAL "Kokkos")
 
   target_link_libraries(Reduced PUBLIC implement_kokkos)
 
+elseif(MODEL STREQUAL "RAJA")
+  file(GLOB raja_bench_src CONFIGURE_DEPENDS raja/*.cpp)
+  add_library(implement_raja ${raja_bench_src})
+
+  # Build RAJA inline
+  if (NOT DEFINED RAJA_SRC)
+    message(FATAL_ERROR "Please set RAJA_SRC path to RAJA source")
+  endif()
+
+  set (ENABLE_TESTS Off CACHE BOOL "")
+  set (ENABLE_EXAMPLES Off CACHE BOOL "")
+  set (ENABLE_REPRODUCERS Off CACHE BOOL "")
+  set (ENABLE_EXERCISES Off CACHE BOOL "")
+  set (ENABLE_DOCUMENTATION Off CACHE BOOL "")
+  set (ENABLE_BENCHMARKS Off CACHE BOOL "")
+
+  include(${RAJA_SRC}/blt/SetupBLT.cmake)
+
+  add_subdirectory(${RAJA_SRC})
+  target_link_libraries(implement_raja PUBLIC RAJA)
+
+  target_link_libraries(Reduced PUBLIC implement_raja)
+
 else()
   message(FATAL_ERROR "Please select a model to build: -DMODEL=<model>")
 
