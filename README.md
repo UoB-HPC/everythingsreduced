@@ -7,6 +7,7 @@ This is a collection of key reduction kernel patterns collated from other benchm
 
 - [Benchmarks](#benchmarks)
 - [Building](#building)
+    - [OpenMP](#openmp-version)
     - [Kokkos](#kokkos-version)
     - [RAJA](#raja-version)
 - [Organisation](#organisation)
@@ -33,6 +34,9 @@ Build using CMake:
 
     cmake -Bbuild -H. -DMODEL=<model>    # Valid: OpenMP, Kokkos
     cmake --build build
+
+### OpenMP version ###
+No extra stages are required to build with OpenMP (for the CPU).
 
 ### Kokkos version ###
 This code builds Kokkos inline.
