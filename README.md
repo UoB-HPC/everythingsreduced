@@ -3,6 +3,15 @@ Everything's Reduced!
 
 This is a collection of key reduction kernel patterns collated from other benchmarks.
 
+## Contents ##
+
+- [Benchmarks](#benchmarks)
+- [Building](#building)
+    - [Kokkos](#kokkos-version)
+    - [RAJA](#raja-version)
+- [Organisation](#organisation)
+- [Citing](#citing)
+
 ## Benchmarks ##
 
 List of benchmark kernels, and their sources.
