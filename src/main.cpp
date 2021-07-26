@@ -313,9 +313,9 @@ int main(void) {
         << "Result: " << r.mean << std::endl
         << "Difference: " << std::abs(r.mean - expected.mean) << std::endl;
     }
-    // As it's a big sum, increase error tollerance to 1.0E-10 before the sqrt
-    // Only checking to 5 d.p, but all the data has only 1 d.p.
-    if (std::abs(r.std - expected.std) > std::sqrt(1.0E-10)) {
+    // The Sqrt operation drastically increases the error, so check to 4 d.p
+    // This is equiv to checking the variance with a tolerance of 1.E-8
+    if (std::abs(r.std - expected.std) > 1.0E-4) {
       std::cerr << "Describe: std result incorrect" << std::endl
         << "Expected: " << std::fixed << expected.std << std::endl
         << "Result: " << std::fixed << r.std << std::endl
