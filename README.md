@@ -44,7 +44,11 @@ This code builds Kokkos inline.
 
 1. Download the Kokkos source.
 2. Add `-DKOKKOS_SRC=/path/to/downloaded/kokkos` to the CMake configure stage.
-3. Pass any Kokkos options to the CMake configure too: `-DKokkos_...`
+3. Pass any Kokkos options to the CMake configure too: `-DKokkos_...`. For example:
+
+| Backend | Options                                                                           |
+| ------- | --------------------------------------------------------------------------------- |
+| CUDA    | `-DKokkos_ENABLE_CUDA=On -DKokkos_ENABLE_CUDA_LAMBDA=On -DKokkos_ARCH_VOLTA72=On` |
 
 ### RAJA version ###
 
