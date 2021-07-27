@@ -31,7 +31,7 @@ void complex_min::setup() {
   auto C = pdata->C;
 
   Kokkos::parallel_for(N, KOKKOS_LAMBDA (const int i) {
-    double v = std::abs(static_cast<double>(N)/2.0 - static_cast<double>(i));
+    double v = fabs(static_cast<double>(N)/2.0 - static_cast<double>(i));
     C(i) = Kokkos::complex<double>{v, v};
   });
   Kokkos::fence();
@@ -43,8 +43,9 @@ void complex_min::teardown() {
 }
 
 
+KOKKOS_INLINE_FUNCTION
 double abs (const Kokkos::complex<double>& c) {
-    return std::sqrt(c.real() * c.real() + c.imag() * c.imag());
+    return sqrt(c.real() * c.real() + c.imag() * c.imag());
 }
 
 std::complex<double> complex_min::run() {

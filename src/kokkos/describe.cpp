@@ -31,7 +31,7 @@ void describe::setup() {
   auto& D = pdata->D;
 
   Kokkos::parallel_for(N, KOKKOS_LAMBDA (const int i) {
-    D(i) = std::abs(static_cast<double>(N)/2.0 - static_cast<double>(i));
+    D(i) = fabs(static_cast<double>(N)/2.0 - static_cast<double>(i));
   });
   Kokkos::fence();
 }
@@ -58,7 +58,7 @@ describe::result describe::run() {
     // Mean calculation
     double val = D(i) / static_cast<double>(N);
     double t = mean + val;
-    if (std::abs(mean) >= val)
+    if (fabs(mean) >= val)
       lost += (mean - t) + val;
     else
       lost += (val - t) + mean;
@@ -66,8 +66,8 @@ describe::result describe::run() {
     mean += val;
 
 
-    min = std::min(min, D(i));
-    max = std::max(max, D(i));
+    min = (min < D(i)) ? min : D(i);
+    max = (max > D(i)) ? max : D(i);
   }, mean, lost, min, max);
 
   mean = mean + lost;
