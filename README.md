@@ -23,6 +23,7 @@ List of benchmark kernels, and their sources.
 | r += c[i]                  | Sum of complex numbers                    |
 | (r1,r2) += (c1[i],c2[i])   | Sum of complex numbers, stored as SoA     |
 | min(abs(c[i]))             | Minimum absolute value of complex numbers |
+| Various scalar sums        | CloverLeaf Field Summary kernel           |
 | count, min, max, mean, std | Pandas Series.Describe                    |
 
 ## Building ##
