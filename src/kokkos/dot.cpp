@@ -32,6 +32,9 @@ void dot::setup() {
   auto A = pdata->A;
   auto B = pdata->B;
 
+  // Have to pull this out of the class because the lambda capture falls over
+  const long N = this->N;
+
   Kokkos::parallel_for(N, KOKKOS_LAMBDA (const int i) {
     A(i) = 1.0 * 1024.0 / static_cast<double>(N);
     B(i) = 2.0 * 1024.0 / static_cast<double>(N);
