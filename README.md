@@ -48,9 +48,16 @@ This code builds Kokkos inline.
 
 ### RAJA version ###
 
-1. Download the RAJA source.
+1. Download the *latest* RAJA source:
+    git clone --recursive https://github.com/LLNL/RAJA.git
 2. Add `-DRAJA_SRC=/path/to/downloaded/RAJA` to the CMake configure stage.
-3. Pass `-DENABLE_OpenMP=On` or other RAJA options too.
+3. Add other options according to the table below:
+
+| Backend | Options                                                                                                  |
+| ------- | -------------------------------------------------------------------------------------------------------- |
+| OpenMP  | `-DENABLE_OpenMP=On`                                                                                     |
+| CUDA    | `-DENABLE_CUDA=On -DCMAKE_CUDA_ARCHITECTURES=XX -DCUDA_ARCH=sm_XX -DCUDA_TOOLKIT_ROOT_DIR=/path/to/cuda` |
+| HIP     | `-DENABLE_HIP=On`                                                                                        |
 
 
 ## Organisation ##
