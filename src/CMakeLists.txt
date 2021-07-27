@@ -60,21 +60,44 @@ elseif(MODEL STREQUAL "RAJA")
   add_library(implement_raja ${raja_bench_src})
 
   # Build RAJA inline
+
   if (NOT DEFINED RAJA_SRC)
     message(FATAL_ERROR "Please set RAJA_SRC path to RAJA source")
   endif()
 
+  # Turn off all the examples, etc
   set (ENABLE_TESTS Off CACHE BOOL "")
   set (ENABLE_EXAMPLES Off CACHE BOOL "")
   set (ENABLE_REPRODUCERS Off CACHE BOOL "")
-  set (ENABLE_EXERCISES Off CACHE BOOL "")
+  set (RAJA_ENABLE_EXERCISES Off CACHE BOOL "")
   set (ENABLE_DOCUMENTATION Off CACHE BOOL "")
   set (ENABLE_BENCHMARKS Off CACHE BOOL "")
 
-  include(${RAJA_SRC}/blt/SetupBLT.cmake)
+  if (ENABLE_CUDA)
 
-  add_subdirectory(${RAJA_SRC})
+     if (NOT DEFINED CUDA_TOOLKIT_ROOT_DIR)
+       message(FATAL_ERROR "Please set CUDA_TOOLKIT_ROOT_DIR to the CUDA install directory")
+     endif()
+
+     # RAJA needs all the cuda stuff setup before including
+     set(CMAKE_CUDA_COMPILER ${CUDA_TOOLKIT_ROOT_DIR}/bin/nvcc)
+     set(CMAKE_CUDA_FLAGS ${CMAKE_CUDA_FLAGS} "--expt-extended-lambda")
+     list(APPEND CMAKE_CUDA_FLAGS)
+  endif()
+
+  add_subdirectory(${RAJA_SRC} ${CMAKE_BINARY_DIR}/raja)
+
   target_link_libraries(implement_raja PUBLIC RAJA)
+
+  if (ENABLE_CUDA)
+    # RAJA needs the codebase to be compiled with nvcc, so we tell cmake to treat sources as *.cu
+    set(CMAKE_CUDA_HOST_COMPILER ${CMAKE_CXX_COMPILER})
+    enable_language(CUDA)
+    set_source_files_properties(${raja_bench_src} PROPERTIES LANGUAGE CUDA)
+  endif()
+
+  # RAJA moves the binary output location, so move it back
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
   target_link_libraries(Reduced PUBLIC implement_raja)
 
