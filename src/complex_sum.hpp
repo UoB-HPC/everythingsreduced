@@ -9,12 +9,12 @@ struct complex_sum {
 
   // Problem size and data arrays
   // Data arrays use C++ PIMPL because different models store data with very different types
-  long N = 1024*1024*1024;
+  const long N;
   struct data;
   std::unique_ptr<data> pdata;
 
   // Constructor: set up any model initialisation (not data)
-  complex_sum();
+  complex_sum(long N);
 
   // Deconstructor: set any model finalisation
   ~complex_sum();

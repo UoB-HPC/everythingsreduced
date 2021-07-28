@@ -53,7 +53,7 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   {
     auto construct_start = clock::now();
-    dot dotty;
+    dot dotty(1024*1024*1024);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -93,7 +93,7 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   {
     auto construct_start = clock::now();
-    complex_sum<double> csum;
+    complex_sum<double> csum(1024*1024*1024);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -134,7 +134,7 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   {
     auto construct_start = clock::now();
-    complex_sum_soa<double> csum;
+    complex_sum_soa<double> csum(1024*1024*1024);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -177,7 +177,7 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   {
     auto construct_start = clock::now();
-    complex_min<double> cmin;
+    complex_min<double> cmin(1024*1024*1024);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -284,7 +284,7 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   {
     auto construct_start = clock::now();
-    describe d;
+    describe d(1024*1024*1024);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
