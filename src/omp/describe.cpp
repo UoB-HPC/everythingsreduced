@@ -12,7 +12,7 @@ struct describe::data {
   double *D;
 };
 
-describe::describe() : pdata{std::make_unique<data>()} {
+describe::describe(long _N) : N(_N), pdata{std::make_unique<data>()} {
   int nthreads = 0;
 
   #pragma omp parallel

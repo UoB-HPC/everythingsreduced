@@ -14,7 +14,7 @@ struct complex_sum_soa<T>::data {
 };
 
 template<typename T>
-complex_sum_soa<T>::complex_sum_soa() : pdata{std::make_unique<data>()} {
+complex_sum_soa<T>::complex_sum_soa(long _N) : N(_N), pdata{std::make_unique<data>()} {
   int nthreads = 0;
 
   #pragma omp parallel
