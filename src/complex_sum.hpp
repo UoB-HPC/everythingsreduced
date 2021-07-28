@@ -4,6 +4,7 @@
 #include <memory>
 #include <complex>
 
+template <typename T>
 struct complex_sum {
 
   // Problem size and data arrays
@@ -24,16 +25,16 @@ struct complex_sum {
   void setup();
 
   // Run the benchmark once
-  std::complex<double> run();
+  std::complex<T> run();
 
   // Finalise, clearing any benchmark data
   void teardown();
 
   // Return expected result
-  std::complex<double> expect() {
+  std::complex<T> expect() {
 
-    double v = 2.0 * 1024.0;
-    return std::complex<double>{v, v};
+    T v = 2.0 * 1024.0;
+    return std::complex<T>{v, v};
   }
 
 };

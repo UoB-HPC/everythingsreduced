@@ -93,7 +93,7 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   {
     auto construct_start = clock::now();
-    complex_sum csum;
+    complex_sum<double> csum;
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -134,7 +134,7 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   {
     auto construct_start = clock::now();
-    complex_sum_soa csum;
+    complex_sum_soa<double> csum;
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -177,7 +177,7 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   {
     auto construct_start = clock::now();
-    complex_min cmin;
+    complex_min<double> cmin;
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();

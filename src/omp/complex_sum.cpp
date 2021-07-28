@@ -7,11 +7,13 @@
 
 #include "../complex_sum.hpp"
 
-struct complex_sum::data {
-  std::complex<double>* C;
+template <typename T>
+struct complex_sum<T>::data {
+  std::complex<T>* C;
 };
 
-complex_sum::complex_sum() : pdata{std::make_unique<data>()} {
+template <typename T>
+complex_sum<T>::complex_sum() : pdata{std::make_unique<data>()} {
   int nthreads = 0;
 
   #pragma omp parallel
@@ -25,33 +27,37 @@ complex_sum::complex_sum() : pdata{std::make_unique<data>()} {
 
 }
 
-complex_sum::~complex_sum() = default;
+template <typename T>
+complex_sum<T>::~complex_sum() = default;
 
-void complex_sum::setup() {
+template <typename T>
+void complex_sum<T>::setup() {
 
-  pdata->C = new std::complex<double>[N];
+  pdata->C = new std::complex<T>[N];
 
-  std::complex<double>* C = pdata->C;
+  std::complex<T>* C = pdata->C;
 
   #pragma omp parallel for
   for (long i = 0; i < N; ++i) {
-    double v = 2.0 * 1024.0 / static_cast<double>(N);
-    C[i] = std::complex<double>{v, v};
+    T v = 2.0 * 1024.0 / static_cast<T>(N);
+    C[i] = std::complex<T>{v, v};
   }
 }
 
-void complex_sum::teardown() {
+template <typename T>
+void complex_sum<T>::teardown() {
   delete[] pdata->C;
 }
 
 
-std::complex<double> complex_sum::run() {
+template <typename T>
+std::complex<T> complex_sum<T>::run() {
 
-  std::complex<double>* C = pdata->C;
+  std::complex<T>* C = pdata->C;
 
-  std::complex<double> sum {0.0, 0.0};
+  std::complex<T> sum {0.0, 0.0};
 
-  #pragma omp declare reduction(my_complex_sum : std::complex<double> : omp_out += omp_in)
+  #pragma omp declare reduction(my_complex_sum : std::complex<T> : omp_out += omp_in)
 
   #pragma omp parallel for reduction(my_complex_sum:sum)
   for (long i = 0; i < N; ++i) {
@@ -60,4 +66,7 @@ std::complex<double> complex_sum::run() {
 
   return sum;
 }
+
+template struct complex_sum<double>;
+template struct complex_sum<float>;
 

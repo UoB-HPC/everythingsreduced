@@ -4,6 +4,7 @@
 #include <memory>
 #include <tuple>
 
+template <typename T>
 struct complex_sum_soa {
 
   // Problem size and data arrays
@@ -24,15 +25,15 @@ struct complex_sum_soa {
   void setup();
 
   // Run the benchmark once
-  std::tuple<double, double> run();
+  std::tuple<T, T> run();
 
   // Finalise, clearing any benchmark data
   void teardown();
 
   // Return expected result
-  std::tuple<double, double> expect() {
+  std::tuple<T, T> expect() {
 
-    double v = 2.0 * 1024.0;
+    T v = 2.0 * 1024.0;
     return {v, v};
   }
 

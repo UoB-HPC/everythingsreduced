@@ -4,11 +4,13 @@
 #include <memory>
 #include <complex>
 
+template <typename T>
 struct complex_min {
 
   // Problem size and data arrays
   // Data arrays use C++ PIMPL because different models store data with very different types
   long N = 1024*1024*1024;
+
   struct data;
   std::unique_ptr<data> pdata;
 
@@ -25,18 +27,18 @@ struct complex_min {
   void setup();
 
   // Run the benchmark once
-  std::complex<double> run();
+  std::complex<T> run();
 
   // Finalise, clearing any benchmark data
   void teardown();
 
   // Return expected result
-  std::complex<double> expect() {
+  std::complex<T> expect() {
 
     if (N % 2 == 1) // odd case
-      return std::complex<double>{0.5, 0.5};
+      return std::complex<T>{0.5, 0.5};
     else // even case
-      return std::complex<double>{0.0, 0.0};
+      return std::complex<T>{0.0, 0.0};
   }
 
 };
