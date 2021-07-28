@@ -16,7 +16,7 @@ describe::describe() : pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
-  std::cout << "Dot is using Kokkos with "
+  std::cout << "Describe is using Kokkos with "
     << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
 }
 
@@ -68,7 +68,7 @@ describe::result describe::run() {
 
     min = (min < D(i)) ? min : D(i);
     max = (max > D(i)) ? max : D(i);
-  }, mean, lost, min, max);
+  }, mean, lost, Kokkos::Min<double>(min), Kokkos::Max<double>(max));
 
   mean = mean + lost;
 
