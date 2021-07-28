@@ -12,7 +12,7 @@ struct dot::data {
   double *B;
 };
 
-dot::dot(long _N) : N(_N), pdata{std::make_unique<data>()} {
+dot::dot(long N_) : N(N_), pdata{std::make_unique<data>()} {
   int nthreads = 0;
 
   #pragma omp parallel

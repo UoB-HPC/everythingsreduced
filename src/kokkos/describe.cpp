@@ -12,7 +12,7 @@ struct describe::data {
   Kokkos::View<double*> D;
 };
 
-describe::describe(long _N) : N(_N), pdata{std::make_unique<data>()} {
+describe::describe(long N_) : N(N_), pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using

@@ -13,7 +13,7 @@ struct complex_sum<T>::data {
 };
 
 template <typename T>
-complex_sum<T>::complex_sum(long _N) : N(_N), pdata{std::make_unique<data>()} {
+complex_sum<T>::complex_sum(long N_) : N(N_), pdata{std::make_unique<data>()} {
   int nthreads = 0;
 
   #pragma omp parallel

@@ -14,7 +14,7 @@ struct complex_min<T>::data {
 };
 
 template <typename T>
-complex_min<T>::complex_min(long _N) : N(_N), pdata{std::make_unique<data>()} {
+complex_min<T>::complex_min(long N_) : N(N_), pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
