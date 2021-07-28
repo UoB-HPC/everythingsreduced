@@ -13,7 +13,7 @@ struct complex_sum<T>::data {
 };
 
 template <typename T>
-complex_sum<T>::complex_sum() : pdata{std::make_unique<data>()} {
+complex_sum<T>::complex_sum(long _N) : N(_N), pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using

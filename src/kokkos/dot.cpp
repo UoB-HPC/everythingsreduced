@@ -12,7 +12,7 @@ struct dot::data {
   Kokkos::View<double*> B;
 };
 
-dot::dot() : pdata{std::make_unique<data>()} {
+dot::dot(long _N) : N(_N), pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
