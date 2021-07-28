@@ -7,12 +7,14 @@
 
 #include "../complex_sum_soa.hpp"
 
-struct complex_sum_soa::data {
-  Kokkos::View<double*> real;
-  Kokkos::View<double*> imag;
+template <typename T>
+struct complex_sum_soa<T>::data {
+  Kokkos::View<T*> real;
+  Kokkos::View<T*> imag;
 };
 
-complex_sum_soa::complex_sum_soa() : pdata{std::make_unique<data>()} {
+template <typename T>
+complex_sum_soa<T>::complex_sum_soa() : pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
@@ -20,45 +22,52 @@ complex_sum_soa::complex_sum_soa() : pdata{std::make_unique<data>()} {
     << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
 }
 
-complex_sum_soa::~complex_sum_soa() {
+template <typename T>
+complex_sum_soa<T>::~complex_sum_soa() {
   Kokkos::finalize();
 }
 
-void complex_sum_soa::setup() {
+template <typename T>
+void complex_sum_soa<T>::setup() {
 
-  pdata->real = Kokkos::View<double*>("real", N);
-  pdata->imag = Kokkos::View<double*>("imag", N);
+  pdata->real = Kokkos::View<T*>("real", N);
+  pdata->imag = Kokkos::View<T*>("imag", N);
 
   auto real = pdata->real;
   auto imag = pdata->imag;
 
   Kokkos::parallel_for(N, KOKKOS_LAMBDA (const int i) {
-    double v = 2.0 * 1024.0 / static_cast<double>(N);
+    T v = 2.0 * 1024.0 / static_cast<T>(N);
     real(i) = v;
     imag(i) = v;
   });
   Kokkos::fence();
 }
 
-void complex_sum_soa::teardown() {
+template <typename T>
+void complex_sum_soa<T>::teardown() {
   pdata.reset();
   // NOTE: All the data has been destroyed!
 }
 
 
-std::tuple<double,double> complex_sum_soa::run() {
+template <typename T>
+std::tuple<T,T> complex_sum_soa<T>::run() {
 
   auto& real = pdata->real;
   auto& imag = pdata->real;
 
-  double sum_r = 0.0;
-  double sum_i = 0.0;
+  T sum_r = 0.0;
+  T sum_i = 0.0;
 
-  Kokkos::parallel_reduce(N, KOKKOS_LAMBDA (const int i, double& sum_r, double& sum_i) {
+  Kokkos::parallel_reduce(N, KOKKOS_LAMBDA (const int i, T& sum_r, T& sum_i) {
     sum_r += real(i);
     sum_i += imag(i);
   }, sum_r,sum_i);
 
   return {sum_r, sum_i};
 }
+
+template struct complex_sum_soa<double>;
+template struct complex_sum_soa<float>;
 

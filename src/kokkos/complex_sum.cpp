@@ -7,11 +7,13 @@
 
 #include "../complex_sum.hpp"
 
-struct complex_sum::data {
-  Kokkos::View<Kokkos::complex<double>*> C;
+template <typename T>
+struct complex_sum<T>::data {
+  Kokkos::View<Kokkos::complex<T>*> C;
 };
 
-complex_sum::complex_sum() : pdata{std::make_unique<data>()} {
+template <typename T>
+complex_sum<T>::complex_sum() : pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
@@ -19,39 +21,46 @@ complex_sum::complex_sum() : pdata{std::make_unique<data>()} {
     << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
 }
 
-complex_sum::~complex_sum() {
+template <typename T>
+complex_sum<T>::~complex_sum() {
   Kokkos::finalize();
 }
 
-void complex_sum::setup() {
+template <typename T>
+void complex_sum<T>::setup() {
 
-  pdata->C = Kokkos::View<Kokkos::complex<double>*>("C", N);
+  pdata->C = Kokkos::View<Kokkos::complex<T>*>("C", N);
 
   auto C = pdata->C;
 
   Kokkos::parallel_for(N, KOKKOS_LAMBDA (const int i) {
-    double v = 2.0 * 1024.0 / static_cast<double>(N);
-    C(i) = Kokkos::complex<double>{v, v};
+    T v = 2.0 * 1024.0 / static_cast<T>(N);
+    C(i) = Kokkos::complex<T>{v, v};
   });
   Kokkos::fence();
 }
 
-void complex_sum::teardown() {
+template <typename T>
+void complex_sum<T>::teardown() {
   pdata.reset();
   // NOTE: All the data has been destroyed!
 }
 
 
-std::complex<double> complex_sum::run() {
+template <typename T>
+std::complex<T> complex_sum<T>::run() {
 
   auto& C = pdata->C;
 
-  Kokkos::complex<double> sum {0.0, 0.0};
+  Kokkos::complex<T> sum {0.0, 0.0};
 
-  Kokkos::parallel_reduce(N, KOKKOS_LAMBDA (const int i, Kokkos::complex<double>& sum) {
+  Kokkos::parallel_reduce(N, KOKKOS_LAMBDA (const int i, Kokkos::complex<T>& sum) {
     sum += C(i);
   }, sum);
 
-  return std::complex<double>{sum.real(), sum.imag()};
+  return std::complex<T>{sum.real(), sum.imag()};
 }
+
+template struct complex_sum<double>;
+template struct complex_sum<float>;
 
