@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "../dot.hpp"
+#include "../complex_sum.hpp"
 
 #include <RAJA/RAJA.hpp>
 
@@ -34,71 +34,77 @@ typedef RAJA::seq_exec policy;
 typedef RAJA::seq_reduce reduce_policy;
 #endif
 
-struct dot::data {
+
+// IMPORTANT NOTE:
+//   This is a hack because I can't get RAJA to build
+//   properly. The documentation and RAJA headers imply
+//   this is all that the RAJA::Complex_type is.
+namespace RAJA {
+using Complex_type = std::complex<double>;
+};
+
+template <typename T>
+struct complex_sum<T>::data {
   // TODO: Use CHAI/Umpire for memory management
-  double *A;
-  double *B;
+  RAJA::Complex_type *C;
 };
 
-
-dot::dot(long N_) : N(N_), pdata{std::make_unique<data>()} {
+template <typename T>
+complex_sum<T>::complex_sum(long N_) : N(N_), pdata{std::make_unique<data>()} {
 };
 
-dot::~dot() = default;
+template <typename T>
+complex_sum<T>::~complex_sum() = default;
 
-void dot::setup() {
+template <typename T>
+void complex_sum<T>::setup() {
 
   // Allocate memory according to the backend used
   // TODO: Use CHAI/Umpire for memory management
 #if defined(RAJA_ENABLE_CUDA)
-  cudaErrchk(cudaMallocManaged((void **)&(pdata->A), sizeof(double) * N));
-  cudaErrchk(cudaMallocManaged((void **)&(pdata->B), sizeof(double) * N));
+  cudaErrchk(cudaMallocManaged((void **)&(pdata->C), sizeof(RAJA::Complex_type) * N));
 #elif defined(RAJA_ENABLE_HIP)
-  hipErrchk(hipMalloc((void **)&(pdata->A), sizeof(double) * N));
-  hipErrchk(hipMalloc((void **)&(pdata->B), sizeof(double) * N));
+  hipErrchk(hipMalloc((void **)&(pdata->C), sizeof(RAJA::Complex_type) * N));
 #else
-  pdata->A = new double[N];
-  pdata->B = new double[N];
+  pdata->C = new RAJA::Complex_type[N];
 #endif
 
-  double * RAJA_RESTRICT A = pdata->A;
-  double * RAJA_RESTRICT B = pdata->B;
+  RAJA::Complex_type * RAJA_RESTRICT C = pdata->C;
   // Have to pull this out of the class because the lambda capture falls over
-  const double n = static_cast<double>(N);
+  const RAJA::Real_type n = static_cast<RAJA::Real_type>(N);
 
   RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE (RAJA::Index_type i) {
-    A[i] = 1.0 * 1024.0 / n;
-    B[i] = 2.0 * 1024.0 / n;
+    RAJA::Real_type v = 2.0 * 1024.0 / static_cast<RAJA::Real_type>(N);
+    C[i] = {v, v};
   });
 }
 
-void dot::teardown() {
+template <typename T>
+void complex_sum<T>::teardown() {
   // TODO: Use CHAI/Umpire for memory management
 #if defined(RAJA_ENABLE_CUDA)
-  cudaErrchk(cudaFree(pdata->A));
-  cudaErrchk(cudaFree(pdata->B));
+  cudaErrchk(cudaFree(pdata->C));
 #elif defined(RAJA_ENABLE_HIP)
-  hipErrchk(hipFree(pdata->A));
-  hipErrchk(hipFree(pdata->B));
+  hipErrchk(hipFree(pdata->C));
 #else
-  delete[] pdata->A;
-  delete[] pdata->B;
+  delete[] pdata->C;
 #endif
   pdata.reset();
   // NOTE: All the data has been destroyed!
 }
 
-double dot::run() {
-  double * A = pdata->A;
-  double * B = pdata->B;
+template <typename T>
+std::complex<T> complex_sum<T>::run() {
+  RAJA::Complex_type * RAJA_RESTRICT C = pdata->C;
 
-  RAJA::ReduceSum<reduce_policy, double> sum(0.0);
+  RAJA::ReduceSum<reduce_policy, RAJA::Complex_type> sum(0.0, 0.0);
 
   RAJA::forall<policy>(RAJA::RangeSegment(0,N), [=] RAJA_DEVICE (RAJA::Index_type i) {
-    sum += A[i] * B[i];
+    sum += C[i];
   });
 
   return sum.get();
 }
 
+template struct complex_sum<RAJA::Real_type>;
 

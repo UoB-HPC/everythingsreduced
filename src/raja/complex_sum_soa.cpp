@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "../dot.hpp"
+#include "../complex_sum_soa.hpp"
 
 #include <RAJA/RAJA.hpp>
 
@@ -34,71 +34,81 @@ typedef RAJA::seq_exec policy;
 typedef RAJA::seq_reduce reduce_policy;
 #endif
 
-struct dot::data {
+template <typename T>
+struct complex_sum_soa<T>::data {
   // TODO: Use CHAI/Umpire for memory management
-  double *A;
-  double *B;
+  T *real;
+  T *imag;
 };
 
-
-dot::dot(long N_) : N(N_), pdata{std::make_unique<data>()} {
+template <typename T>
+complex_sum_soa<T>::complex_sum_soa(long N_) : N(N_), pdata{std::make_unique<data>()} {
 };
 
-dot::~dot() = default;
+template <typename T>
+complex_sum_soa<T>::~complex_sum_soa() = default;
 
-void dot::setup() {
+template <typename T>
+void complex_sum_soa<T>::setup() {
 
   // Allocate memory according to the backend used
   // TODO: Use CHAI/Umpire for memory management
 #if defined(RAJA_ENABLE_CUDA)
-  cudaErrchk(cudaMallocManaged((void **)&(pdata->A), sizeof(double) * N));
-  cudaErrchk(cudaMallocManaged((void **)&(pdata->B), sizeof(double) * N));
+  cudaErrchk(cudaMallocManaged((void **)&(pdata->real), sizeof(T) * N));
+  cudaErrchk(cudaMallocManaged((void **)&(pdata->imag), sizeof(T) * N));
 #elif defined(RAJA_ENABLE_HIP)
-  hipErrchk(hipMalloc((void **)&(pdata->A), sizeof(double) * N));
-  hipErrchk(hipMalloc((void **)&(pdata->B), sizeof(double) * N));
+  hipErrchk(hipMalloc((void **)&(pdata->real), sizeof(T) * N));
+  hipErrchk(hipMalloc((void **)&(pdata->imag), sizeof(T) * N));
 #else
-  pdata->A = new double[N];
-  pdata->B = new double[N];
+  pdata->real = new T[N];
+  pdata->imag = new T[N];
 #endif
 
-  double * RAJA_RESTRICT A = pdata->A;
-  double * RAJA_RESTRICT B = pdata->B;
+  T * RAJA_RESTRICT real = pdata->real;
+  T * RAJA_RESTRICT imag = pdata->imag;
   // Have to pull this out of the class because the lambda capture falls over
-  const double n = static_cast<double>(N);
+  const T n = static_cast<T>(N);
 
   RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE (RAJA::Index_type i) {
-    A[i] = 1.0 * 1024.0 / n;
-    B[i] = 2.0 * 1024.0 / n;
+    T v = 2.0 * 1024.0 / static_cast<T>(N);
+    real[i] = v;
+    imag[i] = v;
   });
 }
 
-void dot::teardown() {
+template <typename T>
+void complex_sum_soa<T>::teardown() {
   // TODO: Use CHAI/Umpire for memory management
 #if defined(RAJA_ENABLE_CUDA)
-  cudaErrchk(cudaFree(pdata->A));
-  cudaErrchk(cudaFree(pdata->B));
+  cudaErrchk(cudaFree(pdata->real));
+  cudaErrchk(cudaFree(pdata->imag));
 #elif defined(RAJA_ENABLE_HIP)
-  hipErrchk(hipFree(pdata->A));
-  hipErrchk(hipFree(pdata->B));
+  hipErrchk(hipFree(pdata->real));
+  hipErrchk(hipFree(pdata->imag));
 #else
-  delete[] pdata->A;
-  delete[] pdata->B;
+  delete[] pdata->real;
+  delete[] pdata->imag;
 #endif
   pdata.reset();
   // NOTE: All the data has been destroyed!
 }
 
-double dot::run() {
-  double * A = pdata->A;
-  double * B = pdata->B;
+template <typename T>
+std::tuple<T,T> complex_sum_soa<T>::run() {
+  T * RAJA_RESTRICT real = pdata->real;
+  T * RAJA_RESTRICT imag = pdata->imag;
 
-  RAJA::ReduceSum<reduce_policy, double> sum(0.0);
+  RAJA::ReduceSum<reduce_policy, T> sum_r(0.0);
+  RAJA::ReduceSum<reduce_policy, T> sum_i(0.0);
 
   RAJA::forall<policy>(RAJA::RangeSegment(0,N), [=] RAJA_DEVICE (RAJA::Index_type i) {
-    sum += A[i] * B[i];
+    sum_r += real[i];
+    sum_i += imag[i];
   });
 
-  return sum.get();
+  return {sum_r.get(), sum_i.get()};
 }
 
+template struct complex_sum_soa<double>;
+template struct complex_sum_soa<float>;
 
