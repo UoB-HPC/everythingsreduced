@@ -16,11 +16,11 @@ This is a collection of key reduction kernel patterns collated from other benchm
 
 ## TODO ##
 
-[ ] Kokkos complex min custom reduction (as current one is broken)
-[ ] CLI for benchmark selection (run one at a time)
-[ ] OpenMP Target
-[ ] SYCL
-[ ] oneDPL
+- [ ] Kokkos complex min custom reduction (as current one is broken)
+- [ ] CLI for benchmark selection (run one at a time)
+- [ ] OpenMP Target
+- [ ] SYCL
+- [ ] oneDPL
 
 
 ## Benchmarks ##
