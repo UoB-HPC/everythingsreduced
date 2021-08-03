@@ -5,6 +5,7 @@
 #include <limits>
 #include <chrono>
 #include <complex>
+#include <string>
 
 const auto LINE = "--------------------------------------------------------------------------------";
 
@@ -17,6 +18,40 @@ const auto LINE = "-------------------------------------------------------------
 #include "complex_min.hpp"
 #include "field_summary.hpp"
 #include "describe.hpp"
+
+enum class Benchmark {dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe};
+
+// Choose the benchmark based on the input argument given from the command line
+Benchmark select_benchmark(const std::string name) {
+
+  if (name == "dot") return Benchmark::dot;
+  else if (name == "complex_sum") return Benchmark::complex_sum;
+  else if (name == "complex_sum_soa") return Benchmark::complex_sum_soa;
+  else if (name == "complex_min") return Benchmark::complex_min;
+  else if (name == "field_summary") return Benchmark::field_summary;
+  else if (name == "describe") return Benchmark::describe;
+  else {
+    std::cerr << "Invalid benchmark: " << name << std::endl;
+    exit(EXIT_FAILURE);
+  }
+}
+
+// Checks there are 3 command line arguments.
+// Specifically, a safety check on argv[2] before benchmarks
+// which require a problem size
+void check_for_option(int argc) {
+  if (argc != 3) {
+    std::cerr << "Missing problem size" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+}
+
+// Parse the input size
+long get_problem_size(const std::string option) {
+  long N = std::stol(option);
+  std::cout << "Problem size: " << N << std::endl;
+  return N;
+}
 
 // Return elapsed time
 double elapsed(std::chrono::high_resolution_clock::time_point start, std::chrono::high_resolution_clock::time_point stop) {
@@ -36,7 +71,7 @@ void print_timing(const char *name, const double constructor, const double setup
       << LINE << std::endl;
 }
 
-int main(void) {
+int main(int argc, char *argv[]) {
 
   // Shorten the standard clock name
   using clock = std::chrono::high_resolution_clock;
@@ -46,14 +81,28 @@ int main(void) {
     << "(v" << Reduced_VERSION_MAJOR << "." << Reduced_VERSION_MINOR << ")"
     << std::endl << std::endl;
 
+  // Check command line arguments
+  if (argc < 2) {
+    std::cerr
+      << "Usage: " << argv[0] << " <benchmark> <options>" << std::endl << std::endl
+      <<    "Valid benchmarks:" << std::endl
+      <<    "  dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+
+  Benchmark run = select_benchmark(argv[1]);
+
   std::cout << "Unit of time: milliseconds" << std::endl << std::endl;
 
   //////////////////////////////////////////////////////////////////////////////
   // Run Dot Product Benchmark
   //////////////////////////////////////////////////////////////////////////////
-  {
+  if (run == Benchmark::dot) {
+    check_for_option(argc);
+    long N = get_problem_size(argv[2]);
+
     auto construct_start = clock::now();
-    dot dotty(1024*1024*1024);
+    dot dotty(N);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -91,9 +140,12 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   // Run Complex Sum Benchmark
   //////////////////////////////////////////////////////////////////////////////
-  {
+  else if (run == Benchmark::complex_sum) {
+    check_for_option(argc);
+    long N = get_problem_size(argv[2]);
+
     auto construct_start = clock::now();
-    complex_sum<double> csum(1024*1024*1024);
+    complex_sum<double> csum(N);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -132,9 +184,12 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   // Run Complex Sum SoA Benchmark
   //////////////////////////////////////////////////////////////////////////////
-  {
+  else if (run == Benchmark::complex_sum_soa) {
+    check_for_option(argc);
+    long N = get_problem_size(argv[2]);
+
     auto construct_start = clock::now();
-    complex_sum_soa<double> csum(1024*1024*1024);
+    complex_sum_soa<double> csum(N);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -175,9 +230,12 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   // Run Complex Min Benchmark
   //////////////////////////////////////////////////////////////////////////////
-  {
+  else if (run == Benchmark::complex_min) {
+    check_for_option(argc);
+    long N = get_problem_size(argv[2]);
+
     auto construct_start = clock::now();
-    complex_min<double> cmin(1024*1024*1024);
+    complex_min<double> cmin(N);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
@@ -216,7 +274,7 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   // Run Field Summary Benchmark
   //////////////////////////////////////////////////////////////////////////////
-  {
+  else if (run == Benchmark::field_summary) {
     auto construct_start = clock::now();
     field_summary summary;
     auto construct_stop = clock::now();
@@ -282,9 +340,12 @@ int main(void) {
   //////////////////////////////////////////////////////////////////////////////
   // Describe Benchmark
   //////////////////////////////////////////////////////////////////////////////
-  {
+  else if (run == Benchmark::describe) {
+    check_for_option(argc);
+    long N = get_problem_size(argv[2]);
+
     auto construct_start = clock::now();
-    describe d(1024*1024*1024);
+    describe d(N);
     auto construct_stop = clock::now();
 
     auto setup_start = clock::now();
