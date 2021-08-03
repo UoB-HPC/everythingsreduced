@@ -111,7 +111,7 @@ public:
   //Required
   typedef ComplexMin reducer;
   typedef reducer_type<T> value_type;
-  typedef Kokkos::View<value_type*, Space, Kokkos::MemoryUnmanaged> result_view_type;
+  typedef Kokkos::View<value_type, Space, Kokkos::MemoryUnmanaged> result_view_type;
 
 private:
   value_type & value;
