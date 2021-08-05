@@ -79,6 +79,7 @@ struct describe {
 
     // Standard deviation
     // Not sure there is a closed form for the input data.
+    r.std = 0;
     for (long i = 0; i < N; ++i) {
       double val = std::abs(static_cast<double>(N)/2.0 - static_cast<double>(i));
       r.std += ((val - r.mean) * (val - r.mean)) / static_cast<double>(N);
