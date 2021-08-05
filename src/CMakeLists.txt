@@ -5,6 +5,8 @@ cmake_minimum_required(VERSION 3.17)
 
 if (MODEL STREQUAL "SYCL")
   set(CMAKE_CXX_STANDARD 17)
+elif (MODEL STREQUAL "oneDPL")
+  set(CMAKE_CXX_STANDARD 17)
 else()
   set(CMAKE_CXX_STANDARD 14)
 endif()
@@ -69,6 +71,13 @@ elseif (MODEL STREQUAL "SYCL")
 
   target_link_libraries(Reduced PUBLIC implement_sycl)
 
+elseif (MODEL STREQUAL "oneDPL")
+  file(GLOB oneDPL_bench_src CONFIGURE_DEPENDS oneDPL/*.cpp)
+  add_library(implement_oneDPL ${oneDPL_bench_src})
+
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_GLIBCXX_USE_TBB_PAR_BACKEND=0 -DONEDPL_MODEL") # workaround for oneDPL
+
+  target_link_libraries(Reduced PUBLIC implement_oneDPL)
 
 elseif(MODEL STREQUAL "Kokkos")
   file(GLOB kokkos_bench_src CONFIGURE_DEPENDS kokkos/*.cpp)
@@ -137,4 +146,3 @@ else()
   message(FATAL_ERROR "Please select a model to build: -DMODEL=<model>")
 
 endif()
-
