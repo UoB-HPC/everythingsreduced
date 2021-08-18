@@ -3,7 +3,11 @@
 
 cmake_minimum_required(VERSION 3.17)
 
-set(CMAKE_CXX_STANDARD 14)
+if (MODEL STREQUAL "SYCL")
+  set(CMAKE_CXX_STANDARD 17)
+else()
+  set(CMAKE_CXX_STANDARD 14)
+endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # select default build type
@@ -42,6 +46,7 @@ if (MODEL STREQUAL "OpenMP")
 
   target_link_libraries(Reduced PUBLIC implement_omp)
 
+
 elseif (MODEL STREQUAL "OpenMP-target")
   file(GLOB omp_target_bench_src CONFIGURE_DEPENDS omp-target/*.cpp)
   add_library(implement_omp_target ${omp_target_bench_src})
@@ -57,6 +62,13 @@ elseif (MODEL STREQUAL "OpenMP-target")
   endif()
 
   target_link_libraries(Reduced PUBLIC implement_omp_target)
+
+elseif (MODEL STREQUAL "SYCL")
+  file(GLOB sycl_bench_src CONFIGURE_DEPENDS sycl/*.cpp)
+  add_library(implement_sycl ${sycl_bench_src})
+
+  target_link_libraries(Reduced PUBLIC implement_sycl)
+
 
 elseif(MODEL STREQUAL "Kokkos")
   file(GLOB kokkos_bench_src CONFIGURE_DEPENDS kokkos/*.cpp)
