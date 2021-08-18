@@ -46,11 +46,29 @@ if (MODEL STREQUAL "OpenMP")
 
   target_link_libraries(Reduced PUBLIC implement_omp)
 
+
+elseif (MODEL STREQUAL "OpenMP-target")
+  file(GLOB omp_target_bench_src CONFIGURE_DEPENDS omp-target/*.cpp)
+  add_library(implement_omp_target ${omp_target_bench_src})
+
+  # Add OpenMP flags
+  find_package(OpenMP)
+  if(OpenMP_CXX_FOUND)
+    target_link_libraries(implement_omp_target PUBLIC OpenMP::OpenMP_CXX)
+  endif()
+
+  if(OMP_TARGET STREQUAL "Intel")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fiopenmp -fopenmp-targets=spir64")
+  endif()
+
+  target_link_libraries(Reduced PUBLIC implement_omp_target)
+
 elseif (MODEL STREQUAL "SYCL")
   file(GLOB sycl_bench_src CONFIGURE_DEPENDS sycl/*.cpp)
   add_library(implement_sycl ${sycl_bench_src})
 
   target_link_libraries(Reduced PUBLIC implement_sycl)
+
 
 elseif(MODEL STREQUAL "Kokkos")
   file(GLOB kokkos_bench_src CONFIGURE_DEPENDS kokkos/*.cpp)
