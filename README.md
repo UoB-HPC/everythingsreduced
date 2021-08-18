@@ -50,7 +50,7 @@ No extra stages are required to build with OpenMP (for the CPU).
 
 The `MODEL` name is `OpenMP-target`; you must also specify `OMP_TARGET` to indicate which backend to use. Currently, only `Intel` is supported.
 
-We recommend installing oneAPI to use the Intel backend. The [HPC Kit](https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit/download.html) is needed for OpenMP. Remember to run `/opt/intel/oneAPI/setvars.sh` (or wherever you have installed it) before building / running.
+We recommend installing oneAPI to use the Intel backend. The [HPC Kit](https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit/download.html) is needed for OpenMP. Remember to run `/opt/intel/oneapi/setvars.sh` (or wherever you have installed it) before building / running.
     
  | Backend | Options                                                              |
  | ------- | ---------------------------------------------------------------------|
