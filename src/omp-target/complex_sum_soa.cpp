@@ -9,14 +9,14 @@
 
 #include "util.hpp"
 
-template <typename T> struct complex_sum_soa<T>::data {
+template <typename T>
+struct complex_sum_soa<T>::data {
   T *real;
   T *imag;
 };
 
 template <typename T>
-complex_sum_soa<T>::complex_sum_soa(long N_)
-    : N(N_), pdata{std::make_unique<data>()} {
+complex_sum_soa<T>::complex_sum_soa(long N_) : N(N_), pdata{std::make_unique<data>()} {
 
   if (!is_offloading()) {
     std::cerr << "OMP target code is not offloading as expecting" << std::endl;
@@ -24,9 +24,11 @@ complex_sum_soa<T>::complex_sum_soa(long N_)
   }
 }
 
-template <typename T> complex_sum_soa<T>::~complex_sum_soa() = default;
+template <typename T>
+complex_sum_soa<T>::~complex_sum_soa() = default;
 
-template <typename T> void complex_sum_soa<T>::setup() {
+template <typename T>
+void complex_sum_soa<T>::setup() {
 
   pdata->real = new T[N];
   pdata->imag = new T[N];
@@ -46,14 +48,16 @@ template <typename T> void complex_sum_soa<T>::setup() {
 #pragma omp target update to(real [0:N], imag [0:N])
 }
 
-template <typename T> void complex_sum_soa<T>::teardown() {
+template <typename T>
+void complex_sum_soa<T>::teardown() {
 #pragma omp target exit data map(delete : pdata->real, pdata->imag)
 
   delete[] pdata->real;
   delete[] pdata->imag;
 }
 
-template <typename T> std::tuple<T, T> complex_sum_soa<T>::run() {
+template <typename T>
+std::tuple<T, T> complex_sum_soa<T>::run() {
 
   T *real = pdata->real;
   T *imag = pdata->imag;

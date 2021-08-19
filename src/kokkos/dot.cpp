@@ -16,8 +16,7 @@ dot::dot(long N_) : N(N_), pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
-  std::cout << "Dot is using Kokkos with "
-            << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
+  std::cout << "Dot is using Kokkos with " << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
 }
 
 dot::~dot() { Kokkos::finalize(); }

@@ -21,8 +21,7 @@ dot::dot(long N_) : N(N_), pdata{std::make_unique<data>()} {
     nthreads = omp_get_num_threads();
   }
 
-  std::cout << "Dot is using OpenMP with " << nthreads << " threads."
-            << std::endl;
+  std::cout << "Dot is using OpenMP with " << nthreads << " threads." << std::endl;
 }
 
 dot::~dot() = default;

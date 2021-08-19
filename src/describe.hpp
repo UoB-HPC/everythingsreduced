@@ -75,16 +75,14 @@ struct describe {
     } else { // odd case
       const double fl_half_n = std::floor(static_cast<double>(N) / 2.0);
       const double half_n = static_cast<double>(N) / 2.0;
-      r.mean = (((fl_half_n - 1.0) * fl_half_n) + fl_half_n + half_n) /
-               static_cast<double>(N);
+      r.mean = (((fl_half_n - 1.0) * fl_half_n) + fl_half_n + half_n) / static_cast<double>(N);
     }
 
     // Standard deviation
     // Not sure there is a closed form for the input data.
     r.std = 0;
     for (long i = 0; i < N; ++i) {
-      double val =
-          std::abs(static_cast<double>(N) / 2.0 - static_cast<double>(i));
+      double val = std::abs(static_cast<double>(N) / 2.0 - static_cast<double>(i));
       r.std += ((val - r.mean) * (val - r.mean)) / static_cast<double>(N);
     }
     r.std = std::sqrt(r.std);

@@ -61,9 +61,7 @@ void describe::setup() {
   const double N = static_cast<double>(N);
 
   RAJA::forall<policy>(RAJA::RangeSegment(0, N),
-                       [=] RAJA_DEVICE(RAJA::Index_type i) {
-                         D[i] = fabs(N / 2.0 - static_cast<double>(i));
-                       });
+                       [=] RAJA_DEVICE(RAJA::Index_type i) { D[i] = fabs(N / 2.0 - static_cast<double>(i)); });
 }
 
 void describe::teardown() {
@@ -91,41 +89,32 @@ describe::result describe::run() {
   RAJA::ReduceSum<reduce_policy, double> mean(0.0);
   RAJA::ReduceSum<reduce_policy, double> lost(0.0);
 
-  RAJA::ReduceMin<reduce_policy, double> min(
-      std::numeric_limits<double>::max());
-  RAJA::ReduceMax<reduce_policy, double> max(
-      std::numeric_limits<double>::min());
+  RAJA::ReduceMin<reduce_policy, double> min(std::numeric_limits<double>::max());
+  RAJA::ReduceMax<reduce_policy, double> max(std::numeric_limits<double>::min());
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N),
-                       [=] RAJA_DEVICE(RAJA::Index_type i) {
-                         // Mean calculation
-                         double val = D[i] / N;
-                         double t = mean + val;
-                         if (fabs(mean) >= val)
-                           lost += (mean - t) + val;
-                         else
-                           lost += (val - t) + mean;
+  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) {
+    // Mean calculation
+    double val = D[i] / N;
+    double t = mean + val;
+    if (fabs(mean) >= val)
+      lost += (mean - t) + val;
+    else
+      lost += (val - t) + mean;
 
-                         mean += val;
+    mean += val;
 
-                         min.min(D[i]);
-                         max.max(D[i]);
-                       });
+    min.min(D[i]);
+    max.max(D[i]);
+  });
 
   double the_mean = mean.get() + lost.get();
 
   RAJA::ReduceSum<reduce_policy, double> std(0.0);
 
   RAJA::forall<policy>(RAJA::RangeSegment(0, N),
-                       [=] RAJA_DEVICE(RAJA::Index_type i) {
-                         std += ((D[i] - the_mean) * (D[i] - the_mean)) / N;
-                       });
+                       [=] RAJA_DEVICE(RAJA::Index_type i) { std += ((D[i] - the_mean) * (D[i] - the_mean)) / N; });
 
   double the_std = std::sqrt(std);
 
-  return {.count = count,
-          .mean = the_mean,
-          .std = the_std,
-          .min = min.get(),
-          .max = max.get()};
+  return {.count = count, .mean = the_mean, .std = the_std, .min = min.get(), .max = max.get()};
 }

@@ -8,7 +8,8 @@
 
 #include "../complex_min.hpp"
 
-template <typename T> struct complex_min<T>::data {
+template <typename T>
+struct complex_min<T>::data {
   Kokkos::View<Kokkos::complex<T> *> C;
 };
 
@@ -17,13 +18,16 @@ complex_min<T>::complex_min(long N_) : N(N_), pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
-  std::cout << "Complex Min is using Kokkos with "
-            << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
+  std::cout << "Complex Min is using Kokkos with " << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
 }
 
-template <typename T> complex_min<T>::~complex_min() { Kokkos::finalize(); }
+template <typename T>
+complex_min<T>::~complex_min() {
+  Kokkos::finalize();
+}
 
-template <typename T> void complex_min<T>::setup() {
+template <typename T>
+void complex_min<T>::setup() {
 
   pdata->C = Kokkos::View<Kokkos::complex<T> *>("C", N);
 
@@ -37,7 +41,8 @@ template <typename T> void complex_min<T>::setup() {
   Kokkos::fence();
 }
 
-template <typename T> void complex_min<T>::teardown() {
+template <typename T>
+void complex_min<T>::teardown() {
   pdata.reset();
   // NOTE: All the data has been destroyed!
 }
@@ -47,7 +52,8 @@ KOKKOS_INLINE_FUNCTION T my_abs(const Kokkos::complex<T> &c) {
   return sqrt(c.real() * c.real() + c.imag() * c.imag());
 }
 
-template <typename T> struct reducer_type {
+template <typename T>
+struct reducer_type {
   Kokkos::complex<T> c;
 
   KOKKOS_INLINE_FUNCTION
@@ -72,29 +78,23 @@ template <typename T> struct reducer_type {
   }
 
   KOKKOS_INLINE_FUNCTION
-  void operator+=(const volatile reducer_type &rhs) volatile {
-    c = (abs(c) < abs(rhs.c)) ? c : rhs.c;
-  }
+  void operator+=(const volatile reducer_type &rhs) volatile { c = (abs(c) < abs(rhs.c)) ? c : rhs.c; }
 
 private:
   KOKKOS_INLINE_FUNCTION
-  T abs(const Kokkos::complex<T> &c) const {
-    return sqrt(c.real() * c.real() + c.imag() * c.imag());
-  }
+  T abs(const Kokkos::complex<T> &c) const { return sqrt(c.real() * c.real() + c.imag() * c.imag()); }
 
   KOKKOS_INLINE_FUNCTION
-  T abs(const volatile Kokkos::complex<T> &c) volatile {
-    return sqrt(c.real() * c.real() + c.imag() * c.imag());
-  }
+  T abs(const volatile Kokkos::complex<T> &c) volatile { return sqrt(c.real() * c.real() + c.imag() * c.imag()); }
 };
 
-template <class T, class Space> struct ComplexMin {
+template <class T, class Space>
+struct ComplexMin {
 public:
   // Required
   typedef ComplexMin reducer;
   typedef reducer_type<T> value_type;
-  typedef Kokkos::View<value_type, Space, Kokkos::MemoryUnmanaged>
-      result_view_type;
+  typedef Kokkos::View<value_type, Space, Kokkos::MemoryUnmanaged> result_view_type;
 
 private:
   value_type &value;
@@ -120,7 +120,8 @@ public:
   bool references_scalar() const { return true; }
 };
 
-template <typename T> std::complex<T> complex_min<T>::run() {
+template <typename T>
+std::complex<T> complex_min<T>::run() {
 
   auto &C = pdata->C;
 

@@ -16,8 +16,7 @@ describe::describe(long N_) : N(N_), pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
-  std::cout << "Describe is using Kokkos with "
-            << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
+  std::cout << "Describe is using Kokkos with " << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
 }
 
 describe::~describe() { Kokkos::finalize(); }
@@ -29,9 +28,7 @@ void describe::setup() {
   auto &D = pdata->D;
 
   Kokkos::parallel_for(
-      N, KOKKOS_LAMBDA(const int i) {
-        D(i) = fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i));
-      });
+      N, KOKKOS_LAMBDA(const int i) { D(i) = fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i)); });
   Kokkos::fence();
 }
 
@@ -55,8 +52,7 @@ describe::result describe::run() {
 
   Kokkos::parallel_reduce(
       N,
-      KOKKOS_LAMBDA(const int i, double &mean, double &lost, double &min,
-                    double &max) {
+      KOKKOS_LAMBDA(const int i, double &mean, double &lost, double &min, double &max) {
         // Mean calculation
         double val = D(i) / static_cast<double>(N);
         double t = mean + val;
@@ -77,10 +73,7 @@ describe::result describe::run() {
   double std = 0.0;
 
   Kokkos::parallel_reduce(
-      N,
-      KOKKOS_LAMBDA(const int i, double &std) {
-        std += ((D(i) - mean) * (D(i) - mean)) / static_cast<double>(N);
-      },
+      N, KOKKOS_LAMBDA(const int i, double &std) { std += ((D(i) - mean) * (D(i) - mean)) / static_cast<double>(N); },
       std);
 
   std = std::sqrt(std);

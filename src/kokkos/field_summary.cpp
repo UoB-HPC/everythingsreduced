@@ -20,8 +20,7 @@ field_summary::field_summary() : pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
-  std::cout << "Field Summary is using Kokkos with "
-            << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
+  std::cout << "Field Summary is using Kokkos with " << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
 }
 
 field_summary::~field_summary() { Kokkos::finalize(); }
@@ -47,8 +46,7 @@ void field_summary::setup() {
   const double dy = 10.0 / static_cast<double>(ny);
 
   Kokkos::parallel_for(
-      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx, ny}),
-      KOKKOS_LAMBDA(const int j, const int k) {
+      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx, ny}), KOKKOS_LAMBDA(const int j, const int k) {
         volume(j, k) = dx * dy;
         density(j, k) = 0.2;
         energy(j, k) = 1.0;
@@ -56,16 +54,14 @@ void field_summary::setup() {
       });
 
   Kokkos::parallel_for(
-      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx / 2, ny / 5}),
-      KOKKOS_LAMBDA(const int j, const int k) {
+      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx / 2, ny / 5}), KOKKOS_LAMBDA(const int j, const int k) {
         density(j, k) = 1.0;
         energy(j, k) = 2.5;
         pressure(j, k) = (1.4 - 1.0) * density(j, k) * energy(j, k);
       });
 
   Kokkos::parallel_for(
-      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx + 1, ny + 1}),
-      KOKKOS_LAMBDA(const int j, const int k) {
+      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx + 1, ny + 1}), KOKKOS_LAMBDA(const int j, const int k) {
         xvel(j, k) = 0.0;
         yvel(j, k) = 0.0;
       });
@@ -96,13 +92,11 @@ field_summary::reduction_vars field_summary::run() {
 
   Kokkos::parallel_reduce(
       Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx, ny}),
-      KOKKOS_LAMBDA(const int j, const int k, double &vol, double &mass,
-                    double &ie, double &ke, double &press) {
+      KOKKOS_LAMBDA(const int j, const int k, double &vol, double &mass, double &ie, double &ke, double &press) {
         double vsqrd = 0.0;
         for (int kv = k; kv <= k + 1; ++kv) {
           for (int jv = j; jv <= j + 1; ++jv) {
-            vsqrd += 0.25 * (xvel(jv, kv) * xvel(jv, kv) +
-                             yvel(jv, kv) * yvel(jv, kv));
+            vsqrd += 0.25 * (xvel(jv, kv) * xvel(jv, kv) + yvel(jv, kv) * yvel(jv, kv));
           }
         }
         double cell_volume = volume(j, k);

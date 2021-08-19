@@ -43,7 +43,8 @@ namespace RAJA {
 using Complex_type = std::complex<double>;
 };
 
-template <typename T> struct complex_min<T>::data {
+template <typename T>
+struct complex_min<T>::data {
   // TODO: Use CHAI/Umpire for memory management
   RAJA::Complex_type *C;
 };
@@ -51,15 +52,16 @@ template <typename T> struct complex_min<T>::data {
 template <typename T>
 complex_min<T>::complex_min(long N_) : N(N_), pdata{std::make_unique<data>()} {}
 
-template <typename T> complex_min<T>::~complex_min() = default;
+template <typename T>
+complex_min<T>::~complex_min() = default;
 
-template <typename T> void complex_min<T>::setup() {
+template <typename T>
+void complex_min<T>::setup() {
 
   // Allocate memory according to the backend used
   // TODO: Use CHAI/Umpire for memory management
 #if defined(RAJA_ENABLE_CUDA)
-  cudaErrchk(
-      cudaMallocManaged((void **)&(pdata->C), sizeof(RAJA::Complex_type) * N));
+  cudaErrchk(cudaMallocManaged((void **)&(pdata->C), sizeof(RAJA::Complex_type) * N));
 #elif defined(RAJA_ENABLE_HIP)
   hipErrchk(hipMalloc((void **)&(pdata->C), sizeof(RAJA::Complex_type) * N));
 #else
@@ -70,14 +72,14 @@ template <typename T> void complex_min<T>::setup() {
   // Have to pull this out of the class because the lambda capture falls over
   const RAJA::Real_type n = static_cast<RAJA::Real_type>(N);
 
-  RAJA::forall<policy>(
-      RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) {
-        RAJA::Real_type v = 2.0 * 1024.0 / static_cast<RAJA::Real_type>(N);
-        C[i] = {v, v};
-      });
+  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) {
+    RAJA::Real_type v = 2.0 * 1024.0 / static_cast<RAJA::Real_type>(N);
+    C[i] = {v, v};
+  });
 }
 
-template <typename T> void complex_min<T>::teardown() {
+template <typename T>
+void complex_min<T>::teardown() {
   // TODO: Use CHAI/Umpire for memory management
 #if defined(RAJA_ENABLE_CUDA)
   cudaErrchk(cudaFree(pdata->C));
@@ -90,7 +92,8 @@ template <typename T> void complex_min<T>::teardown() {
   // NOTE: All the data has been destroyed!
 }
 
-template <typename T> std::complex<T> complex_min<T>::run() {
+template <typename T>
+std::complex<T> complex_min<T>::run() {
 
   std::cerr << "UNIMPLEMENTED" << std::endl;
   return {-1.0, -1.0};

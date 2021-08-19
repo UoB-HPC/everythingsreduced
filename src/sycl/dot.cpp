@@ -52,11 +52,9 @@ double dot::run() {
   pdata->q.submit([&](sycl::handler &h) {
     sycl::accessor A(pdata->A, h, sycl::read_only);
     sycl::accessor B(pdata->B, h, sycl::read_only);
-    h.parallel_for(
-        sycl::range<1>(N),
-        sycl::reduction(pdata->sum, h, std::plus<>(),
-                        sycl::property::reduction::initialize_to_identity{}),
-        [=](sycl::id<1> i, auto &sum) { sum += A[i] * B[i]; });
+    h.parallel_for(sycl::range<1>(N),
+                   sycl::reduction(pdata->sum, h, std::plus<>(), sycl::property::reduction::initialize_to_identity{}),
+                   [=](sycl::id<1> i, auto &sum) { sum += A[i] * B[i]; });
   });
 
   return pdata->sum.get_host_access()[0];

@@ -7,26 +7,27 @@
 
 #include "../complex_sum_soa.hpp"
 
-template <typename T> struct complex_sum_soa<T>::data {
+template <typename T>
+struct complex_sum_soa<T>::data {
   Kokkos::View<T *> real;
   Kokkos::View<T *> imag;
 };
 
 template <typename T>
-complex_sum_soa<T>::complex_sum_soa(long N_)
-    : N(N_), pdata{std::make_unique<data>()} {
+complex_sum_soa<T>::complex_sum_soa(long N_) : N(N_), pdata{std::make_unique<data>()} {
   Kokkos::initialize();
 
   // Print out a (mangled) name of what backend Kokkos is using
-  std::cout << "Complex Sum SoA is using Kokkos with "
-            << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
+  std::cout << "Complex Sum SoA is using Kokkos with " << typeid(Kokkos::DefaultExecutionSpace).name() << std::endl;
 }
 
-template <typename T> complex_sum_soa<T>::~complex_sum_soa() {
+template <typename T>
+complex_sum_soa<T>::~complex_sum_soa() {
   Kokkos::finalize();
 }
 
-template <typename T> void complex_sum_soa<T>::setup() {
+template <typename T>
+void complex_sum_soa<T>::setup() {
 
   pdata->real = Kokkos::View<T *>("real", N);
   pdata->imag = Kokkos::View<T *>("imag", N);
@@ -43,12 +44,14 @@ template <typename T> void complex_sum_soa<T>::setup() {
   Kokkos::fence();
 }
 
-template <typename T> void complex_sum_soa<T>::teardown() {
+template <typename T>
+void complex_sum_soa<T>::teardown() {
   pdata.reset();
   // NOTE: All the data has been destroyed!
 }
 
-template <typename T> std::tuple<T, T> complex_sum_soa<T>::run() {
+template <typename T>
+std::tuple<T, T> complex_sum_soa<T>::run() {
 
   auto &real = pdata->real;
   auto &imag = pdata->real;

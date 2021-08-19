@@ -25,8 +25,7 @@ field_summary::field_summary() : pdata{std::make_unique<data>()} {
     nthreads = omp_get_num_threads();
   }
 
-  std::cout << "Field Summary is using OpenMP with " << nthreads << " threads."
-            << std::endl;
+  std::cout << "Field Summary is using OpenMP with " << nthreads << " threads." << std::endl;
 }
 
 field_summary::~field_summary() = default;
@@ -59,8 +58,7 @@ void field_summary::setup() {
       volume[j + k * nx] = dx * dy;
       density[j + k * nx] = 0.2;
       energy[j + k * nx] = 1.0;
-      pressure[j + k * nx] =
-          (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
+      pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
     }
   }
 
@@ -71,8 +69,7 @@ void field_summary::setup() {
 
       density[j + k * nx] = 1.0;
       energy[j + k * nx] = 2.5;
-      pressure[j + k * nx] =
-          (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
+      pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
     }
   }
 

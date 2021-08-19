@@ -34,19 +34,21 @@ typedef RAJA::seq_exec policy;
 typedef RAJA::seq_reduce reduce_policy;
 #endif
 
-template <typename T> struct complex_sum_soa<T>::data {
+template <typename T>
+struct complex_sum_soa<T>::data {
   // TODO: Use CHAI/Umpire for memory management
   T *real;
   T *imag;
 };
 
 template <typename T>
-complex_sum_soa<T>::complex_sum_soa(long N_)
-    : N(N_), pdata{std::make_unique<data>()} {};
+complex_sum_soa<T>::complex_sum_soa(long N_) : N(N_), pdata{std::make_unique<data>()} {};
 
-template <typename T> complex_sum_soa<T>::~complex_sum_soa() = default;
+template <typename T>
+complex_sum_soa<T>::~complex_sum_soa() = default;
 
-template <typename T> void complex_sum_soa<T>::setup() {
+template <typename T>
+void complex_sum_soa<T>::setup() {
 
   // Allocate memory according to the backend used
   // TODO: Use CHAI/Umpire for memory management
@@ -66,15 +68,15 @@ template <typename T> void complex_sum_soa<T>::setup() {
   // Have to pull this out of the class because the lambda capture falls over
   const T n = static_cast<T>(N);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N),
-                       [=] RAJA_DEVICE(RAJA::Index_type i) {
-                         T v = 2.0 * 1024.0 / static_cast<T>(N);
-                         real[i] = v;
-                         imag[i] = v;
-                       });
+  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) {
+    T v = 2.0 * 1024.0 / static_cast<T>(N);
+    real[i] = v;
+    imag[i] = v;
+  });
 }
 
-template <typename T> void complex_sum_soa<T>::teardown() {
+template <typename T>
+void complex_sum_soa<T>::teardown() {
   // TODO: Use CHAI/Umpire for memory management
 #if defined(RAJA_ENABLE_CUDA)
   cudaErrchk(cudaFree(pdata->real));
@@ -90,18 +92,18 @@ template <typename T> void complex_sum_soa<T>::teardown() {
   // NOTE: All the data has been destroyed!
 }
 
-template <typename T> std::tuple<T, T> complex_sum_soa<T>::run() {
+template <typename T>
+std::tuple<T, T> complex_sum_soa<T>::run() {
   T *RAJA_RESTRICT real = pdata->real;
   T *RAJA_RESTRICT imag = pdata->imag;
 
   RAJA::ReduceSum<reduce_policy, T> sum_r(0.0);
   RAJA::ReduceSum<reduce_policy, T> sum_i(0.0);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N),
-                       [=] RAJA_DEVICE(RAJA::Index_type i) {
-                         sum_r += real[i];
-                         sum_i += imag[i];
-                       });
+  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) {
+    sum_r += real[i];
+    sum_i += imag[i];
+  });
 
   return {sum_r.get(), sum_i.get()};
 }

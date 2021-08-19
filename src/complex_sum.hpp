@@ -4,7 +4,8 @@
 #include <complex>
 #include <memory>
 
-template <typename T> struct complex_sum {
+template <typename T>
+struct complex_sum {
 
   // Problem size and data arrays
   // Data arrays use C++ PIMPL because different models store data with very

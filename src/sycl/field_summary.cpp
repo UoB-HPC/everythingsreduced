@@ -10,11 +10,9 @@
 
 struct field_summary::data {
   data(long nx, long ny)
-      : xvel(sycl::range<2>(nx + 1, ny + 1)),
-        yvel(sycl::range<2>(nx + 1, ny + 1)), volume(sycl::range<2>(nx, ny)),
-        density(sycl::range<2>(nx, ny)), energy(sycl::range<2>(nx, ny)),
-        pressure(sycl::range<2>(nx, ny)), vol(1), mass(1), ie(1), ke(1),
-        press(1), q(sycl::default_selector{}) {}
+      : xvel(sycl::range<2>(nx + 1, ny + 1)), yvel(sycl::range<2>(nx + 1, ny + 1)), volume(sycl::range<2>(nx, ny)),
+        density(sycl::range<2>(nx, ny)), energy(sycl::range<2>(nx, ny)), pressure(sycl::range<2>(nx, ny)), vol(1),
+        mass(1), ie(1), ke(1), press(1), q(sycl::default_selector{}) {}
 
   sycl::buffer<double, 2> xvel;
   sycl::buffer<double, 2> yvel;
@@ -104,25 +102,21 @@ field_summary::reduction_vars field_summary::run() {
     sycl::accessor density(pdata->density, h, sycl::read_only);
     sycl::accessor energy(pdata->energy, h, sycl::read_only);
     sycl::accessor pressure(pdata->pressure, h, sycl::read_only);
-    h.parallel_for(get_reduction_range(sycl::range<2>(nx, ny),
-                                       pdata->q.get_device(), pdata->vol,
-                                       pdata->mass, pdata->ie, pdata->ke,
-                                       pdata->press),
+    h.parallel_for(get_reduction_range(sycl::range<2>(nx, ny), pdata->q.get_device(), pdata->vol, pdata->mass,
+                                       pdata->ie, pdata->ke, pdata->press),
                    sycl::reduction(pdata->vol, h, std::plus<>(), properties),
                    sycl::reduction(pdata->mass, h, std::plus<>(), properties),
                    sycl::reduction(pdata->ie, h, std::plus<>(), properties),
                    sycl::reduction(pdata->ke, h, std::plus<>(), properties),
                    sycl::reduction(pdata->press, h, std::plus<>(), properties),
-                   [=](sycl::nd_item<2> it, auto &vol, auto &mass, auto &ie,
-                       auto &ke, auto &press) {
+                   [=](sycl::nd_item<2> it, auto &vol, auto &mass, auto &ie, auto &ke, auto &press) {
                      int j = it.get_global_id(0);
                      int k = it.get_global_id(1);
                      if (j < nx && k < ny) {
                        double vsqrd = 0.0;
                        for (int kv = k; kv <= k + 1; ++kv) {
                          for (int jv = j; jv <= j + 1; ++jv) {
-                           vsqrd += 0.25 * (xvel[jv][kv] * xvel[jv][kv] +
-                                            yvel[jv][kv] * yvel[jv][kv]);
+                           vsqrd += 0.25 * (xvel[jv][kv] * xvel[jv][kv] + yvel[jv][kv] * yvel[jv][kv]);
                          }
                        }
                        double cell_volume = volume[j][k];
@@ -144,21 +138,18 @@ field_summary::reduction_vars field_summary::run() {
     sycl::accessor density(pdata->density, h, sycl::read_only);
     sycl::accessor energy(pdata->energy, h, sycl::read_only);
     sycl::accessor pressure(pdata->pressure, h, sycl::read_only);
-    h.parallel_for(sycl::range<2>(nx, ny),
-                   sycl::reduction(pdata->vol, h, std::plus<>(), properties),
+    h.parallel_for(sycl::range<2>(nx, ny), sycl::reduction(pdata->vol, h, std::plus<>(), properties),
                    sycl::reduction(pdata->mass, h, std::plus<>(), properties),
                    sycl::reduction(pdata->ie, h, std::plus<>(), properties),
                    sycl::reduction(pdata->ke, h, std::plus<>(), properties),
                    sycl::reduction(pdata->press, h, std::plus<>(), properties),
-                   [=](sycl::id<2> jk, auto &vol, auto &mass, auto &ie,
-                       auto &ke, auto &press) {
+                   [=](sycl::id<2> jk, auto &vol, auto &mass, auto &ie, auto &ke, auto &press) {
                      int j = jk[0];
                      int k = jk[1];
                      double vsqrd = 0.0;
                      for (int kv = k; kv <= k + 1; ++kv) {
                        for (int jv = j; jv <= j + 1; ++jv) {
-                         vsqrd += 0.25 * (xvel[jv][kv] * xvel[jv][kv] +
-                                          yvel[jv][kv] * yvel[jv][kv]);
+                         vsqrd += 0.25 * (xvel[jv][kv] * xvel[jv][kv] + yvel[jv][kv] * yvel[jv][kv]);
                        }
                      }
                      double cell_volume = volume[j][k];
@@ -172,7 +163,6 @@ field_summary::reduction_vars field_summary::run() {
   });
 #endif
 
-  return {pdata->vol.get_host_access()[0], pdata->mass.get_host_access()[0],
-          pdata->ie.get_host_access()[0], pdata->ke.get_host_access()[0],
-          pdata->press.get_host_access()[0]};
+  return {pdata->vol.get_host_access()[0], pdata->mass.get_host_access()[0], pdata->ie.get_host_access()[0],
+          pdata->ke.get_host_access()[0], pdata->press.get_host_access()[0]};
 }

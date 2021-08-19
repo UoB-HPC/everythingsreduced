@@ -52,7 +52,7 @@ describe::result describe::run() {
 
   const long count = N;
 
-#pragma omp target teams distribute parallel for reduction(+:mean, lost) reduction(min:min) reduction(max:max)
+#pragma omp target teams distribute parallel for reduction(+ : mean, lost) reduction(min : min) reduction(max : max)
   for (long i = 0; i < N; ++i) {
     // Mean calculation
     double val = D[i] / static_cast<double>(count);
@@ -76,8 +76,7 @@ describe::result describe::run() {
     std += ((D[i] - mean) * (D[i] - mean)) / static_cast<double>(count);
   }
 
-  return {
-      .count = N, .mean = mean, .std = std::sqrt(std), .min = min, .max = max};
+  return {.count = N, .mean = mean, .std = std::sqrt(std), .min = min, .max = max};
 }
 
 void describe::teardown() {

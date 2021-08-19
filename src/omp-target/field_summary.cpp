@@ -47,9 +47,8 @@ void field_summary::setup() {
   double *energy = pdata->energy;
   double *pressure = pdata->pressure;
 
-#pragma omp target enter data map(alloc                                        \
-                                  : xvel [0:DOF_pad], yvel [0:DOF_pad],        \
-                                    volume [0:DOF], density [0:DOF],           \
+#pragma omp target enter data map(alloc                                                                                \
+                                  : xvel [0:DOF_pad], yvel [0:DOF_pad], volume [0:DOF], density [0:DOF],               \
                                     energy [0:DOF], pressure [0:DOF])
 
   // Initalise arrays
@@ -64,8 +63,7 @@ void field_summary::setup() {
       volume[j + k * nx] = dx * dy;
       density[j + k * nx] = 0.2;
       energy[j + k * nx] = 1.0;
-      pressure[j + k * nx] =
-          (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
+      pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
     }
   }
 
@@ -76,8 +74,7 @@ void field_summary::setup() {
 
       density[j + k * nx] = 1.0;
       energy[j + k * nx] = 2.5;
-      pressure[j + k * nx] =
-          (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
+      pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
     }
   }
 
@@ -90,15 +87,13 @@ void field_summary::setup() {
     }
   }
 
-#pragma omp target update to(xvel [0:DOF_pad], yvel [0:DOF_pad],               \
-                             volume [0:DOF], density [0:DOF], energy [0:DOF],  \
+#pragma omp target update to(xvel [0:DOF_pad], yvel [0:DOF_pad], volume [0:DOF], density [0:DOF], energy [0:DOF],      \
                              pressure [0:DOF])
 }
 
 void field_summary::teardown() {
-#pragma omp target exit data map(delete                                        \
-                                 : pdata->xvel, pdata->yvel, pdata->volume,    \
-                                   pdata->density, pdata->energy,              \
+#pragma omp target exit data map(delete                                                                                \
+                                 : pdata->xvel, pdata->yvel, pdata->volume, pdata->density, pdata->energy,             \
                                    pdata->pressure)
 
   delete[] pdata->xvel;
@@ -125,7 +120,7 @@ field_summary::reduction_vars field_summary::run() {
   double ke = 0.0;
   double press = 0.0;
 
-#pragma omp target teams distribute parallel for reduction(+:vol, mass, ie, ke, press)
+#pragma omp target teams distribute parallel for reduction(+ : vol, mass, ie, ke, press)
   for (long k = 0; k < ny; ++k) {
 #pragma omp simd reduction(+ : vol, mass, ie, ke, press)
     for (long j = 0; j < nx; ++j) {

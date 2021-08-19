@@ -43,8 +43,5 @@ struct field_summary {
   }
 
   // Return theoretical minimum number of GiB moved in run()
-  double gibibytes() {
-    return 1.0E-9 * sizeof(double) *
-           ((4.0 * nx * ny) + (2.0 * (nx + 1) * (ny + 1)));
-  }
+  double gibibytes() { return 1.0E-9 * sizeof(double) * ((4.0 * nx * ny) + (2.0 * (nx + 1) * (ny + 1))); }
 };

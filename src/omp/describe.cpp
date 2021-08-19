@@ -21,8 +21,7 @@ describe::describe(long N_) : N(N_), pdata{std::make_unique<data>()} {
     nthreads = omp_get_num_threads();
   }
 
-  std::cout << "Describe is using OpenMP with " << nthreads << " threads."
-            << std::endl;
+  std::cout << "Describe is using OpenMP with " << nthreads << " threads." << std::endl;
 }
 
 describe::~describe() = default;
@@ -51,7 +50,7 @@ describe::result describe::run() {
   double min = std::numeric_limits<double>::max();
   double max = std::numeric_limits<double>::min();
 
-#pragma omp parallel for reduction(+:mean, lost) reduction(min:min) reduction(max:max)
+#pragma omp parallel for reduction(+ : mean, lost) reduction(min : min) reduction(max : max)
   for (long i = 0; i < N; ++i) {
     // Mean calculation
     double val = D[i] / static_cast<double>(N);
