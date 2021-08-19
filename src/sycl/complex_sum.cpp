@@ -27,22 +27,20 @@ complex_sum<T>::~complex_sum() {}
 
 template <typename T>
 void complex_sum<T>::setup() {
-  pdata->q
-      .submit([&](sycl::handler &h) {
-        sycl::accessor sum(pdata->sum, h, sycl::write_only);
-        h.single_task([=]() { sum[0] = std::complex<T>(0, 0); });
-      })
-      .wait();
+  pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor sum(pdata->sum, h, sycl::write_only);
+    h.single_task([=]() { sum[0] = std::complex<T>(0, 0); });
+  });
+  pdata->q.wait();
 
-  pdata->q
-      .submit([&, N = this->N](sycl::handler &h) {
-        sycl::accessor C(pdata->C, h, sycl::write_only);
-        h.parallel_for(N, [=](const int i) {
-          T v = 2.0 * 1024.0 / static_cast<T>(N);
-          C[i] = std::complex<T>{v, v};
-        });
-      })
-      .wait();
+  pdata->q.submit([&, N = this->N](sycl::handler &h) {
+    sycl::accessor C(pdata->C, h, sycl::write_only);
+    h.parallel_for(N, [=](const int i) {
+      T v = 2.0 * 1024.0 / static_cast<T>(N);
+      C[i] = std::complex<T>{v, v};
+    });
+  });
+  pdata->q.wait();
 }
 
 template <typename T>

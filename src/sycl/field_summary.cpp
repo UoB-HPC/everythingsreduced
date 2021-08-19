@@ -39,50 +39,47 @@ void field_summary::setup() {
   const double dx = 10.0 / static_cast<double>(nx);
   const double dy = 10.0 / static_cast<double>(ny);
 
-  pdata->q
-      .submit([&](sycl::handler &h) {
-        sycl::accessor volume(pdata->volume, h, sycl::write_only);
-        sycl::accessor density(pdata->density, h, sycl::write_only);
-        sycl::accessor energy(pdata->energy, h, sycl::write_only);
-        sycl::accessor pressure(pdata->pressure, h, sycl::write_only);
-        h.parallel_for(sycl::range<2>(nx, ny), [=](sycl::id<2> jk) {
-          size_t j = jk[0];
-          size_t k = jk[1];
-          volume[j][k] = dx * dy;
-          density[j][k] = 0.2;
-          energy[j][k] = 1.0;
-          pressure[j][k] = (1.4 - 1.0) * 0.2 * 1.0;
-        });
-      })
-      .wait();
+  pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor volume(pdata->volume, h, sycl::write_only);
+    sycl::accessor density(pdata->density, h, sycl::write_only);
+    sycl::accessor energy(pdata->energy, h, sycl::write_only);
+    sycl::accessor pressure(pdata->pressure, h, sycl::write_only);
+    h.parallel_for(sycl::range<2>(nx, ny), [=](sycl::id<2> jk) {
+      size_t j = jk[0];
+      size_t k = jk[1];
+      volume[j][k] = dx * dy;
+      density[j][k] = 0.2;
+      energy[j][k] = 1.0;
+      pressure[j][k] = (1.4 - 1.0) * 0.2 * 1.0;
+    });
+  });
+  pdata->q.wait();
 
-  pdata->q
-      .submit([&](sycl::handler &h) {
-        sycl::accessor density(pdata->density, h, sycl::write_only);
-        sycl::accessor energy(pdata->energy, h, sycl::write_only);
-        sycl::accessor pressure(pdata->pressure, h, sycl::write_only);
-        h.parallel_for(sycl::range<2>(nx / 2, ny / 5), [=](sycl::id<2> jk) {
-          size_t j = jk[0];
-          size_t k = jk[1];
-          density[j][k] = 1.0;
-          energy[j][k] = 2.5;
-          pressure[j][k] = (1.4 - 1.0) * 1.0 * 2.5;
-        });
-      })
-      .wait();
+  pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor density(pdata->density, h, sycl::write_only);
+    sycl::accessor energy(pdata->energy, h, sycl::write_only);
+    sycl::accessor pressure(pdata->pressure, h, sycl::write_only);
+    h.parallel_for(sycl::range<2>(nx / 2, ny / 5), [=](sycl::id<2> jk) {
+      size_t j = jk[0];
+      size_t k = jk[1];
+      density[j][k] = 1.0;
+      energy[j][k] = 2.5;
+      pressure[j][k] = (1.4 - 1.0) * 1.0 * 2.5;
+    });
+  });
+  pdata->q.wait();
 
-  pdata->q
-      .submit([&](sycl::handler &h) {
-        sycl::accessor xvel(pdata->xvel, h, sycl::write_only);
-        sycl::accessor yvel(pdata->yvel, h, sycl::write_only);
-        h.parallel_for(sycl::range<2>(nx + 1, ny + 1), [=](sycl::id<2> jk) {
-          size_t j = jk[0];
-          size_t k = jk[1];
-          xvel[j][k] = 0.0;
-          yvel[j][k] = 0.0;
-        });
-      })
-      .wait();
+  pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor xvel(pdata->xvel, h, sycl::write_only);
+    sycl::accessor yvel(pdata->yvel, h, sycl::write_only);
+    h.parallel_for(sycl::range<2>(nx + 1, ny + 1), [=](sycl::id<2> jk) {
+      size_t j = jk[0];
+      size_t k = jk[1];
+      xvel[j][k] = 0.0;
+      yvel[j][k] = 0.0;
+    });
+  });
+  pdata->q.wait();
 }
 
 void field_summary::teardown() {

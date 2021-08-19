@@ -27,27 +27,25 @@ describe::describe(long N_) : N(N_), pdata{std::make_unique<data>(N)} {
 describe::~describe(){};
 
 void describe::setup() {
-  pdata->q
-      .submit([&](sycl::handler &h) {
-        sycl::accessor mean(pdata->mean, h, sycl::write_only);
-        sycl::accessor std(pdata->std, h, sycl::write_only);
-        sycl::accessor min(pdata->min, h, sycl::write_only);
-        sycl::accessor max(pdata->max, h, sycl::write_only);
-        h.single_task([=]() {
-          mean[0] = 0;
-          std[0] = 0;
-          min[0] = 0;
-          max[0] = 0;
-        });
-      })
-      .wait();
+  pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor mean(pdata->mean, h, sycl::write_only);
+    sycl::accessor std(pdata->std, h, sycl::write_only);
+    sycl::accessor min(pdata->min, h, sycl::write_only);
+    sycl::accessor max(pdata->max, h, sycl::write_only);
+    h.single_task([=]() {
+      mean[0] = 0;
+      std[0] = 0;
+      min[0] = 0;
+      max[0] = 0;
+    });
+  });
+  pdata->q.wait();
 
-  pdata->q
-      .submit([&, N = this->N](sycl::handler &h) {
-        sycl::accessor D(pdata->D, h, sycl::write_only);
-        h.parallel_for(N, [=](const int i) { D[i] = fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i)); });
-      })
-      .wait();
+  pdata->q.submit([&, N = this->N](sycl::handler &h) {
+    sycl::accessor D(pdata->D, h, sycl::write_only);
+    h.parallel_for(N, [=](const int i) { D[i] = fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i)); });
+  });
+  pdata->q.wait();
 }
 
 void describe::teardown() {

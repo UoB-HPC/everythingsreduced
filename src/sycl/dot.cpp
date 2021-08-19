@@ -24,23 +24,21 @@ dot::dot(long N_) : N(N_), pdata{std::make_unique<data>(N)} {
 dot::~dot() {}
 
 void dot::setup() {
-  pdata->q
-      .submit([&](sycl::handler &h) {
-        sycl::accessor sum(pdata->sum, h, sycl::write_only);
-        h.single_task([=]() { sum[0] = 0.0; });
-      })
-      .wait();
+  pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor sum(pdata->sum, h, sycl::write_only);
+    h.single_task([=]() { sum[0] = 0.0; });
+  });
+  pdata->q.wait();
 
-  pdata->q
-      .submit([&, N = this->N](sycl::handler &h) {
-        sycl::accessor A(pdata->A, h, sycl::write_only);
-        sycl::accessor B(pdata->B, h, sycl::write_only);
-        h.parallel_for(N, [=](const int i) {
-          A[i] = 1.0 * 1024.0 / static_cast<double>(N);
-          B[i] = 2.0 * 1024.0 / static_cast<double>(N);
-        });
-      })
-      .wait();
+  pdata->q.submit([&, N = this->N](sycl::handler &h) {
+    sycl::accessor A(pdata->A, h, sycl::write_only);
+    sycl::accessor B(pdata->B, h, sycl::write_only);
+    h.parallel_for(N, [=](const int i) {
+      A[i] = 1.0 * 1024.0 / static_cast<double>(N);
+      B[i] = 2.0 * 1024.0 / static_cast<double>(N);
+    });
+  });
+  pdata->q.wait();
 }
 
 void dot::teardown() {

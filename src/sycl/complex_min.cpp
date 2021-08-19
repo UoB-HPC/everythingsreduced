@@ -28,22 +28,20 @@ complex_min<T>::~complex_min() {}
 
 template <typename T>
 void complex_min<T>::setup() {
-  pdata->q
-      .submit([&](sycl::handler &h) {
-        sycl::accessor result(pdata->result, h, sycl::write_only);
-        h.single_task([=]() { result[0] = std::complex<T>(0, 0); });
-      })
-      .wait();
+  pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor result(pdata->result, h, sycl::write_only);
+    h.single_task([=]() { result[0] = std::complex<T>(0, 0); });
+  });
+  pdata->q.wait();
 
-  pdata->q
-      .submit([&, N = this->N](sycl::handler &h) {
-        sycl::accessor C(pdata->C, h, sycl::write_only);
-        h.parallel_for(N, [=](const int i) {
-          T v = fabs(static_cast<T>(N) / 2.0 - static_cast<T>(i));
-          C[i] = std::complex<T>{v, v};
-        });
-      })
-      .wait();
+  pdata->q.submit([&, N = this->N](sycl::handler &h) {
+    sycl::accessor C(pdata->C, h, sycl::write_only);
+    h.parallel_for(N, [=](const int i) {
+      T v = fabs(static_cast<T>(N) / 2.0 - static_cast<T>(i));
+      C[i] = std::complex<T>{v, v};
+    });
+  });
+  pdata->q.wait();
 }
 
 template <typename T>

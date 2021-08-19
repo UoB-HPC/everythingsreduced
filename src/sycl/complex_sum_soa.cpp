@@ -29,28 +29,26 @@ complex_sum_soa<T>::~complex_sum_soa() {}
 
 template <typename T>
 void complex_sum_soa<T>::setup() {
-  pdata->q
-      .submit([&](sycl::handler &h) {
-        sycl::accessor sum_r(pdata->sum_r, h, sycl::write_only);
-        sycl::accessor sum_i(pdata->sum_i, h, sycl::write_only);
-        h.single_task([=]() {
-          sum_r[0] = 0;
-          sum_i[0] = 0;
-        });
-      })
-      .wait();
+  pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor sum_r(pdata->sum_r, h, sycl::write_only);
+    sycl::accessor sum_i(pdata->sum_i, h, sycl::write_only);
+    h.single_task([=]() {
+      sum_r[0] = 0;
+      sum_i[0] = 0;
+    });
+  });
+  pdata->q.wait();
 
-  pdata->q
-      .submit([&, N = this->N](sycl::handler &h) {
-        sycl::accessor real(pdata->real, h, sycl::write_only);
-        sycl::accessor imag(pdata->imag, h, sycl::write_only);
-        h.parallel_for(N, [=](const int i) {
-          T v = 2.0 * 1024.0 / static_cast<T>(N);
-          real[i] = v;
-          imag[i] = v;
-        });
-      })
-      .wait();
+  pdata->q.submit([&, N = this->N](sycl::handler &h) {
+    sycl::accessor real(pdata->real, h, sycl::write_only);
+    sycl::accessor imag(pdata->imag, h, sycl::write_only);
+    h.parallel_for(N, [=](const int i) {
+      T v = 2.0 * 1024.0 / static_cast<T>(N);
+      real[i] = v;
+      imag[i] = v;
+    });
+  });
+  pdata->q.wait();
 }
 
 template <typename T>
