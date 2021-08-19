@@ -98,6 +98,12 @@ struct describe {
 
     return r;
   }
+
+  // Return theoretical minimum number of GiB moved in run()
+  double gibibytes() {
+    // Factor of two because standard deviation requires second pass through data
+    return 1.0E-9 * sizeof(double) * 2.0 * N;
+  }
 };
 
 

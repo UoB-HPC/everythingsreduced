@@ -37,6 +37,11 @@ struct complex_sum {
     return std::complex<T>{v, v};
   }
 
+  // Return theoretical minimum number of GiB moved in run()
+  double gibibytes() {
+    return 1.0E-9 * sizeof(std::complex<T>) * N;
+  }
+
 };
 
 

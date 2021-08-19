@@ -60,7 +60,7 @@ double elapsed(std::chrono::high_resolution_clock::time_point start, std::chrono
 }
 
 // Print timings for a benchmark
-void print_timing(const char *name, const double constructor, const double setup, const double run, const double check, const double teardown) {
+void print_timing(const char *name, const double constructor, const double setup, const double run, const double check, const double teardown, const double gibibytes) {
     std::cout << std::endl
       << " " << name << std::endl
       << "  Constructor: " << constructor << std::endl
@@ -68,6 +68,8 @@ void print_timing(const char *name, const double constructor, const double setup
       << "  Run:         " << run << std::endl
       << "  Verify:      " << check << std::endl
       << "  Teardown:    " << teardown << std::endl
+      << std::endl
+      << "  Sustained GiB/s: " << gibibytes / run << std::endl
       << LINE << std::endl;
 }
 
@@ -133,8 +135,10 @@ int main(int argc, char *argv[]) {
       elapsed(setup_start, setup_stop),
       elapsed(run_start, run_stop),
       elapsed(check_start, check_stop),
-      elapsed(teardown_start, teardown_stop)
+      elapsed(teardown_start, teardown_stop),
+      dotty.gibibytes()
     );
+
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -177,7 +181,8 @@ int main(int argc, char *argv[]) {
       elapsed(setup_start, setup_stop),
       elapsed(run_start, run_stop),
       elapsed(check_start, check_stop),
-      elapsed(teardown_start, teardown_stop)
+      elapsed(teardown_start, teardown_stop),
+      csum.gibibytes()
     );
   }
 
@@ -223,7 +228,8 @@ int main(int argc, char *argv[]) {
       elapsed(setup_start, setup_stop),
       elapsed(run_start, run_stop),
       elapsed(check_start, check_stop),
-      elapsed(teardown_start, teardown_stop)
+      elapsed(teardown_start, teardown_stop),
+      csum.gibibytes()
     );
   }
 
@@ -267,7 +273,8 @@ int main(int argc, char *argv[]) {
       elapsed(setup_start, setup_stop),
       elapsed(run_start, run_stop),
       elapsed(check_start, check_stop),
-      elapsed(teardown_start, teardown_stop)
+      elapsed(teardown_start, teardown_stop),
+      cmin.gibibytes()
     );
   }
 
@@ -332,7 +339,8 @@ int main(int argc, char *argv[]) {
       elapsed(setup_start, setup_stop),
       elapsed(run_start, run_stop),
       elapsed(check_start, check_stop),
-      elapsed(teardown_start, teardown_stop)
+      elapsed(teardown_start, teardown_stop),
+      summary.gibibytes()
     );
 
   }
@@ -405,7 +413,8 @@ int main(int argc, char *argv[]) {
       elapsed(setup_start, setup_stop),
       elapsed(run_start, run_stop),
       elapsed(check_start, check_stop),
-      elapsed(teardown_start, teardown_stop)
+      elapsed(teardown_start, teardown_stop),
+      d.gibibytes()
     );
 
   }
