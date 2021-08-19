@@ -17,6 +17,7 @@ This is a collection of key reduction kernel patterns collated from other benchm
 ## TODO ##
 
 - [ ] oneDPL
+- [ ] RAJA custom reducer for complex min
 
 
 ## Benchmarks ##
