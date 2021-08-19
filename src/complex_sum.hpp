@@ -1,14 +1,14 @@
 // Copyright (c) 2021 Everything's Reduced authors
 // SPDX-License-Identifier: MIT
 
-#include <memory>
 #include <complex>
+#include <memory>
 
-template <typename T>
-struct complex_sum {
+template <typename T> struct complex_sum {
 
   // Problem size and data arrays
-  // Data arrays use C++ PIMPL because different models store data with very different types
+  // Data arrays use C++ PIMPL because different models store data with very
+  // different types
   const long N;
   struct data;
   std::unique_ptr<data> pdata;
@@ -36,7 +36,4 @@ struct complex_sum {
     T v = 2.0 * 1024.0;
     return std::complex<T>{v, v};
   }
-
 };
-
-

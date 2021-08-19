@@ -6,7 +6,8 @@
 struct dot {
 
   // Problem size and data arrays
-  // Data arrays use C++ PIMPL because different models store data with very different types
+  // Data arrays use C++ PIMPL because different models store data with very
+  // different types
   const long N;
   struct data;
   std::unique_ptr<data> pdata;
@@ -35,6 +36,4 @@ struct dot {
     double b = 2.0 * 1024.0 / static_cast<double>(N);
     return a * b * static_cast<double>(N);
   }
-
 };
-

@@ -4,11 +4,11 @@
 #include <memory>
 #include <tuple>
 
-template <typename T>
-struct complex_sum_soa {
+template <typename T> struct complex_sum_soa {
 
   // Problem size and data arrays
-  // Data arrays use C++ PIMPL because different models store data with very different types
+  // Data arrays use C++ PIMPL because different models store data with very
+  // different types
   const long N;
   struct data;
   std::unique_ptr<data> pdata;
@@ -36,7 +36,4 @@ struct complex_sum_soa {
     T v = 2.0 * 1024.0;
     return {v, v};
   }
-
 };
-
-

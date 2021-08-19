@@ -1,14 +1,14 @@
 // Copyright (c) 2021 Everything's Reduced authors
 // SPDX-License-Identifier: MIT
 
-#include <memory>
 #include <complex>
+#include <memory>
 
-template <typename T>
-struct complex_min {
+template <typename T> struct complex_min {
 
   // Problem size and data arrays
-  // Data arrays use C++ PIMPL because different models store data with very different types
+  // Data arrays use C++ PIMPL because different models store data with very
+  // different types
   const long N;
 
   struct data;
@@ -40,7 +40,4 @@ struct complex_min {
     else // even case
       return std::complex<T>{0.0, 0.0};
   }
-
 };
-
-

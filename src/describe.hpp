@@ -1,11 +1,10 @@
 // Copyright (c) 2021 Everything's Reduced authors
 // SPDX-License-Identifier: MIT
 
-#include <memory>
 #include <cmath>
+#include <memory>
 
 struct describe {
-
 
   // Reduction result
   // count: number of items in series
@@ -22,7 +21,8 @@ struct describe {
   };
 
   // Problem size and data arrays
-  // Data arrays use C++ PIMPL because different models store data with very different types
+  // Data arrays use C++ PIMPL because different models store data with very
+  // different types
   const long N;
   struct data;
   std::unique_ptr<data> pdata;
@@ -57,7 +57,9 @@ struct describe {
     // Even case
     //   Total is sum of integers to N/2 + sum of integers to N/2-1
     //   Equiv, twice the sum of integers N/2-1, plus N/2
-    //   Total = (n/2 - 1) * (n/2) + (n/2) = (n/2) ((n/2) - 1 + 1) = (n/2) * (n/2)
+    //   Total = (n/2 - 1) * (n/2) + (n/2)
+    //         = (n/2) ((n/2) - 1 + 1)
+    //         = (n/2) * (n/2)
     //   mean = (n/2) * (n/2) / n = n/4
     //
     // Odd case
@@ -70,18 +72,19 @@ struct describe {
 
     if (N % 2 == 0) { // even case
       r.mean = static_cast<double>(N) / 4.0;
-    }
-    else { // odd case
+    } else { // odd case
       const double fl_half_n = std::floor(static_cast<double>(N) / 2.0);
       const double half_n = static_cast<double>(N) / 2.0;
-      r.mean = (((fl_half_n-1.0) * fl_half_n) + fl_half_n + half_n) / static_cast<double>(N);
+      r.mean = (((fl_half_n - 1.0) * fl_half_n) + fl_half_n + half_n) /
+               static_cast<double>(N);
     }
 
     // Standard deviation
     // Not sure there is a closed form for the input data.
     r.std = 0;
     for (long i = 0; i < N; ++i) {
-      double val = std::abs(static_cast<double>(N)/2.0 - static_cast<double>(i));
+      double val =
+          std::abs(static_cast<double>(N) / 2.0 - static_cast<double>(i));
       r.std += ((val - r.mean) * (val - r.mean)) / static_cast<double>(N);
     }
     r.std = std::sqrt(r.std);
@@ -94,10 +97,7 @@ struct describe {
 
     // Maximum
     r.max = static_cast<double>(N) / 2.0;
-    
 
     return r;
   }
 };
-
-
