@@ -69,7 +69,7 @@ void print_timing(const char *name, const double constructor, const double setup
       << "  Verify:      " << check << std::endl
       << "  Teardown:    " << teardown << std::endl
       << std::endl
-      << "  Sustained GiB/s: " << gibibytes / run << std::endl
+      << "  Sustained GiB/s: " << gibibytes / (run * 1.0E-3) << std::endl
       << LINE << std::endl;
 }
 
