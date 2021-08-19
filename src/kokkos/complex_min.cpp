@@ -88,7 +88,7 @@ struct reducer_type {
 
   KOKKOS_INLINE_FUNCTION
   void operator += (const volatile reducer_type& rhs) volatile {
-    this->c = (abs(c) < abs(rhs.c)) ? c : rhs.c;
+    c = (abs(c) < abs(rhs.c)) ? c : rhs.c;
   }
 
 private:
@@ -162,6 +162,7 @@ std::complex<T> complex_min<T>::run() {
   }, ComplexMin<T, Kokkos::HostSpace>(smallest));
 
   return std::complex<T>{smallest.c.real(), smallest.c.imag()};
+
 }
 
 template struct complex_min<double>;

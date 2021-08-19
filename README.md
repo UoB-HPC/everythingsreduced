@@ -16,7 +16,6 @@ This is a collection of key reduction kernel patterns collated from other benchm
 
 ## TODO ##
 
-- [ ] Kokkos complex min custom reduction (as current one is broken)
 - [ ] oneDPL
 
 
