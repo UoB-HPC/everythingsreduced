@@ -36,4 +36,7 @@ struct dot {
     double b = 2.0 * 1024.0 / static_cast<double>(N);
     return a * b * static_cast<double>(N);
   }
+
+  // Return theoretical minimum number of GiB moved in run()
+  double gibibytes() { return 1.0E-9 * sizeof(double) * 2.0 * N; }
 };

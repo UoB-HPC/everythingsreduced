@@ -41,4 +41,10 @@ struct field_summary {
         0.1720E+00 * 0.1000E+03 // The original code outputs press/vol
     };
   }
+
+  // Return theoretical minimum number of GiB moved in run()
+  double gibibytes() {
+    return 1.0E-9 * sizeof(double) *
+           ((4.0 * nx * ny) + (2.0 * (nx + 1) * (ny + 1)));
+  }
 };
