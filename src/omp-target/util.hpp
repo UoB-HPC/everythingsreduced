@@ -1,6 +1,6 @@
 #pragma once
 
-#pragma < omp.h>
+#include <omp.h>
 
 inline bool is_offloading() {
   int dev;
