@@ -6,7 +6,8 @@
 struct dot {
 
   // Problem size and data arrays
-  // Data arrays use C++ PIMPL because different models store data with very different types
+  // Data arrays use C++ PIMPL because different models store data with very
+  // different types
   const long N;
   struct data;
   std::unique_ptr<data> pdata;
@@ -37,9 +38,5 @@ struct dot {
   }
 
   // Return theoretical minimum number of GiB moved in run()
-  double gibibytes() {
-    return 1.0E-9 * sizeof(double) * 2.0 * N;
-  }
-
+  double gibibytes() { return 1.0E-9 * sizeof(double) * 2.0 * N; }
 };
-

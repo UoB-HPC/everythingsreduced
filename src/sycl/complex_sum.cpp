@@ -10,8 +10,7 @@
 
 template <typename T>
 struct complex_sum<T>::data {
-  data(long N) : C(N), sum(1), q(sycl::default_selector{})
-  {}
+  data(long N) : C(N), sum(1), q(sycl::default_selector{}) {}
 
   sycl::buffer<std::complex<T>> C;
   sycl::buffer<std::complex<T>> sum;
@@ -28,20 +27,22 @@ complex_sum<T>::~complex_sum() {}
 
 template <typename T>
 void complex_sum<T>::setup() {
-  pdata->q.submit([&](sycl::handler& h) {
+  pdata->q.submit([&](sycl::handler &h) {
     sycl::accessor sum(pdata->sum, h, sycl::write_only);
-    h.single_task([=]() {
-      sum[0] = std::complex<T>(0, 0);
-    });
-  }).wait();
+    h.single_task([=]() { sum[0] = std::complex<T>(0, 0); });
+  });
+  pdata->q.wait();
 
-  pdata->q.submit([&, N=this->N](sycl::handler& h) {
+  pdata->q.submit([&, N = this->N](sycl::handler &h) {
     sycl::accessor C(pdata->C, h, sycl::write_only);
-    h.parallel_for(N, [=](const int i) {
-      T v = 2.0 * 1024.0 / static_cast<T>(N);
-      C[i] = std::complex<T>{v, v};
-    });
-  }).wait();
+    h.parallel_for(
+      N,
+      [=](const int i) {
+        T v = 2.0 * 1024.0 / static_cast<T>(N);
+        C[i] = std::complex<T>{v, v};
+      });
+  });
+  pdata->q.wait();
 }
 
 template <typename T>
@@ -50,18 +51,18 @@ void complex_sum<T>::teardown() {
   // NOTE: All the data has been destroyed!
 }
 
-
 template <typename T>
 std::complex<T> complex_sum<T>::run() {
   // Identity isn't strictly required here, but may improve performance
-  pdata->q.submit([&](sycl::handler& h) {
+  pdata->q.submit([&](sycl::handler &h) {
     sycl::accessor C(pdata->C, h, sycl::read_only);
     std::complex<T> identity{0, 0};
-    h.parallel_for(sycl::range<1>(N),
-                   sycl::reduction(pdata->sum, h, identity, std::plus<>(), sycl::property::reduction::initialize_to_identity{}),
-                   [=](const int i, auto& sum) {
-      sum += C[i];
-    });
+    h.parallel_for(
+        sycl::range<1>(N),
+        sycl::reduction(pdata->sum, h, identity, std::plus<>(), sycl::property::reduction::initialize_to_identity{}),
+        [=](const int i, auto &sum) {
+          sum += C[i];
+        });
   });
 
   return pdata->sum.get_host_access()[0];
@@ -69,4 +70,3 @@ std::complex<T> complex_sum<T>::run() {
 
 template struct complex_sum<double>;
 template struct complex_sum<float>;
-

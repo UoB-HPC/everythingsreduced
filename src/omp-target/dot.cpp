@@ -15,7 +15,7 @@ struct dot::data {
 
 dot::dot(long N_) : N(N_), pdata{std::make_unique<data>()} {
 
-  if(!is_offloading()) {
+  if (!is_offloading()) {
     std::cerr << "OMP target code is not offloading as expecting" << std::endl;
     exit(1);
   }
@@ -27,19 +27,18 @@ void dot::setup() {
   pdata->A = new double[N];
   pdata->B = new double[N];
 
-  double * A = pdata->A;
-  double * B = pdata->B;
+  double *A = pdata->A;
+  double *B = pdata->B;
 
-#pragma omp target enter data map(alloc:A[0:N],B[0:N])
+#pragma omp target enter data map(alloc : A [0:N], B [0:N])
 
-  #pragma omp parallel for
+#pragma omp parallel for
   for (long i = 0; i < N; ++i) {
     A[i] = 1.0 * 1024.0 / static_cast<double>(N);
     B[i] = 2.0 * 1024.0 / static_cast<double>(N);
   }
 
-#pragma omp target update to(A[0:N],B[0:N])
-
+#pragma omp target update to(A [0:N], B [0:N])
 }
 
 double dot::run() {
@@ -49,7 +48,7 @@ double dot::run() {
 
   double sum = 0.0;
 
-#pragma omp target teams distribute parallel for reduction(+:sum)
+#pragma omp target teams distribute parallel for reduction(+ : sum)
   for (long i = 0; i < N; ++i) {
     sum += A[i] * B[i];
   }
@@ -58,7 +57,7 @@ double dot::run() {
 }
 
 void dot::teardown() {
-#pragma omp target exit data map(delete:pdata->A,pdata->B)
+#pragma omp target exit data map(delete : pdata->A, pdata->B)
 
   delete[] pdata->A;
   delete[] pdata->B;

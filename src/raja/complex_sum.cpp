@@ -34,7 +34,6 @@ typedef RAJA::seq_exec policy;
 typedef RAJA::seq_reduce reduce_policy;
 #endif
 
-
 // IMPORTANT NOTE:
 //   This is a hack because I can't get RAJA to build
 //   properly. The documentation and RAJA headers imply
@@ -50,8 +49,7 @@ struct complex_sum<T>::data {
 };
 
 template <typename T>
-complex_sum<T>::complex_sum(long N_) : N(N_), pdata{std::make_unique<data>()} {
-};
+complex_sum<T>::complex_sum(long N_) : N(N_), pdata{std::make_unique<data>()} {};
 
 template <typename T>
 complex_sum<T>::~complex_sum() = default;
@@ -69,14 +67,16 @@ void complex_sum<T>::setup() {
   pdata->C = new RAJA::Complex_type[N];
 #endif
 
-  RAJA::Complex_type * RAJA_RESTRICT C = pdata->C;
+  RAJA::Complex_type *RAJA_RESTRICT C = pdata->C;
   // Have to pull this out of the class because the lambda capture falls over
   const RAJA::Real_type n = static_cast<RAJA::Real_type>(N);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE (RAJA::Index_type i) {
-    RAJA::Real_type v = 2.0 * 1024.0 / static_cast<RAJA::Real_type>(N);
-    C[i] = {v, v};
-  });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      RAJA::Real_type v = 2.0 * 1024.0 / static_cast<RAJA::Real_type>(N);
+      C[i] = {v, v};
+    });
 }
 
 template <typename T>
@@ -95,16 +95,17 @@ void complex_sum<T>::teardown() {
 
 template <typename T>
 std::complex<T> complex_sum<T>::run() {
-  RAJA::Complex_type * RAJA_RESTRICT C = pdata->C;
+  RAJA::Complex_type *RAJA_RESTRICT C = pdata->C;
 
   RAJA::ReduceSum<reduce_policy, RAJA::Complex_type> sum(0.0, 0.0);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0,N), [=] RAJA_DEVICE (RAJA::Index_type i) {
-    sum += C[i];
-  });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      sum += C[i];
+    });
 
   return sum.get();
 }
 
 template struct complex_sum<RAJA::Real_type>;
-

@@ -7,31 +7,29 @@
 
 #include "../complex_sum_soa.hpp"
 
-template<typename T>
+template <typename T>
 struct complex_sum_soa<T>::data {
   T *real;
   T *imag;
 };
 
-template<typename T>
+template <typename T>
 complex_sum_soa<T>::complex_sum_soa(long N_) : N(N_), pdata{std::make_unique<data>()} {
   int nthreads = 0;
 
-  #pragma omp parallel
+#pragma omp parallel
   {
-    #pragma omp single
+#pragma omp single
     nthreads = omp_get_num_threads();
   }
 
-  std::cout << "Complex Sum SoA is using OpenMP with "
-    << nthreads << " threads." << std::endl;
-
+  std::cout << "Complex Sum SoA is using OpenMP with " << nthreads << " threads." << std::endl;
 }
 
-template<typename T>
+template <typename T>
 complex_sum_soa<T>::~complex_sum_soa() = default;
 
-template<typename T>
+template <typename T>
 void complex_sum_soa<T>::setup() {
 
   pdata->real = new T[N];
@@ -40,7 +38,7 @@ void complex_sum_soa<T>::setup() {
   T *real = pdata->real;
   T *imag = pdata->imag;
 
-  #pragma omp parallel for
+#pragma omp parallel for
   for (long i = 0; i < N; ++i) {
     T v = 2.0 * 1024.0 / static_cast<T>(N);
     real[i] = v;
@@ -48,15 +46,14 @@ void complex_sum_soa<T>::setup() {
   }
 }
 
-template<typename T>
+template <typename T>
 void complex_sum_soa<T>::teardown() {
   delete[] pdata->real;
   delete[] pdata->imag;
 }
 
-
-template<typename T>
-std::tuple<T,T> complex_sum_soa<T>::run() {
+template <typename T>
+std::tuple<T, T> complex_sum_soa<T>::run() {
 
   T *real = pdata->real;
   T *imag = pdata->imag;
@@ -64,7 +61,7 @@ std::tuple<T,T> complex_sum_soa<T>::run() {
   T sum_r = 0.0;
   T sum_i = 0.0;
 
-  #pragma omp parallel for reduction(+: sum_r, sum_i)
+#pragma omp parallel for reduction(+ : sum_r, sum_i)
   for (long i = 0; i < N; ++i) {
     sum_r += real[i];
     sum_i += imag[i];
@@ -75,4 +72,3 @@ std::tuple<T,T> complex_sum_soa<T>::run() {
 
 template struct complex_sum_soa<double>;
 template struct complex_sum_soa<float>;
-

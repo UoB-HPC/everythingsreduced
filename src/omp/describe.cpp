@@ -15,15 +15,13 @@ struct describe::data {
 describe::describe(long N_) : N(N_), pdata{std::make_unique<data>()} {
   int nthreads = 0;
 
-  #pragma omp parallel
+#pragma omp parallel
   {
-    #pragma omp single
+#pragma omp single
     nthreads = omp_get_num_threads();
   }
 
-  std::cout << "Describe is using OpenMP with "
-    << nthreads << " threads." << std::endl;
-
+  std::cout << "Describe is using OpenMP with " << nthreads << " threads." << std::endl;
 }
 
 describe::~describe() = default;
@@ -31,11 +29,11 @@ describe::~describe() = default;
 void describe::setup() {
   pdata->D = new double[N];
 
-  double * D = pdata->D;
+  double *D = pdata->D;
 
-  #pragma omp parallel for
+#pragma omp parallel for
   for (long i = 0; i < N; ++i) {
-    D[i] = std::abs(static_cast<double>(N)/2.0 - static_cast<double>(i));
+    D[i] = std::abs(static_cast<double>(N) / 2.0 - static_cast<double>(i));
   }
 }
 
@@ -52,7 +50,7 @@ describe::result describe::run() {
   double min = std::numeric_limits<double>::max();
   double max = std::numeric_limits<double>::min();
 
-  #pragma omp parallel for reduction(+:mean, lost) reduction(min:min) reduction(max:max)
+#pragma omp parallel for reduction(+ : mean, lost) reduction(min : min) reduction(max : max)
   for (long i = 0; i < N; ++i) {
     // Mean calculation
     double val = D[i] / static_cast<double>(N);
@@ -64,7 +62,6 @@ describe::result describe::run() {
 
     mean += val;
 
-
     min = std::min(min, D[i]);
     max = std::max(max, D[i]);
   }
@@ -73,22 +70,13 @@ describe::result describe::run() {
 
   double std = 0.0;
 
-  #pragma omp parallel for reduction(+:std)
+#pragma omp parallel for reduction(+ : std)
   for (long i = 0; i < N; ++i) {
     std += ((D[i] - mean) * (D[i] - mean)) / static_cast<double>(N);
   }
   std = std::sqrt(std);
 
-  return {
-    .count = count,
-    .mean = mean,
-    .std = std,
-    .min = min,
-    .max = max
-  };
+  return {.count = count, .mean = mean, .std = std, .min = min, .max = max};
 }
 
-void describe::teardown() {
-  delete[] pdata->D;
-}
-
+void describe::teardown() { delete[] pdata->D; }

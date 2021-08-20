@@ -10,7 +10,8 @@ struct field_summary {
   };
 
   // Problem size and data arrays
-  // Data arrays use C++ PIMPL because different models store data with very different types
+  // Data arrays use C++ PIMPL because different models store data with very
+  // different types
   long nx = 3840;
   long ny = 3840;
   struct data;
@@ -36,17 +37,11 @@ struct field_summary {
   // Return expected result
   reduction_vars expect() {
     return {
-      0.1000E+03,
-      0.2800E+02,
-      0.4300E+02,
-      0.0000E+00,
-      0.1720E+00*0.1000E+03 // The original code outputs press/vol
+        0.1000E+03, 0.2800E+02, 0.4300E+02, 0.0000E+00,
+        0.1720E+00 * 0.1000E+03 // The original code outputs press/vol
     };
   }
 
   // Return theoretical minimum number of GiB moved in run()
-  double gibibytes() {
-    return 1.0E-9 * sizeof(double) * ((4.0 * nx * ny) + (2.0 * (nx+1) * (ny+1)));
-  }
+  double gibibytes() { return 1.0E-9 * sizeof(double) * ((4.0 * nx * ny) + (2.0 * (nx + 1) * (ny + 1))); }
 };
-

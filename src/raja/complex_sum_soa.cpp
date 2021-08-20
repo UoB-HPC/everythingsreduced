@@ -42,8 +42,7 @@ struct complex_sum_soa<T>::data {
 };
 
 template <typename T>
-complex_sum_soa<T>::complex_sum_soa(long N_) : N(N_), pdata{std::make_unique<data>()} {
-};
+complex_sum_soa<T>::complex_sum_soa(long N_) : N(N_), pdata{std::make_unique<data>()} {};
 
 template <typename T>
 complex_sum_soa<T>::~complex_sum_soa() = default;
@@ -64,16 +63,18 @@ void complex_sum_soa<T>::setup() {
   pdata->imag = new T[N];
 #endif
 
-  T * RAJA_RESTRICT real = pdata->real;
-  T * RAJA_RESTRICT imag = pdata->imag;
+  T *RAJA_RESTRICT real = pdata->real;
+  T *RAJA_RESTRICT imag = pdata->imag;
   // Have to pull this out of the class because the lambda capture falls over
   const T n = static_cast<T>(N);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE (RAJA::Index_type i) {
-    T v = 2.0 * 1024.0 / static_cast<T>(N);
-    real[i] = v;
-    imag[i] = v;
-  });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      T v = 2.0 * 1024.0 / static_cast<T>(N);
+      real[i] = v;
+      imag[i] = v;
+    });
 }
 
 template <typename T>
@@ -94,21 +95,22 @@ void complex_sum_soa<T>::teardown() {
 }
 
 template <typename T>
-std::tuple<T,T> complex_sum_soa<T>::run() {
-  T * RAJA_RESTRICT real = pdata->real;
-  T * RAJA_RESTRICT imag = pdata->imag;
+std::tuple<T, T> complex_sum_soa<T>::run() {
+  T *RAJA_RESTRICT real = pdata->real;
+  T *RAJA_RESTRICT imag = pdata->imag;
 
   RAJA::ReduceSum<reduce_policy, T> sum_r(0.0);
   RAJA::ReduceSum<reduce_policy, T> sum_i(0.0);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0,N), [=] RAJA_DEVICE (RAJA::Index_type i) {
-    sum_r += real[i];
-    sum_i += imag[i];
-  });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      sum_r += real[i];
+      sum_i += imag[i];
+    });
 
   return {sum_r.get(), sum_i.get()};
 }
 
 template struct complex_sum_soa<double>;
 template struct complex_sum_soa<float>;
-

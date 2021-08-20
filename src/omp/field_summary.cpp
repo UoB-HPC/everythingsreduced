@@ -19,23 +19,21 @@ struct field_summary::data {
 field_summary::field_summary() : pdata{std::make_unique<data>()} {
   int nthreads = 0;
 
-  #pragma omp parallel
+#pragma omp parallel
   {
-    #pragma omp single
+#pragma omp single
     nthreads = omp_get_num_threads();
   }
 
-  std::cout << "Field Summary is using OpenMP with "
-    << nthreads << " threads." << std::endl;
-
+  std::cout << "Field Summary is using OpenMP with " << nthreads << " threads." << std::endl;
 }
 
 field_summary::~field_summary() = default;
 
 void field_summary::setup() {
   // Allocate arrays
-  pdata->xvel = new double[(nx+1) * (ny+1)];
-  pdata->yvel = new double[(nx+1) * (ny+1)];
+  pdata->xvel = new double[(nx + 1) * (ny + 1)];
+  pdata->yvel = new double[(nx + 1) * (ny + 1)];
   pdata->volume = new double[nx * ny];
   pdata->density = new double[nx * ny];
   pdata->energy = new double[nx * ny];
@@ -49,41 +47,40 @@ void field_summary::setup() {
   double *pressure = pdata->pressure;
 
   // Initalise arrays
-  const double dx = 10.0/static_cast<double>(nx);
-  const double dy = 10.0/static_cast<double>(ny);
+  const double dx = 10.0 / static_cast<double>(nx);
+  const double dy = 10.0 / static_cast<double>(ny);
 
-  #pragma omp parallel for
+#pragma omp parallel for
   for (long k = 0; k < ny; ++k) {
-    #pragma omp simd
+#pragma omp simd
     for (long j = 0; j < nx; ++j) {
 
-      volume[j + k*nx] = dx * dy;
-      density[j + k*nx] = 0.2;
-      energy[j + k*nx] = 1.0;
-      pressure[j + k*nx] = (1.4-1.0) * density[j + k*nx] * energy[j + k*nx];
+      volume[j + k * nx] = dx * dy;
+      density[j + k * nx] = 0.2;
+      energy[j + k * nx] = 1.0;
+      pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
     }
   }
 
-  #pragma omp parallel for
-  for (long k = 0; k < ny/5; ++k) {
-    #pragma omp simd
-    for (long j = 0; j < nx/2; ++j) {
+#pragma omp parallel for
+  for (long k = 0; k < ny / 5; ++k) {
+#pragma omp simd
+    for (long j = 0; j < nx / 2; ++j) {
 
-      density[j + k*nx] = 1.0;
-      energy[j + k*nx] = 2.5;
-      pressure[j + k*nx] = (1.4-1.0) * density[j + k*nx] * energy[j + k*nx];
+      density[j + k * nx] = 1.0;
+      energy[j + k * nx] = 2.5;
+      pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
     }
   }
 
-  #pragma omp parallel for
-  for (long k = 0; k < ny+1; ++k) {
-    #pragma omp simd
-    for (long j = 0; j < nx+1; ++j) {
-      xvel[j + k*(nx+1)] = 0.0;
-      yvel[j + k*(nx+1)] = 0.0;
+#pragma omp parallel for
+  for (long k = 0; k < ny + 1; ++k) {
+#pragma omp simd
+    for (long j = 0; j < nx + 1; ++j) {
+      xvel[j + k * (nx + 1)] = 0.0;
+      yvel[j + k * (nx + 1)] = 0.0;
     }
   }
-
 }
 
 void field_summary::teardown() {
@@ -111,27 +108,26 @@ field_summary::reduction_vars field_summary::run() {
   double ke = 0.0;
   double press = 0.0;
 
-  #pragma omp parallel for reduction(+:vol, mass, ie, ke, press)
+#pragma omp parallel for reduction(+ : vol, mass, ie, ke, press)
   for (long k = 0; k < ny; ++k) {
-    #pragma omp simd reduction(+:vol, mass, ie, ke, press)
+#pragma omp simd reduction(+ : vol, mass, ie, ke, press)
     for (long j = 0; j < nx; ++j) {
       double vsqrd = 0.0;
-      for (long kv = k; kv <= k+1; ++kv) {
-        for (long jv = j; jv <= j+1; ++jv) {
-          vsqrd += 0.25 * (xvel[jv + kv*(nx+1)] * xvel[jv + kv*(nx+1)] + yvel[jv + kv*(nx+1)] * yvel[jv + kv*(nx+1)]);
+      for (long kv = k; kv <= k + 1; ++kv) {
+        for (long jv = j; jv <= j + 1; ++jv) {
+          vsqrd += 0.25 * (xvel[jv + kv * (nx + 1)] * xvel[jv + kv * (nx + 1)] +
+                           yvel[jv + kv * (nx + 1)] * yvel[jv + kv * (nx + 1)]);
         }
       }
-      double cell_volume = volume[j + k*nx];
-      double cell_mass = cell_volume * density[j + k*nx];
+      double cell_volume = volume[j + k * nx];
+      double cell_mass = cell_volume * density[j + k * nx];
       vol += cell_volume;
       mass += cell_mass;
-      ie += cell_mass * energy[j + k*nx];
+      ie += cell_mass * energy[j + k * nx];
       ke += cell_mass * 0.5 * vsqrd;
-      press += cell_volume * pressure[j + k*nx];
+      press += cell_volume * pressure[j + k * nx];
     }
   }
 
   return {vol, mass, ie, ke, press};
 }
-
-
