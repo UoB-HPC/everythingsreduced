@@ -68,7 +68,7 @@ void complex_min<T>::setup() {
   pdata->C = new RAJA::Complex_type[N];
 #endif
 
-  RAJA::Complex_type *RAJA_RESTRICT C = pdata->C;
+  RAJA::Complex_type * RAJA_RESTRICT C = pdata->C;
   // Have to pull this out of the class because the lambda capture falls over
   const RAJA::Real_type n = static_cast<RAJA::Real_type>(N);
 

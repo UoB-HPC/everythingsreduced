@@ -88,12 +88,12 @@ void field_summary::setup() {
   pdata->pressure = new double[nx * ny];
 #endif
 
-  double *RAJA_RESTRICT xvel = pdata->xvel;
-  double *RAJA_RESTRICT yvel = pdata->yvel;
-  double *RAJA_RESTRICT volume = pdata->volume;
-  double *RAJA_RESTRICT density = pdata->density;
-  double *RAJA_RESTRICT energy = pdata->energy;
-  double *RAJA_RESTRICT pressure = pdata->pressure;
+  double * RAJA_RESTRICT xvel = pdata->xvel;
+  double * RAJA_RESTRICT yvel = pdata->yvel;
+  double * RAJA_RESTRICT volume = pdata->volume;
+  double * RAJA_RESTRICT density = pdata->density;
+  double * RAJA_RESTRICT energy = pdata->energy;
+  double * RAJA_RESTRICT pressure = pdata->pressure;
 
   // Have to pull this out of the class because the lambda capture falls over
   const double N = static_cast<double>(N);
@@ -154,12 +154,12 @@ void field_summary::teardown() {
 
 field_summary::reduction_vars field_summary::run() {
 
-  double *RAJA_RESTRICT xvel = pdata->xvel;
-  double *RAJA_RESTRICT yvel = pdata->yvel;
-  double *RAJA_RESTRICT volume = pdata->volume;
-  double *RAJA_RESTRICT density = pdata->density;
-  double *RAJA_RESTRICT energy = pdata->energy;
-  double *RAJA_RESTRICT pressure = pdata->pressure;
+  double * RAJA_RESTRICT xvel = pdata->xvel;
+  double * RAJA_RESTRICT yvel = pdata->yvel;
+  double * RAJA_RESTRICT volume = pdata->volume;
+  double * RAJA_RESTRICT density = pdata->density;
+  double * RAJA_RESTRICT energy = pdata->energy;
+  double * RAJA_RESTRICT pressure = pdata->pressure;
 
   // Reduction variables
   RAJA::ReduceSum<reduce_policy, double> vol = 0.0;

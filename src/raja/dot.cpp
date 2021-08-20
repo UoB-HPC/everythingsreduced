@@ -59,8 +59,8 @@ void dot::setup() {
   pdata->B = new double[N];
 #endif
 
-  double *RAJA_RESTRICT A = pdata->A;
-  double *RAJA_RESTRICT B = pdata->B;
+  double * RAJA_RESTRICT A = pdata->A;
+  double * RAJA_RESTRICT B = pdata->B;
   // Have to pull this out of the class because the lambda capture falls over
   const double n = static_cast<double>(N);
 
