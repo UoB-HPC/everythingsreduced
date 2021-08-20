@@ -67,7 +67,7 @@ void complex_sum<T>::setup() {
   pdata->C = new RAJA::Complex_type[N];
 #endif
 
-  RAJA::Complex_type * RAJA_RESTRICT C = pdata->C;
+  RAJA::Complex_type *RAJA_RESTRICT C = pdata->C;
   // Have to pull this out of the class because the lambda capture falls over
   const RAJA::Real_type n = static_cast<RAJA::Real_type>(N);
 
@@ -95,7 +95,7 @@ void complex_sum<T>::teardown() {
 
 template <typename T>
 std::complex<T> complex_sum<T>::run() {
-  RAJA::Complex_type * RAJA_RESTRICT C = pdata->C;
+  RAJA::Complex_type *RAJA_RESTRICT C = pdata->C;
 
   RAJA::ReduceSum<reduce_policy, RAJA::Complex_type> sum(0.0, 0.0);
 

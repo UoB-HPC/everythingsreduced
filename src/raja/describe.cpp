@@ -56,7 +56,7 @@ void describe::setup() {
   pdata->D = new double[N];
 #endif
 
-  double * RAJA_RESTRICT D = pdata->D;
+  double *RAJA_RESTRICT D = pdata->D;
   // Have to pull this out of the class because the lambda capture falls over
   const double N = static_cast<double>(N);
 
@@ -82,7 +82,7 @@ void describe::teardown() {
 
 describe::result describe::run() {
 
-  double * RAJA_RESTRICT D = pdata->D;
+  double *RAJA_RESTRICT D = pdata->D;
 
   long count = N;
 

@@ -63,8 +63,8 @@ void complex_sum_soa<T>::setup() {
   pdata->imag = new T[N];
 #endif
 
-  T * RAJA_RESTRICT real = pdata->real;
-  T * RAJA_RESTRICT imag = pdata->imag;
+  T *RAJA_RESTRICT real = pdata->real;
+  T *RAJA_RESTRICT imag = pdata->imag;
   // Have to pull this out of the class because the lambda capture falls over
   const T n = static_cast<T>(N);
 
@@ -96,8 +96,8 @@ void complex_sum_soa<T>::teardown() {
 
 template <typename T>
 std::tuple<T, T> complex_sum_soa<T>::run() {
-  T * RAJA_RESTRICT real = pdata->real;
-  T * RAJA_RESTRICT imag = pdata->imag;
+  T *RAJA_RESTRICT real = pdata->real;
+  T *RAJA_RESTRICT imag = pdata->imag;
 
   RAJA::ReduceSum<reduce_policy, T> sum_r(0.0);
   RAJA::ReduceSum<reduce_policy, T> sum_i(0.0);
