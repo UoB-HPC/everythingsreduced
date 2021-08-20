@@ -102,26 +102,29 @@ void field_summary::setup() {
   const double dx = 10.0 / static_cast<double>(nx);
   const double dy = 10.0 / static_cast<double>(ny);
 
-  RAJA::kernel<exec_pol>(RAJA::make_tuple(RAJA::RangeSegment(0, nx), RAJA::RangeSegment(0, ny)),
-                         [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
-                           volume[j + k * nx] = dx * dy;
-                           density[j + k * nx] = 0.2;
-                           energy[j + k * nx] = 1.0;
-                           pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
-                         });
+  RAJA::kernel<exec_pol>(
+    RAJA::make_tuple(RAJA::RangeSegment(0, nx), RAJA::RangeSegment(0, ny)),
+    [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
+      volume[j + k * nx] = dx * dy;
+      density[j + k * nx] = 0.2;
+      energy[j + k * nx] = 1.0;
+      pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
+    });
 
-  RAJA::kernel<exec_pol>(RAJA::make_tuple(RAJA::RangeSegment(0, nx / 2), RAJA::RangeSegment(0, ny / 5)),
-                         [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
-                           density[j + k * nx] = 1.0;
-                           energy[j + k * nx] = 2.5;
-                           pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
-                         });
+  RAJA::kernel<exec_pol>(
+    RAJA::make_tuple(RAJA::RangeSegment(0, nx / 2), RAJA::RangeSegment(0, ny / 5)),
+    [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
+      density[j + k * nx] = 1.0;
+      energy[j + k * nx] = 2.5;
+      pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
+    });
 
-  RAJA::kernel<exec_pol>(RAJA::make_tuple(RAJA::RangeSegment(0, nx + 1), RAJA::RangeSegment(0, ny + 1)),
-                         [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
-                           xvel[j + k * (nx + 1)] = 0.0;
-                           yvel[j + k * (nx + 1)] = 0.0;
-                         });
+  RAJA::kernel<exec_pol>(
+    RAJA::make_tuple(RAJA::RangeSegment(0, nx + 1), RAJA::RangeSegment(0, ny + 1)),
+    [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
+      xvel[j + k * (nx + 1)] = 0.0;
+      yvel[j + k * (nx + 1)] = 0.0;
+    });
 }
 
 void field_summary::teardown() {
@@ -168,23 +171,24 @@ field_summary::reduction_vars field_summary::run() {
   RAJA::ReduceSum<reduce_policy, double> ke = 0.0;
   RAJA::ReduceSum<reduce_policy, double> press = 0.0;
 
-  RAJA::kernel<exec_pol>(RAJA::make_tuple(RAJA::RangeSegment(0, nx), RAJA::RangeSegment(0, ny)),
-                         [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
-                           double vsqrd = 0.0;
-                           for (long kv = k; kv <= k + 1; ++kv) {
-                             for (long jv = j; jv <= j + 1; ++jv) {
-                               vsqrd += 0.25 * (xvel[jv + kv * (nx + 1)] * xvel[jv + kv * (nx + 1)] +
-                                                yvel[jv + kv * (nx + 1)] * yvel[jv + kv * (nx + 1)]);
-                             }
-                           }
-                           double cell_volume = volume[j + k * nx];
-                           double cell_mass = cell_volume * density[j + k * nx];
-                           vol += cell_volume;
-                           mass += cell_mass;
-                           ie += cell_mass * energy[j + k * nx];
-                           ke += cell_mass * 0.5 * vsqrd;
-                           press += cell_volume * pressure[j + k * nx];
-                         });
+  RAJA::kernel<exec_pol>(
+    RAJA::make_tuple(RAJA::RangeSegment(0, nx), RAJA::RangeSegment(0, ny)),
+    [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
+      double vsqrd = 0.0;
+      for (long kv = k; kv <= k + 1; ++kv) {
+        for (long jv = j; jv <= j + 1; ++jv) {
+          vsqrd += 0.25 * (xvel[jv + kv * (nx + 1)] * xvel[jv + kv * (nx + 1)] +
+                           yvel[jv + kv * (nx + 1)] * yvel[jv + kv * (nx + 1)]);
+        }
+      }
+      double cell_volume = volume[j + k * nx];
+      double cell_mass = cell_volume * density[j + k * nx];
+      vol += cell_volume;
+      mass += cell_mass;
+      ie += cell_mass * energy[j + k * nx];
+      ke += cell_mass * 0.5 * vsqrd;
+      press += cell_volume * pressure[j + k * nx];
+    });
 
   return {vol.get(), mass.get(), ie.get(), ke.get(), press.get()};
 }

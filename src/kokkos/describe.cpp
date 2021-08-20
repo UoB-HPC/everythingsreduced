@@ -28,7 +28,10 @@ void describe::setup() {
   auto &D = pdata->D;
 
   Kokkos::parallel_for(
-      N, KOKKOS_LAMBDA(const int i) { D(i) = fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i)); });
+      N,
+      KOKKOS_LAMBDA(const int i) {
+        D(i) = fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i));
+      });
   Kokkos::fence();
 }
 

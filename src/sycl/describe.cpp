@@ -43,7 +43,11 @@ void describe::setup() {
 
   pdata->q.submit([&, N = this->N](sycl::handler &h) {
     sycl::accessor D(pdata->D, h, sycl::write_only);
-    h.parallel_for(N, [=](const int i) { D[i] = fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i)); });
+    h.parallel_for(
+      N,
+      [=](const int i) {
+        D[i] = fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i));
+      });
   });
   pdata->q.wait();
 }
@@ -63,32 +67,35 @@ describe::result describe::run() {
   pdata->q.submit([&, N = this->N](sycl::handler &h) {
     sycl::accessor D(pdata->D, h, sycl::read_only);
     auto properties = sycl::property::reduction::initialize_to_identity{};
-    h.parallel_for(get_reduction_range(N, pdata->q.get_device(), pdata->mean, pdata->min, pdata->max),
-                   sycl::reduction(pdata->mean, h, std::plus<>(), properties),
-                   sycl::reduction(pdata->min, h, sycl::minimum<>(), properties),
-                   sycl::reduction(pdata->max, h, sycl::maximum<>(), properties),
-                   [=](sycl::nd_item<1> it, auto &mean, auto &min, auto &max) {
-                     const int i = it.get_global_id(0);
-                     if (i < N) {
-                       mean += D[i];
-                       min.combine(D[i]);
-                       max.combine(D[i]);
-                     }
-                   });
+    h.parallel_for(
+      get_reduction_range(N, pdata->q.get_device(), pdata->mean, pdata->min, pdata->max),
+      sycl::reduction(pdata->mean, h, std::plus<>(), properties),
+      sycl::reduction(pdata->min, h, sycl::minimum<>(), properties),
+      sycl::reduction(pdata->max, h, sycl::maximum<>(), properties),
+      [=](sycl::nd_item<1> it, auto &mean, auto &min, auto &max) {
+        const int i = it.get_global_id(0);
+        if (i < N) {
+          mean += D[i];
+          min.combine(D[i]);
+          max.combine(D[i]);
+        }
+      });
   });
 #else
   // Calculate mean, min and max together
   pdata->q.submit([&](sycl::handler &h) {
     sycl::accessor D(pdata->D, h, sycl::read_only);
     auto properties = sycl::property::reduction::initialize_to_identity{};
-    h.parallel_for(sycl::range<1>(N), sycl::reduction(pdata->mean, h, std::plus<>(), properties),
-                   sycl::reduction(pdata->min, h, sycl::minimum<>(), properties),
-                   sycl::reduction(pdata->max, h, sycl::maximum<>(), properties),
-                   [=](const int i, auto &mean, auto &min, auto &max) {
-                     mean += D[i];
-                     min.combine(D[i]);
-                     max.combine(D[i]);
-                   });
+    h.parallel_for(
+      sycl::range<1>(N),
+      sycl::reduction(pdata->mean, h, std::plus<>(), properties),
+      sycl::reduction(pdata->min, h, sycl::minimum<>(), properties),
+      sycl::reduction(pdata->max, h, sycl::maximum<>(), properties),
+      [=](const int i, auto &mean, auto &min, auto &max) {
+        mean += D[i];
+        min.combine(D[i]);
+        max.combine(D[i]);
+      });
   });
 #endif
 

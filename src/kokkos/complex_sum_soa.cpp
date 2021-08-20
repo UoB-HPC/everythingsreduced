@@ -36,7 +36,8 @@ void complex_sum_soa<T>::setup() {
   auto imag = pdata->imag;
 
   Kokkos::parallel_for(
-      N, KOKKOS_LAMBDA(const int i) {
+      N,
+      KOKKOS_LAMBDA(const int i) {
         T v = 2.0 * 1024.0 / static_cast<T>(N);
         real(i) = v;
         imag(i) = v;

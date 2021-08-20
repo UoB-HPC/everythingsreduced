@@ -34,7 +34,8 @@ void complex_min<T>::setup() {
   auto C = pdata->C;
 
   Kokkos::parallel_for(
-      N, KOKKOS_LAMBDA(const int i) {
+      N,
+      KOKKOS_LAMBDA(const int i) {
         T v = fabs(static_cast<T>(N) / 2.0 - static_cast<T>(i));
         C(i) = Kokkos::complex<T>{v, v};
       });

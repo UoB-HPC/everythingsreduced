@@ -36,10 +36,12 @@ void complex_min<T>::setup() {
 
   pdata->q.submit([&, N = this->N](sycl::handler &h) {
     sycl::accessor C(pdata->C, h, sycl::write_only);
-    h.parallel_for(N, [=](const int i) {
-      T v = fabs(static_cast<T>(N) / 2.0 - static_cast<T>(i));
-      C[i] = std::complex<T>{v, v};
-    });
+    h.parallel_for(
+      N,
+      [=](const int i) {
+        T v = fabs(static_cast<T>(N) / 2.0 - static_cast<T>(i));
+        C[i] = std::complex<T>{v, v};
+      });
   });
   pdata->q.wait();
 }
@@ -67,7 +69,9 @@ std::complex<T> complex_min<T>::run() {
     h.parallel_for(
         sycl::range<1>(N),
         sycl::reduction(pdata->result, h, identity, minabs<T>(), sycl::property::reduction::initialize_to_identity{}),
-        [=](const int i, auto &result) { result.combine(C[i]); });
+        [=](const int i, auto &result) {
+          result.combine(C[i]);
+        });
   });
 
   return pdata->result.get_host_access()[0];

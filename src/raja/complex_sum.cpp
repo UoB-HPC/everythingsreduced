@@ -71,10 +71,12 @@ void complex_sum<T>::setup() {
   // Have to pull this out of the class because the lambda capture falls over
   const RAJA::Real_type n = static_cast<RAJA::Real_type>(N);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) {
-    RAJA::Real_type v = 2.0 * 1024.0 / static_cast<RAJA::Real_type>(N);
-    C[i] = {v, v};
-  });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      RAJA::Real_type v = 2.0 * 1024.0 / static_cast<RAJA::Real_type>(N);
+      C[i] = {v, v};
+    });
 }
 
 template <typename T>
@@ -97,7 +99,11 @@ std::complex<T> complex_sum<T>::run() {
 
   RAJA::ReduceSum<reduce_policy, RAJA::Complex_type> sum(0.0, 0.0);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) { sum += C[i]; });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      sum += C[i];
+    });
 
   return sum.get();
 }

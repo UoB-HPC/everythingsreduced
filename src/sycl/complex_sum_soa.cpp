@@ -42,11 +42,13 @@ void complex_sum_soa<T>::setup() {
   pdata->q.submit([&, N = this->N](sycl::handler &h) {
     sycl::accessor real(pdata->real, h, sycl::write_only);
     sycl::accessor imag(pdata->imag, h, sycl::write_only);
-    h.parallel_for(N, [=](const int i) {
-      T v = 2.0 * 1024.0 / static_cast<T>(N);
-      real[i] = v;
-      imag[i] = v;
-    });
+    h.parallel_for(
+      N,
+      [=](const int i) {
+        T v = 2.0 * 1024.0 / static_cast<T>(N);
+        real[i] = v;
+        imag[i] = v;
+      });
   });
   pdata->q.wait();
 }
@@ -66,28 +68,31 @@ std::tuple<T, T> complex_sum_soa<T>::run() {
     sycl::accessor real(pdata->real, h, sycl::read_only);
     sycl::accessor imag(pdata->imag, h, sycl::read_only);
     auto properties = sycl::property::reduction::initialize_to_identity{};
-    h.parallel_for(get_reduction_range(N, pdata->q.get_device(), pdata->sum_r, pdata->sum_i),
-                   sycl::reduction(pdata->sum_r, h, std::plus<>(), properties),
-                   sycl::reduction(pdata->sum_i, h, std::plus<>(), properties),
-                   [=](sycl::nd_item<1> it, auto &sum_r, auto &sum_i) {
-                     const int i = it.get_global_id(0);
-                     if (i < N) {
-                       sum_r += real[i];
-                       sum_i += imag[i];
-                     }
-                   });
+    h.parallel_for(
+      get_reduction_range(N, pdata->q.get_device(), pdata->sum_r, pdata->sum_i),
+      sycl::reduction(pdata->sum_r, h, std::plus<>(), properties),
+      sycl::reduction(pdata->sum_i, h, std::plus<>(), properties),
+      [=](sycl::nd_item<1> it, auto &sum_r, auto &sum_i) {
+        const int i = it.get_global_id(0);
+        if (i < N) {
+          sum_r += real[i];
+          sum_i += imag[i];
+        }
+      });
   });
 #else
   pdata->q.submit([&](sycl::handler &h) {
     sycl::accessor real(pdata->real, h, sycl::read_only);
     sycl::accessor imag(pdata->imag, h, sycl::read_only);
     auto properties = sycl::property::reduction::initialize_to_identity{};
-    h.parallel_for(sycl::range<1>(N), sycl::reduction(pdata->sum_r, h, std::plus<>(), properties),
-                   sycl::reduction(pdata->sum_i, h, std::plus<>(), properties),
-                   [=](const int i, auto &sum_r, auto &sum_i) {
-                     sum_r += real[i];
-                     sum_i += imag[i];
-                   });
+    h.parallel_for(
+      sycl::range<1>(N),
+      sycl::reduction(pdata->sum_r, h, std::plus<>(), properties),
+      sycl::reduction(pdata->sum_i, h, std::plus<>(), properties),
+      [=](const int i, auto &sum_r, auto &sum_i) {
+        sum_r += real[i];
+        sum_i += imag[i];
+      });
   });
 #endif
 

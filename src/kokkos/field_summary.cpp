@@ -46,7 +46,8 @@ void field_summary::setup() {
   const double dy = 10.0 / static_cast<double>(ny);
 
   Kokkos::parallel_for(
-      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx, ny}), KOKKOS_LAMBDA(const int j, const int k) {
+      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx, ny}),
+      KOKKOS_LAMBDA(const int j, const int k) {
         volume(j, k) = dx * dy;
         density(j, k) = 0.2;
         energy(j, k) = 1.0;
@@ -54,14 +55,16 @@ void field_summary::setup() {
       });
 
   Kokkos::parallel_for(
-      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx / 2, ny / 5}), KOKKOS_LAMBDA(const int j, const int k) {
+      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx / 2, ny / 5}),
+      KOKKOS_LAMBDA(const int j, const int k) {
         density(j, k) = 1.0;
         energy(j, k) = 2.5;
         pressure(j, k) = (1.4 - 1.0) * density(j, k) * energy(j, k);
       });
 
   Kokkos::parallel_for(
-      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx + 1, ny + 1}), KOKKOS_LAMBDA(const int j, const int k) {
+      Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {nx + 1, ny + 1}),
+      KOKKOS_LAMBDA(const int j, const int k) {
         xvel(j, k) = 0.0;
         yvel(j, k) = 0.0;
       });

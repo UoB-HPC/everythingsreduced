@@ -33,7 +33,8 @@ void dot::setup() {
   const long N = this->N;
 
   Kokkos::parallel_for(
-      N, KOKKOS_LAMBDA(const int i) {
+      N,
+      KOKKOS_LAMBDA(const int i) {
         A(i) = 1.0 * 1024.0 / static_cast<double>(N);
         B(i) = 2.0 * 1024.0 / static_cast<double>(N);
       });
@@ -52,7 +53,8 @@ double dot::run() {
   double sum = 0.0;
 
   Kokkos::parallel_reduce(
-      N, KOKKOS_LAMBDA(const int i, double &sum) { sum += A(i) * B(i); }, sum);
+      N,
+      KOKKOS_LAMBDA(const int i, double &sum) { sum += A(i) * B(i); }, sum);
 
   return sum;
 }

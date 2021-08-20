@@ -64,10 +64,12 @@ void dot::setup() {
   // Have to pull this out of the class because the lambda capture falls over
   const double n = static_cast<double>(N);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) {
-    A[i] = 1.0 * 1024.0 / n;
-    B[i] = 2.0 * 1024.0 / n;
-  });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      A[i] = 1.0 * 1024.0 / n;
+      B[i] = 2.0 * 1024.0 / n;
+    });
 }
 
 void dot::teardown() {
@@ -92,7 +94,11 @@ double dot::run() {
 
   RAJA::ReduceSum<reduce_policy, double> sum(0.0);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) { sum += A[i] * B[i]; });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      sum += A[i] * B[i];
+    });
 
   return sum.get();
 }

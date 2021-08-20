@@ -33,10 +33,12 @@ void dot::setup() {
   pdata->q.submit([&, N = this->N](sycl::handler &h) {
     sycl::accessor A(pdata->A, h, sycl::write_only);
     sycl::accessor B(pdata->B, h, sycl::write_only);
-    h.parallel_for(N, [=](const int i) {
-      A[i] = 1.0 * 1024.0 / static_cast<double>(N);
-      B[i] = 2.0 * 1024.0 / static_cast<double>(N);
-    });
+    h.parallel_for(
+      N,
+      [=](const int i) {
+        A[i] = 1.0 * 1024.0 / static_cast<double>(N);
+        B[i] = 2.0 * 1024.0 / static_cast<double>(N);
+      });
   });
   pdata->q.wait();
 }
@@ -50,9 +52,12 @@ double dot::run() {
   pdata->q.submit([&](sycl::handler &h) {
     sycl::accessor A(pdata->A, h, sycl::read_only);
     sycl::accessor B(pdata->B, h, sycl::read_only);
-    h.parallel_for(sycl::range<1>(N),
-                   sycl::reduction(pdata->sum, h, std::plus<>(), sycl::property::reduction::initialize_to_identity{}),
-                   [=](sycl::id<1> i, auto &sum) { sum += A[i] * B[i]; });
+    h.parallel_for(
+      sycl::range<1>(N),
+      sycl::reduction(pdata->sum, h, std::plus<>(), sycl::property::reduction::initialize_to_identity{}),
+      [=](sycl::id<1> i, auto &sum) {
+        sum += A[i] * B[i];
+      });
   });
 
   return pdata->sum.get_host_access()[0];

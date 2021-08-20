@@ -35,10 +35,12 @@ void complex_sum<T>::setup() {
 
   pdata->q.submit([&, N = this->N](sycl::handler &h) {
     sycl::accessor C(pdata->C, h, sycl::write_only);
-    h.parallel_for(N, [=](const int i) {
-      T v = 2.0 * 1024.0 / static_cast<T>(N);
-      C[i] = std::complex<T>{v, v};
-    });
+    h.parallel_for(
+      N,
+      [=](const int i) {
+        T v = 2.0 * 1024.0 / static_cast<T>(N);
+        C[i] = std::complex<T>{v, v};
+      });
   });
   pdata->q.wait();
 }
@@ -58,7 +60,9 @@ std::complex<T> complex_sum<T>::run() {
     h.parallel_for(
         sycl::range<1>(N),
         sycl::reduction(pdata->sum, h, identity, std::plus<>(), sycl::property::reduction::initialize_to_identity{}),
-        [=](const int i, auto &sum) { sum += C[i]; });
+        [=](const int i, auto &sum) {
+          sum += C[i];
+        });
   });
 
   return pdata->sum.get_host_access()[0];

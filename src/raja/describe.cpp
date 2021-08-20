@@ -60,8 +60,11 @@ void describe::setup() {
   // Have to pull this out of the class because the lambda capture falls over
   const double N = static_cast<double>(N);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N),
-                       [=] RAJA_DEVICE(RAJA::Index_type i) { D[i] = fabs(N / 2.0 - static_cast<double>(i)); });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      D[i] = fabs(N / 2.0 - static_cast<double>(i));
+    });
 }
 
 void describe::teardown() {
@@ -92,27 +95,32 @@ describe::result describe::run() {
   RAJA::ReduceMin<reduce_policy, double> min(std::numeric_limits<double>::max());
   RAJA::ReduceMax<reduce_policy, double> max(std::numeric_limits<double>::min());
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N), [=] RAJA_DEVICE(RAJA::Index_type i) {
-    // Mean calculation
-    double val = D[i] / N;
-    double t = mean + val;
-    if (fabs(mean) >= val)
-      lost += (mean - t) + val;
-    else
-      lost += (val - t) + mean;
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      // Mean calculation
+      double val = D[i] / N;
+      double t = mean + val;
+      if (fabs(mean) >= val)
+        lost += (mean - t) + val;
+      else
+        lost += (val - t) + mean;
 
-    mean += val;
+      mean += val;
 
-    min.min(D[i]);
-    max.max(D[i]);
-  });
+      min.min(D[i]);
+      max.max(D[i]);
+    });
 
   double the_mean = mean.get() + lost.get();
 
   RAJA::ReduceSum<reduce_policy, double> std(0.0);
 
-  RAJA::forall<policy>(RAJA::RangeSegment(0, N),
-                       [=] RAJA_DEVICE(RAJA::Index_type i) { std += ((D[i] - the_mean) * (D[i] - the_mean)) / N; });
+  RAJA::forall<policy>(
+    RAJA::RangeSegment(0, N),
+    [=] RAJA_DEVICE(RAJA::Index_type i) {
+      std += ((D[i] - the_mean) * (D[i] - the_mean)) / N;
+    });
 
   double the_std = std::sqrt(std);
 

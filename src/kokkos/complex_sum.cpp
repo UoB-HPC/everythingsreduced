@@ -33,7 +33,8 @@ void complex_sum<T>::setup() {
   auto C = pdata->C;
 
   Kokkos::parallel_for(
-      N, KOKKOS_LAMBDA(const int i) {
+      N,
+      KOKKOS_LAMBDA(const int i) {
         T v = 2.0 * 1024.0 / static_cast<T>(N);
         C(i) = Kokkos::complex<T>{v, v};
       });
@@ -54,7 +55,11 @@ std::complex<T> complex_sum<T>::run() {
   Kokkos::complex<T> sum{0.0, 0.0};
 
   Kokkos::parallel_reduce(
-      N, KOKKOS_LAMBDA(const int i, Kokkos::complex<T> &sum) { sum += C(i); }, sum);
+      N,
+      KOKKOS_LAMBDA(const int i, Kokkos::complex<T> &sum) {
+        sum += C(i);
+      },
+      sum);
 
   return std::complex<T>{sum.real(), sum.imag()};
 }
