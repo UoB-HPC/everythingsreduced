@@ -9,8 +9,10 @@ This is a collection of key reduction kernel patterns collated from other benchm
 - [Benchmarks](#benchmarks)
 - [Building](#building)
     - [OpenMP](#openmp-version)
+    - [OpenMP Target](#openmp-target-version)
     - [Kokkos](#kokkos-version)
     - [RAJA](#raja-version)
+    - [SYCL](#sycl-version)
 - [Organisation](#organisation)
 - [Citing](#citing)
 
