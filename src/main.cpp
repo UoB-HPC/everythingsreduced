@@ -20,6 +20,8 @@ const auto LINE = "------------------------------------------------------------"
 #include "dot.hpp"
 #include "field_summary.hpp"
 
+#include "util.hpp"
+
 enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe };
 
 // Choose the benchmark based on the input argument given from the command line
@@ -55,7 +57,7 @@ void check_for_option(int argc) {
 
 // Parse the input size
 long get_problem_size(const std::string option) {
-  long N = std::stol(option);
+  const long N = suffixed_atoll(option.c_str());
   std::cout << "Problem size: " << N << std::endl;
   return N;
 }
