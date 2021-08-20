@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Deakin"
+    given-names: "Tom"
+    orcid: "0000-0002-6439-4171"
+  - family-names: "Sewall"
+    given-names: "Jason"
+  - family-names: "Pennycook"
+    given-names: "John"
+title: "Everything's Reduced"
+version: 0.5
+date-released: 2021-08-20
+url: "https://github.com/UoB-HPC/everythingsreduced"
+
