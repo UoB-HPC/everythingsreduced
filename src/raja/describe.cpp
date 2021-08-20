@@ -122,7 +122,7 @@ describe::result describe::run() {
       std += ((D[i] - the_mean) * (D[i] - the_mean)) / N;
     });
 
-  double the_std = std::sqrt(std);
+  double the_std = std::sqrt(std.get());
 
   return {.count = count, .mean = the_mean, .std = the_std, .min = min.get(), .max = max.get()};
 }
