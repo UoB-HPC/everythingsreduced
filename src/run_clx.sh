@@ -11,7 +11,7 @@ export OMP_PROC_BIND=true
 
 # Build OpenMP
 cmake -Bbuild_omp -H. -DMODEL=OpenMP -DCMAKE_CXX_COMPILER=icpc
-cmake --build build_omp
+cmake --build build_omp --parallel
 
 if [ -f ./build_omp/Reduced ]; then
   for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
@@ -31,7 +31,7 @@ fi
 
 
 cmake -H. -Bbuild_kokkos -DMODEL=Kokkos -DKOKKOS_SRC=kokkos-3.4.01 -DKokkos_ENABLE_OPENMP=On -DKokkos_ARCH_SKX=On -DCMAKE_CXX_COMPILER=icpc
-cmake --build build_kokkos
+cmake --build build_kokkos --parallel
 
 
 if [ -f ./build_kokkos/Reduced ]; then
@@ -51,7 +51,7 @@ if [ ! -d RAJA-v0.14.0 ]; then
 fi
 
 cmake -H. -Bbuild_raja -DMODEL=RAJA -DRAJA_SRC=RAJA-v0.14.0 -DCMAKE_C_COMPILER=icc -DCMAKE_CXX_COMPILER=icpc -DENABLE_OPENMP=On -DRAJA_USE_COMPLEX=On
-cmake --build build_raja
+cmake --build build_raja --parallel
 
 
 if [ -f ./build_raja/Reduced ]; then
@@ -69,8 +69,9 @@ source $HOME/intel/oneapi/setvars.sh
 source dpcpp_compiler/startup.sh
 
 cmake -H. -Bbuild_sycl -DMODEL=SYCL -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS='-fsycl -fsycl-unnamed-lambda'
-cmake --build build_sycl
+cmake --build build_sycl --parallel
 
+export SYCL_DEVICE_FILTER=cpu
 
 if [ -f ./build_sycl/Reduced ]; then
   for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
