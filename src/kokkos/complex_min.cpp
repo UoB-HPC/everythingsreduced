@@ -64,7 +64,7 @@ struct reducer_type {
   reducer_type(T r, T i) { c = Kokkos::complex<T>{r, i}; }
 
   KOKKOS_INLINE_FUNCTION
-  reducer_type(const reducer_type *rhs) { c = rhs.c; }
+  reducer_type(const reducer_type *rhs) { c = rhs->c; }
 
   KOKKOS_INLINE_FUNCTION
   void init() { c = Kokkos::complex<T>{0.0, 0.0}; }
