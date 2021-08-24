@@ -57,18 +57,15 @@ void describe::setup() {
 #endif
 
   double *RAJA_RESTRICT D = pdata->D;
-  // Have to pull this out of the class because the lambda capture falls over
-  const double N = static_cast<double>(N);
 
   RAJA::forall<policy>(
     RAJA::RangeSegment(0, N),
-    [=] RAJA_DEVICE(RAJA::Index_type i) {
-      D[i] = fabs(N / 2.0 - static_cast<double>(i));
+    [=, N = this->N] RAJA_DEVICE(RAJA::Index_type i) {
+      D[i] = fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i));
     });
 }
 
 void describe::teardown() {
-  // TODO: Use CHAI/Umpire for memory management
 #if defined(RAJA_ENABLE_CUDA)
   cudaErrchk(cudaFree(pdata->D));
 #elif defined(RAJA_ENABLE_HIP)
@@ -86,8 +83,6 @@ describe::result describe::run() {
 
   long count = N;
 
-  const double N = static_cast<double>(N);
-
   // Calculate mean using Kahan summation algorithm, improved by Neumaier
   RAJA::ReduceSum<reduce_policy, double> mean(0.0);
   RAJA::ReduceSum<reduce_policy, double> lost(0.0);
@@ -97,9 +92,9 @@ describe::result describe::run() {
 
   RAJA::forall<policy>(
     RAJA::RangeSegment(0, N),
-    [=] RAJA_DEVICE(RAJA::Index_type i) {
+    [=, N = this->N] RAJA_DEVICE(RAJA::Index_type i) {
       // Mean calculation
-      double val = D[i] / N;
+      double val = D[i] / static_cast<double>(N);
       double t = mean + val;
       if (fabs(mean) >= val)
         lost += (mean - t) + val;
@@ -119,7 +114,7 @@ describe::result describe::run() {
   RAJA::forall<policy>(
     RAJA::RangeSegment(0, N),
     [=] RAJA_DEVICE(RAJA::Index_type i) {
-      std += ((D[i] - the_mean) * (D[i] - the_mean)) / N;
+      std += ((D[i] - the_mean) * (D[i] - the_mean)) / static_cast<double>(N);
     });
 
   double the_std = std::sqrt(std.get());
