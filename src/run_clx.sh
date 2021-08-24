@@ -55,7 +55,7 @@ cmake --build build_raja --parallel
 
 
 if [ -f ./build_raja/Reduced ]; then
-  for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
+  for b in dot complex_sum complex_sum_soa field_summary describe; do
     ./build_raja/Reduced $b 1gib
   done
 else
