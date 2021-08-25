@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <limits>
+#include <new>
 
 #include <omp.h>
 
@@ -32,20 +33,24 @@ complex_min<T>::~complex_min() = default;
 template <typename T>
 void complex_min<T>::setup() {
 
-  pdata->C = new std::complex<T>[N];
+  pdata->C = (std::complex<T>*) malloc(N * sizeof(std::complex<T>));
 
   std::complex<T> *C = pdata->C;
 
 #pragma omp parallel for
   for (long i = 0; i < N; ++i) {
     T v = std::abs(static_cast<T>(N) / 2.0 - static_cast<T>(i));
+    new (C + i) std::complex<T>;
     C[i] = std::complex<T>{v, v};
   }
 }
 
 template <typename T>
 void complex_min<T>::teardown() {
-  delete[] pdata->C;
+  for (long i = 0; i < N; ++i) {
+    (pdata->C + i)->~complex();
+  }
+  free(pdata->C);
 }
 
 template <typename T>
