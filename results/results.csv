@@ -1,0 +1,390 @@
+arch,model,compiler,kernel,bandwidth
+gen9, omp_target, icpx, dot, 22.1804
+gen9, omp_target, icpx, complex_sum, 22.159
+gen9, omp_target, icpx, complex_sum_soa, 21.7288
+gen9, omp_target, icpx, complex_min, 11.4754
+gen9, omp_target, icpx, field_summary, 4.24303
+gen9, omp_target, icpx, describe, 16.975
+gen9, sycl, dpcpp, dot, 24.7668
+gen9, sycl, dpcpp, complex_sum, 24.5223
+gen9, sycl, dpcpp, complex_sum_soa, 21.0235
+gen9, sycl, dpcpp, complex_min, 17.7713
+gen9, sycl, dpcpp, field_summary, 12.6522
+gen9, sycl, dpcpp, describe, 14.6233
+gen9, kokkos_sycl, dpcpp, dot, 24.773
+gen9, kokkos_sycl, dpcpp, complex_sum, 24.5128
+gen9, kokkos_sycl, dpcpp, complex_sum_soa, 24.9011
+gen9, kokkos_sycl, dpcpp, field_summary, 15.1878
+gen9, kokkos_sycl, dpcpp, describe, 14.9412
+
+gen9, omp_target, icpx, dot, 22.2197
+gen9, omp_target, icpx, complex_sum, 22.7725
+gen9, omp_target, icpx, complex_sum_soa, 21.5158
+gen9, omp_target, icpx, complex_min, 11.1654
+gen9, omp_target, icpx, field_summary, 4.21807
+gen9, omp_target, icpx, describe, 16.648
+gen9, sycl, dpcpp, dot, 24.6606
+gen9, sycl, dpcpp, complex_sum, 24.593
+gen9, sycl, dpcpp, complex_sum_soa, 21.0955
+gen9, sycl, dpcpp, complex_min, 17.7693
+gen9, sycl, dpcpp, field_summary, 11.7444
+gen9, sycl, dpcpp, describe, 14.9285
+gen9, kokkos_sycl, dpcpp, dot, 25.7536
+gen9, kokkos_sycl, dpcpp, complex_sum, 25.2912
+gen9, kokkos_sycl, dpcpp, complex_sum_soa, 24.7886
+gen9, kokkos_sycl, dpcpp, field_summary, 7.09376
+gen9, kokkos_sycl, dpcpp, describe, 9.66253
+
+gen9, omp_target, icpx, dot, 22.1635
+gen9, omp_target, icpx, complex_sum, 22.5673
+gen9, omp_target, icpx, complex_sum_soa, 21.6652
+gen9, omp_target, icpx, complex_min, 11.1696
+gen9, omp_target, icpx, field_summary, 4.23232
+gen9, omp_target, icpx, describe, 16.979
+gen9, sycl, dpcpp, dot, 24.8301
+gen9, sycl, dpcpp, complex_sum, 24.6042
+gen9, sycl, dpcpp, complex_sum_soa, 21.0629
+gen9, sycl, dpcpp, complex_min, 17.7029
+gen9, sycl, dpcpp, field_summary, 11.6947
+gen9, sycl, dpcpp, describe, 14.9606
+gen9, kokkos_sycl, dpcpp, dot, 25.7767
+gen9, kokkos_sycl, dpcpp, complex_sum, 25.402
+gen9, kokkos_sycl, dpcpp, complex_sum_soa, 24.6156
+gen9, kokkos_sycl, dpcpp, field_summary, 7.05861
+gen9, kokkos_sycl, dpcpp, describe, 10.3666
+
+gen9, omp_target, icpx, dot, 22.3273
+gen9, omp_target, icpx, complex_sum, 23.3034
+gen9, omp_target, icpx, complex_sum_soa, 21.6227
+gen9, omp_target, icpx, complex_min, 11.194
+gen9, omp_target, icpx, field_summary, 4.11538
+gen9, omp_target, icpx, describe, 16.8528
+gen9, sycl, dpcpp, dot, 24.8069
+gen9, sycl, dpcpp, complex_sum, 24.5598
+gen9, sycl, dpcpp, complex_sum_soa, 21.0611
+gen9, sycl, dpcpp, complex_min, 17.7463
+gen9, sycl, dpcpp, field_summary, 11.758
+gen9, sycl, dpcpp, describe, 14.9532
+gen9, kokkos_sycl, dpcpp, dot, 25.6323
+gen9, kokkos_sycl, dpcpp, complex_sum, 25.3782
+gen9, kokkos_sycl, dpcpp, complex_sum_soa, 24.8983
+gen9, kokkos_sycl, dpcpp, field_summary, 7.08268
+gen9, kokkos_sycl, dpcpp, describe, 10.3038
+
+gen9, omp_target, icpx, dot, 22.2599
+gen9, omp_target, icpx, complex_sum, 23.4533
+gen9, omp_target, icpx, complex_sum_soa, 21.8048
+gen9, omp_target, icpx, complex_min, 11.1531
+gen9, omp_target, icpx, field_summary, 4.12244
+gen9, omp_target, icpx, describe, 16.7364
+gen9, sycl, dpcpp, dot, 24.8063
+gen9, sycl, dpcpp, complex_sum, 24.4682
+gen9, sycl, dpcpp, complex_sum_soa, 21.0998
+gen9, sycl, dpcpp, complex_min, 17.7945
+gen9, sycl, dpcpp, field_summary, 11.7934
+gen9, sycl, dpcpp, describe, 14.7702
+gen9, kokkos_sycl, dpcpp, dot, 25.7727
+gen9, kokkos_sycl, dpcpp, complex_sum, 25.406
+gen9, kokkos_sycl, dpcpp, complex_sum_soa, 24.8916
+gen9, kokkos_sycl, dpcpp, field_summary, 7.10436
+gen9, kokkos_sycl, dpcpp, describe, 10.4092
+
+
+cxl, omp, icpc, dot, 233.97
+cxl, omp, icpc, complex_sum, 63.7254
+cxl, omp, icpc, complex_sum_soa, 233.366
+cxl, omp, icpc, complex_min, 25.5306
+cxl, omp, icpc, field_summary, 191.094
+cxl, omp, icpc, describe, 135.896
+cxl, kokkos, icpc, dot, 231.191
+cxl, kokkos, icpc, complex_sum,  240.802
+cxl, kokkos, icpc, complex_sum_soa, 231.192
+cxl, kokkos, icpc, complex_min, 145.101
+cxl, kokkos, icpc, field_summary, 191.725
+cxl, kokkos, icpc, describe,  129.648
+cxl, raja, icpc, dot, 230.191
+cxl, raja, icpc, complex_sum, 38.6151
+cxl, raja, icpc, complex_sum_soa, 234.919
+cxl, raja, icpc, field_summary, 181.617
+cxl, sycl, dpcpp, dot, 70.9288
+cxl, sycl, dpcpp, complex_sum, 89.3188
+cxl, sycl, dpcpp, complex_sum_soa, 80.2769
+cxl, sycl, dpcpp, complex_min, 40.5159
+cxl, sycl, dpcpp, field_summary, 16.9846
+cxl, sycl, dpcpp, describe, 16.3869
+
+cxl, omp, icpc, dot, 235.282
+cxl, omp, icpc, complex_sum, 63.7931
+cxl, omp, icpc, complex_sum_soa, 235.427
+cxl, omp, icpc, complex_min, 25.595
+cxl, omp, icpc, field_summary, 192.92
+cxl, omp, icpc, describe, 137.193
+cxl, kokkos, icpc, dot, 232.244
+cxl, kokkos, icpc, complex_sum, 239.785
+cxl, kokkos, icpc, complex_sum_soa, 230.223
+cxl, kokkos, icpc, complex_min, 145.805
+cxl, kokkos, icpc, field_summary, 195.267
+cxl, kokkos, icpc, describe, 130.903
+cxl, raja, icpc, dot, 216.139
+cxl, raja, icpc, complex_sum, 38.61
+cxl, raja, icpc, complex_sum_soa, 236.036
+cxl, raja, icpc, field_summary, 171.124
+cxl, sycl, dpcpp, dot, 76.961
+cxl, sycl, dpcpp, complex_sum, 90.5442
+cxl, sycl, dpcpp, complex_sum_soa, 78.626
+cxl, sycl, dpcpp, complex_min, 43.0989
+cxl, sycl, dpcpp, field_summary, 16.5827
+cxl, sycl, dpcpp, describe, 15.933
+
+cxl, omp, icpc, dot, 228.063
+cxl, omp, icpc, complex_sum, 63.6918
+cxl, omp, icpc, complex_sum_soa, 235.675
+cxl, omp, icpc, complex_min, 25.5567
+cxl, omp, icpc, field_summary, 195.335
+cxl, omp, icpc, describe, 137.375
+cxl, kokkos, icpc, dot,232.854
+cxl, kokkos, icpc, complex_sum,240.525
+cxl, kokkos, icpc, complex_sum_soa,230.666
+cxl, kokkos, icpc, complex_min,145.884
+cxl, kokkos, icpc, field_summary,195.397
+cxl, kokkos, icpc, describe,129.551
+cxl, raja, icpc, dot,232.782
+cxl, raja, icpc, complex_sum,38.589
+cxl, raja, icpc, complex_sum_soa,235.997
+cxl, raja, icpc, field_summary,172.984
+cxl, sycl, dpcpp, dot,76.5882
+cxl, sycl, dpcpp, complex_sum,91.9406
+cxl, sycl, dpcpp, complex_sum_soa,76.9667
+cxl, sycl, dpcpp, complex_min,38.1367
+cxl, sycl, dpcpp, field_summary,17.1335
+cxl, sycl, dpcpp, describe,15.5728
+
+cxl, omp, icpc, dot, 233.129
+cxl, omp, icpc, complex_sum, 63.7481
+cxl, omp, icpc, complex_sum_soa, 154.023
+cxl, omp, icpc, complex_min, 25.4825
+cxl, omp, icpc, field_summary, 190.75
+cxl, omp, icpc, describe, 137.227
+cxl, kokkos, icpc, dot, 231.307
+cxl, kokkos, icpc, complex_sum, 237.237
+cxl, kokkos, icpc, complex_sum_soa,230.939
+cxl, kokkos, icpc, complex_min, 145.037
+cxl, kokkos, icpc, field_summary, 190.085
+cxl, kokkos, icpc, describe, 129.01
+cxl, raja, icpc, dot, 231.18
+cxl, raja, icpc, complex_sum, 38.6223
+cxl, raja, icpc, complex_sum_soa, 234.535
+cxl, raja, icpc, field_summary, 169.281
+cxl, sycl, dpcpp, dot, 76.6413
+cxl, sycl, dpcpp, complex_sum, 89.1591
+cxl, sycl, dpcpp, complex_sum_soa, 82.8572
+cxl, sycl, dpcpp, complex_min, 41.2856
+cxl, sycl, dpcpp, field_summary, 16.7563
+cxl, sycl, dpcpp, describe, 15.713
+
+cxl, omp, icpc, dot, 233.331
+cxl, omp, icpc, complex_sum, 63.5056
+cxl, omp, icpc, complex_sum_soa, 234.078
+cxl, omp, icpc, complex_min, 25.8738
+cxl, omp, icpc, field_summary, 190.46
+cxl, omp, icpc, describe, 136.173
+cxl, kokkos, icpc, dot, 230.567
+cxl, kokkos, icpc, complex_sum, 238.974
+cxl, kokkos, icpc, complex_sum_soa,230.164
+cxl, kokkos, icpc, complex_min, 144.876
+cxl, kokkos, icpc, field_summary, 189.361
+cxl, kokkos, icpc, describe, 129.463
+cxl, raja, icpc, dot, 231.615
+cxl, raja, icpc, complex_sum, 38.6291
+cxl, raja, icpc, complex_sum_soa, 233.791
+cxl, raja, icpc, field_summary, 169.236
+cxl, sycl, dpcpp, dot, 77.6357
+cxl, sycl, dpcpp, complex_sum, 93.4717
+cxl, sycl, dpcpp, complex_sum_soa, 80.4981
+cxl, sycl, dpcpp, complex_min, 41.8841
+cxl, sycl, dpcpp, field_summary, 17.0262
+cxl, sycl, dpcpp, describe, 16.6664
+
+
+
+rome, omp, cce, dot, 314.329
+rome, omp, cce, complex_sum, 29.5927 
+rome, omp, cce, complex_sum_soa, 314.906
+rome, omp, cce, complex_min, 29.3762
+rome, omp, cce, field_summary, 202.378
+rome, omp, cce, describe, 314.827
+rome, kokkos, cce, dot, 314.648
+rome, kokkos, cce, complex_sum, 321.142
+rome, kokkos, cce, complex_sum_soa, 313.359
+rome, kokkos, cce, complex_min, 303.871
+rome, kokkos, cce, field_summary, 163.967
+rome, kokkos, cce, describe, 257.707
+rome, raja, cce, dot, 310.643
+rome, raja, cce, complex_sum, 29.6037
+rome, raja, cce, complex_sum_soa, 314.188
+rome, raja, cce, field_summary, 183.532
+rome, raja, cce, describe, 284.438
+
+rome, omp, cce, dot, 313.783
+rome, omp, cce, complex_sum, 29.5876
+rome, omp, cce, complex_sum_soa, 314.692
+rome, omp, cce, complex_min, 29.4996
+rome, omp, cce, field_summary, 191.153
+rome, omp, cce, describe, 317.053
+rome, kokkos, cce, dot, 313.791
+rome, kokkos, cce, complex_sum, 320.603
+rome, kokkos, cce, complex_sum_soa, 315.601
+rome, kokkos, cce, complex_min, 313.678
+rome, kokkos, cce, field_summary, 170.098
+rome, kokkos, cce, describe, 256.826
+rome, raja, cce, dot, 311.964
+rome, raja, cce, complex_sum, 29.5293
+rome, raja, cce, complex_sum_soa, 313.726
+rome, raja, cce, field_summary, 181.559
+rome, raja, cce, describe, 282.712
+
+rome, omp, cce, dot, 314.254
+rome, omp, cce, complex_sum, 29.2435
+rome, omp, cce, complex_sum_soa, 314.224
+rome, omp, cce, complex_min, 29.3916
+rome, omp, cce, field_summary, 195.809
+rome, omp, cce, describe, 316.894
+rome, kokkos, cce, dot, 313.172
+rome, kokkos, cce, complex_sum, 321.265
+rome, kokkos, cce, complex_sum_soa, 315.079
+rome, kokkos, cce, complex_min, 317.113
+rome, kokkos, cce, field_summary, 170.94
+rome, kokkos, cce, describe, 256.062
+rome, raja, cce, dot, 312.453
+rome, raja, cce, complex_sum, 29.6803
+rome, raja, cce, complex_sum_soa, 314.014
+rome, raja, cce, field_summary, 187.034
+rome, raja, cce, describe, 282.572
+
+rome, omp, cce, dot, 314.973
+rome, omp, cce, complex_sum, 29.6006
+rome, omp, cce, complex_sum_soa, 314.412
+rome, omp, cce, complex_min, 27.6859
+rome, omp, cce, field_summary, 196.398
+rome, omp, cce, describe, 315.586
+rome, kokkos, cce, dot, 313.991
+rome, kokkos, cce, complex_sum, 321.475
+rome, kokkos, cce, complex_sum_soa, 315.316
+rome, kokkos, cce, complex_min, 316.606
+rome, kokkos, cce, field_summary, 162.318
+rome, kokkos, cce, describe, 255.849
+rome, raja, cce, dot, 309.842
+rome, raja, cce, complex_sum, 29.4473
+rome, raja, cce, complex_sum_soa, 313.602
+rome, raja, cce, field_summary, 189.497
+rome, raja, cce, describe, 278.476
+
+rome, omp, cce, dot, 314.462
+rome, omp, cce, complex_sum, 29.7735
+rome, omp, cce, complex_sum_soa, 314.968
+rome, omp, cce, complex_min, 29.411
+rome, omp, cce, field_summary, 197.556
+rome, omp, cce, describe, 314.776
+rome, kokkos, cce, dot, 313.987
+rome, kokkos, cce, complex_sum, 321.081
+rome, kokkos, cce, complex_sum_soa, 315.238
+rome, kokkos, cce, complex_min, 316.984
+rome, kokkos, cce, field_summary, 165.492
+rome, kokkos, cce, describe, 256.016
+rome, raja, cce, dot, 312.296
+rome, raja, cce, complex_sum, 29.6831
+rome, raja, cce, complex_sum_soa, 313.814
+rome, raja, cce, field_summary, 188.854
+rome, raja, cce, describe, 283.59
+
+
+
+rome, omp, aocc, dot, 308.609
+rome, omp, aocc, complex_sum, 29.7767
+rome, omp, aocc, complex_sum_soa, 308.488
+rome, omp, aocc, complex_min, 29.7363
+rome, omp, aocc, field_summary, 207.216
+rome, omp, aocc, describe, 315.775
+rome, kokkos, aocc, dot, 308.977
+rome, kokkos, aocc, complex_sum, 320.145
+rome, kokkos, aocc, complex_sum_soa, 308.669
+rome, kokkos, aocc, complex_min, 320.259
+rome, kokkos, aocc, field_summary, 172.548
+rome, kokkos, aocc, describe, 317.094
+rome, raja, aocc, dot, 306.147
+rome, raja, aocc, complex_sum, 29.5219
+rome, raja, aocc, complex_sum_soa, 307.098
+rome, raja, aocc, field_summary, 180.277
+rome, raja, aocc, describe, 286.808
+
+rome, omp, aocc, dot, 309.751
+rome, omp, aocc, complex_sum, 29.6917
+rome, omp, aocc, complex_sum_soa, 309.713
+rome, omp, aocc, complex_min, 29.7787
+rome, omp, aocc, field_summary, 218.086
+rome, omp, aocc, describe, 312.994
+rome, kokkos, aocc, dot, 308.387
+rome, kokkos, aocc, complex_sum, 319.191
+rome, kokkos, aocc, complex_sum_soa, 309.911
+rome, kokkos, aocc, complex_min, 321.158
+rome, kokkos, aocc, field_summary, 169.142
+rome, kokkos, aocc, describe, 316.348
+rome, raja, aocc, dot, 305.958
+rome, raja, aocc, complex_sum, 29.7758
+rome, raja, aocc, complex_sum_soa, 306.402
+rome, raja, aocc, field_summary, 197.946
+rome, raja, aocc, describe, 286.682
+
+rome, omp, aocc, dot, 309.901
+rome, omp, aocc, complex_sum, 29.6556
+rome, omp, aocc, complex_sum_soa, 309.046
+rome, omp, aocc, complex_min, 28.843
+rome, omp, aocc, field_summary, 218.342
+rome, omp, aocc, describe, 314.183
+rome, kokkos, aocc, dot, 308.892
+rome, kokkos, aocc, complex_sum, 321.514
+rome, kokkos, aocc, complex_sum_soa, 308.854
+rome, kokkos, aocc, complex_min, 319.677
+rome, kokkos, aocc, field_summary, 165.483
+rome, kokkos, aocc, describe, 316.233
+rome, raja, aocc, dot, 306.283
+rome, raja, aocc, complex_sum, 29.6062
+rome, raja, aocc, complex_sum_soa, 306.803
+rome, raja, aocc, field_summary, 181.9
+rome, raja, aocc, describe, 287.17
+
+rome, omp, aocc, dot, 309.937
+rome, omp, aocc, complex_sum, 29.7668
+rome, omp, aocc, complex_sum_soa, 309.503
+rome, omp, aocc, complex_min, 29.456
+rome, omp, aocc, field_summary, 220.086
+rome, omp, aocc, describe, 312.424
+rome, kokkos, aocc, dot, 309.452
+rome, kokkos, aocc, complex_sum, 321.87
+rome, kokkos, aocc, complex_sum_soa, 309.481
+rome, kokkos, aocc, complex_min, 320.812
+rome, kokkos, aocc, field_summary, 165.547
+rome, kokkos, aocc, describe, 315.878
+rome, raja, aocc, dot, 305.685
+rome, raja, aocc, complex_sum, 29.7309
+rome, raja, aocc, complex_sum_soa, 307.976
+rome, raja, aocc, field_summary, 177.345
+rome, raja, aocc, describe, 284.865
+
+rome, omp, aocc, dot, 308.72
+rome, omp, aocc, complex_sum, 29.4904
+rome, omp, aocc, complex_sum_soa, 309.515
+rome, omp, aocc, complex_min, 29.5678
+rome, omp, aocc, field_summary, 219.703
+rome, omp, aocc, describe, 314.053
+rome, kokkos, aocc, dot, 304.42
+rome, kokkos, aocc, complex_sum, 321.597
+rome, kokkos, aocc, complex_sum_soa, 309.487
+rome, kokkos, aocc, complex_min, 314.229
+rome, kokkos, aocc, field_summary, 162.509
+rome, kokkos, aocc, describe, 289.75
+rome, raja, aocc, dot, 306.803
+rome, raja, aocc, complex_sum, 29.6746
+rome, raja, aocc, complex_sum_soa, 307.224
+rome, raja, aocc, field_summary, 190.497
+rome, raja, aocc, describe, 286.62
