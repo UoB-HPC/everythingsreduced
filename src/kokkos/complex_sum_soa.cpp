@@ -55,7 +55,7 @@ template <typename T>
 std::tuple<T, T> complex_sum_soa<T>::run() {
 
   auto &real = pdata->real;
-  auto &imag = pdata->real;
+  auto &imag = pdata->imag;
 
   T sum_r = 0.0;
   T sum_i = 0.0;
