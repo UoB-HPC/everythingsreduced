@@ -15,7 +15,7 @@ COMPILER=CC
 C_COMPILER=cc
 
 # Try with AOCC
-if true; then
+if false ; then
   module load aocc/2.3
   COMPILER=clang++
   C_COMPILER=clang
@@ -34,7 +34,7 @@ fi
 
 
 if [ -f ./build_omp/Reduced ]; then
-  for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
+  for b in dot complex_sum complex_sum_soa complex_min complex_sum_fp32 complex_sum_soa_fp32 complex_min_fp32 field_summary describe; do
     ./build_omp/Reduced $b 1gib
   done
 else
@@ -56,13 +56,14 @@ fi
 
 
 if [ -f ./build_kokkos/Reduced ]; then
-  for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
+  for b in dot complex_sum complex_sum_soa complex_min complex_sum_fp32 complex_sum_soa_fp32 complex_min_fp32 field_summary describe; do
     ./build_kokkos/Reduced $b 1gib
   done
 else
   echo "Build failed"
   exit 1
 fi
+
 
 # Build RAJA
 if $build; then
@@ -76,7 +77,7 @@ cmake --build build_raja --parallel
 fi
 
 if [ -f ./build_raja/Reduced ]; then
-  for b in dot complex_sum complex_sum_soa field_summary describe; do
+  for b in dot complex_sum complex_sum_soa complex_sum_fp32 complex_sum_soa_fp32 field_summary describe; do
     ./build_raja/Reduced $b 1gib
   done
 else
@@ -84,3 +85,24 @@ else
   exit 1
 fi
 
+
+exit
+# Build SYCL
+source $HOME/intel/oneapi/setvars.sh
+source dpcpp_compiler/startup.sh
+
+if $build; then
+cmake -H. -Bbuild_sycl -DMODEL=SYCL -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS='-fsycl -fsycl-unnamed-lambda'
+cmake --build build_sycl --parallel
+fi
+
+export SYCL_DEVICE_FILTER=cpu
+
+if [ -f ./build_sycl/Reduced ]; then
+  for b in dot complex_sum complex_sum_soa complex_min complex_sum_fp32 complex_sum_soa_fp32 complex_min_fp32 field_summary describe; do
+    ./build_sycl/Reduced $b 1gib
+  done
+else
+  echo "Build failed"
+  exit 1
+fi
