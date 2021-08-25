@@ -33,6 +33,7 @@ void complex_min<T>::setup() {
 
   auto C = pdata->C;
 
+  auto N = this->N;
   Kokkos::parallel_for(
       N,
       KOKKOS_LAMBDA(const int i) {
@@ -71,7 +72,7 @@ struct reducer_type {
 
   // Fake minimum with += operator
   KOKKOS_INLINE_FUNCTION
-  reducer_type &operator+=(const reducer_type &rhs) {
+  reducer_type &operator+=(reducer_type &rhs) {
     if (abs(c) < abs(rhs.c))
       return *this;
     else

@@ -27,6 +27,7 @@ void describe::setup() {
 
   auto &D = pdata->D;
 
+  auto N = this->N;
   Kokkos::parallel_for(
       N,
       KOKKOS_LAMBDA(const int i) {
@@ -53,6 +54,7 @@ describe::result describe::run() {
   double min = std::numeric_limits<double>::max();
   double max = std::numeric_limits<double>::min();
 
+  auto N = this->N;
   Kokkos::parallel_reduce(
       N,
       KOKKOS_LAMBDA(const int i, double &mean, double &lost, double &min, double &max) {

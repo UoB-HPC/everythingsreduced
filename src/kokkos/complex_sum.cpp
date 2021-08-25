@@ -32,6 +32,7 @@ void complex_sum<T>::setup() {
 
   auto C = pdata->C;
 
+  auto N = this->N;
   Kokkos::parallel_for(
       N,
       KOKKOS_LAMBDA(const int i) {

@@ -35,6 +35,7 @@ void complex_sum_soa<T>::setup() {
   auto real = pdata->real;
   auto imag = pdata->imag;
 
+  auto N = this->N;
   Kokkos::parallel_for(
       N,
       KOKKOS_LAMBDA(const int i) {
