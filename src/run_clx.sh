@@ -20,7 +20,7 @@ cmake --build build_omp --parallel
 fi
 
 if [ -f ./build_omp/Reduced ]; then
-  for b in dot complex_sum complex_sum_soa complex_min complex_sum_fp32 complex_sum_soa_fp32 complex_min_fp32 field_summary describe; do
+  for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
     ./build_omp/Reduced $b 1gib
   done
 else
@@ -43,7 +43,7 @@ fi
 
 
 if [ -f ./build_kokkos/Reduced ]; then
-  for b in dot complex_sum complex_sum_soa complex_min complex_sum_fp32 complex_sum_soa_fp32 complex_min_fp32 field_summary describe; do
+  for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
     ./build_kokkos/Reduced $b 1gib
   done
 else
@@ -65,7 +65,7 @@ fi
 
 
 if [ -f ./build_raja/Reduced ]; then
-  for b in dot complex_sum complex_sum_soa complex_sum_fp32 complex_sum_soa_fp32 field_summary describe; do
+  for b in dot complex_sum complex_sum_soa field_summary describe; do
     ./build_raja/Reduced $b 1gib
   done
 else
@@ -86,7 +86,7 @@ fi
 export SYCL_DEVICE_FILTER=cpu
 
 if [ -f ./build_sycl/Reduced ]; then
-  for b in dot complex_sum complex_sum_soa complex_min complex_sum_fp32 complex_sum_soa_fp32 complex_min_fp32 field_summary describe; do
+  for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
     ./build_sycl/Reduced $b 1gib
   done
 else

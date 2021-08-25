@@ -22,17 +22,7 @@ const auto LINE = "------------------------------------------------------------"
 
 #include "util.hpp"
 
-enum class Benchmark {
-  dot,
-  complex_sum,
-  complex_sum_soa,
-  complex_min,
-  complex_sum_fp32,
-  complex_sum_soa_fp32,
-  complex_min_fp32,
-  field_summary,
-  describe
-};
+enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe };
 
 // Choose the benchmark based on the input argument given from the command line
 Benchmark select_benchmark(const std::string name) {
@@ -45,12 +35,6 @@ Benchmark select_benchmark(const std::string name) {
     return Benchmark::complex_sum_soa;
   else if (name == "complex_min")
     return Benchmark::complex_min;
-  else if (name == "complex_sum_fp32")
-    return Benchmark::complex_sum_fp32;
-  else if (name == "complex_sum_soa_fp32")
-    return Benchmark::complex_sum_soa_fp32;
-  else if (name == "complex_min_fp32")
-    return Benchmark::complex_min_fp32;
   else if (name == "field_summary")
     return Benchmark::field_summary;
   else if (name == "describe")
@@ -116,7 +100,6 @@ int main(int argc, char *argv[]) {
               << std::endl
               << "Valid benchmarks:" << std::endl
               << "  dot, complex_sum, complex_sum_soa, complex_min, "
-              << "complex_sum_fp32, complex_sum_soa_fp32, complex_min_fp32, "
                  "field_summary, describe"
               << std::endl;
     exit(EXIT_FAILURE);
@@ -281,125 +264,6 @@ int main(int argc, char *argv[]) {
     auto teardown_stop = clock::now();
 
     print_timing("Complex Min", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
-                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 cmin.gibibytes());
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Run Complex Sum FP32 Benchmark
-  //////////////////////////////////////////////////////////////////////////////
-  else if (run == Benchmark::complex_sum_fp32) {
-    check_for_option(argc);
-    long N = get_problem_size(argv[2]);
-
-    auto construct_start = clock::now();
-    complex_sum<float> csum(N);
-    auto construct_stop = clock::now();
-
-    auto setup_start = clock::now();
-    csum.setup();
-    auto setup_stop = clock::now();
-
-    auto run_start = clock::now();
-    std::complex<float> r = csum.run();
-    auto run_stop = clock::now();
-
-    // Check solution
-    auto check_start = clock::now();
-    if (std::abs(r - csum.expect()) > std::numeric_limits<float>::epsilon() * 100.0) {
-      std::cerr << "Complex Sum FP32: result incorrect" << std::endl
-                << "Expected: " << csum.expect() << std::endl
-                << "Result: " << r << std::endl
-                << "Difference: " << std::abs(r - csum.expect()) << std::endl
-                << "Eps: " << std::numeric_limits<double>::epsilon() << std::endl;
-    }
-    auto check_stop = clock::now();
-
-    auto teardown_start = clock::now();
-    csum.teardown();
-    auto teardown_stop = clock::now();
-
-    print_timing("Complex Sum FP32", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
-                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 csum.gibibytes());
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Run Complex Sum SoA FP32 Benchmark
-  //////////////////////////////////////////////////////////////////////////////
-  else if (run == Benchmark::complex_sum_soa_fp32) {
-    check_for_option(argc);
-    long N = get_problem_size(argv[2]);
-
-    auto construct_start = clock::now();
-    complex_sum_soa<float> csum(N);
-    auto construct_stop = clock::now();
-
-    auto setup_start = clock::now();
-    csum.setup();
-    auto setup_stop = clock::now();
-
-    auto run_start = clock::now();
-    std::tuple<float, float> r = csum.run();
-    auto run_stop = clock::now();
-
-    // Check solution
-    auto check_start = clock::now();
-    if (std::abs(std::get<0>(r) - std::get<0>(csum.expect())) > std::numeric_limits<float>::epsilon() * 100.0 ||
-        std::abs(std::get<1>(r) - std::get<1>(csum.expect())) > std::numeric_limits<float>::epsilon() * 100.0) {
-      std::cerr << "Complex Sum SoA: result incorrect" << std::endl
-                << "Expected: " << std::get<0>(csum.expect()) << "+ i" << std::get<1>(csum.expect()) << std::endl
-                << "Result:   " << std::get<0>(r) << "+ i" << std::get<1>(r) << std::endl
-                << "Difference: " << std::abs(std::get<0>(r) - std::get<0>(csum.expect())) << " and "
-                << std::abs(std::get<1>(r) - std::get<1>(csum.expect())) << std::endl
-                << "Eps: " << std::numeric_limits<float>::epsilon() << std::endl;
-    }
-    auto check_stop = clock::now();
-
-    auto teardown_start = clock::now();
-    csum.teardown();
-    auto teardown_stop = clock::now();
-
-    print_timing("Complex Sum SoA FP32", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
-                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 csum.gibibytes());
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Run Complex Min FP32 Benchmark
-  //////////////////////////////////////////////////////////////////////////////
-  else if (run == Benchmark::complex_min_fp32) {
-    check_for_option(argc);
-    long N = get_problem_size(argv[2]);
-
-    auto construct_start = clock::now();
-    complex_min<float> cmin(N);
-    auto construct_stop = clock::now();
-
-    auto setup_start = clock::now();
-    cmin.setup();
-    auto setup_stop = clock::now();
-
-    auto run_start = clock::now();
-    std::complex<float> r = cmin.run();
-    auto run_stop = clock::now();
-
-    // Check solution
-    auto check_start = clock::now();
-    if (std::abs(r - cmin.expect()) > std::numeric_limits<float>::epsilon() * 100.0) {
-      std::cerr << "Complex Min: result incorrect" << std::endl
-                << "Expected: " << cmin.expect() << std::endl
-                << "Result: " << r << std::endl
-                << "Difference: " << std::abs(r - cmin.expect()) << std::endl
-                << "Eps: " << std::numeric_limits<float>::epsilon() << std::endl;
-    }
-    auto check_stop = clock::now();
-
-    auto teardown_start = clock::now();
-    cmin.teardown();
-    auto teardown_stop = clock::now();
-
-    print_timing("Complex Min FP32", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
                  cmin.gibibytes());
   }
