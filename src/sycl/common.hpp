@@ -1,8 +1,13 @@
 // Copyright (c) 2021 Everything's Reduced authors
 // SPDX-License-Identifier: MIT
 #pragma once
+
 #include <sstream>
+#ifndef ONEDPL_MODEL
 #include <sycl.hpp>
+#else
+#include <CL/sycl.hpp>
+#endif
 
 static inline std::string config_string(std::string name, sycl::queue &q) {
   std::stringstream ss("");

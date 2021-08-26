@@ -13,6 +13,7 @@ This is a collection of key reduction kernel patterns collated from other benchm
     - [Kokkos](#kokkos-version)
     - [RAJA](#raja-version)
     - [SYCL](#sycl-version)
+    - [oneDPL](#onedpl-version)
 - [Organisation](#organisation)
 - [Citing](#citing)
 
@@ -42,7 +43,7 @@ Each library implements the benchmark kernels.
 
 Build using CMake:
 
-    cmake -Bbuild -H. -DMODEL=<model>    # Valid: OpenMP, Kokkos, RAJA, OpenMP-target, SYCL
+    cmake -Bbuild -H. -DMODEL=<model>    # Valid: OpenMP, Kokkos, RAJA, OpenMP-target, SYCL, oneDPL
     cmake --build build
 
 ### OpenMP version ###
@@ -53,7 +54,7 @@ No extra stages are required to build with OpenMP (for the CPU).
 The `MODEL` name is `OpenMP-target`; you must also specify `OMP_TARGET` to indicate which backend to use. Currently, only `Intel` is supported.
 
 We recommend installing oneAPI to use the Intel backend. The [HPC Kit](https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit/download.html) is needed for OpenMP. Remember to run `/opt/intel/oneapi/setvars.sh` (or wherever you have installed it) before building / running.
-    
+
  | Backend | Options                                                              |
  | ------- | ---------------------------------------------------------------------|
  | Intel   | `-DMODEL=OpenMP-target -DOMP_TARGET=Intel -DCMAKE_CXX_COMPILER=icpx` |
@@ -86,7 +87,17 @@ This code builds Kokkos inline.
 
 We recommend installing the oneAPI [basekit](https://software.intel.com/content/www/us/en/develop/tools/oneapi/base-toolkit/download.html). Remember to run `/opt/intel/oneAPI/setvars.sh` (or wherever you have installed it) before building / running.
 
-We also recommend using a recent 'nightly' build of the oneAPI DPC++ compiler, which can be found [here](https://github.com/intel/llvm/releases) (see the 'assets' arrow and download `dpcpp_compiler.tar.gz`.) When you have untarred the package, you should `source <path-to-nightly>/startup.sh`. 
+We also recommend using a recent 'nightly' build of the oneAPI DPC++ compiler, which can be found [here](https://github.com/intel/llvm/releases) (see the 'assets' arrow and download `dpcpp_compiler.tar.gz`.) When you have untarred the package, you should `source <path-to-nightly>/startup.sh`.
+
+| Toolchain | Options                                                                                                  |
+| --------- | -------------------------------------------------------------------------------------------------------- |
+| oneAPI    | `-DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS='-fsycl -fsycl-unnamed-lambda'`                          |
+
+### oneDPL version ###
+
+We recommend installing the oneAPI [basekit](https://software.intel.com/content/www/us/en/develop/tools/oneapi/base-toolkit/download.html). Remember to run `/opt/intel/oneAPI/setvars.sh` (or wherever you have installed it) before building / running.
+
+This code has only been tested with the 2021.3 release of oneAPI.
 
 | Toolchain | Options                                                                                                  |
 | --------- | -------------------------------------------------------------------------------------------------------- |
@@ -134,4 +145,3 @@ Using this approach we can avoid templating the main driver code, and supply dif
 ## Citing ##
 
 To be announced.
-
