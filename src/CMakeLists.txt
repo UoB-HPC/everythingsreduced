@@ -20,7 +20,7 @@ message(STATUS "CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}")
 
 # set the project name
 project(Reduced
-  VERSION 0.5
+  VERSION 0.6
   LANGUAGES CXX
 )
 
