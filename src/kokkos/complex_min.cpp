@@ -51,7 +51,7 @@ void complex_min<T>::teardown() {
 
 template <typename T>
 KOKKOS_INLINE_FUNCTION T my_abs(const Kokkos::complex<T> &c) {
-  return sqrt(c.real() * c.real() + c.imag() * c.imag());
+  return c.real() * c.real() + c.imag() * c.imag();
 }
 
 template <typename T>
@@ -84,10 +84,10 @@ struct reducer_type {
 
 private:
   KOKKOS_INLINE_FUNCTION
-  T abs(const Kokkos::complex<T> &c) const { return sqrt(c.real() * c.real() + c.imag() * c.imag()); }
+  T abs(const Kokkos::complex<T> &c) const { return c.real() * c.real() + c.imag() * c.imag(); }
 
   KOKKOS_INLINE_FUNCTION
-  T abs(const volatile Kokkos::complex<T> &c) volatile { return sqrt(c.real() * c.real() + c.imag() * c.imag()); }
+  T abs(const volatile Kokkos::complex<T> &c) volatile { return c.real() * c.real() + c.imag() * c.imag(); }
 };
 
 template <class T, class Space>
