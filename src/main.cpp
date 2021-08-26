@@ -71,7 +71,7 @@ double elapsed(std::chrono::high_resolution_clock::time_point start,
 
 // Print timings for a benchmark
 void print_timing(const char *name, const double constructor, const double setup, const double run, const double check,
-                  const double teardown, const double gibibytes) {
+                  const double teardown, const double gigabytes) {
   std::cout << std::endl
             << " " << name << std::endl
             << "  Constructor: " << constructor << std::endl
@@ -80,7 +80,7 @@ void print_timing(const char *name, const double constructor, const double setup
             << "  Verify:      " << check << std::endl
             << "  Teardown:    " << teardown << std::endl
             << std::endl
-            << "  Sustained GiB/s: " << gibibytes / (run * 1.0E-3) << std::endl
+            << "  Sustained GB/s: " << gigabytes / (run * 1.0E-3) << std::endl
             << LINE << std::endl;
 }
 
@@ -145,7 +145,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Dot Product", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 dotty.gibibytes());
+                 dotty.gigabytes());
 
   }
 
@@ -185,7 +185,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Complex Sum", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 csum.gibibytes());
+                 csum.gigabytes());
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -226,7 +226,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Complex Sum", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 csum.gibibytes());
+                 csum.gigabytes());
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -265,7 +265,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Complex Min", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 cmin.gibibytes());
+                 cmin.gigabytes());
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -325,7 +325,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Field Summary", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 summary.gibibytes());
+                 summary.gigabytes());
 
   }
 
@@ -393,7 +393,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Describe", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 d.gibibytes());
+                 d.gigabytes());
   }
 
   return EXIT_SUCCESS;

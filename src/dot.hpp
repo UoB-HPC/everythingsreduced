@@ -37,6 +37,6 @@ struct dot {
     return a * b * static_cast<double>(N);
   }
 
-  // Return theoretical minimum number of GiB moved in run()
-  double gibibytes() { return 1.0E-9 * sizeof(double) * 2.0 * N; }
+  // Return theoretical minimum number of GB moved in run()
+  double gigabytes() { return 1.0E-9 * sizeof(double) * 2.0 * N; }
 };

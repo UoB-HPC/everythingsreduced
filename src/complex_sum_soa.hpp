@@ -38,6 +38,6 @@ struct complex_sum_soa {
     return {v, v};
   }
 
-  // Return theoretical minimum number of GiB moved in run()
-  double gibibytes() { return 1.0E-9 * sizeof(T) * 2.0 * N; }
+  // Return theoretical minimum number of GB moved in run()
+  double gigabytes() { return 1.0E-9 * sizeof(T) * 2.0 * N; }
 };
