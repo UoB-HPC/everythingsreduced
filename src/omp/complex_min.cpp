@@ -33,6 +33,9 @@ complex_min<T>::~complex_min() = default;
 template <typename T>
 void complex_min<T>::setup() {
 
+  // Using new std::complex<T>[N] here would initialize memory
+  // Using placement new instead allows initialization to be parallelized
+  // This improves performance on NUMA systems (due to first-touch policy)
   pdata->C = (std::complex<T>*) malloc(N * sizeof(std::complex<T>));
 
   std::complex<T> *C = pdata->C;
