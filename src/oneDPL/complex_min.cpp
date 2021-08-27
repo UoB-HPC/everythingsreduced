@@ -45,12 +45,17 @@ void complex_min<T>::teardown() {
 }
 
 template <typename T>
+inline T abs2(const std::complex<T> &x) {
+  return (x.real() * x.real()) + (x.imag() * x.imag());
+}
+
+template <typename T>
 std::complex<T> complex_min<T>::run() {
   auto exec_p = oneapi::dpl::execution::make_device_policy(pdata->q);
   return oneapi::dpl::reduce(exec_p,
                              oneapi::dpl::begin(pdata->C), oneapi::dpl::end(pdata->C),
                              std::complex<T>(),
-                             [=](const auto &lhs, const auto &rhs) { return (abs(lhs) < abs(rhs)) ? lhs : rhs; });
+                             [=](const auto &lhs, const auto &rhs) { return (abs2(lhs) < abs2(rhs)) ? lhs : rhs; });
 }
 
 template struct complex_min<double>;

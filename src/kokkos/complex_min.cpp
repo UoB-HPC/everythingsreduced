@@ -50,8 +50,8 @@ void complex_min<T>::teardown() {
 }
 
 template <typename T>
-KOKKOS_INLINE_FUNCTION T my_abs(const Kokkos::complex<T> &c) {
-  return sqrt(c.real() * c.real() + c.imag() * c.imag());
+KOKKOS_INLINE_FUNCTION T my_abs2(const Kokkos::complex<T> &c) {
+  return c.real() * c.real() + c.imag() * c.imag();
 }
 
 template <typename T>
@@ -73,21 +73,21 @@ struct reducer_type {
   // Fake minimum with += operator
   KOKKOS_INLINE_FUNCTION
   reducer_type &operator+=(reducer_type &rhs) {
-    if (abs(c) < abs(rhs.c))
+    if (abs2(c) < abs2(rhs.c))
       return *this;
     else
       return rhs;
   }
 
   KOKKOS_INLINE_FUNCTION
-  void operator+=(const volatile reducer_type &rhs) volatile { c = (abs(c) < abs(rhs.c)) ? c : rhs.c; }
+  void operator+=(const volatile reducer_type &rhs) volatile { c = (abs2(c) < abs2(rhs.c)) ? c : rhs.c; }
 
 private:
   KOKKOS_INLINE_FUNCTION
-  T abs(const Kokkos::complex<T> &c) const { return sqrt(c.real() * c.real() + c.imag() * c.imag()); }
+  T abs2(const Kokkos::complex<T> &c) const { return c.real() * c.real() + c.imag() * c.imag(); }
 
   KOKKOS_INLINE_FUNCTION
-  T abs(const volatile Kokkos::complex<T> &c) volatile { return sqrt(c.real() * c.real() + c.imag() * c.imag()); }
+  T abs2(const volatile Kokkos::complex<T> &c) volatile { return c.real() * c.real() + c.imag() * c.imag(); }
 };
 
 template <class T, class Space>
@@ -133,7 +133,7 @@ std::complex<T> complex_min<T>::run() {
   Kokkos::parallel_reduce(
       N,
       KOKKOS_LAMBDA(const int i, reducer_type<T> &smallest) {
-        smallest.c = (my_abs(smallest.c) < my_abs(C(i))) ? smallest.c : C(i);
+        smallest.c = (my_abs2(smallest.c) < my_abs2(C(i))) ? smallest.c : C(i);
       },
       ComplexMin<T, Kokkos::HostSpace>(smallest));
 

@@ -56,7 +56,11 @@ template <typename T>
 struct minabs {
 public:
   std::complex<T> operator()(const std::complex<T> &lhs, const std::complex<T> &rhs) const {
-    return (abs(lhs) < abs(rhs)) ? lhs : rhs;
+    return (abs2(lhs) < abs2(rhs)) ? lhs : rhs;
+  }
+private:
+  static inline T abs2(const std::complex<T> &x) {
+    return (x.real() * x.real()) + (x.imag() * x.imag());
   }
 };
 

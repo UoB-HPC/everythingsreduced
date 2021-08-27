@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <limits>
+#include <new>
 
 #include <omp.h>
 
@@ -32,25 +33,37 @@ complex_min<T>::~complex_min() = default;
 template <typename T>
 void complex_min<T>::setup() {
 
-  pdata->C = new std::complex<T>[N];
+  // Using new std::complex<T>[N] here would initialize memory
+  // Using placement new instead allows initialization to be parallelized
+  // This improves performance on NUMA systems (due to first-touch policy)
+  pdata->C = (std::complex<T>*) malloc(N * sizeof(std::complex<T>));
 
   std::complex<T> *C = pdata->C;
 
-#pragma omp parallel for
+#pragma omp parallel for simd
   for (long i = 0; i < N; ++i) {
     T v = std::abs(static_cast<T>(N) / 2.0 - static_cast<T>(i));
+    new (C + i) std::complex<T>;
     C[i] = std::complex<T>{v, v};
   }
 }
 
 template <typename T>
 void complex_min<T>::teardown() {
-  delete[] pdata->C;
+  for (long i = 0; i < N; ++i) {
+    (pdata->C + i)->~complex();
+  }
+  free(pdata->C);
 }
 
 template <typename T>
-std::complex<T> minimum(const std::complex<T> a, const std::complex<T> b) {
-  return std::abs(a) < std::abs(b) ? a : b;
+inline T abs2(const std::complex<T> &x) {
+  return (x.real() * x.real()) + (x.imag() * x.imag());
+}
+
+template <typename T>
+inline std::complex<T> minimum(const std::complex<T> &a, const std::complex<T> &b) {
+  return (abs2(a) < abs2(b)) ? a : b;
 }
 
 template <typename T>
@@ -63,7 +76,7 @@ std::complex<T> complex_min<T>::run() {
 
 #pragma omp declare reduction(my_complex_min : std::complex <T> : omp_out = minimum(omp_out, omp_in))
 
-#pragma omp parallel for reduction(my_complex_min : smallest)
+#pragma omp parallel for simd reduction(my_complex_min : smallest)
   for (long i = 0; i < N; ++i) {
     smallest = minimum(smallest, C[i]);
   }
