@@ -1,0 +1,2476 @@
+Fri Aug 27 14:15:00 GMT 2021
+clx-001
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Intel 19.1.3.20200925
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /cm/shared/apps/intel/compilers_and_libraries/2020.4.304/linux/bin/intel64/icpc - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found OpenMP_CXX: -qopenmp (found version "5.0") 
+-- Found OpenMP: TRUE (found version "5.0")  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_omp
+Scanning dependencies of target implement_omp
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_sum_soa.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_min.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_sum.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/dot.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/describe.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/field_summary.cpp.o
+[ 77%] Linking CXX static library libimplement_omp.a
+[ 77%] Built target implement_omp
+Scanning dependencies of target Reduced
+[ 88%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 40 threads.
+
+ Dot Product
+  Constructor: 14.3628
+  Setup:       258.924
+  Run:         7301.68
+  Verify:      0.000369
+  Teardown:    40.8446
+
+  Sustained GB/s: 235.287
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 40 threads.
+
+ Dot Product
+  Constructor: 13.2733
+  Setup:       260.14
+  Run:         7310.71
+  Verify:      0.000422
+  Teardown:    42.6748
+
+  Sustained GB/s: 234.996
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 40 threads.
+
+ Dot Product
+  Constructor: 14.3753
+  Setup:       259.352
+  Run:         7306.75
+  Verify:      0.000412
+  Teardown:    41.0323
+
+  Sustained GB/s: 235.123
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 40 threads.
+
+ Dot Product
+  Constructor: 11.2467
+  Setup:       260.136
+  Run:         7317.58
+  Verify:      0.000496
+  Teardown:    40.9803
+
+  Sustained GB/s: 234.775
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 40 threads.
+
+ Dot Product
+  Constructor: 16.1774
+  Setup:       260.519
+  Run:         7315.36
+  Verify:      0.000354
+  Teardown:    41.0739
+
+  Sustained GB/s: 234.846
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 14.6948
+  Setup:       218.891
+  Run:         7062.8
+  Verify:      0.021568
+  Teardown:    42.6055
+
+  Sustained GB/s: 243.244
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 8.54564
+  Setup:       218.456
+  Run:         7066.5
+  Verify:      0.01288
+  Teardown:    42.5836
+
+  Sustained GB/s: 243.117
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 13.4433
+  Setup:       217.613
+  Run:         7113.24
+  Verify:      0.01145
+  Teardown:    40.8884
+
+  Sustained GB/s: 241.519
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 13.3513
+  Setup:       219.132
+  Run:         7189.25
+  Verify:      0.011748
+  Teardown:    40.8878
+
+  Sustained GB/s: 238.966
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 13.439
+  Setup:       218.835
+  Run:         7203.36
+  Verify:      0.010207
+  Teardown:    40.9404
+
+  Sustained GB/s: 238.498
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 8.70975
+  Setup:       262.249
+  Run:         7330.67
+  Verify:      0.001221
+  Teardown:    41.0861
+
+  Sustained GB/s: 234.356
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 14.2445
+  Setup:       263.532
+  Run:         7314.2
+  Verify:      0.001328
+  Teardown:    41.0527
+
+  Sustained GB/s: 234.884
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 9.22663
+  Setup:       265.357
+  Run:         7337.43
+  Verify:      0.001251
+  Teardown:    42.6068
+
+  Sustained GB/s: 234.14
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 13.4266
+  Setup:       262.26
+  Run:         7315.04
+  Verify:      0.001241
+  Teardown:    41.0542
+
+  Sustained GB/s: 234.857
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 40 threads.
+
+ Complex Sum
+  Constructor: 13.262
+  Setup:       263.961
+  Run:         7319.32
+  Verify:      0.001312
+  Teardown:    41.0545
+
+  Sustained GB/s: 234.719
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 40 threads.
+
+ Complex Min
+  Constructor: 12.2963
+  Setup:       222.685
+  Run:         10901.2
+  Verify:      0.006863
+  Teardown:    40.9937
+
+  Sustained GB/s: 157.596
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 40 threads.
+
+ Complex Min
+  Constructor: 13.4933
+  Setup:       222.05
+  Run:         10887
+  Verify:      0.006697
+  Teardown:    40.8424
+
+  Sustained GB/s: 157.801
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 40 threads.
+
+ Complex Min
+  Constructor: 10.4834
+  Setup:       222.054
+  Run:         10883.5
+  Verify:      0.005873
+  Teardown:    40.9676
+
+  Sustained GB/s: 157.853
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 40 threads.
+
+ Complex Min
+  Constructor: 13.4036
+  Setup:       222.659
+  Run:         10913.7
+  Verify:      0.006295
+  Teardown:    40.8289
+
+  Sustained GB/s: 157.415
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 40 threads.
+
+ Complex Min
+  Constructor: 13.4297
+  Setup:       222.81
+  Run:         10893.3
+  Verify:      0.006726
+  Teardown:    40.7921
+
+  Sustained GB/s: 157.711
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 40 threads.
+
+ Field Summary
+  Constructor: 10.7773
+  Setup:       13.4103
+  Run:         330.481
+  Verify:      0.001425
+  Teardown:    2.88581
+
+  Sustained GB/s: 214.207
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 40 threads.
+
+ Field Summary
+  Constructor: 13.524
+  Setup:       13.3109
+  Run:         331.746
+  Verify:      0.00118
+  Teardown:    2.91416
+
+  Sustained GB/s: 213.39
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 40 threads.
+
+ Field Summary
+  Constructor: 13.036
+  Setup:       13.3978
+  Run:         332.587
+  Verify:      0.001616
+  Teardown:    2.90442
+
+  Sustained GB/s: 212.85
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 40 threads.
+
+ Field Summary
+  Constructor: 9.46257
+  Setup:       13.2501
+  Run:         332.052
+  Verify:      0.001188
+  Teardown:    2.94435
+
+  Sustained GB/s: 213.193
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 40 threads.
+
+ Field Summary
+  Constructor: 9.76494
+  Setup:       13.3522
+  Run:         328.918
+  Verify:      0.00167
+  Teardown:    2.91824
+
+  Sustained GB/s: 215.224
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 40 threads.
+
+ Describe
+  Constructor: 10.444
+  Setup:       109.093
+  Run:         13649.2
+  Verify:      1058.33
+  Teardown:    18.7949
+
+  Sustained GB/s: 125.867
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 40 threads.
+
+ Describe
+  Constructor: 14.6732
+  Setup:       109.215
+  Run:         13477.4
+  Verify:      1055.55
+  Teardown:    18.9024
+
+  Sustained GB/s: 127.471
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 40 threads.
+
+ Describe
+  Constructor: 14.0438
+  Setup:       108.703
+  Run:         13313
+  Verify:      1054.06
+  Teardown:    18.9565
+
+  Sustained GB/s: 129.046
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 40 threads.
+
+ Describe
+  Constructor: 14.1297
+  Setup:       108.593
+  Run:         13302.9
+  Verify:      1055.31
+  Teardown:    18.8684
+
+  Sustained GB/s: 129.144
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 40 threads.
+
+ Describe
+  Constructor: 17.7351
+  Setup:       109.432
+  Run:         13368.8
+  Verify:      1055.44
+  Teardown:    18.8776
+
+  Sustained GB/s: 128.507
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Intel 19.1.3.20200925
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /cm/shared/apps/intel/compilers_and_libraries/2020.4.304/linux/bin/intel64/icpc - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Setting default Kokkos CXX standard to 14
+-- Setting policy CMP0074 to use <Package>_ROOT variables
+-- The project name is: Kokkos
+-- Using -std=gnu++14 for C++14 extensions as feature
+-- Built-in Execution Spaces:
+--     Device Parallel: NoTypeDefined
+--     Host Parallel: Kokkos::OpenMP
+--       Host Serial: NONE
+-- 
+-- Architectures:
+--  SKX
+-- Found TPLLIBDL: /usr/lib64/libdl.so  
+-- Kokkos Devices: OPENMP, Kokkos Backends: OPENMP
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_kokkos
+Scanning dependencies of target kokkoscore
+[ 16%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Core.cpp.o
+[ 16%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_CPUDiscovery.cpp.o
+[ 25%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_ExecPolicy.cpp.o
+[ 41%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Error.cpp.o
+[ 48%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostBarrier.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Spinwait.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Stacktrace.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Profiling.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_hwloc.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace_deepcopy.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostThreadTeam.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemorySpace.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_NumericTraits.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial_Task.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_SharedAlloc.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemoryPool.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/OpenMP/Kokkos_OpenMP_Exec.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/OpenMP/Kokkos_OpenMP_Task.cpp.o
+[ 64%] Linking CXX static library libkokkoscore.a
+[ 64%] Built target kokkoscore
+Scanning dependencies of target kokkoscontainers
+[ 67%] Building CXX object kokkos-3.4.01/containers/src/CMakeFiles/kokkoscontainers.dir/impl/Kokkos_UnorderedMap_impl.cpp.o
+[ 70%] Linking CXX static library libkokkoscontainers.a
+[ 70%] Built target kokkoscontainers
+Scanning dependencies of target implement_kokkos
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_min.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum_soa.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/dot.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/describe.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/field_summary.cpp.o
+[ 93%] Linking CXX static library libimplement_kokkos.a
+[ 93%] Built target implement_kokkos
+Scanning dependencies of target Reduced
+[ 96%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 12.3028
+  Setup:       373.561
+  Run:         7657.72
+  Verify:      0.000392
+  Teardown:    41.1483
+
+  Sustained GB/s: 224.347
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 14.3057
+  Setup:       377.401
+  Run:         7767.27
+  Verify:      0.000419
+  Teardown:    41.1899
+
+  Sustained GB/s: 221.183
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 20.8072
+  Setup:       376.594
+  Run:         7753.43
+  Verify:      0.000424
+  Teardown:    41.1837
+
+  Sustained GB/s: 221.578
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 13.0552
+  Setup:       378.527
+  Run:         7736.35
+  Verify:      0.000394
+  Teardown:    41.235
+
+  Sustained GB/s: 222.067
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 8.36599
+  Setup:       378.664
+  Run:         7818.9
+  Verify:      0.000408
+  Teardown:    41.1891
+
+  Sustained GB/s: 219.722
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 13.4196
+  Setup:       398.38
+  Run:         7663.47
+  Verify:      0.018754
+  Teardown:    60.3647
+
+  Sustained GB/s: 224.179
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 7.89314
+  Setup:       402.822
+  Run:         7654.71
+  Verify:      0.019661
+  Teardown:    60.3904
+
+  Sustained GB/s: 224.435
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 9.63766
+  Setup:       400.956
+  Run:         7470.58
+  Verify:      0.017964
+  Teardown:    60.65
+
+  Sustained GB/s: 229.967
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 13.6184
+  Setup:       402.992
+  Run:         7499.66
+  Verify:      0.016489
+  Teardown:    60.8103
+
+  Sustained GB/s: 229.075
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 9.37981
+  Setup:       399.223
+  Run:         7498.24
+  Verify:      0.017729
+  Teardown:    60.6823
+
+  Sustained GB/s: 229.119
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 13.8552
+  Setup:       374.735
+  Run:         8161.7
+  Verify:      0.00117
+  Teardown:    42.3997
+
+  Sustained GB/s: 210.494
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 13.3152
+  Setup:       375.863
+  Run:         8147.05
+  Verify:      0.001175
+  Teardown:    42.8212
+
+  Sustained GB/s: 210.872
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 13.3012
+  Setup:       376.4
+  Run:         8163.2
+  Verify:      0.00113
+  Teardown:    42.5246
+
+  Sustained GB/s: 210.455
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 13.3593
+  Setup:       376.684
+  Run:         8151.02
+  Verify:      0.001158
+  Teardown:    42.5215
+
+  Sustained GB/s: 210.77
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 13.6245
+  Setup:       376.68
+  Run:         8150.14
+  Verify:      0.001123
+  Teardown:    42.5396
+
+  Sustained GB/s: 210.792
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 9.80409
+  Setup:       404.581
+  Run:         7905.68
+  Verify:      0.019366
+  Teardown:    62.4652
+
+  Sustained GB/s: 217.311
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 9.14856
+  Setup:       398.413
+  Run:         7883.53
+  Verify:      0.020312
+  Teardown:    60.567
+
+  Sustained GB/s: 217.921
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 9.37885
+  Setup:       400.927
+  Run:         7890.5
+  Verify:      0.020336
+  Teardown:    60.582
+
+  Sustained GB/s: 217.729
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 13.5464
+  Setup:       402.579
+  Run:         7980.14
+  Verify:      0.020683
+  Teardown:    60.5926
+
+  Sustained GB/s: 215.283
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 13.541
+  Setup:       402.334
+  Run:         8019.99
+  Verify:      0.020449
+  Teardown:    60.6163
+
+  Sustained GB/s: 214.213
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 11.866
+  Setup:       17.9304
+  Run:         340.485
+  Verify:      0.001668
+  Teardown:    3.07286
+
+  Sustained GB/s: 207.913
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 11.8823
+  Setup:       18.0705
+  Run:         344.465
+  Verify:      0.001527
+  Teardown:    3.0359
+
+  Sustained GB/s: 205.51
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 13.6657
+  Setup:       18.1664
+  Run:         341.987
+  Verify:      0.001479
+  Teardown:    3.06216
+
+  Sustained GB/s: 207
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 12.1194
+  Setup:       18.2614
+  Run:         343.455
+  Verify:      0.001315
+  Teardown:    3.04293
+
+  Sustained GB/s: 206.115
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 14.3748
+  Setup:       18.14
+  Run:         341.788
+  Verify:      0.001807
+  Teardown:    3.04159
+
+  Sustained GB/s: 207.12
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 7.17985
+  Setup:       188.212
+  Run:         14197.9
+  Verify:      652.365
+  Teardown:    18.929
+
+  Sustained GB/s: 121.003
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 13.7843
+  Setup:       188.448
+  Run:         14048.2
+  Verify:      652.672
+  Teardown:    18.8443
+
+  Sustained GB/s: 122.292
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 9.41629
+  Setup:       187.93
+  Run:         14021.9
+  Verify:      652.309
+  Teardown:    18.9481
+
+  Sustained GB/s: 122.521
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 13.5763
+  Setup:       188.466
+  Run:         14023.6
+  Verify:      655.574
+  Teardown:    18.8638
+
+  Sustained GB/s: 122.507
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 13.6342
+  Setup:       188.112
+  Run:         14009.4
+  Verify:      653.827
+  Teardown:    18.9817
+
+  Sustained GB/s: 122.631
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Intel 19.1.3.20200925
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /cm/shared/apps/intel/compilers_and_libraries/2020.4.304/linux/bin/intel64/icpc - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The C compiler identification is Intel 19.1.3.20200925
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /cm/shared/apps/intel/compilers_and_libraries/2020.4.304/linux/bin/intel64/icc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test COMPILER_SUPPORTS_c++17
+-- Performing Test COMPILER_SUPPORTS_c++17 - Success
+-- BLT Version: 0.4.1
+-- CMake Version: 3.18.3
+-- CMake Executable: /lustre/projects/bristol/modules/cmake/3.18.3/bin/cmake
+-- Found Git: /home/br-jprice/modules/git/2.13.3/bin/git (found version "2.13.3") 
+-- Git Support is ON
+-- Git Executable: /home/br-jprice/modules/git/2.13.3/bin/git
+-- Git Version: 2.13.3
+-- MPI Support is OFF
+-- OpenMP Support is On
+-- Found OpenMP_C: -qopenmp (found version "5.0") 
+-- Found OpenMP_CXX: -qopenmp (found version "5.0") 
+-- Found OpenMP: TRUE (found version "5.0")  
+-- OpenMP Compile Flags: -qopenmp
+-- OpenMP Link Flags:    -qopenmp
+-- CUDA Support is Off
+-- HIP Support is OFF
+-- HCC Support is OFF
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Sphinx support is ON
+-- Failed to locate Sphinx executable (missing: SPHINX_EXECUTABLE) 
+-- Valgrind support is ON
+-- Found Valgrind: /bin/valgrind  
+-- AStyle support is ON
+-- Failed to locate AStyle executable (missing: ASTYLE_EXECUTABLE) 
+-- ClangFormat support is ON
+-- Found ClangFormat: /opt/cray/pe/cce/11.0.4/cce-clang/x86_64/bin/clang-format  
+-- Uncrustify support is ON
+-- Failed to locate Uncrustify executable (missing: UNCRUSTIFY_EXECUTABLE) 
+-- Yapf support is ON
+-- Failed to locate Yapf executable (missing: YAPF_EXECUTABLE) 
+-- CMakeFormat support is ON
+-- Failed to locate CMakeFormat executable (missing: CMAKEFORMAT_EXECUTABLE) 
+-- Cppcheck support is ON
+-- Failed to locate Cppcheck executable (missing: CPPCHECK_EXECUTABLE) 
+-- ClangQuery support is ON
+-- Failed to locate ClangQuery executable (missing: CLANGQUERY_EXECUTABLE) 
+-- ClangTidy support is ON
+-- Failed to locate ClangTidy executable (missing: CLANGTIDY_EXECUTABLE) 
+-- C Compiler family is Intel
+-- Adding optional BLT definitions and compiler flags
+-- Standard C++17 selected
+-- Enabling all compiler warnings on all targets.
+-- Fortran support disabled.
+-- CMAKE_C_FLAGS flags are:    -Wall -Wextra 
+-- CMAKE_CXX_FLAGS flags are:       -Wall -Wextra 
+-- CMAKE_EXE_LINKER_FLAGS flags are:  
+-- OpenMP Enabled
+-- Using RAJA CAMP submodule.
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for std::aligned_alloc
+-- Looking for std::aligned_alloc - not found
+-- Looking for _mm_malloc
+-- Looking for _mm_malloc - found
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_raja
+Scanning dependencies of target RAJA
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/AlignedRangeIndexSetBuilders.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/DepGraphNode.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/LockFreeIndexSetBuilders.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_CUDA.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_HIP.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_SYCL.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/PluginStrategy.cpp.o
+[ 47%] Linking CXX static library lib/libRAJA.a
+[ 47%] Built target RAJA
+Scanning dependencies of target implement_raja
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_min.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum_soa.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/describe.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/dot.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/field_summary.cpp.o
+[ 88%] Linking CXX static library raja/lib/libimplement_raja.a
+[ 88%] Built target implement_raja
+Scanning dependencies of target Reduced
+[ 94%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.001204
+  Setup:       268.59
+  Run:         7605.03
+  Verify:      0.000409
+  Teardown:    41.5165
+
+  Sustained GB/s: 225.902
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.001515
+  Setup:       266.246
+  Run:         7660.94
+  Verify:      0.000439
+  Teardown:    41.3852
+
+  Sustained GB/s: 224.253
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.001559
+  Setup:       263.621
+  Run:         7692.02
+  Verify:      0.000593
+  Teardown:    41.3997
+
+  Sustained GB/s: 223.347
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.001526
+  Setup:       263.531
+  Run:         7735.6
+  Verify:      0.000452
+  Teardown:    41.5275
+
+  Sustained GB/s: 222.088
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.001536
+  Setup:       265.558
+  Run:         7854.13
+  Verify:      0.000411
+  Teardown:    41.3774
+
+  Sustained GB/s: 218.737
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000141
+  Setup:       4259.84
+  Run:         42032
+  Verify:      0.031544
+  Teardown:    38.1695
+
+  Sustained GB/s: 40.8733
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000139
+  Setup:       4272.64
+  Run:         41766.4
+  Verify:      0.030623
+  Teardown:    38.392
+
+  Sustained GB/s: 41.1332
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000157
+  Setup:       4274.26
+  Run:         42028
+  Verify:      0.015824
+  Teardown:    38.5065
+
+  Sustained GB/s: 40.8772
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000135
+  Setup:       4277.82
+  Run:         41785.5
+  Verify:      0.038456
+  Teardown:    38.2323
+
+  Sustained GB/s: 41.1144
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000143
+  Setup:       4275.29
+  Run:         41563.6
+  Verify:      0.030216
+  Teardown:    38.8393
+
+  Sustained GB/s: 41.3339
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000152
+  Setup:       268.893
+  Run:         7774.74
+  Verify:      0.00125
+  Teardown:    41.6582
+
+  Sustained GB/s: 220.97
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000137
+  Setup:       270.187
+  Run:         7634.14
+  Verify:      0.001043
+  Teardown:    41.4966
+
+  Sustained GB/s: 225.04
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00016
+  Setup:       266.975
+  Run:         7797.35
+  Verify:      0.001091
+  Teardown:    41.5629
+
+  Sustained GB/s: 220.33
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000141
+  Setup:       266.58
+  Run:         7636.54
+  Verify:      0.00142
+  Teardown:    41.5144
+
+  Sustained GB/s: 224.969
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000156
+  Setup:       273.389
+  Run:         7628.77
+  Verify:      0.001335
+  Teardown:    41.5995
+
+  Sustained GB/s: 225.198
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.001717
+  Setup:       21.3316
+  Run:         372.558
+  Verify:      0.001637
+  Teardown:    3.05703
+
+  Sustained GB/s: 190.014
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.001752
+  Setup:       20.4114
+  Run:         365.29
+  Verify:      0.001182
+  Teardown:    3.04207
+
+  Sustained GB/s: 193.794
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.001747
+  Setup:       19.7207
+  Run:         364.112
+  Verify:      0.001292
+  Teardown:    3.04668
+
+  Sustained GB/s: 194.421
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.001746
+  Setup:       23.039
+  Run:         361.956
+  Verify:      0.001832
+  Teardown:    3.06841
+
+  Sustained GB/s: 195.58
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.001801
+  Setup:       26.1748
+  Run:         362.258
+  Verify:      0.001329
+  Teardown:    3.01817
+
+  Sustained GB/s: 195.417
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.001678
+  Setup:       120.359
+  Run:         15330.5
+  Verify:      1054.92
+  Teardown:    19.0896
+
+  Sustained GB/s: 112.063
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.001708
+  Setup:       172.366
+  Run:         15287.2
+  Verify:      1056.6
+  Teardown:    18.9469
+
+  Sustained GB/s: 112.381
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.001786
+  Setup:       117.679
+  Run:         15280
+  Verify:      1054.28
+  Teardown:    19.0319
+
+  Sustained GB/s: 112.433
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.006172
+  Setup:       115.939
+  Run:         15308.2
+  Verify:      1055.57
+  Teardown:    19.0603
+
+  Sustained GB/s: 112.227
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.001636
+  Setup:       116.229
+  Run:         15470.7
+  Verify:      1084.51
+  Teardown:    19.0285
+
+  Sustained GB/s: 111.048
+--------------------------------------------------------------------------------
+ 
+:: initializing oneAPI environment ...
+   run_clx.sh: BASH_VERSION = 4.4.19(1)-release
+:: advisor -- latest
+:: ccl -- latest
+:: clck -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: inspector -- latest
+:: intelpython -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: ipp -- latest
+:: itac -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vpl -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Clang 13.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/br-tdeakin/intel/oneapi/compiler/2021.3.0/linux/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_onedpl
+Scanning dependencies of target implement_oneDPL
+[ 66%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/complex_min.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/complex_sum_soa.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/complex_sum.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/describe.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/dot.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/field_summary.cpp.o
+[ 77%] Linking CXX static library libimplement_oneDPL.a
+[ 77%] Built target implement_oneDPL
+Scanning dependencies of target Reduced
+[ 88%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 0.126217
+  Setup:       353.273
+  Run:         15961.6
+  Verify:      0.014122
+  Teardown:    39.1204
+
+  Sustained GB/s: 107.632
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 0.105207
+  Setup:       353.849
+  Run:         16332.2
+  Verify:      0.014587
+  Teardown:    39.4397
+
+  Sustained GB/s: 105.19
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 0.111574
+  Setup:       360.381
+  Run:         16206
+  Verify:      0.032369
+  Teardown:    39.2525
+
+  Sustained GB/s: 106.009
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 0.303316
+  Setup:       357.187
+  Run:         16315.2
+  Verify:      0.014033
+  Teardown:    38.7464
+
+  Sustained GB/s: 105.3
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 0.127378
+  Setup:       353.841
+  Run:         15979.9
+  Verify:      0.01825
+  Teardown:    40.0022
+
+  Sustained GB/s: 107.509
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.296076
+  Setup:       471.213
+  Run:         16511.1
+  Verify:      0.033334
+  Teardown:    39.6953
+
+  Sustained GB/s: 104.05
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.114304
+  Setup:       474.872
+  Run:         16662
+  Verify:      0.017917
+  Teardown:    38.8457
+
+  Sustained GB/s: 103.108
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.113272
+  Setup:       472.617
+  Run:         17229
+  Verify:      0.020078
+  Teardown:    38.6888
+
+  Sustained GB/s: 99.7151
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.1117
+  Setup:       467.83
+  Run:         16382.1
+  Verify:      0.01972
+  Teardown:    39.2587
+
+  Sustained GB/s: 104.87
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.109741
+  Setup:       472.658
+  Run:         16503.7
+  Verify:      0.019474
+  Teardown:    38.8485
+
+  Sustained GB/s: 104.097
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.127422
+  Setup:       523.735
+  Run:         16702
+  Verify:      0.031714
+  Teardown:    38.4303
+
+  Sustained GB/s: 102.861
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.140154
+  Setup:       518.426
+  Run:         16555.9
+  Verify:      0.023429
+  Teardown:    39.6799
+
+  Sustained GB/s: 103.769
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.291264
+  Setup:       522.512
+  Run:         16471.1
+  Verify:      0.02508
+  Teardown:    40.9263
+
+  Sustained GB/s: 104.303
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.126253
+  Setup:       522.873
+  Run:         16275.8
+  Verify:      0.014777
+  Teardown:    39.7594
+
+  Sustained GB/s: 105.555
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 0.110559
+  Setup:       524.167
+  Run:         16619.5
+  Verify:      0.015316
+  Teardown:    40.1111
+
+  Sustained GB/s: 103.372
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 0.223894
+  Setup:       577.144
+  Run:         16508.4
+  Verify:      0.022868
+  Teardown:    39.504
+
+  Sustained GB/s: 104.068
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 0.116059
+  Setup:       579.365
+  Run:         16630
+  Verify:      0.018837
+  Teardown:    39.5225
+
+  Sustained GB/s: 103.307
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 0.122295
+  Setup:       578.988
+  Run:         16811.7
+  Verify:      0.033436
+  Teardown:    39.3492
+
+  Sustained GB/s: 102.19
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 0.279083
+  Setup:       587.297
+  Run:         16943.8
+  Verify:      0.020846
+  Teardown:    40.0816
+
+  Sustained GB/s: 101.393
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 0.116788
+  Setup:       578.713
+  Run:         16774.9
+  Verify:      0.018724
+  Teardown:    39.9765
+
+  Sustained GB/s: 102.414
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 0.136633
+  Setup:       384.163
+  Run:         16461.3
+  Verify:      1107.56
+  Teardown:    20.6381
+
+  Sustained GB/s: 104.365
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 0.139918
+  Setup:       391.179
+  Run:         17059.3
+  Verify:      1106.82
+  Teardown:    21.1322
+
+  Sustained GB/s: 100.707
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 0.114297
+  Setup:       384.656
+  Run:         16897.4
+  Verify:      1108.29
+  Teardown:    19.9499
+
+  Sustained GB/s: 101.672
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 0.132612
+  Setup:       383.463
+  Run:         16424.3
+  Verify:      1107.63
+  Teardown:    20.0259
+
+  Sustained GB/s: 104.601
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 0.110354
+  Setup:       382.595
+  Run:         16588.1
+  Verify:      1108.28
+  Teardown:    21.6162
+
+  Sustained GB/s: 103.568
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Clang 14.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/br-tdeakin/codes/everythingsreduced/src/dpcpp_compiler/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_sycl
+Scanning dependencies of target implement_sycl
+[ 22%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/complex_min.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/complex_sum_soa.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/complex_sum.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/describe.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/dot.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/field_summary.cpp.o
+[ 77%] Linking CXX static library libimplement_sycl.a
+[ 77%] Built target implement_sycl
+Scanning dependencies of target Reduced
+[ 88%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 256.894
+  Setup:       413.867
+  Run:         24048
+  Verify:      0.02305
+  Teardown:    38.9147
+
+  Sustained GB/s: 71.44
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 273.525
+  Setup:       407.645
+  Run:         24170.2
+  Verify:      0.023183
+  Teardown:    39.4009
+
+  Sustained GB/s: 71.0788
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 253.205
+  Setup:       412.075
+  Run:         24034.1
+  Verify:      0.024384
+  Teardown:    38.7044
+
+  Sustained GB/s: 71.4814
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 228.352
+  Setup:       411.338
+  Run:         23721.4
+  Verify:      0.022419
+  Teardown:    39.4359
+
+  Sustained GB/s: 72.4236
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Dot Product
+  Constructor: 261.781
+  Setup:       407.537
+  Run:         24075.9
+  Verify:      0.030036
+  Teardown:    38.4711
+
+  Sustained GB/s: 71.3572
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 262.365
+  Setup:       571.697
+  Run:         21441.4
+  Verify:      0.033512
+  Teardown:    38.1422
+
+  Sustained GB/s: 80.1249
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 239.887
+  Setup:       574.626
+  Run:         21367.4
+  Verify:      0.021506
+  Teardown:    38.1114
+
+  Sustained GB/s: 80.4021
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 229.871
+  Setup:       574.789
+  Run:         21804.2
+  Verify:      0.018071
+  Teardown:    38.4059
+
+  Sustained GB/s: 78.7916
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 217.659
+  Setup:       571.983
+  Run:         21447.5
+  Verify:      0.014937
+  Teardown:    38.3299
+
+  Sustained GB/s: 80.1019
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 246.208
+  Setup:       576.744
+  Run:         21268.3
+  Verify:      0.017142
+  Teardown:    37.6306
+
+  Sustained GB/s: 80.7771
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 237.286
+  Setup:       1265.05
+  Run:         21832
+  Verify:      0.013406
+  Teardown:    39.1163
+
+  Sustained GB/s: 78.6912
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 199.394
+  Setup:       1279.3
+  Run:         21897.9
+  Verify:      0.019947
+  Teardown:    39.6532
+
+  Sustained GB/s: 78.4545
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 218.389
+  Setup:       1269.73
+  Run:         21769
+  Verify:      0.013857
+  Teardown:    39.385
+
+  Sustained GB/s: 78.9188
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 252.846
+  Setup:       1274.46
+  Run:         21890.5
+  Verify:      0.01286
+  Teardown:    39.5052
+
+  Sustained GB/s: 78.4808
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Sum
+  Constructor: 261.952
+  Setup:       1273.31
+  Run:         21828.8
+  Verify:      0.013564
+  Teardown:    40.2664
+
+  Sustained GB/s: 78.7028
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 228.381
+  Setup:       888.447
+  Run:         38901.8
+  Verify:      0.038613
+  Teardown:    38.4305
+
+  Sustained GB/s: 44.1622
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 232.181
+  Setup:       877.723
+  Run:         38787.5
+  Verify:      0.039764
+  Teardown:    38.0474
+
+  Sustained GB/s: 44.2922
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 318.584
+  Setup:       875.735
+  Run:         39021.5
+  Verify:      0.020962
+  Teardown:    38.1624
+
+  Sustained GB/s: 44.0266
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 213.016
+  Setup:       886.368
+  Run:         39252.9
+  Verify:      0.036527
+  Teardown:    38.1527
+
+  Sustained GB/s: 43.7671
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Complex Min
+  Constructor: 244.422
+  Setup:       882.838
+  Run:         38864
+  Verify:      0.03536
+  Teardown:    37.8489
+
+  Sustained GB/s: 44.2051
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Field Summary
+  Constructor: 274.478
+  Setup:       957.363
+  Run:         3324.64
+  Verify:      0.001912
+  Teardown:    6.15993
+
+  Sustained GB/s: 21.2929
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Field Summary
+  Constructor: 248.8
+  Setup:       959.695
+  Run:         3322.33
+  Verify:      0.001815
+  Teardown:    5.26339
+
+  Sustained GB/s: 21.3077
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Field Summary
+  Constructor: 234.358
+  Setup:       962.555
+  Run:         3322.5
+  Verify:      0.001831
+  Teardown:    5.1939
+
+  Sustained GB/s: 21.3066
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Field Summary
+  Constructor: 289.05
+  Setup:       961.84
+  Run:         3317.77
+  Verify:      0.001624
+  Teardown:    5.4016
+
+  Sustained GB/s: 21.337
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Field Summary
+  Constructor: 259.01
+  Setup:       960.167
+  Run:         3326.73
+  Verify:      0.001479
+  Teardown:    5.30828
+
+  Sustained GB/s: 21.2795
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 250.445
+  Setup:       726.642
+  Run:         101731
+  Verify:      1106.97
+  Teardown:    20.2975
+
+  Sustained GB/s: 16.8875
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 240.315
+  Setup:       731.863
+  Run:         102183
+  Verify:      1106.47
+  Teardown:    21.0431
+
+  Sustained GB/s: 16.8129
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 244.205
+  Setup:       730.044
+  Run:         102668
+  Verify:      1107.85
+  Teardown:    21.4822
+
+  Sustained GB/s: 16.7334
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 252.727
+  Setup:       724.6
+  Run:         102776
+  Verify:      1107.41
+  Teardown:    20.1486
+
+  Sustained GB/s: 16.7158
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+
+ Describe
+  Constructor: 255.159
+  Setup:       731.912
+  Run:         102468
+  Verify:      1108.37
+  Teardown:    21.2113
+
+  Sustained GB/s: 16.7661
+--------------------------------------------------------------------------------

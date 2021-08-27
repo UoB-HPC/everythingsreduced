@@ -2,8 +2,13 @@
 # Copyright (c) 2021 Everything's Reduced authors
 # SPDX-License-Identifier: MIT
 
+date
+hostname
+
 module load cmake/3.18.3
 module load intel/compiler/64/2020/19.1.3
+
+runs=5
 
 build=true
 
@@ -23,7 +28,9 @@ fi
 
 if [ -f ./build_omp/Reduced ]; then
   for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
-    ./build_omp/Reduced $b 1gib
+    for i in $(seq 1 $runs); do
+      ./build_omp/Reduced $b 1gib
+    done
   done
 else
   echo "Build failed"
@@ -46,7 +53,9 @@ fi
 
 if [ -f ./build_kokkos/Reduced ]; then
   for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
-    ./build_kokkos/Reduced $b 1gib
+    for i in $(seq 1 $runs); do
+      ./build_kokkos/Reduced $b 1gib
+    done
   done
 else
   echo "Build failed"
@@ -68,7 +77,9 @@ fi
 
 if [ -f ./build_raja/Reduced ]; then
   for b in dot complex_sum complex_sum_soa field_summary describe; do
-    ./build_raja/Reduced $b 1gib
+    for i in $(seq 1 $runs); do
+      ./build_raja/Reduced $b 1gib
+    done
   done
 else
   echo "Build failed"
@@ -88,7 +99,9 @@ fi
 
 if [ -f ./build_onedpl/Reduced ]; then
   for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
-    ./build_onedpl/Reduced $b 1gib
+    for i in $(seq 1 $runs); do
+      ./build_onedpl/Reduced $b 1gib
+    done
   done
 else
   echo "Build failed"
@@ -109,7 +122,9 @@ export SYCL_DEVICE_FILTER=cpu
 
 if [ -f ./build_sycl/Reduced ]; then
   for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
-    ./build_sycl/Reduced $b 1gib
+    for i in $(seq 1 $runs); do
+      ./build_sycl/Reduced $b 1gib
+    done
   done
 else
   echo "Build failed"
