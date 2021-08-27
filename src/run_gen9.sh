@@ -1,4 +1,6 @@
 #!/bin/bash
+# Copyright (c) 2021 Everything's Reduced authors
+# SPDX-License-Identifier: MIT
 
 # Load Intel compiler
 source ~/intel/oneapi/setvars.sh

@@ -1,4 +1,6 @@
 #!/bin/bash
+# Copyright (c) 2021 Everything's Reduced authors
+# SPDX-License-Identifier: MIT
 
 module load cmake/3.18.3
 
