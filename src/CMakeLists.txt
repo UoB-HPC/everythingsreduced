@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.17)
 
 if (MODEL STREQUAL "SYCL")
   set(CMAKE_CXX_STANDARD 17)
-elif (MODEL STREQUAL "oneDPL")
+elseif (MODEL STREQUAL "oneDPL")
   set(CMAKE_CXX_STANDARD 17)
 else()
   set(CMAKE_CXX_STANDARD 14)
