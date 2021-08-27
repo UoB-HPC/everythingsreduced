@@ -141,10 +141,12 @@ int main(int argc, char *argv[]) {
       auto r = res[i];
       if (std::abs(r - dotty.expect()) > std::numeric_limits<double>::epsilon() * 100.0) {
         std::cerr << "Dot: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << dotty.expect() << std::endl
                   << "Result: " << r << std::endl
                   << "Difference: " << std::abs(r - dotty.expect()) << std::endl
                   << "Eps: " << std::numeric_limits<double>::epsilon() << std::endl;
+        break;
       }
     }
     auto check_stop = clock::now();
@@ -188,10 +190,12 @@ int main(int argc, char *argv[]) {
       auto r = res[i];
       if (std::abs(r - csum.expect()) > std::numeric_limits<double>::epsilon() * 100.0) {
         std::cerr << "Complex Sum: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << csum.expect() << std::endl
                   << "Result: " << r << std::endl
                   << "Difference: " << std::abs(r - csum.expect()) << std::endl
                   << "Eps: " << std::numeric_limits<double>::epsilon() << std::endl;
+      break;
       }
     }
     auto check_stop = clock::now();
@@ -235,11 +239,13 @@ int main(int argc, char *argv[]) {
       if (std::abs(std::get<0>(r) - std::get<0>(csum.expect())) > std::numeric_limits<double>::epsilon() * 100.0 ||
           std::abs(std::get<1>(r) - std::get<1>(csum.expect())) > std::numeric_limits<double>::epsilon() * 100.0) {
         std::cerr << "Complex Sum SoA: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << std::get<0>(csum.expect()) << "+ i" << std::get<1>(csum.expect()) << std::endl
                   << "Result:   " << std::get<0>(r) << "+ i" << std::get<1>(r) << std::endl
                   << "Difference: " << std::abs(std::get<0>(r) - std::get<0>(csum.expect())) << " and "
                   << std::abs(std::get<1>(r) - std::get<1>(csum.expect())) << std::endl
                   << "Eps: " << std::numeric_limits<double>::epsilon() << std::endl;
+        break;
       }
     }
     auto check_stop = clock::now();
@@ -282,10 +288,12 @@ int main(int argc, char *argv[]) {
       auto r = res[i];
       if (std::abs(r - cmin.expect()) > std::numeric_limits<double>::epsilon() * 100.0) {
         std::cerr << "Complex Min: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << cmin.expect() << std::endl
                   << "Result: " << r << std::endl
                   << "Difference: " << std::abs(r - cmin.expect()) << std::endl
                   << "Eps: " << std::numeric_limits<double>::epsilon() << std::endl;
+        break;
       }
     }
     auto check_stop = clock::now();
@@ -324,37 +332,49 @@ int main(int argc, char *argv[]) {
     auto check_start = clock::now();
     field_summary::reduction_vars expected = summary.expect();
     for (int i = 0; i < NITERS; ++i) {
+      bool wrong = false;
       auto r = res[i];
       if (std::abs(r.vol - expected.vol) > 1.0E-8) {
         std::cerr << "Field Summary: vol result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << expected.vol << std::endl
                   << "Result: " << r.vol << std::endl
                   << "Difference: " << std::abs(r.vol - expected.vol) << std::endl;
+        wrong = true;
       }
       if (std::abs(r.mass - expected.mass) > 1.0E-8) {
         std::cerr << "Field Summary: mass result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << expected.mass << std::endl
                   << "Result: " << r.mass << std::endl
                   << "Difference: " << std::abs(r.mass - expected.mass) << std::endl;
+        wrong = true;
       }
       if (std::abs(r.ie - expected.ie) > 1.0E-8) {
         std::cerr << "Field Summary: ie result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << expected.ie << std::endl
                   << "Result: " << r.ie << std::endl
                   << "Difference: " << std::abs(r.ie - expected.ie) << std::endl;
+        wrong = true;
       }
       if (std::abs(r.ke - expected.ke) > 1.0E-8) {
         std::cerr << "Field Summary: ke result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << expected.ke << std::endl
                   << "Result: " << r.ke << std::endl
                   << "Difference: " << std::abs(r.ke - expected.ke) << std::endl;
+        wrong = true;
       }
       if (std::abs(r.press - expected.press) > 1.0E-8) {
         std::cerr << "Field Summary: press result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << expected.press << std::endl
                   << "Result: " << r.press << std::endl
                   << "Difference: " << std::abs(r.press - expected.press) << std::endl;
+        wrong = true;
       }
+      if (wrong) break;
     }
     auto check_stop = clock::now();
 
@@ -396,40 +416,52 @@ int main(int argc, char *argv[]) {
     describe::result expected = d.expect();
     for (int i = 0; i < NITERS; ++i) {
       auto r = res[i];
+      bool wrong = false;
       if (std::abs(r.count - expected.count) > std::numeric_limits<double>::epsilon() * 100.0) {
         std::cerr << "Describe: count result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << expected.count << std::endl
                   << "Result: " << r.count << std::endl
                   << "Difference: " << std::abs(r.count - expected.count) << std::endl;
+        wrong = true;
       }
       // Check this one to E-12 as computed analytically rather than large sum,
       // and FP errors seem to accumulate
       if (std::abs(r.mean - expected.mean) > 1.0E-12) {
         std::cerr << "Describe: mean result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << expected.mean << std::endl
                   << "Result: " << r.mean << std::endl
                   << "Difference: " << std::abs(r.mean - expected.mean) << std::endl;
+        wrong = true;
       }
       // The Sqrt operation drastically increases the error, so check to 4 d.p
       // This is equiv to checking the variance with a tolerance of 1.E-8
       if (std::abs(r.std - expected.std) > 1.0E-4) {
         std::cerr << "Describe: std result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << std::fixed << expected.std << std::endl
                   << "Result: " << std::fixed << r.std << std::endl
                   << "Difference: " << std::abs(r.std - expected.std) << std::endl;
+        wrong = true;
       }
       if (std::abs(r.min - expected.min) > std::numeric_limits<double>::epsilon() * 100.0) {
         std::cerr << "Describe: min result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << expected.min << std::endl
                   << "Result: " << r.min << std::endl
                   << "Difference: " << std::abs(r.min - expected.min) << std::endl;
+        wrong = true;
       }
       if (std::abs(r.max - expected.max) > std::numeric_limits<double>::epsilon() * 100.0) {
         std::cerr << "Describe: max result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << expected.max << std::endl
                   << "Result: " << r.max << std::endl
                   << "Difference: " << std::abs(r.max - expected.max) << std::endl;
+        wrong = true;
       }
+      if (wrong) break;
     }
     auto check_stop = clock::now();
 
