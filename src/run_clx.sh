@@ -74,8 +74,28 @@ else
 fi
 
 
-# Build SYCL
+# Build oneDPL
+# Note, need to use the release version of clang++, not nightly as we do for SYCL later
+# Build/run this before SYCL
 source $HOME/intel/oneapi/setvars.sh
+
+if $build; then
+cmake -H. -Bbuild_onedpl -DMODEL=oneDPL -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS='-fsycl -fsycl-unnamed-lambda'
+cmake --build build_onedpl --parallel
+fi
+
+if [ -f ./build_onedpl/Reduced ]; then
+  for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
+    ./build_onedpl/Reduced $b 1gib
+  done
+else
+  echo "Build failed"
+  exit 1
+fi
+
+
+
+# Build SYCL
 source dpcpp_compiler/startup.sh
 
 if $build; then
