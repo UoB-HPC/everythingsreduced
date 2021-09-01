@@ -7,6 +7,8 @@ if (MODEL STREQUAL "SYCL")
   set(CMAKE_CXX_STANDARD 17)
 elseif (MODEL STREQUAL "oneDPL")
   set(CMAKE_CXX_STANDARD 17)
+elseif (Kokkos_ENABLE_SYCL STREQUAL "On")
+  set(CMAKE_CXX_STANDARD 17)
 else()
   set(CMAKE_CXX_STANDARD 14)
 endif()
@@ -81,6 +83,12 @@ elseif (MODEL STREQUAL "oneDPL")
 
 elseif(MODEL STREQUAL "Kokkos")
   file(GLOB kokkos_bench_src CONFIGURE_DEPENDS kokkos/*.cpp)
+
+  # Complex Min breaks with some backends, so give the option to exclude it
+  if (DEFINED NO_COMPLEX_MIN)
+    list(REMOVE_ITEM kokkos_bench_src ${CMAKE_CURRENT_SOURCE_DIR}/kokkos/complex_min.cpp)
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNO_COMPLEX_MIN")
+  endif()
   add_library(implement_kokkos ${kokkos_bench_src})
 
   # Build Kokkos inline

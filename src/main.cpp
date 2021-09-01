@@ -14,7 +14,9 @@ const auto LINE = "------------------------------------------------------------"
 #include "config.hpp"
 
 // Benchmarks:
+#ifndef NO_COMPLEX_MIN
 #include "complex_min.hpp"
+#endif
 #include "complex_sum.hpp"
 #include "complex_sum_soa.hpp"
 #include "describe.hpp"
@@ -263,6 +265,7 @@ int main(int argc, char *argv[]) {
   // Run Complex Min Benchmark
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::complex_min) {
+#ifndef NO_COMPLEX_MIN
     check_for_option(argc);
     long N = get_problem_size(argv[2]);
 
@@ -305,6 +308,7 @@ int main(int argc, char *argv[]) {
     print_timing("Complex Min", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
                  static_cast<double>(NITERS)*cmin.gigabytes());
+#endif
   }
 
   //////////////////////////////////////////////////////////////////////////////
