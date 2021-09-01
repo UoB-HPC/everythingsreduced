@@ -54,12 +54,12 @@ void complex_min<T>::teardown() {
 
 #pragma omp declare target
 template <typename T>
-inline T abs2(const std::complex<T> x) {
+inline T abs2(const std::complex<T> &x) {
   return (x.real() * x.real()) + (x.imag() * x.imag());
 }
 
 template <typename T>
-inline std::complex<T> minimum(const std::complex<T> a, const std::complex<T> b) {
+inline std::complex<T> minimum(const std::complex<T> &a, const std::complex<T> &b) {
   return abs2(a) < abs2(b) ? a : b;
 }
 #pragma omp end declare target
