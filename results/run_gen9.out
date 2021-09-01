@@ -1,0 +1,4525 @@
+Wed  1 Sep 13:53:22 BST 2021
+node10
+ 
+:: initializing oneAPI environment ...
+   run_gen9.sh: BASH_VERSION = 4.4.19(1)-release
+:: advisor -- latest
+:: ccl -- latest
+:: clck -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: inspector -- latest
+:: intelpython -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: ipp -- latest
+:: itac -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vpl -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+Use $GMM_DIR to reference this GMMLib installation at /nfs/software/x86_64/intel/gmmlib/20.3.2
+Use $IGC_DIR to reference this IGC installation at /nfs/software/x86_64/intel/igc-1.0.5723
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is IntelDPCPP 13.0.0.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /nfs/home/tom/intel/oneapi/compiler/2021.3.0/linux/bin/clang++ - skipped
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /nfs/home/tom/codes/everythingsreduced/src/build_onedpl
+Scanning dependencies of target implement_oneDPL
+[ 44%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/complex_sum.cpp.o
+[ 44%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/complex_min.cpp.o
+[ 44%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/dot.cpp.o
+[ 44%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/complex_sum_soa.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/describe.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_oneDPL.dir/oneDPL/field_summary.cpp.o
+[ 77%] Linking CXX static library libimplement_oneDPL.a
+[ 77%] Built target implement_oneDPL
+Scanning dependencies of target Reduced
+[ 88%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 0.091688
+  Setup:       325.355
+  Run:         7992.44
+  Verify:      0.001487
+  Teardown:    18.3801
+
+  Sustained GB/s: 26.8689
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 0.109616
+  Setup:       323.589
+  Run:         7995.76
+  Verify:      0.00142
+  Teardown:    18.74
+
+  Sustained GB/s: 26.8578
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 0.078108
+  Setup:       327.237
+  Run:         8023.14
+  Verify:      0.0014
+  Teardown:    18.7945
+
+  Sustained GB/s: 26.7661
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 0.121418
+  Setup:       325.21
+  Run:         8016.14
+  Verify:      0.001382
+  Teardown:    18.8938
+
+  Sustained GB/s: 26.7895
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 0.113269
+  Setup:       326.206
+  Run:         8030.05
+  Verify:      0.001546
+  Teardown:    18.8061
+
+  Sustained GB/s: 26.7431
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.118307
+  Setup:       349.113
+  Run:         7586.99
+  Verify:      0.007196
+  Teardown:    18.3069
+
+  Sustained GB/s: 28.3048
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.126501
+  Setup:       354.256
+  Run:         7607.45
+  Verify:      0.00655
+  Teardown:    18.3373
+
+  Sustained GB/s: 28.2287
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.093694
+  Setup:       353.723
+  Run:         7627.79
+  Verify:      0.006982
+  Teardown:    18.3061
+
+  Sustained GB/s: 28.1534
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.121167
+  Setup:       353.361
+  Run:         7574.89
+  Verify:      0.024418
+  Teardown:    18.224
+
+  Sustained GB/s: 28.35
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.169252
+  Setup:       354.089
+  Run:         7603.45
+  Verify:      0.00862
+  Teardown:    25.5766
+
+  Sustained GB/s: 28.2436
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.061263
+  Setup:       360.526
+  Run:         7852.72
+  Verify:      0.016305
+  Teardown:    32.3813
+
+  Sustained GB/s: 27.347
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.06406
+  Setup:       376.8
+  Run:         7832.53
+  Verify:      0.017498
+  Teardown:    30.7579
+
+  Sustained GB/s: 27.4175
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.06953
+  Setup:       370.798
+  Run:         7776.69
+  Verify:      0.016518
+  Teardown:    31.1241
+
+  Sustained GB/s: 27.6144
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.059805
+  Setup:       368.686
+  Run:         7815.59
+  Verify:      0.016686
+  Teardown:    30.6622
+
+  Sustained GB/s: 27.4769
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 0.057563
+  Setup:       369.818
+  Run:         7789.04
+  Verify:      0.017307
+  Teardown:    31.0274
+
+  Sustained GB/s: 27.5706
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 0.054823
+  Setup:       389.527
+  Run:         8938.9
+  Verify:      0.012141
+  Teardown:    32.0394
+
+  Sustained GB/s: 24.024
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 0.070718
+  Setup:       391.415
+  Run:         8940.75
+  Verify:      0.011697
+  Teardown:    32.1118
+
+  Sustained GB/s: 24.019
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 0.055225
+  Setup:       392.111
+  Run:         8934.8
+  Verify:      0.01162
+  Teardown:    32.399
+
+  Sustained GB/s: 24.0351
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 0.071288
+  Setup:       391.731
+  Run:         8938.06
+  Verify:      0.012223
+  Teardown:    32.1761
+
+  Sustained GB/s: 24.0263
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 0.061858
+  Setup:       394.393
+  Run:         8922.83
+  Verify:      0.012065
+  Teardown:    32.4347
+
+  Sustained GB/s: 24.0673
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 0.145161
+  Setup:       249.63
+  Run:         10524.1
+  Verify:      2356.34
+  Teardown:    0.580938
+
+  Sustained GB/s: 20.4054
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 0.097701
+  Setup:       262.405
+  Run:         10523.6
+  Verify:      2356.36
+  Teardown:    0.517655
+
+  Sustained GB/s: 20.4064
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 0.086921
+  Setup:       247.773
+  Run:         10501.9
+  Verify:      2355.68
+  Teardown:    0.542552
+
+  Sustained GB/s: 20.4484
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 0.120493
+  Setup:       248.937
+  Run:         10529.8
+  Verify:      2354.65
+  Teardown:    0.485812
+
+  Sustained GB/s: 20.3944
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 0.1224
+  Setup:       249.412
+  Run:         10525.7
+  Verify:      2353.76
+  Teardown:    0.572673
+
+  Sustained GB/s: 20.4023
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is IntelClang 13.0.0.20210300
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /nfs/home/tom/intel/oneapi/compiler/2021.3.0/linux/bin/icpx - skipped
+-- Found OpenMP_CXX: -fopenmp (found version "5.0") 
+-- Found OpenMP: TRUE (found version "5.0")  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /nfs/home/tom/codes/everythingsreduced/src/build_omp_target
+Scanning dependencies of target implement_omp_target
+[ 11%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/complex_min.cpp.o
+[ 55%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/complex_sum.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/describe.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/complex_sum_soa.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/field_summary.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/dot.cpp.o
+[ 77%] Linking CXX static library libimplement_omp_target.a
+[ 77%] Built target implement_omp_target
+Scanning dependencies of target Reduced
+[ 88%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Dot Product
+  Constructor: 3560.33
+  Setup:       802.398
+  Run:         9122.7
+  Verify:      0.000526
+  Teardown:    12.1575
+
+  Sustained GB/s: 23.54
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Dot Product
+  Constructor: 3552.95
+  Setup:       804.216
+  Run:         9134.31
+  Verify:      0.000527
+  Teardown:    12.3486
+
+  Sustained GB/s: 23.5101
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Dot Product
+  Constructor: 3559.23
+  Setup:       803.088
+  Run:         9106.36
+  Verify:      0.00057
+  Teardown:    12.1256
+
+  Sustained GB/s: 23.5823
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Dot Product
+  Constructor: 3547.55
+  Setup:       802.181
+  Run:         9148.78
+  Verify:      0.000529
+  Teardown:    12.2849
+
+  Sustained GB/s: 23.4729
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Dot Product
+  Constructor: 3543.3
+  Setup:       800.243
+  Run:         9151.15
+  Verify:      0.030352
+  Teardown:    12.0973
+
+  Sustained GB/s: 23.4668
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3586.35
+  Setup:       714.948
+  Run:         8898.24
+  Verify:      0.001232
+  Teardown:    20.195
+
+  Sustained GB/s: 24.1338
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3589.93
+  Setup:       714.722
+  Run:         8754
+  Verify:      0.017741
+  Teardown:    20.1721
+
+  Sustained GB/s: 24.5315
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3578.11
+  Setup:       715.923
+  Run:         8721.97
+  Verify:      0.000607
+  Teardown:    20.3492
+
+  Sustained GB/s: 24.6215
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3541.2
+  Setup:       716.237
+  Run:         8886.01
+  Verify:      0.000654
+  Teardown:    20.1137
+
+  Sustained GB/s: 24.167
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3587.46
+  Setup:       718.678
+  Run:         8858.7
+  Verify:      0.0183
+  Teardown:    20.1019
+
+  Sustained GB/s: 24.2415
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3534.54
+  Setup:       805.093
+  Run:         9435.1
+  Verify:      0.000654
+  Teardown:    12.169
+
+  Sustained GB/s: 22.7606
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3596.43
+  Setup:       800.463
+  Run:         9340.87
+  Verify:      0.000595
+  Teardown:    12.4848
+
+  Sustained GB/s: 22.9902
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3603.4
+  Setup:       803.877
+  Run:         9479.21
+  Verify:      0.00095
+  Teardown:    12.6801
+
+  Sustained GB/s: 22.6547
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3603.32
+  Setup:       800.605
+  Run:         9384.95
+  Verify:      0.000678
+  Teardown:    12.0214
+
+  Sustained GB/s: 22.8822
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Sum
+  Constructor: 3612.25
+  Setup:       802.533
+  Run:         9359.65
+  Verify:      0.000666
+  Teardown:    12.1855
+
+  Sustained GB/s: 22.9441
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Min
+  Constructor: 3646.99
+  Setup:       713.887
+  Run:         16279.7
+  Verify:      0.000692
+  Teardown:    20.0407
+
+  Sustained GB/s: 13.1912
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Min
+  Constructor: 3551.52
+  Setup:       711.932
+  Run:         16192.7
+  Verify:      0.000781
+  Teardown:    20.0651
+
+  Sustained GB/s: 13.2621
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Min
+  Constructor: 3542.24
+  Setup:       716.41
+  Run:         16187.7
+  Verify:      0.000556
+  Teardown:    20.2078
+
+  Sustained GB/s: 13.2662
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Min
+  Constructor: 3542.02
+  Setup:       714.139
+  Run:         16236.6
+  Verify:      0.001158
+  Teardown:    20.2704
+
+  Sustained GB/s: 13.2262
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Complex Min
+  Constructor: 3617.03
+  Setup:       712.543
+  Run:         16240
+  Verify:      0.001495
+  Teardown:    20.131
+
+  Sustained GB/s: 13.2234
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 3576.44
+  Setup:       237.569
+  Run:         17180.6
+  Verify:      0.001428
+  Teardown:    3.54727
+
+  Sustained GB/s: 4.12042
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 3506.73
+  Setup:       240.817
+  Run:         16634.8
+  Verify:      0.001123
+  Teardown:    3.29211
+
+  Sustained GB/s: 4.25561
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 3579.42
+  Setup:       236.326
+  Run:         16602
+  Verify:      0.001358
+  Teardown:    3.38867
+
+  Sustained GB/s: 4.26401
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 3506.12
+  Setup:       239.679
+  Run:         16694.8
+  Verify:      0.00218
+  Teardown:    3.30697
+
+  Sustained GB/s: 4.24032
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 3556.66
+  Setup:       240.02
+  Run:         17190.2
+  Verify:      0.000905
+  Teardown:    3.26186
+
+  Sustained GB/s: 4.11811
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Describe
+  Constructor: 3549
+  Setup:       327.185
+  Run:         12084.4
+  Verify:      155.314
+  Teardown:    9.99273
+
+  Sustained GB/s: 17.7706
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Describe
+  Constructor: 3592.44
+  Setup:       327.224
+  Run:         12132.9
+  Verify:      155.667
+  Teardown:    10.0032
+
+  Sustained GB/s: 17.6997
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Describe
+  Constructor: 3558.39
+  Setup:       328.04
+  Run:         12164
+  Verify:      155.273
+  Teardown:    10.243
+
+  Sustained GB/s: 17.6544
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Describe
+  Constructor: 3570.15
+  Setup:       330.466
+  Run:         12277.5
+  Verify:      155.494
+  Teardown:    9.99837
+
+  Sustained GB/s: 17.4913
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+
+ Describe
+  Constructor: 3616.35
+  Setup:       325.824
+  Run:         12122.3
+  Verify:      155.429
+  Teardown:    10.0055
+
+  Sustained GB/s: 17.7151
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Clang 14.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /nfs/home/tom/codes/everythingsreduced/src/dpcpp_compiler/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /nfs/home/tom/codes/everythingsreduced/src/build_sycl
+Scanning dependencies of target implement_sycl
+[ 11%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/complex_min.cpp.o
+[ 22%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/complex_sum.cpp.o
+[ 33%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/complex_sum_soa.cpp.o
+[ 44%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/describe.cpp.o
+[ 55%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/dot.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_sycl.dir/sycl/field_summary.cpp.o
+[ 77%] Linking CXX static library libimplement_sycl.a
+[ 77%] Built target implement_sycl
+Scanning dependencies of target Reduced
+[ 88%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 140.004
+  Setup:       333.184
+  Run:         8308.37
+  Verify:      0.000466
+  Teardown:    18.412
+
+  Sustained GB/s: 25.8472
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 119.329
+  Setup:       335.481
+  Run:         8303.94
+  Verify:      0.000487
+  Teardown:    18.8031
+
+  Sustained GB/s: 25.861
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 120.785
+  Setup:       332.041
+  Run:         8306.17
+  Verify:      0.000618
+  Teardown:    19.338
+
+  Sustained GB/s: 25.8541
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 121.569
+  Setup:       335.109
+  Run:         8308.86
+  Verify:      0.000466
+  Teardown:    18.7949
+
+  Sustained GB/s: 25.8457
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Dot is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Dot Product
+  Constructor: 121.665
+  Setup:       333.185
+  Run:         8307.14
+  Verify:      0.000568
+  Teardown:    18.8904
+
+  Sustained GB/s: 25.8511
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 120.69
+  Setup:       373.237
+  Run:         8403.77
+  Verify:      0.021614
+  Teardown:    18.3966
+
+  Sustained GB/s: 25.5538
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 116.989
+  Setup:       373.69
+  Run:         8396.73
+  Verify:      0.003984
+  Teardown:    18.2734
+
+  Sustained GB/s: 25.5752
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 123.868
+  Setup:       366.728
+  Run:         8408.06
+  Verify:      0.003751
+  Teardown:    18.3659
+
+  Sustained GB/s: 25.5408
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 119.578
+  Setup:       371.222
+  Run:         8404.82
+  Verify:      0.003725
+  Teardown:    18.3878
+
+  Sustained GB/s: 25.5506
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 119.646
+  Setup:       365.95
+  Run:         8397.71
+  Verify:      0.004655
+  Teardown:    18.3953
+
+  Sustained GB/s: 25.5723
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 124.941
+  Setup:       537.284
+  Run:         10029.7
+  Verify:      0.001119
+  Teardown:    18.805
+
+  Sustained GB/s: 21.4112
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 126.922
+  Setup:       544.598
+  Run:         10067.3
+  Verify:      0.000763
+  Teardown:    24.2065
+
+  Sustained GB/s: 21.3313
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 145.805
+  Setup:       551.136
+  Run:         10079.7
+  Verify:      0.000798
+  Teardown:    28.7865
+
+  Sustained GB/s: 21.3051
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 167.95
+  Setup:       556.875
+  Run:         10051.7
+  Verify:      0.001619
+  Teardown:    28.5182
+
+  Sustained GB/s: 21.3644
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Sum SoA is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Sum
+  Constructor: 155.793
+  Setup:       550.537
+  Run:         10059.6
+  Verify:      0.001557
+  Teardown:    27.4255
+
+  Sustained GB/s: 21.3477
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 153.11
+  Setup:       453.182
+  Run:         8503.86
+  Verify:      0.00449
+  Teardown:    24.1713
+
+  Sustained GB/s: 25.2531
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 140.485
+  Setup:       440.649
+  Run:         8501.18
+  Verify:      0.004638
+  Teardown:    24.8227
+
+  Sustained GB/s: 25.261
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 143.344
+  Setup:       440.303
+  Run:         8502.9
+  Verify:      0.004875
+  Teardown:    25.0321
+
+  Sustained GB/s: 25.2559
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 145.54
+  Setup:       446.555
+  Run:         8492.74
+  Verify:      0.004874
+  Teardown:    24.8026
+
+  Sustained GB/s: 25.2861
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Complex Min is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Complex Min
+  Constructor: 143.111
+  Setup:       438.632
+  Run:         8504.72
+  Verify:      0.004976
+  Teardown:    24.9125
+
+  Sustained GB/s: 25.2505
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Field Summary
+  Constructor: 142.501
+  Setup:       568.685
+  Run:         4656.86
+  Verify:      0.001816
+  Teardown:    14.665
+
+  Sustained GB/s: 15.2015
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Field Summary
+  Constructor: 174.114
+  Setup:       588.045
+  Run:         4636.82
+  Verify:      0.001891
+  Teardown:    14.8191
+
+  Sustained GB/s: 15.2672
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Field Summary
+  Constructor: 179.182
+  Setup:       595.225
+  Run:         4635.02
+  Verify:      0.002133
+  Teardown:    14.7546
+
+  Sustained GB/s: 15.2731
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Field Summary
+  Constructor: 175.245
+  Setup:       597.834
+  Run:         4636.31
+  Verify:      0.001522
+  Teardown:    14.751
+
+  Sustained GB/s: 15.2689
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Field Summary
+  Constructor: 176.766
+  Setup:       600.801
+  Run:         4632.43
+  Verify:      0.001763
+  Teardown:    15.3365
+
+  Sustained GB/s: 15.2817
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 174.371
+  Setup:       395.849
+  Run:         14533.2
+  Verify:      208.258
+  Teardown:    11.3489
+
+  Sustained GB/s: 14.7764
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 128.086
+  Setup:       371.079
+  Run:         14534.1
+  Verify:      209.081
+  Teardown:    11.3372
+
+  Sustained GB/s: 14.7755
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 128.474
+  Setup:       363.855
+  Run:         14528
+  Verify:      208.905
+  Teardown:    11.3384
+
+  Sustained GB/s: 14.7817
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 128.26
+  Setup:       372.085
+  Run:         14515.6
+  Verify:      209.094
+  Teardown:    11.3449
+
+  Sustained GB/s: 14.7943
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Describe is using SYCL with Platform Intel(R) OpenCL HD Graphics and Device Intel(R) Graphics [0x193b]
+
+ Describe
+  Constructor: 130.432
+  Setup:       368.07
+  Run:         14537.2
+  Verify:      209.37
+  Teardown:    11.3034
+
+  Sustained GB/s: 14.7723
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Clang 14.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /nfs/home/tom/codes/everythingsreduced/src/dpcpp_compiler/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Setting default Kokkos CXX standard to 17
+-- Setting policy CMP0074 to use <Package>_ROOT variables
+-- The project name is: Kokkos
+-- SERIAL backend is being turned on to ensure there is at least one Host space. To change this, you must enable another host execution space and configure with -DKokkos_ENABLE_SERIAL=OFF or change CMakeCache.txt
+-- Using -std=gnu++17 for C++17 extensions as feature
+-- Built-in Execution Spaces:
+--     Device Parallel: Kokkos::Experimental::SYCL
+--     Host Parallel: NoTypeDefined
+--       Host Serial: SERIAL
+-- 
+-- Architectures:
+-- Found TPLLIBDL: /usr/lib64/libdl.so  
+-- Kokkos Devices: SERIAL;SYCL, Kokkos Backends: SERIAL;SYCL
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /nfs/home/tom/codes/everythingsreduced/src/build_kokkos
+Scanning dependencies of target kokkoscore
+[  3%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_CPUDiscovery.cpp.o
+[  9%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Error.cpp.o
+[ 12%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostBarrier.cpp.o
+[ 18%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Core.cpp.o
+[ 18%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_ExecPolicy.cpp.o
+[ 25%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace_deepcopy.cpp.o
+[ 25%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemoryPool.cpp.o
+[ 21%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace.cpp.o
+[ 34%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemorySpace.cpp.o
+[ 34%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostThreadTeam.cpp.o
+[ 34%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_NumericTraits.cpp.o
+[ 40%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial.cpp.o
+[ 43%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial_Task.cpp.o
+[ 40%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Profiling.cpp.o
+[ 46%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_SharedAlloc.cpp.o
+[ 53%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Spinwait.cpp.o
+[ 56%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Stacktrace.cpp.o
+[ 56%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_hwloc.cpp.o
+[ 59%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/SYCL/Kokkos_SYCL_Instance.cpp.o
+[ 62%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/SYCL/Kokkos_SYCL.cpp.o
+[ 65%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/SYCL/Kokkos_SYCL_Space.cpp.o
+[ 68%] Linking CXX static library libkokkoscore.a
+[ 68%] Built target kokkoscore
+Scanning dependencies of target kokkoscontainers
+[ 71%] Building CXX object kokkos-3.4.01/containers/src/CMakeFiles/kokkoscontainers.dir/impl/Kokkos_UnorderedMap_impl.cpp.o
+[ 75%] Linking CXX static library libkokkoscontainers.a
+[ 75%] Built target kokkoscontainers
+Scanning dependencies of target implement_kokkos
+[ 78%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum_soa.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/field_summary.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum.cpp.o
+[ 87%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/dot.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/describe.cpp.o
+[ 93%] Linking CXX static library libimplement_kokkos.a
+[ 93%] Built target implement_kokkos
+Scanning dependencies of target Reduced
+[ 96%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Dot is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Dot Product
+  Constructor: 125.021
+  Setup:       572.924
+  Run:         7824.25
+  Verify:      0.00055
+  Teardown:    9.88445
+
+  Sustained GB/s: 27.4465
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Dot is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Dot Product
+  Constructor: 122.211
+  Setup:       571.932
+  Run:         7822.23
+  Verify:      0.000491
+  Teardown:    10.2436
+
+  Sustained GB/s: 27.4536
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Dot is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Dot Product
+  Constructor: 123.157
+  Setup:       573.361
+  Run:         7800.77
+  Verify:      0.000922
+  Teardown:    10.2941
+
+  Sustained GB/s: 27.5291
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Dot is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Dot Product
+  Constructor: 124.485
+  Setup:       577.312
+  Run:         7807.03
+  Verify:      0.000521
+  Teardown:    9.8734
+
+  Sustained GB/s: 27.507
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Dot is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Dot Product
+  Constructor: 124.791
+  Setup:       579.934
+  Run:         7813.49
+  Verify:      0.000495
+  Teardown:    9.94249
+
+  Sustained GB/s: 27.4843
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 124.42
+  Setup:       549.578
+  Run:         7867.3
+  Verify:      0.005523
+  Teardown:    48.5015
+
+  Sustained GB/s: 27.2963
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 176.358
+  Setup:       587.389
+  Run:         7847.5
+  Verify:      0.005798
+  Teardown:    48.4981
+
+  Sustained GB/s: 27.3652
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 174.512
+  Setup:       581.637
+  Run:         7847.72
+  Verify:      0.005059
+  Teardown:    48.5504
+
+  Sustained GB/s: 27.3644
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 176.882
+  Setup:       582.063
+  Run:         7847.08
+  Verify:      0.005106
+  Teardown:    48.596
+
+  Sustained GB/s: 27.3667
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 172.334
+  Setup:       568.84
+  Run:         7842.72
+  Verify:      0.004837
+  Teardown:    47.961
+
+  Sustained GB/s: 27.3819
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 170.304
+  Setup:       488.082
+  Run:         8084.37
+  Verify:      0.000586
+  Teardown:    15.0744
+
+  Sustained GB/s: 26.5634
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 166.786
+  Setup:       480.338
+  Run:         8090.42
+  Verify:      0.000497
+  Teardown:    15.3978
+
+  Sustained GB/s: 26.5435
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 163.984
+  Setup:       477.47
+  Run:         8093.53
+  Verify:      0.000496
+  Teardown:    15.8418
+
+  Sustained GB/s: 26.5333
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 169.949
+  Setup:       480.99
+  Run:         8091.07
+  Verify:      0.000494
+  Teardown:    15.5892
+
+  Sustained GB/s: 26.5414
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Complex Sum
+  Constructor: 172.255
+  Setup:       483.898
+  Run:         8075.78
+  Verify:      0.000403
+  Teardown:    15.8137
+
+  Sustained GB/s: 26.5917
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Field Summary is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Field Summary
+  Constructor: 171.661
+  Setup:       558.9
+  Run:         9598.44
+  Verify:      0.001754
+  Teardown:    10.0713
+
+  Sustained GB/s: 7.37528
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Field Summary is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Field Summary
+  Constructor: 179.113
+  Setup:       558.368
+  Run:         9575.18
+  Verify:      0.001365
+  Teardown:    10.087
+
+  Sustained GB/s: 7.3932
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Field Summary is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Field Summary
+  Constructor: 180.858
+  Setup:       569.437
+  Run:         9572.65
+  Verify:      0.001417
+  Teardown:    10.0957
+
+  Sustained GB/s: 7.39515
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Field Summary is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Field Summary
+  Constructor: 176.936
+  Setup:       561.613
+  Run:         9577.71
+  Verify:      0.001597
+  Teardown:    10.0487
+
+  Sustained GB/s: 7.39124
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Field Summary is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Field Summary
+  Constructor: 175.051
+  Setup:       558.355
+  Run:         9563.18
+  Verify:      0.002194
+  Teardown:    10.0825
+
+  Sustained GB/s: 7.40247
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Describe is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Describe
+  Constructor: 176.8
+  Setup:       494.398
+  Run:         21663
+  Verify:      157.609
+  Teardown:    0.514562
+
+  Sustained GB/s: 9.91316
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Describe is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Describe
+  Constructor: 128.419
+  Setup:       460.399
+  Run:         21368.7
+  Verify:      155.002
+  Teardown:    0.500693
+
+  Sustained GB/s: 10.0497
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Describe is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Describe
+  Constructor: 123.37
+  Setup:       462.614
+  Run:         21433
+  Verify:      155.15
+  Teardown:    0.508919
+
+  Sustained GB/s: 10.0195
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Describe is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Describe
+  Constructor: 124.096
+  Setup:       463.509
+  Run:         21321.7
+  Verify:      154.803
+  Teardown:    0.563529
+
+  Sustained GB/s: 10.0718
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 134217728
+Name: Intel(R) Graphics [0x193b]
+Driver Version: 20.49.0
+Is Host: 0
+Is CPU: 0
+Is GPU: 1
+Is Accelerator: 0
+Vendor Id: 32902
+Max Compute Units: 72
+Max Work Item Dimensions: 3
+Max Work Group Size: 256
+Preferred Vector Width Char: 16
+Preferred Vector Width Short: 8
+Preferred Vector Width Int: 4
+Preferred Vector Width Long: 1
+Preferred Vector Width Float: 1
+Preferred Vector Width Double: 1
+Preferred Vector Width Half: 8
+Native Vector Width Char: 16
+Native Vector Width Short: 8
+Native Vector Width Int: 4
+Native Vector Width Long: 1
+Native Vector Width Float: 1
+Native Vector Width Double: 1
+Native Vector Width Half: 8
+Address Bits: 64
+Image Support: 1
+Max Mem Alloc Size: 4294959104
+Max Read Image Args: 128
+Image2d Max Width: 16384
+Image2d Max Height: 16384
+Image3d Max Width: 16384
+Image3d Max Height: 16384
+Image3d Max Depth: 2048
+Image Max Buffer Size: 268434944
+Image Max Array Size: 2048
+Max Samplers: 16
+Max Parameter Size: 2048
+Mem Base Addr Align: 1024
+Global Cache Mem Line Size: 64
+Global Mem Cache Size: 1572864
+Global Mem Size: 26751713280
+Max Constant Buffer Size: 4294959104
+Max Constant Args: 8
+Local Mem Size: 65536
+Error Correction Support: 0
+Host Unified Memory: 1
+Profiling Timer Resolution: 83
+Is Endian Little: 1
+Is Available: 1
+Is Compiler Available: 1
+Is Linker Available: 1
+Queue Profiling: 1
+Built In Kernels: 3
+	block_motion_estimate_intel
+	block_advanced_motion_estimate_check_intel
+	block_advanced_motion_estimate_bidirectional_check_intel
+Vendor: Intel(R) Corporation
+Profile: FULL_PROFILE
+Version: 3.0
+Extensions: 40
+	cl_khr_byte_addressable_store
+	cl_khr_fp16
+	cl_khr_global_int32_base_atomics
+	cl_khr_global_int32_extended_atomics
+	cl_khr_icd
+	cl_khr_local_int32_base_atomics
+	cl_khr_local_int32_extended_atomics
+	cl_intel_subgroups
+	cl_intel_required_subgroup_size
+	cl_intel_subgroups_short
+	cl_khr_spir
+	cl_intel_accelerator
+	cl_intel_driver_diagnostics
+	cl_khr_priority_hints
+	cl_khr_throttle_hints
+	cl_khr_create_command_queue
+	cl_intel_subgroups_char
+	cl_intel_subgroups_long
+	cl_khr_il_program
+	cl_intel_mem_force_host_memory
+	cl_khr_fp64
+	cl_khr_subgroups
+	cl_intel_spirv_device_side_avc_motion_estimation
+	cl_intel_spirv_media_block_io
+	cl_intel_spirv_subgroups
+	cl_khr_spirv_no_integer_wrap_decoration
+	cl_intel_unified_shared_memory_preview
+	cl_khr_mipmap_image
+	cl_khr_mipmap_image_writes
+	cl_intel_planar_yuv
+	cl_intel_packed_yuv
+	cl_intel_motion_estimation
+	cl_intel_device_side_avc_motion_estimation
+	cl_intel_advanced_motion_estimation
+	cl_khr_int64_base_atomics
+	cl_khr_int64_extended_atomics
+	cl_khr_image2d_from_buffer
+	cl_khr_depth_images
+	cl_khr_3d_image_writes
+	cl_intel_media_block_io
+Printf Buffer Size: 4194304
+Preferred Interop User Sync: 1
+Partition Max Sub Devices: 0
+Reference Count: 1
+
+Describe is using Kokkos with N6Kokkos12Experimental4SYCLE
+
+ Describe
+  Constructor: 127.009
+  Setup:       461.557
+  Run:         21485.3
+  Verify:      155.004
+  Teardown:    0.510094
+
+  Sustained GB/s: 9.99513
+--------------------------------------------------------------------------------
