@@ -97,3 +97,49 @@ else
   exit 1
 fi
 
+
+
+# Build SYCL with hipSYCL
+## hipSYCL doesn't implement the SYCL 2020 reduction interface yet
+# module load boost/1.73.0/gcc-10.2
+# module load llvm/11.0
+# 
+# if $build; then
+# if [ ! -d hipSYCL-install ]; then
+#   git clone --recurse-submodules https://github.com/illuhad/hipSYCL
+#   rm -rf hipSYCL-build
+#   mkdir hipSYCL-build
+#   cd hipSYCL-build
+#   cmake -DCMAKE_INSTALL_PREFIX=$PWD/../hipSYCL-install ../hipSYCL -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang
+#   make install -j
+# fi
+# 
+# export PATH=$PATH:hipSYCL-install/bin
+# export CPATH=$CPATH:hipSYCL-install/include:hipSYCL-install/include/sycl
+# mkdir build_sycl
+# syclcc -O3 -std=c++17 --hipsycl-targets=omp main.cpp sycl/*.cpp -o build_sycl/Reduced
+# 
+# fi
+
+# Build SYCL with Intel
+# Doesn't work due to missing CL_*_INTEL defines
+# source $HOME/intel/oneapi/setvars.sh
+# source dpcpp_compiler/startup.sh
+# 
+# if $build; then
+# cmake -H. -Bbuild_sycl -DMODEL=SYCL -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS='-fsycl -fsycl-unnamed-lambda'
+# cmake --build build_sycl --parallel
+# fi
+# 
+# export SYCL_DEVICE_FILTER=cpu
+# 
+# if [ -f ./build_sycl/Reduced ]; then
+#   for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
+#     for i in $(seq 1 $runs); do
+#       ./build_sycl/Reduced $b 1gib
+#     done
+#   done
+# else
+#   echo "Build failed"
+#   exit 1
+# fi
