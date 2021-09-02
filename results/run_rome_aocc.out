@@ -1,4 +1,4 @@
-Thu Sep  2 12:06:22 GMT 2021
+Thu Sep  2 13:14:21 GMT 2021
 rome-001
 Loading cray-mvapich2_noslurm/2.3.5
   Loading requirement: shared cuda11.2/toolkit/11.2.0
@@ -15,12 +15,12 @@ Loading cray-mvapich2_noslurm/2.3.5
 -- Generating done
 -- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_omp
 Scanning dependencies of target implement_omp
-[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_sum_soa.cpp.o
-[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_sum.cpp.o
 [ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_min.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_sum.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_sum_soa.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/describe.cpp.o
 [ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/dot.cpp.o
 [ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/field_summary.cpp.o
-[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/describe.cpp.o
 [ 77%] Linking CXX static library libimplement_omp.a
 [ 77%] Built target implement_omp
 Scanning dependencies of target Reduced
@@ -35,13 +35,77 @@ Problem size: 1073741824
 Dot is using OpenMP with 128 threads.
 
  Dot Product
-  Constructor: 93.2879
-  Setup:       161.604
-  Run:         5321.81
-  Verify:      0.020319
-  Teardown:    35.148
+  Constructor: 48.0656
+  Setup:       160.661
+  Run:         5306.74
+  Verify:      0.02314
+  Teardown:    35.2505
 
-  Sustained GB/s: 322.82
+  Sustained GB/s: 323.737
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 128 threads.
+
+ Dot Product
+  Constructor: 25.8344
+  Setup:       160.498
+  Run:         5303.94
+  Verify:      0.0204
+  Teardown:    35.005
+
+  Sustained GB/s: 323.908
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 128 threads.
+
+ Dot Product
+  Constructor: 35.0317
+  Setup:       162.311
+  Run:         5333.78
+  Verify:      0.02287
+  Teardown:    35.0306
+
+  Sustained GB/s: 322.096
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 128 threads.
+
+ Dot Product
+  Constructor: 25.1377
+  Setup:       160.044
+  Run:         5320.47
+  Verify:      0.019769
+  Teardown:    35.0609
+
+  Sustained GB/s: 322.901
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 128 threads.
+
+ Dot Product
+  Constructor: 26.1917
+  Setup:       161.506
+  Run:         5311.91
+  Verify:      0.021259
+  Teardown:    35.4141
+
+  Sustained GB/s: 323.422
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -51,13 +115,77 @@ Problem size: 1073741824
 Complex Sum is using OpenMP with 128 threads.
 
  Complex Sum
-  Constructor: 27.2365
-  Setup:       127.131
-  Run:         5084.66
-  Verify:      0.03122
-  Teardown:    35.3895
+  Constructor: 32.7706
+  Setup:       127.652
+  Run:         5114.5
+  Verify:      0.03307
+  Teardown:    35.2248
 
-  Sustained GB/s: 337.876
+  Sustained GB/s: 335.905
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 28.2342
+  Setup:       127.879
+  Run:         5090.43
+  Verify:      0.033889
+  Teardown:    35.2851
+
+  Sustained GB/s: 337.493
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 24.1901
+  Setup:       127.771
+  Run:         5081.5
+  Verify:      0.033609
+  Teardown:    35.5433
+
+  Sustained GB/s: 338.087
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 28.0201
+  Setup:       127.853
+  Run:         5095.09
+  Verify:      0.036659
+  Teardown:    35.4214
+
+  Sustained GB/s: 337.185
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 31.2758
+  Setup:       127.836
+  Run:         5078.62
+  Verify:      0.035999
+  Teardown:    35.3633
+
+  Sustained GB/s: 338.278
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -67,13 +195,77 @@ Problem size: 1073741824
 Complex Sum SoA is using OpenMP with 128 threads.
 
  Complex Sum
-  Constructor: 30.2332
-  Setup:       159.211
-  Run:         5320.55
-  Verify:      0.01966
-  Teardown:    34.3743
+  Constructor: 25.7406
+  Setup:       158.421
+  Run:         5317.14
+  Verify:      0.02063
+  Teardown:    35.1562
 
-  Sustained GB/s: 322.896
+  Sustained GB/s: 323.103
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 22.4686
+  Setup:       162.147
+  Run:         5296.15
+  Verify:      0.021819
+  Teardown:    35.3013
+
+  Sustained GB/s: 324.384
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 27.3752
+  Setup:       161.688
+  Run:         5312.83
+  Verify:      0.01877
+  Teardown:    35.2989
+
+  Sustained GB/s: 323.366
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 28.2013
+  Setup:       162.548
+  Run:         5313.14
+  Verify:      0.021059
+  Teardown:    35.2145
+
+  Sustained GB/s: 323.347
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 31.846
+  Setup:       158.421
+  Run:         5320.61
+  Verify:      0.021019
+  Teardown:    35.02
+
+  Sustained GB/s: 322.893
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -83,13 +275,77 @@ Problem size: 1073741824
 Complex Min is using OpenMP with 128 threads.
 
  Complex Min
-  Constructor: 31.0532
-  Setup:       127.841
-  Run:         6572.53
-  Verify:      0.028779
-  Teardown:    34.4491
+  Constructor: 29.1569
+  Setup:       127.149
+  Run:         6646.19
+  Verify:      0.04072
+  Teardown:    35.3096
 
-  Sustained GB/s: 261.389
+  Sustained GB/s: 258.492
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 128 threads.
+
+ Complex Min
+  Constructor: 25.0494
+  Setup:       127.903
+  Run:         6620.63
+  Verify:      0.03827
+  Teardown:    34.6537
+
+  Sustained GB/s: 259.49
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 128 threads.
+
+ Complex Min
+  Constructor: 24.0043
+  Setup:       127.972
+  Run:         6628.54
+  Verify:      0.0331
+  Teardown:    35.4176
+
+  Sustained GB/s: 259.18
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 128 threads.
+
+ Complex Min
+  Constructor: 30.5595
+  Setup:       127.99
+  Run:         6614.94
+  Verify:      0.037959
+  Teardown:    35.4831
+
+  Sustained GB/s: 259.713
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 128 threads.
+
+ Complex Min
+  Constructor: 23.5116
+  Setup:       127.787
+  Run:         6604.01
+  Verify:      0.034659
+  Teardown:    35.3501
+
+  Sustained GB/s: 260.143
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -98,13 +354,73 @@ Unit of time: milliseconds
 Field Summary is using OpenMP with 128 threads.
 
  Field Summary
-  Constructor: 28.7548
-  Setup:       9.22318
-  Run:         189.34
-  Verify:      0.02062
-  Teardown:    2.39185
+  Constructor: 30.6037
+  Setup:       9.47899
+  Run:         183.261
+  Verify:      0.020519
+  Teardown:    2.35981
 
-  Sustained GB/s: 373.885
+  Sustained GB/s: 386.287
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 128 threads.
+
+ Field Summary
+  Constructor: 36.7868
+  Setup:       9.87386
+  Run:         189.122
+  Verify:      0.027929
+  Teardown:    2.48101
+
+  Sustained GB/s: 374.314
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 128 threads.
+
+ Field Summary
+  Constructor: 32.4474
+  Setup:       10.2865
+  Run:         196.756
+  Verify:      0.01666
+  Teardown:    2.39665
+
+  Sustained GB/s: 359.792
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 128 threads.
+
+ Field Summary
+  Constructor: 30.6216
+  Setup:       9.63093
+  Run:         184.302
+  Verify:      0.01678
+  Teardown:    2.36771
+
+  Sustained GB/s: 384.103
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 128 threads.
+
+ Field Summary
+  Constructor: 25.7442
+  Setup:       9.8673
+  Run:         185.614
+  Verify:      0.01794
+  Teardown:    2.41425
+
+  Sustained GB/s: 381.39
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -114,13 +430,77 @@ Problem size: 1073741824
 Describe is using OpenMP with 128 threads.
 
  Describe
-  Constructor: 34.1317
-  Setup:       64.0946
-  Run:         5361.12
-  Verify:      1598.81
-  Teardown:    17.4808
+  Constructor: 23.9579
+  Setup:       64.4067
+  Run:         5370.66
+  Verify:      1609.77
+  Teardown:    17.4363
 
-  Sustained GB/s: 320.453
+  Sustained GB/s: 319.884
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 128 threads.
+
+ Describe
+  Constructor: 22.8323
+  Setup:       64.2373
+  Run:         5357.04
+  Verify:      1609.26
+  Teardown:    17.4122
+
+  Sustained GB/s: 320.697
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 128 threads.
+
+ Describe
+  Constructor: 42.3434
+  Setup:       64.1364
+  Run:         5339.49
+  Verify:      1607.7
+  Teardown:    17.3119
+
+  Sustained GB/s: 321.751
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 128 threads.
+
+ Describe
+  Constructor: 47.0343
+  Setup:       64.0459
+  Run:         5475.19
+  Verify:      1607.55
+  Teardown:    17.3842
+
+  Sustained GB/s: 313.777
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 128 threads.
+
+ Describe
+  Constructor: 45.4002
+  Setup:       64.0171
+  Run:         5337.65
+  Verify:      1607.09
+  Teardown:    17.4466
+
+  Sustained GB/s: 321.862
 --------------------------------------------------------------------------------
 -- CMAKE_BUILD_TYPE=Release
 -- The CXX compiler identification is Clang 11.0.0
@@ -146,21 +526,21 @@ Describe is using OpenMP with 128 threads.
 -- Generating done
 -- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_kokkos
 Scanning dependencies of target kokkoscore
-[ 16%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_ExecPolicy.cpp.o
-[ 16%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_CPUDiscovery.cpp.o
-[ 35%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Profiling.cpp.o
-[ 35%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Error.cpp.o
-[ 45%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Core.cpp.o
-[ 45%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemoryPool.cpp.o
-[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace_deepcopy.cpp.o
-[ 45%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemorySpace.cpp.o
+[ 41%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Error.cpp.o
+[ 41%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Core.cpp.o
+[ 19%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_CPUDiscovery.cpp.o
+[ 48%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Profiling.cpp.o
+[ 25%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial_Task.cpp.o
+[ 48%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace.cpp.o
+[ 25%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_ExecPolicy.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace_deepcopy.cpp.o
+[ 32%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostBarrier.cpp.o
 [ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostThreadTeam.cpp.o
-[ 45%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostBarrier.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemoryPool.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemorySpace.cpp.o
 [ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_NumericTraits.cpp.o
 [ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_SharedAlloc.cpp.o
-[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial_Task.cpp.o
-[ 54%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace.cpp.o
-[ 54%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Spinwait.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Spinwait.cpp.o
 [ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Stacktrace.cpp.o
 [ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_hwloc.cpp.o
 [ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/OpenMP/Kokkos_OpenMP_Task.cpp.o
@@ -173,11 +553,11 @@ Scanning dependencies of target kokkoscontainers
 [ 70%] Built target kokkoscontainers
 Scanning dependencies of target implement_kokkos
 [ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum_soa.cpp.o
-[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_min.cpp.o
 [ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_min.cpp.o
 [ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/describe.cpp.o
-[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/field_summary.cpp.o
 [ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/dot.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/field_summary.cpp.o
 [ 93%] Linking CXX static library libimplement_kokkos.a
 [ 93%] Built target implement_kokkos
 Scanning dependencies of target Reduced
@@ -192,13 +572,77 @@ Problem size: 1073741824
 Dot is using Kokkos with N6Kokkos6OpenMPE
 
  Dot Product
-  Constructor: 45.2045
-  Setup:       256.868
-  Run:         5308.92
-  Verify:      0.01835
-  Teardown:    34.1881
+  Constructor: 43.5658
+  Setup:       257.082
+  Run:         5306.05
+  Verify:      0.02249
+  Teardown:    34.3599
 
-  Sustained GB/s: 323.604
+  Sustained GB/s: 323.779
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 39.8162
+  Setup:       256.717
+  Run:         5306.91
+  Verify:      0.02163
+  Teardown:    34.4145
+
+  Sustained GB/s: 323.726
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 23.2109
+  Setup:       254.938
+  Run:         5292.28
+  Verify:      0.02331
+  Teardown:    34.1936
+
+  Sustained GB/s: 324.621
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 32.3307
+  Setup:       256.013
+  Run:         5292.31
+  Verify:      0.02201
+  Teardown:    34.341
+
+  Sustained GB/s: 324.62
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 25.6531
+  Setup:       255.781
+  Run:         5296.93
+  Verify:      0.0222
+  Teardown:    34.4468
+
+  Sustained GB/s: 324.336
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -208,13 +652,77 @@ Problem size: 1073741824
 Complex Sum is using Kokkos with N6Kokkos6OpenMPE
 
  Complex Sum
-  Constructor: 26.7949
-  Setup:       250.197
-  Run:         5101.13
-  Verify:      0.03728
-  Teardown:    39.5506
+  Constructor: 31.8649
+  Setup:       249.712
+  Run:         5130.91
+  Verify:      0.04793
+  Teardown:    41.8618
 
-  Sustained GB/s: 336.786
+  Sustained GB/s: 334.831
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 33.961
+  Setup:       252.05
+  Run:         5097.52
+  Verify:      0.042669
+  Teardown:    40.4375
+
+  Sustained GB/s: 337.024
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 33.7587
+  Setup:       249.727
+  Run:         5160.12
+  Verify:      0.048389
+  Teardown:    41.1999
+
+  Sustained GB/s: 332.936
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 26.7354
+  Setup:       250.356
+  Run:         5104.21
+  Verify:      0.0402
+  Teardown:    40.9112
+
+  Sustained GB/s: 336.583
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 31.9887
+  Setup:       249.974
+  Run:         5103.81
+  Verify:      0.041499
+  Teardown:    48.7183
+
+  Sustained GB/s: 336.609
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -224,13 +732,77 @@ Problem size: 1073741824
 Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
 
  Complex Sum
-  Constructor: 32.8446
-  Setup:       256.411
-  Run:         5318.63
-  Verify:      0.0201
-  Teardown:    34.6072
+  Constructor: 28.0322
+  Setup:       256.039
+  Run:         5299.6
+  Verify:      0.02343
+  Teardown:    34.5924
 
-  Sustained GB/s: 323.013
+  Sustained GB/s: 324.173
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 31.1952
+  Setup:       256.327
+  Run:         5294.19
+  Verify:      0.02548
+  Teardown:    34.3845
+
+  Sustained GB/s: 324.504
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 34.169
+  Setup:       255.622
+  Run:         5317.07
+  Verify:      0.021779
+  Teardown:    34.4423
+
+  Sustained GB/s: 323.108
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 29.4017
+  Setup:       255.678
+  Run:         5311.61
+  Verify:      0.023309
+  Teardown:    34.3792
+
+  Sustained GB/s: 323.44
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 23.3436
+  Setup:       255.638
+  Run:         5310.2
+  Verify:      0.02483
+  Teardown:    34.4007
+
+  Sustained GB/s: 323.526
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -240,13 +812,77 @@ Problem size: 1073741824
 Complex Min is using Kokkos with N6Kokkos6OpenMPE
 
  Complex Min
-  Constructor: 28.2343
-  Setup:       250.043
-  Run:         5153.76
-  Verify:      0.040969
-  Teardown:    39.2249
+  Constructor: 22.7177
+  Setup:       249.764
+  Run:         5215.68
+  Verify:      0.045409
+  Teardown:    39.4576
 
-  Sustained GB/s: 333.346
+  Sustained GB/s: 329.389
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 27.6329
+  Setup:       250.094
+  Run:         5180.97
+  Verify:      0.04136
+  Teardown:    40.5803
+
+  Sustained GB/s: 331.596
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 27.2059
+  Setup:       250.311
+  Run:         5152.85
+  Verify:      0.046129
+  Teardown:    44.7532
+
+  Sustained GB/s: 333.405
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 25.2766
+  Setup:       249.905
+  Run:         5160.45
+  Verify:      0.047749
+  Teardown:    48.7267
+
+  Sustained GB/s: 332.914
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 25.669
+  Setup:       249.648
+  Run:         5164.36
+  Verify:      0.044379
+  Teardown:    43.8195
+
+  Sustained GB/s: 332.662
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -255,13 +891,73 @@ Unit of time: milliseconds
 Field Summary is using Kokkos with N6Kokkos6OpenMPE
 
  Field Summary
-  Constructor: 29.5735
-  Setup:       14.8265
-  Run:         243.402
-  Verify:      0.012999
-  Teardown:    2.34314
+  Constructor: 30.1257
+  Setup:       15.0373
+  Run:         210.473
+  Verify:      0.01557
+  Teardown:    2.53031
 
-  Sustained GB/s: 290.84
+  Sustained GB/s: 336.343
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 23.0264
+  Setup:       15.7902
+  Run:         230.576
+  Verify:      0.01823
+  Teardown:    2.45423
+
+  Sustained GB/s: 307.019
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 32.6419
+  Setup:       16.9302
+  Run:         233.097
+  Verify:      0.01791
+  Teardown:    2.4338
+
+  Sustained GB/s: 303.698
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 21.9115
+  Setup:       15.5539
+  Run:         218.266
+  Verify:      0.01859
+  Teardown:    2.49453
+
+  Sustained GB/s: 324.334
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 32.4221
+  Setup:       16.1756
+  Run:         234.138
+  Verify:      0.01773
+  Teardown:    2.44289
+
+  Sustained GB/s: 302.348
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -271,13 +967,77 @@ Problem size: 1073741824
 Describe is using Kokkos with N6Kokkos6OpenMPE
 
  Describe
-  Constructor: 34.7969
-  Setup:       126.589
-  Run:         5363.37
-  Verify:      1600.58
-  Teardown:    17.4832
+  Constructor: 29.0157
+  Setup:       126.084
+  Run:         5266.37
+  Verify:      1617.81
+  Teardown:    17.4767
 
-  Sustained GB/s: 320.319
+  Sustained GB/s: 326.218
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 31.0411
+  Setup:       125.714
+  Run:         5260.98
+  Verify:      1613.25
+  Teardown:    17.4233
+
+  Sustained GB/s: 326.553
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 25.946
+  Setup:       125.728
+  Run:         5283.81
+  Verify:      1612.93
+  Teardown:    17.5551
+
+  Sustained GB/s: 325.142
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 22.3567
+  Setup:       125.648
+  Run:         5265.12
+  Verify:      1610.08
+  Teardown:    17.5019
+
+  Sustained GB/s: 326.296
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 22.7204
+  Setup:       125.635
+  Run:         5282.34
+  Verify:      1608.39
+  Teardown:    17.473
+
+  Sustained GB/s: 325.232
 --------------------------------------------------------------------------------
 -- CMAKE_BUILD_TYPE=Release
 -- The CXX compiler identification is Clang 11.0.0
@@ -350,22 +1110,22 @@ Describe is using Kokkos with N6Kokkos6OpenMPE
 -- Generating done
 -- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_raja
 Scanning dependencies of target RAJA
-[ 29%] Building CXX object raja/CMakeFiles/RAJA.dir/src/AlignedRangeIndexSetBuilders.cpp.o
-[ 35%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_CUDA.cpp.o
-[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/DepGraphNode.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/AlignedRangeIndexSetBuilders.cpp.o
 [ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/LockFreeIndexSetBuilders.cpp.o
-[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/PluginStrategy.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_CUDA.cpp.o
 [ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_HIP.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/DepGraphNode.cpp.o
 [ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_SYCL.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/PluginStrategy.cpp.o
 [ 47%] Linking CXX static library lib/libRAJA.a
 [ 47%] Built target RAJA
 Scanning dependencies of target implement_raja
-[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum.cpp.o
 [ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_min.cpp.o
-[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/describe.cpp.o
-[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum_soa.cpp.o
-[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/field_summary.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum.cpp.o
 [ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/dot.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/describe.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/field_summary.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum_soa.cpp.o
 [ 88%] Linking CXX static library raja/lib/libimplement_raja.a
 [ 88%] Built target implement_raja
 Scanning dependencies of target Reduced
@@ -379,13 +1139,118 @@ Unit of time: milliseconds
 Problem size: 1073741824
 
  Dot Product
-  Constructor: 0.00017
-  Setup:       196.02
-  Run:         5340.57
-  Verify:      0.02046
-  Teardown:    34.8149
+  Constructor: 0.00016
+  Setup:       182.132
+  Run:         5369.38
+  Verify:      0.02182
+  Teardown:    35.5526
 
-  Sustained GB/s: 321.686
+  Sustained GB/s: 319.96
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00016
+  Setup:       184.383
+  Run:         5336.76
+  Verify:      0.020519
+  Teardown:    34.7936
+
+  Sustained GB/s: 321.916
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000151
+  Setup:       180.538
+  Run:         5333.08
+  Verify:      0.02542
+  Teardown:    35.6328
+
+  Sustained GB/s: 322.138
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00015
+  Setup:       180.578
+  Run:         5358.9
+  Verify:      0.0199
+  Teardown:    34.8575
+
+  Sustained GB/s: 320.586
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00016
+  Setup:       181.871
+  Run:         5324.8
+  Verify:      0.02278
+  Teardown:    35.7923
+
+  Sustained GB/s: 322.639
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00017
+  Setup:       2730.74
+  Run:         54408.4
+  Verify:      0.031059
+  Teardown:    26.6382
+
+  Sustained GB/s: 31.5758
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00018
+  Setup:       2834.89
+  Run:         48237.1
+  Verify:      0.031109
+  Teardown:    28.7456
+
+  Sustained GB/s: 35.6154
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00017
+  Setup:       2792.29
+  Run:         53042.5
+  Verify:      0.02779
+  Teardown:    27.0223
+
+  Sustained GB/s: 32.3889
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -395,12 +1260,27 @@ Problem size: 1073741824
 
  Complex Sum
   Constructor: 0.00016
-  Setup:       2731.63
-  Run:         55215.5
-  Verify:      0.0321
-  Teardown:    27.1807
+  Setup:       2812.44
+  Run:         46965.6
+  Verify:      0.030849
+  Teardown:    28.4358
 
-  Sustained GB/s: 31.1142
+  Sustained GB/s: 36.5797
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00018
+  Setup:       2785.76
+  Run:         52300.5
+  Verify:      0.03148
+  Teardown:    28.1789
+
+  Sustained GB/s: 32.8484
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -410,12 +1290,72 @@ Problem size: 1073741824
 
  Complex Sum
   Constructor: 0.00027
-  Setup:       183.06
-  Run:         5331.33
-  Verify:      0.019849
-  Teardown:    35.3436
+  Setup:       188.643
+  Run:         5321.09
+  Verify:      0.01907
+  Teardown:    35.4424
 
-  Sustained GB/s: 322.244
+  Sustained GB/s: 322.864
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00026
+  Setup:       176.865
+  Run:         5310.42
+  Verify:      0.02127
+  Teardown:    35.4367
+
+  Sustained GB/s: 323.513
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000271
+  Setup:       178.479
+  Run:         5321.23
+  Verify:      0.01944
+  Teardown:    35.5373
+
+  Sustained GB/s: 322.855
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00026
+  Setup:       178.537
+  Run:         5326.53
+  Verify:      0.01864
+  Teardown:    35.6051
+
+  Sustained GB/s: 322.534
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00027
+  Setup:       179.685
+  Run:         5328.56
+  Verify:      0.01967
+  Teardown:    35.5602
+
+  Sustained GB/s: 322.411
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -424,12 +1364,128 @@ Unit of time: milliseconds
 
  Field Summary
   Constructor: 0.000231
-  Setup:       36.0136
-  Run:         205.028
-  Verify:      0.01564
-  Teardown:    2.4964
+  Setup:       35.7823
+  Run:         210.787
+  Verify:      0.01634
+  Teardown:    2.72318
 
-  Sustained GB/s: 345.275
+  Sustained GB/s: 335.842
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.00023
+  Setup:       36.9554
+  Run:         213.685
+  Verify:      0.01792
+  Teardown:    2.52073
+
+  Sustained GB/s: 331.288
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.000209
+  Setup:       34.4051
+  Run:         206.175
+  Verify:      0.02081
+  Teardown:    2.70772
+
+  Sustained GB/s: 343.355
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.00024
+  Setup:       35.0282
+  Run:         229.865
+  Verify:      0.025509
+  Teardown:    2.56122
+
+  Sustained GB/s: 307.969
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.00024
+  Setup:       33.131
+  Run:         208.61
+  Verify:      0.016739
+  Teardown:    2.56942
+
+  Sustained GB/s: 339.348
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.00018
+  Setup:       83.4223
+  Run:         5810.85
+  Verify:      1604.62
+  Teardown:    17.6893
+
+  Sustained GB/s: 295.651
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.00017
+  Setup:       86.4178
+  Run:         5808.68
+  Verify:      1605.09
+  Teardown:    17.7378
+
+  Sustained GB/s: 295.762
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.00017
+  Setup:       85.7967
+  Run:         5820.51
+  Verify:      1605.29
+  Teardown:    17.7127
+
+  Sustained GB/s: 295.161
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.00017
+  Setup:       90.8038
+  Run:         5823.55
+  Verify:      1605.28
+  Teardown:    17.7136
+
+  Sustained GB/s: 295.007
 --------------------------------------------------------------------------------
 Everything's Reduced (v0.6)
 
@@ -439,10 +1495,10 @@ Problem size: 1073741824
 
  Describe
   Constructor: 0.00016
-  Setup:       86.4619
-  Run:         5848.32
-  Verify:      1603.02
-  Teardown:    17.7902
+  Setup:       86.6979
+  Run:         5819.34
+  Verify:      1608.1
+  Teardown:    17.711
 
-  Sustained GB/s: 293.757
+  Sustained GB/s: 295.22
 --------------------------------------------------------------------------------
