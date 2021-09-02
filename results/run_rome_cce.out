@@ -1,0 +1,448 @@
+Thu Sep  2 12:02:29 GMT 2021
+rome-001
+Loading cray-mvapich2_noslurm/2.3.5
+  Loading requirement: shared cuda11.2/toolkit/11.2.0
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Clang 11.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/cray/pe/craype/2.7.7/bin/CC - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found OpenMP_CXX: -fopenmp (found version "5.0") 
+-- Found OpenMP: TRUE (found version "5.0")  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_omp
+Scanning dependencies of target implement_omp
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_min.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_sum.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/complex_sum_soa.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/describe.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/dot.cpp.o
+[ 66%] Building CXX object CMakeFiles/implement_omp.dir/omp/field_summary.cpp.o
+[ 77%] Linking CXX static library libimplement_omp.a
+[ 77%] Built target implement_omp
+Scanning dependencies of target Reduced
+[ 88%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using OpenMP with 128 threads.
+
+ Dot Product
+  Constructor: 30.1419
+  Setup:       156.824
+  Run:         5235.79
+  Verify:      0.00041
+  Teardown:    0.01091
+
+  Sustained GB/s: 328.123
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 12.1535
+  Setup:       126.869
+  Run:         5084.06
+  Verify:      0.051869
+  Teardown:    0.00031
+
+  Sustained GB/s: 337.916
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using OpenMP with 128 threads.
+
+ Complex Sum
+  Constructor: 12.2585
+  Setup:       166.933
+  Run:         5219.63
+  Verify:      0.00056
+  Teardown:    0.01281
+
+  Sustained GB/s: 329.14
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using OpenMP with 128 threads.
+
+ Complex Min
+  Constructor: 12.8704
+  Setup:       126.887
+  Run:         5760.02
+  Verify:      0.052129
+  Teardown:    0.00071
+
+  Sustained GB/s: 298.26
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using OpenMP with 128 threads.
+
+ Field Summary
+  Constructor: 12.9891
+  Setup:       9.98264
+  Run:         194.358
+  Verify:      0.02941
+  Teardown:    0.016159
+
+  Sustained GB/s: 364.231
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using OpenMP with 128 threads.
+
+ Describe
+  Constructor: 12.4181
+  Setup:       63.4101
+  Run:         5224.9
+  Verify:      1829.91
+  Teardown:    0.01294
+
+  Sustained GB/s: 328.807
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Clang 11.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/cray/pe/craype/2.7.7/bin/CC - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Setting default Kokkos CXX standard to 14
+-- Setting policy CMP0074 to use <Package>_ROOT variables
+-- The project name is: Kokkos
+-- Using -std=gnu++14 for C++14 extensions as feature
+-- Built-in Execution Spaces:
+--     Device Parallel: NoTypeDefined
+--     Host Parallel: Kokkos::OpenMP
+--       Host Serial: NONE
+-- 
+-- Architectures:
+--  ZEN2
+-- Found TPLLIBDL: /usr/lib64/libdl.so  
+-- Kokkos Devices: OPENMP, Kokkos Backends: OPENMP
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_kokkos
+Scanning dependencies of target kokkoscore
+[ 19%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_CPUDiscovery.cpp.o
+[ 25%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Core.cpp.o
+[ 29%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_ExecPolicy.cpp.o
+[ 38%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Profiling.cpp.o
+[ 38%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Error.cpp.o
+[ 38%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostBarrier.cpp.o
+[ 51%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemoryPool.cpp.o
+[ 51%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace_deepcopy.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostThreadTeam.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_NumericTraits.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemorySpace.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial_Task.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_SharedAlloc.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Spinwait.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Stacktrace.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_hwloc.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/OpenMP/Kokkos_OpenMP_Exec.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/OpenMP/Kokkos_OpenMP_Task.cpp.o
+[ 64%] Linking CXX static library libkokkoscore.a
+[ 64%] Built target kokkoscore
+Scanning dependencies of target kokkoscontainers
+[ 67%] Building CXX object kokkos-3.4.01/containers/src/CMakeFiles/kokkoscontainers.dir/impl/Kokkos_UnorderedMap_impl.cpp.o
+[ 70%] Linking CXX static library libkokkoscontainers.a
+[ 70%] Built target kokkoscontainers
+Scanning dependencies of target implement_kokkos
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_min.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/describe.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum_soa.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/dot.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/field_summary.cpp.o
+[ 93%] Linking CXX static library libimplement_kokkos.a
+[ 93%] Built target implement_kokkos
+Scanning dependencies of target Reduced
+[ 96%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos6OpenMPE
+
+ Dot Product
+  Constructor: 34.226
+  Setup:       241.178
+  Run:         5224.38
+  Verify:      0.00033
+  Teardown:    0.00413
+
+  Sustained GB/s: 328.84
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 33.5032
+  Setup:       248.782
+  Run:         5098.52
+  Verify:      0.04516
+  Teardown:    4.64141
+
+  Sustained GB/s: 336.958
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Sum
+  Constructor: 14.8576
+  Setup:       240.931
+  Run:         5215.68
+  Verify:      0.00045
+  Teardown:    0.00417
+
+  Sustained GB/s: 329.389
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos6OpenMPE
+
+ Complex Min
+  Constructor: 14.9862
+  Setup:       248.512
+  Run:         7514.14
+  Verify:      0.049219
+  Teardown:    3.80557
+
+  Sustained GB/s: 228.634
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos6OpenMPE
+
+ Field Summary
+  Constructor: 15.3295
+  Setup:       15.0516
+  Run:         225.917
+  Verify:      0.01812
+  Teardown:    0.00845
+
+  Sustained GB/s: 313.35
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos6OpenMPE
+
+ Describe
+  Constructor: 15.5855
+  Setup:       120.019
+  Run:         6665.43
+  Verify:      1836.09
+  Teardown:    0.00559
+
+  Sustained GB/s: 257.746
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Clang 11.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/cray/pe/craype/2.7.7/bin/CC - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The C compiler identification is Clang 11.0.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/cray/pe/craype/2.7.7/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- BLT Version: 0.4.1
+-- CMake Version: 3.18.3
+-- CMake Executable: /lustre/projects/bristol/modules/cmake/3.18.3/bin/cmake
+-- Found Git: /home/br-jprice/modules/git/2.13.3/bin/git (found version "2.13.3") 
+-- Git Support is ON
+-- Git Executable: /home/br-jprice/modules/git/2.13.3/bin/git
+-- Git Version: 2.13.3
+-- MPI Support is OFF
+-- OpenMP Support is On
+-- Found OpenMP_C: -fopenmp (found version "5.0") 
+-- Found OpenMP_CXX: -fopenmp (found version "5.0") 
+-- Found OpenMP: TRUE (found version "5.0")  
+-- OpenMP Compile Flags: -fopenmp
+-- OpenMP Link Flags:    -fopenmp
+-- CUDA Support is Off
+-- HIP Support is OFF
+-- HCC Support is OFF
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Sphinx support is ON
+-- Failed to locate Sphinx executable (missing: SPHINX_EXECUTABLE) 
+-- Valgrind support is ON
+-- Found Valgrind: /bin/valgrind  
+-- AStyle support is ON
+-- Failed to locate AStyle executable (missing: ASTYLE_EXECUTABLE) 
+-- ClangFormat support is ON
+-- Found ClangFormat: /opt/cray/pe/cce/11.0.4/cce-clang/x86_64/bin/clang-format  
+-- Uncrustify support is ON
+-- Failed to locate Uncrustify executable (missing: UNCRUSTIFY_EXECUTABLE) 
+-- Yapf support is ON
+-- Failed to locate Yapf executable (missing: YAPF_EXECUTABLE) 
+-- CMakeFormat support is ON
+-- Failed to locate CMakeFormat executable (missing: CMAKEFORMAT_EXECUTABLE) 
+-- Cppcheck support is ON
+-- Failed to locate Cppcheck executable (missing: CPPCHECK_EXECUTABLE) 
+-- ClangQuery support is ON
+-- Failed to locate ClangQuery executable (missing: CLANGQUERY_EXECUTABLE) 
+-- ClangTidy support is ON
+-- Failed to locate ClangTidy executable (missing: CLANGTIDY_EXECUTABLE) 
+-- C Compiler family is Clang
+-- Adding optional BLT definitions and compiler flags
+-- Standard C++14 selected
+-- Enabling all compiler warnings on all targets.
+-- Fortran support disabled.
+-- CMAKE_C_FLAGS flags are:    -Wall -Wextra 
+-- CMAKE_CXX_FLAGS flags are:       -Wall -Wextra 
+-- CMAKE_EXE_LINKER_FLAGS flags are:  
+-- OpenMP Enabled
+-- Using RAJA CAMP submodule.
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for std::aligned_alloc
+-- Looking for std::aligned_alloc - not found
+-- Looking for _mm_malloc
+-- Looking for _mm_malloc - not found
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/br-tdeakin/codes/everythingsreduced/src/build_raja
+Scanning dependencies of target RAJA
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/DepGraphNode.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/AlignedRangeIndexSetBuilders.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_HIP.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/LockFreeIndexSetBuilders.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_SYCL.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/PluginStrategy.cpp.o
+[ 41%] Building CXX object raja/CMakeFiles/RAJA.dir/src/MemUtils_CUDA.cpp.o
+[ 47%] Linking CXX static library lib/libRAJA.a
+[ 47%] Built target RAJA
+Scanning dependencies of target implement_raja
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_min.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum_soa.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/describe.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/dot.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/field_summary.cpp.o
+[ 88%] Linking CXX static library raja/lib/libimplement_raja.a
+[ 88%] Built target implement_raja
+Scanning dependencies of target Reduced
+[ 94%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00036
+  Setup:       168.257
+  Run:         5290.68
+  Verify:      0.00034
+  Teardown:    0.01761
+
+  Sustained GB/s: 324.72
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.0004
+  Setup:       3014.8
+  Run:         46991.9
+  Verify:      0.03304
+  Teardown:    0.00704
+
+  Sustained GB/s: 36.5592
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00046
+  Setup:       167.203
+  Run:         5266.18
+  Verify:      0.00056
+  Teardown:    0.022379
+
+  Sustained GB/s: 326.23
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.00045
+  Setup:       22.3273
+  Run:         214.114
+  Verify:      0.00185
+  Teardown:    0.016029
+
+  Sustained GB/s: 330.624
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Describe
+  Constructor: 0.00035
+  Setup:       76.7792
+  Run:         5903.71
+  Verify:      1840.18
+  Teardown:    0.01297
+
+  Sustained GB/s: 291.001
+--------------------------------------------------------------------------------

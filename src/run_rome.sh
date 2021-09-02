@@ -2,6 +2,9 @@
 # Copyright (c) 2021 Everything's Reduced authors
 # SPDX-License-Identifier: MIT
 
+date
+hostname
+
 module load cmake/3.18.3
 
 module swap craype-broadwell craype-x86-rome
@@ -17,7 +20,7 @@ COMPILER=CC
 C_COMPILER=cc
 
 # Try with AOCC
-if true; then
+if false; then
   module load aocc/2.3
   COMPILER=clang++
   C_COMPILER=clang
@@ -37,7 +40,9 @@ fi
 
 if [ -f ./build_omp/Reduced ]; then
   for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
-    ./build_omp/Reduced $b 1gib
+    for i in $(seq 1 $runs); do
+      ./build_omp/Reduced $b 1gib
+    done
   done
 else
   echo "Build failed"
@@ -59,7 +64,9 @@ fi
 
 if [ -f ./build_kokkos/Reduced ]; then
   for b in dot complex_sum complex_sum_soa complex_min field_summary describe; do
-    ./build_kokkos/Reduced $b 1gib
+    for i in $(seq 1 $runs); do
+      ./build_kokkos/Reduced $b 1gib
+    done
   done
 else
   echo "Build failed"
@@ -79,7 +86,9 @@ fi
 
 if [ -f ./build_raja/Reduced ]; then
   for b in dot complex_sum complex_sum_soa field_summary describe; do
-    ./build_raja/Reduced $b 1gib
+    for i in $(seq 1 $runs); do
+      ./build_raja/Reduced $b 1gib
+    done
   done
 else
   echo "Build failed"
