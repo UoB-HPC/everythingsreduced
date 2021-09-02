@@ -10,6 +10,8 @@ module load cmake/3.18.3
 module swap craype-broadwell craype-x86-rome
 module load cray-mvapich2_noslurm
 
+runs=5
+
 build=true
 
 if $build; then
