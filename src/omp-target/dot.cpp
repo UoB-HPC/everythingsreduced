@@ -57,7 +57,9 @@ double dot::run() {
 }
 
 void dot::teardown() {
-#pragma omp target exit data map(delete : pdata->A, pdata->B)
+  auto A = pdata->A;
+  auto B = pdata->B;
+#pragma omp target exit data map(delete : A, B)
 
   delete[] pdata->A;
   delete[] pdata->B;

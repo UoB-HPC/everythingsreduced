@@ -50,7 +50,9 @@ void complex_sum_soa<T>::setup() {
 
 template <typename T>
 void complex_sum_soa<T>::teardown() {
-#pragma omp target exit data map(delete : pdata->real, pdata->imag)
+  T *real = pdata->real;
+  T *imag = pdata->imag;
+#pragma omp target exit data map(delete : real, imag)
 
   delete[] pdata->real;
   delete[] pdata->imag;

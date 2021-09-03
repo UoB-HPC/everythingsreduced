@@ -92,9 +92,13 @@ void field_summary::setup() {
 }
 
 void field_summary::teardown() {
-#pragma omp target exit data map(delete                                                                                \
-                                 : pdata->xvel, pdata->yvel, pdata->volume, pdata->density, pdata->energy,             \
-                                   pdata->pressure)
+  double *xvel = pdata->xvel;
+  double *yvel = pdata->yvel;
+  double *volume = pdata->volume;
+  double *density = pdata->density;
+  double *energy = pdata->energy;
+  double *pressure = pdata->pressure;
+#pragma omp target exit data map(delete : xvel, yvel, volume, density, energy, pressure)
 
   delete[] pdata->xvel;
   delete[] pdata->yvel;

@@ -80,7 +80,8 @@ describe::result describe::run() {
 }
 
 void describe::teardown() {
-#pragma omp target exit data map(delete : pdata->D)
+  auto D = pdata->D;
+#pragma omp target exit data map(delete : D)
 
   delete[] pdata->D;
 }
