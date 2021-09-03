@@ -120,9 +120,8 @@ field_summary::reduction_vars field_summary::run() {
   double ke = 0.0;
   double press = 0.0;
 
-#pragma omp target teams distribute parallel for reduction(+ : vol, mass, ie, ke, press)
+#pragma omp target teams distribute parallel for collapse(2) reduction(+ : vol, mass, ie, ke, press)
   for (long k = 0; k < ny; ++k) {
-#pragma omp simd reduction(+ : vol, mass, ie, ke, press)
     for (long j = 0; j < nx; ++j) {
       double vsqrd = 0.0;
       for (long kv = k; kv <= k + 1; ++kv) {
