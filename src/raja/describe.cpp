@@ -79,6 +79,11 @@ void describe::teardown() {
 
 describe::result describe::run() {
 
+#ifdef RAJA_ENABLE_HIP
+  std::cout << "RAJA HIP fails because cannot use intermediate mean values" << std::endl;
+  return {-1, -1, -1, -1, -1};
+#else
+
   double *RAJA_RESTRICT D = pdata->D;
 
   long count = N;
@@ -120,4 +125,5 @@ describe::result describe::run() {
   double the_std = std::sqrt(std.get());
 
   return {.count = count, .mean = the_mean, .std = the_std, .min = min.get(), .max = max.get()};
+#endif
 }
