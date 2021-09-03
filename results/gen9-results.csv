@@ -19,11 +19,6 @@ gen9, onedpl, clang, complex_min, 24.019
 gen9, onedpl, clang, complex_min, 24.0351
 gen9, onedpl, clang, complex_min, 24.0263
 gen9, onedpl, clang, complex_min, 24.0673
-gen9, onedpl, clang, describe, 20.4054
-gen9, onedpl, clang, describe, 20.4064
-gen9, onedpl, clang, describe, 20.4484
-gen9, onedpl, clang, describe, 20.3944
-gen9, onedpl, clang, describe, 20.4023
 gen9, omp-target, icpx, dot, 23.54
 gen9, omp-target, icpx, dot, 23.5101
 gen9, omp-target, icpx, dot, 23.5823
