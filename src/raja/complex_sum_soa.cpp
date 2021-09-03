@@ -65,12 +65,10 @@ void complex_sum_soa<T>::setup() {
 
   T *RAJA_RESTRICT real = pdata->real;
   T *RAJA_RESTRICT imag = pdata->imag;
-  // Have to pull this out of the class because the lambda capture falls over
-  const T n = static_cast<T>(N);
 
   RAJA::forall<policy>(
     RAJA::RangeSegment(0, N),
-    [=] RAJA_DEVICE(RAJA::Index_type i) {
+    [=, N = this->N] RAJA_DEVICE(RAJA::Index_type i) {
       T v = 2.0 * 1024.0 / static_cast<T>(N);
       real[i] = v;
       imag[i] = v;

@@ -113,7 +113,7 @@ describe::result describe::run() {
 
   RAJA::forall<policy>(
     RAJA::RangeSegment(0, N),
-    [=] RAJA_DEVICE(RAJA::Index_type i) {
+    [=, N = this->N] RAJA_DEVICE(RAJA::Index_type i) {
       std += ((D[i] - the_mean) * (D[i] - the_mean)) / static_cast<double>(N);
     });
 

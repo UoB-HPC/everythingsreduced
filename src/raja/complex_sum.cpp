@@ -68,12 +68,10 @@ void complex_sum<T>::setup() {
 #endif
 
   RAJA::Complex_type *RAJA_RESTRICT C = pdata->C;
-  // Have to pull this out of the class because the lambda capture falls over
-  const RAJA::Real_type n = static_cast<RAJA::Real_type>(N);
 
   RAJA::forall<policy>(
     RAJA::RangeSegment(0, N),
-    [=] RAJA_DEVICE(RAJA::Index_type i) {
+    [=, N = this->N] RAJA_DEVICE(RAJA::Index_type i) {
       RAJA::Real_type v = 2.0 * 1024.0 / static_cast<RAJA::Real_type>(N);
       C[i] = {v, v};
     });
