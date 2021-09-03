@@ -1,0 +1,1551 @@
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Clang 12.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/rocm/hip/bin/hipcc - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Setting default Kokkos CXX standard to 14
+-- Setting policy CMP0074 to use <Package>_ROOT variables
+-- The project name is: Kokkos
+-- Compiler Version: 4.2.21155
+-- SERIAL backend is being turned on to ensure there is at least one Host space. To change this, you must enable another host execution space and configure with -DKokkos_ENABLE_SERIAL=OFF or change CMakeCache.txt
+-- Using -std=gnu++14 for C++14 extensions as feature
+-- Built-in Execution Spaces:
+--     Device Parallel: Kokkos::Experimental::HIP
+--     Host Parallel: NoTypeDefined
+--       Host Serial: SERIAL
+-- 
+-- Architectures:
+--  VEGA908
+-- Found TPLLIBDL: /usr/lib64/libdl.so  
+-- Kokkos Devices: SERIAL;HIP, Kokkos Backends: SERIAL;HIP
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cosma/home/do006/dc-deak1/codes/everythingsreduced/src/build_kokkos
+Scanning dependencies of target kokkoscore
+[  3%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_CPUDiscovery.cpp.o
+[ 33%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_ExecPolicy.cpp.o
+[ 45%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostThreadTeam.cpp.o
+[ 48%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Core.cpp.o
+[ 51%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Error.cpp.o
+[ 57%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace_deepcopy.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemorySpace.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Stacktrace.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemoryPool.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_NumericTraits.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostBarrier.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial_Task.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Profiling.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_SharedAlloc.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Spinwait.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/HIP/Kokkos_HIP_Instance.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_hwloc.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/HIP/Kokkos_HIP_Locks.cpp.o
+[ 63%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/HIP/Kokkos_HIP_Space.cpp.o
+[ 66%] Linking CXX static library libkokkoscore.a
+[ 66%] Built target kokkoscore
+Scanning dependencies of target kokkoscontainers
+[ 69%] Building CXX object kokkos-3.4.01/containers/src/CMakeFiles/kokkoscontainers.dir/impl/Kokkos_UnorderedMap_impl.cpp.o
+[ 72%] Linking CXX static library libkokkoscontainers.a
+[ 72%] Built target kokkoscontainers
+Scanning dependencies of target implement_kokkos
+[ 84%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum_soa.cpp.o
+[ 84%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_min.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/describe.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/dot.cpp.o
+[ 90%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/field_summary.cpp.o
+[ 93%] Linking CXX static library libimplement_kokkos.a
+[ 93%] Built target implement_kokkos
+Scanning dependencies of target Reduced
+[ 96%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Dot Product
+  Constructor: 269.514
+  Setup:       44.0604
+  Run:         1926.93
+  Verify:      0.33325
+  Teardown:    6.31016
+
+  Sustained GB/s: 891.565
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Dot Product
+  Constructor: 674.019
+  Setup:       44.8441
+  Run:         1884.25
+  Verify:      0.005932
+  Teardown:    0.475729
+
+  Sustained GB/s: 911.762
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Dot Product
+  Constructor: 272.926
+  Setup:       43.2659
+  Run:         1867.81
+  Verify:      0.003587
+  Teardown:    0.382894
+
+  Sustained GB/s: 919.786
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Dot Product
+  Constructor: 273.694
+  Setup:       43.3881
+  Run:         1864.36
+  Verify:      0.003687
+  Teardown:    0.307431
+
+  Sustained GB/s: 921.487
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Dot Product
+  Constructor: 269.235
+  Setup:       42.7425
+  Run:         1850.55
+  Verify:      0.006712
+  Teardown:    0.424733
+
+  Sustained GB/s: 928.367
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 277.217
+  Setup:       42.7714
+  Run:         1841.14
+  Verify:      0.002245
+  Teardown:    9.79839
+
+  Sustained GB/s: 933.111
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 352.581
+  Setup:       203.954
+  Run:         1815.66
+  Verify:      0.002414
+  Teardown:    9.10021
+
+  Sustained GB/s: 946.207
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 338.554
+  Setup:       237.16
+  Run:         1819.89
+  Verify:      0.001012
+  Teardown:    8.85334
+
+  Sustained GB/s: 944.004
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 403.309
+  Setup:       179.128
+  Run:         1836.82
+  Verify:      0.001232
+  Teardown:    9.0498
+
+  Sustained GB/s: 935.307
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 409.711
+  Setup:       169.684
+  Run:         1818.1
+  Verify:      0.001683
+  Teardown:    9.03345
+
+  Sustained GB/s: 944.936
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 283.356
+  Setup:       282.817
+  Run:         1867.41
+  Verify:      0.008296
+  Teardown:    0.421707
+
+  Sustained GB/s: 919.984
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 273.874
+  Setup:       42.0552
+  Run:         1874.96
+  Verify:      0.002886
+  Teardown:    0.273717
+
+  Sustained GB/s: 916.28
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 264.694
+  Setup:       43.0223
+  Run:         1911.02
+  Verify:      0.004649
+  Teardown:    0.380219
+
+  Sustained GB/s: 898.99
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 267.452
+  Setup:       41.5932
+  Run:         1854.24
+  Verify:      0.002465
+  Teardown:    0.288836
+
+  Sustained GB/s: 926.517
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Sum
+  Constructor: 264.234
+  Setup:       41.5776
+  Run:         1870.17
+  Verify:      0.002996
+  Teardown:    0.313612
+
+  Sustained GB/s: 918.624
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Min
+  Constructor: 268.709
+  Setup:       41.6209
+  Run:         3061.5
+  Verify:      0.001222
+  Teardown:    8.8334
+
+  Sustained GB/s: 561.158
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Min
+  Constructor: 263.057
+  Setup:       326.586
+  Run:         3069.73
+  Verify:      0.000991
+  Teardown:    9.07329
+
+  Sustained GB/s: 559.654
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Min
+  Constructor: 281.881
+  Setup:       300.061
+  Run:         2797.79
+  Verify:      0.00031
+  Teardown:    8.82038
+
+  Sustained GB/s: 614.052
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Min
+  Constructor: 266.892
+  Setup:       320.855
+  Run:         2803.45
+  Verify:      0.000812
+  Teardown:    9.34498
+
+  Sustained GB/s: 612.812
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Complex Min
+  Constructor: 309.936
+  Setup:       272.691
+  Run:         2786.06
+  Verify:      0.002324
+  Teardown:    9.27472
+
+  Sustained GB/s: 616.636
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Field Summary
+  Constructor: 340.03
+  Setup:       6.71411
+  Run:         822.579
+  Verify:      0.013105
+  Teardown:    0.31245
+
+  Sustained GB/s: 86.06
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Field Summary
+  Constructor: 520.573
+  Setup:       7.68634
+  Run:         825.499
+  Verify:      0.024436
+  Teardown:    0.419894
+
+  Sustained GB/s: 85.7556
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Field Summary
+  Constructor: 516.682
+  Setup:       7.66745
+  Run:         820.856
+  Verify:      0.01051
+  Teardown:    0.323371
+
+  Sustained GB/s: 86.2407
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Field Summary
+  Constructor: 512.622
+  Setup:       7.6592
+  Run:         825.666
+  Verify:      0.023955
+  Teardown:    0.352507
+
+  Sustained GB/s: 85.7383
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Field Summary
+  Constructor: 435.605
+  Setup:       7.4272
+  Run:         834.778
+  Verify:      0.013366
+  Teardown:    0.344831
+
+  Sustained GB/s: 84.8024
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Describe
+  Constructor: 313.695
+  Setup:       25.4728
+  Run:         2009.98
+  Verify:      1324.08
+  Teardown:    0.319073
+
+  Sustained GB/s: 854.727
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Describe
+  Constructor: 375.401
+  Setup:       24.7587
+  Run:         2006.51
+  Verify:      1317.36
+  Teardown:    0.316829
+
+  Sustained GB/s: 856.208
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Describe
+  Constructor: 307.713
+  Setup:       23.6892
+  Run:         2008.77
+  Verify:      1316.75
+  Teardown:    0.329814
+
+  Sustained GB/s: 855.241
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Describe
+  Constructor: 283.395
+  Setup:       23.7831
+  Run:         2024.09
+  Verify:      1967.41
+  Teardown:    0.472543
+
+  Sustained GB/s: 848.77
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos12Experimental3HIPE
+
+ Describe
+  Constructor: 266.299
+  Setup:       24.2815
+  Run:         2011.68
+  Verify:      1313.69
+  Teardown:    0.234594
+
+  Sustained GB/s: 854.008
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot: result incorrect
+Result: 0 (skipping rest)
+Expected: 0.00195312
+Result: 0.00195312
+Difference: 1.85537e-09
+Eps: 2.22045e-16
+
+ Dot Product
+  Constructor: 201.268
+  Setup:       9275.82
+  Run:         2828.44
+  Verify:      0.169731
+  Teardown:    41.4284
+
+  Sustained GB/s: 607.398
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot: result incorrect
+Result: 0 (skipping rest)
+Expected: 0.00195312
+Result: 0.00195312
+Difference: 1.85537e-09
+Eps: 2.22045e-16
+
+ Dot Product
+  Constructor: 180.125
+  Setup:       8600.16
+  Run:         2833.73
+  Verify:      0.097744
+  Teardown:    28.3029
+
+  Sustained GB/s: 606.264
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot: result incorrect
+Result: 0 (skipping rest)
+Expected: 0.00195312
+Result: 0.00195312
+Difference: 1.85537e-09
+Eps: 2.22045e-16
+
+ Dot Product
+  Constructor: 200.182
+  Setup:       8890.81
+  Run:         2833.97
+  Verify:      0.473165
+  Teardown:    46.5372
+
+  Sustained GB/s: 606.212
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot: result incorrect
+Result: 0 (skipping rest)
+Expected: 0.00195312
+Result: 0.00195312
+Difference: 1.85537e-09
+Eps: 2.22045e-16
+
+ Dot Product
+  Constructor: 243.622
+  Setup:       9443.14
+  Run:         2826.46
+  Verify:      0.169982
+  Teardown:    33.4682
+
+  Sustained GB/s: 607.823
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot: result incorrect
+Result: 0 (skipping rest)
+Expected: 0.00195312
+Result: 0.00195312
+Difference: 1.85537e-09
+Eps: 2.22045e-16
+
+ Dot Product
+  Constructor: 200.293
+  Setup:       9379.55
+  Run:         2825.07
+  Verify:      0.312882
+  Teardown:    34.2347
+
+  Sustained GB/s: 608.122
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum: result incorrect
+Result: 0 (skipping rest)
+Expected: (2048,2048)
+Result: (2048,2048)
+Difference: 0.00275135
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 177.971
+  Setup:       51708.1
+  Run:         3812.13
+  Verify:      0.162197
+  Teardown:    95.5136
+
+  Sustained GB/s: 450.664
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum: result incorrect
+Result: 0 (skipping rest)
+Expected: (2048,2048)
+Result: (2048,2048)
+Difference: 0.00206351
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 210.197
+  Setup:       43608.2
+  Run:         3805.02
+  Verify:      0.340123
+  Teardown:    31.0734
+
+  Sustained GB/s: 451.505
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum: result incorrect
+Result: 0 (skipping rest)
+Expected: (2048,2048)
+Result: (2048,2048)
+Difference: 0.00275135
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 250.109
+  Setup:       22342.8
+  Run:         3812.98
+  Verify:      0.263428
+  Teardown:    36.6323
+
+  Sustained GB/s: 450.563
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum: result incorrect
+Result: 0 (skipping rest)
+Expected: (2048,2048)
+Result: (2048,2048)
+Difference: 0.00206351
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 182.785
+  Setup:       32625.8
+  Run:         3805.28
+  Verify:      0.313933
+  Teardown:    35.5244
+
+  Sustained GB/s: 451.474
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum: result incorrect
+Result: 0 (skipping rest)
+Expected: (2048,2048)
+Result: (2048,2048)
+Difference: 0.00275135
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 194.305
+  Setup:       68577.5
+  Run:         3828.89
+  Verify:      0.508291
+  Teardown:    125.222
+
+  Sustained GB/s: 448.691
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA: result incorrect
+Result: 0 (skipping rest)
+Expected: 2048+ i2048
+Result:   2048+ i2048
+Difference: 0.000972748 and 0.000972748
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 228.458
+  Setup:       10143
+  Run:         5895.93
+  Verify:      0.227901
+  Teardown:    37.3838
+
+  Sustained GB/s: 291.385
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA: result incorrect
+Result: 0 (skipping rest)
+Expected: 2048+ i2048
+Result:   2048+ i2048
+Difference: 0.000972748 and 0.000972748
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 174.885
+  Setup:       8709.16
+  Run:         5910.47
+  Verify:      0.125758
+  Teardown:    35.634
+
+  Sustained GB/s: 290.668
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA: result incorrect
+Result: 0 (skipping rest)
+Expected: 2048+ i2048
+Result:   2048+ i2048
+Difference: 0.000972748 and 0.000972748
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 170.806
+  Setup:       9116.26
+  Run:         5909.47
+  Verify:      0.211229
+  Teardown:    51.7739
+
+  Sustained GB/s: 290.717
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA: result incorrect
+Result: 0 (skipping rest)
+Expected: 2048+ i2048
+Result:   2048+ i2048
+Difference: 0.000972748 and 0.000972748
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 207.085
+  Setup:       8540.62
+  Run:         5903.68
+  Verify:      0.104598
+  Teardown:    35.8133
+
+  Sustained GB/s: 291.003
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA: result incorrect
+Result: 0 (skipping rest)
+Expected: 2048+ i2048
+Result:   2048+ i2048
+Difference: 0.000972748 and 0.000972748
+Eps: 2.22045e-16
+
+ Complex Sum
+  Constructor: 178.055
+  Setup:       9224.32
+  Run:         6002.57
+  Verify:      0.209296
+  Teardown:    58.7717
+
+  Sustained GB/s: 286.209
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Min
+  Constructor: 185.357
+  Setup:       25838.5
+  Run:         3856.94
+  Verify:      0.025689
+  Teardown:    47.82
+
+  Sustained GB/s: 445.427
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Min
+  Constructor: 173.33
+  Setup:       82752.9
+  Run:         3851.53
+  Verify:      0.012353
+  Teardown:    71.3587
+
+  Sustained GB/s: 446.053
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Min
+  Constructor: 172.575
+  Setup:       58379.8
+  Run:         3850.7
+  Verify:      0.021401
+  Teardown:    25.9522
+
+  Sustained GB/s: 446.149
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Min
+  Constructor: 198.972
+  Setup:       47891.5
+  Run:         3865.89
+  Verify:      0.058581
+  Teardown:    48.8773
+
+  Sustained GB/s: 444.396
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Min
+  Constructor: 229.585
+  Setup:       31562
+  Run:         3859.64
+  Verify:      0.022513
+  Teardown:    24.5069
+
+  Sustained GB/s: 445.116
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 180.591
+  Setup:       270.621
+  Run:         368.684
+  Verify:      0.007404
+  Teardown:    1.67609
+
+  Sustained GB/s: 192.01
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 174.273
+  Setup:       219.771
+  Run:         362.283
+  Verify:      0.010009
+  Teardown:    3.07317
+
+  Sustained GB/s: 195.403
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 197.108
+  Setup:       235.862
+  Run:         361.32
+  Verify:      0.010189
+  Teardown:    6.36055
+
+  Sustained GB/s: 195.924
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 216.811
+  Setup:       503.556
+  Run:         406.492
+  Verify:      0.03156
+  Teardown:    12.3203
+
+  Sustained GB/s: 174.151
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 231.815
+  Setup:       703.863
+  Run:         356.665
+  Verify:      0.017202
+  Teardown:    7.32563
+
+  Sustained GB/s: 198.481
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe: mean result incorrect
+Result: 0 (skipping rest)
+Expected: 2.68435e+08
+Result: 2.68483e+08
+Difference: 47344.9
+Describe: std result incorrect
+Result: 0 (skipping rest)
+Expected: 154981282.781569
+Result: 154981246.437542
+Difference: 36.344027
+Describe: max result incorrect
+Result: 0 (skipping rest)
+Expected: 536870912.000000
+Result: 536870911.000000
+Difference: 1.000000
+
+ Describe
+  Constructor: 223.935
+  Setup:       5672.46
+  Run:         14944.5
+  Verify:      1313.62
+  Teardown:    10.1422
+
+  Sustained GB/s: 114.958
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe: mean result incorrect
+Result: 0 (skipping rest)
+Expected: 2.68435e+08
+Result: 2.68483e+08
+Difference: 47344.9
+Describe: std result incorrect
+Result: 0 (skipping rest)
+Expected: 154981282.781569
+Result: 154981246.437542
+Difference: 36.344027
+Describe: max result incorrect
+Result: 0 (skipping rest)
+Expected: 536870912.000000
+Result: 536870911.000000
+Difference: 1.000000
+
+ Describe
+  Constructor: 176.291
+  Setup:       4754.69
+  Run:         14964.8
+  Verify:      2235.46
+  Teardown:    23.2293
+
+  Sustained GB/s: 114.802
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe: mean result incorrect
+Result: 0 (skipping rest)
+Expected: 2.68435e+08
+Result: 2.68483e+08
+Difference: 47344.9
+Describe: std result incorrect
+Result: 0 (skipping rest)
+Expected: 154981282.781569
+Result: 154981246.437542
+Difference: 36.344027
+Describe: max result incorrect
+Result: 0 (skipping rest)
+Expected: 536870912.000000
+Result: 536870911.000000
+Difference: 1.000000
+
+ Describe
+  Constructor: 264.325
+  Setup:       5262.45
+  Run:         14952.5
+  Verify:      1313.98
+  Teardown:    21.2917
+
+  Sustained GB/s: 114.897
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe: mean result incorrect
+Result: 0 (skipping rest)
+Expected: 2.68435e+08
+Result: 2.68483e+08
+Difference: 47344.9
+Describe: std result incorrect
+Result: 0 (skipping rest)
+Expected: 154981282.781569
+Result: 154981246.437542
+Difference: 36.344027
+Describe: max result incorrect
+Result: 0 (skipping rest)
+Expected: 536870912.000000
+Result: 536870911.000000
+Difference: 1.000000
+
+ Describe
+  Constructor: 175.089
+  Setup:       4808.68
+  Run:         14963.9
+  Verify:      2548.67
+  Teardown:    21.0053
+
+  Sustained GB/s: 114.809
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe: mean result incorrect
+Result: 0 (skipping rest)
+Expected: 2.68435e+08
+Result: 2.68483e+08
+Difference: 47344.9
+Describe: std result incorrect
+Result: 0 (skipping rest)
+Expected: 154981282.781569
+Result: 154981246.437542
+Difference: 36.344027
+Describe: max result incorrect
+Result: 0 (skipping rest)
+Expected: 536870912.000000
+Result: 536870911.000000
+Difference: 1.000000
+
+ Describe
+  Constructor: 223.207
+  Setup:       5546.4
+  Run:         14927.8
+  Verify:      1457.37
+  Teardown:    20.9315
+
+  Sustained GB/s: 115.086
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is Clang 12.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/rocm/bin/hipcc - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The C compiler identification is Clang 12.0.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/rocm/bin/hipcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+Using C++ standard: c++14
+-- BLT Version: 0.4.1
+-- CMake Version: 3.18.1
+-- CMake Executable: /cosma/local/cmake/3.18.1/bin/cmake
+-- Found Git: /usr/bin/git (found version "1.8.3.1") 
+-- Git Support is ON
+-- Git Executable: /usr/bin/git
+-- Git Version: 1.8.3.1
+-- MPI Support is OFF
+-- OpenMP Support is Off
+-- CUDA Support is Off
+-- HIP Support is On
+-- Found HIP: /opt/rocm/hip (found version "4.2.21155-37cb3a34") 
+-- Performing Test HIP_CLANG_SUPPORTS_PARALLEL_JOBS
+-- Performing Test HIP_CLANG_SUPPORTS_PARALLEL_JOBS - Success
+-- HIP version:      4.2.21155-37cb3a34
+-- HIP platform:     amd
+-- HCC Support is OFF
+-- Found Doxygen: /usr/bin/doxygen (found version "1.8.5") found components: doxygen dot 
+-- Sphinx support is ON
+-- Found Sphinx: /cosma/local/Python/2.7.15/bin/sphinx-build  
+-- Valgrind support is ON
+-- Found Valgrind: /usr/bin/valgrind  
+-- AStyle support is ON
+-- Failed to locate AStyle executable (missing: ASTYLE_EXECUTABLE) 
+-- ClangFormat support is ON
+-- Found ClangFormat: /cosma/local/llvm/llvm-11.0.0/bin/clang-format  
+-- Uncrustify support is ON
+-- Failed to locate Uncrustify executable (missing: UNCRUSTIFY_EXECUTABLE) 
+-- Yapf support is ON
+-- Failed to locate Yapf executable (missing: YAPF_EXECUTABLE) 
+-- CMakeFormat support is ON
+-- Failed to locate CMakeFormat executable (missing: CMAKEFORMAT_EXECUTABLE) 
+-- Cppcheck support is ON
+-- Failed to locate Cppcheck executable (missing: CPPCHECK_EXECUTABLE) 
+-- ClangQuery support is ON
+-- Failed to locate ClangQuery executable (missing: CLANGQUERY_EXECUTABLE) 
+-- ClangTidy support is ON
+-- Failed to locate ClangTidy executable (missing: CLANGTIDY_EXECUTABLE) 
+-- C Compiler family is Clang
+-- Adding optional BLT definitions and compiler flags
+-- Standard C++14 selected
+-- Enabling all compiler warnings on all targets.
+-- Fortran support disabled.
+-- CMAKE_C_FLAGS flags are:    -Wall -Wextra 
+-- CMAKE_CXX_FLAGS flags are:  -I/opt/rocm/include -D__HIP_PLATFORM_AMD__ --gcc-toolchain=/cosma/local/gcc/7.3.0     -Wall -Wextra 
+-- CMAKE_EXE_LINKER_FLAGS flags are:  -L/cosma/local/boost//gnu_7.3.0/1_67_0/lib -Wl,-rpath=/cosma/local/boost//gnu_7.3.0/1_67_0/lib -L/cosma/local/gcc/7.3.0/lib64/ -Wl,-rpath=/cosma/local/gcc/7.3.0/lib64/
+CMake Warning (dev) at /cosma/local/cmake/3.18.1/share/cmake-3.18/Modules/FindPackageHandleStandardArgs.cmake:273 (message):
+  The package name passed to `find_package_handle_standard_args` (ROCPRIM)
+  does not match the name of the calling package (RocPRIM).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  RAJA-v0.14.0/cmake/thirdparty/FindRocPRIM.cmake:20 (find_package_handle_standard_args)
+  RAJA-v0.14.0/cmake/SetupPackages.cmake:63 (find_package)
+  RAJA-v0.14.0/CMakeLists.txt:172 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found ROCPRIM: /opt/rocm/rocprim/include  
+-- Using RAJA CAMP submodule.
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for std::aligned_alloc
+-- Looking for std::aligned_alloc - not found
+-- Looking for _mm_malloc
+-- Looking for _mm_malloc - not found
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cosma/home/do006/dc-deak1/codes/everythingsreduced/src/build_raja
+[ 41%] Building HIPCC object raja/CMakeFiles/RAJA.dir/src/RAJA_generated_MemUtils_HIP.cpp.o
+[ 41%] Building HIPCC object raja/CMakeFiles/RAJA.dir/src/RAJA_generated_DepGraphNode.cpp.o
+[ 41%] Building HIPCC object raja/CMakeFiles/RAJA.dir/src/RAJA_generated_LockFreeIndexSetBuilders.cpp.o
+[ 41%] Building HIPCC object raja/CMakeFiles/RAJA.dir/src/RAJA_generated_AlignedRangeIndexSetBuilders.cpp.o
+[ 41%] Building HIPCC object raja/CMakeFiles/RAJA.dir/src/RAJA_generated_PluginStrategy.cpp.o
+[ 41%] Building HIPCC object raja/CMakeFiles/RAJA.dir/src/RAJA_generated_MemUtils_SYCL.cpp.o
+[ 41%] Building HIPCC object raja/CMakeFiles/RAJA.dir/src/RAJA_generated_MemUtils_CUDA.cpp.o
+Scanning dependencies of target RAJA
+[ 47%] Linking CXX static library lib/libRAJA.a
+[ 47%] Built target RAJA
+Scanning dependencies of target implement_raja
+[ 52%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_min.cpp.o
+[ 70%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum.cpp.o
+[ 70%] Building CXX object CMakeFiles/implement_raja.dir/raja/complex_sum_soa.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/describe.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/field_summary.cpp.o
+[ 82%] Building CXX object CMakeFiles/implement_raja.dir/raja/dot.cpp.o
+[ 88%] Linking CXX static library raja/lib/libimplement_raja.a
+[ 88%] Built target implement_raja
+Scanning dependencies of target Reduced
+[ 94%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00013
+  Setup:       295.899
+  Run:         2869.76
+  Verify:      0.015779
+  Teardown:    0.750077
+
+  Sustained GB/s: 598.651
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000241
+  Setup:       686.331
+  Run:         2856.78
+  Verify:      0.007564
+  Teardown:    0.644248
+
+  Sustained GB/s: 601.371
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000221
+  Setup:       687.113
+  Run:         2884.21
+  Verify:      0.007565
+  Teardown:    0.79402
+
+  Sustained GB/s: 595.654
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000151
+  Setup:       517.164
+  Run:         2885.27
+  Verify:      0.004699
+  Teardown:    0.331286
+
+  Sustained GB/s: 595.434
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00011
+  Setup:       493.664
+  Run:         2869.33
+  Verify:      0.003236
+  Teardown:    0.300749
+
+  Sustained GB/s: 598.742
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000942
+  Setup:       502.397
+  Run:         3136.82
+  Verify:      0.004569
+  Teardown:    0.273026
+
+  Sustained GB/s: 547.684
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000952
+  Setup:       785.735
+  Run:         3127.12
+  Verify:      0.003417
+  Teardown:    0.26441
+
+  Sustained GB/s: 549.382
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000871
+  Setup:       790.173
+  Run:         3165.1
+  Verify:      0.007705
+  Teardown:    0.506497
+
+  Sustained GB/s: 542.791
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.001443
+  Setup:       782.207
+  Run:         3132.17
+  Verify:      0.003677
+  Teardown:    0.246175
+
+  Sustained GB/s: 548.498
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.001212
+  Setup:       791.415
+  Run:         3153.49
+  Verify:      0.086062
+  Teardown:    3.36882
+
+  Sustained GB/s: 544.789
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000171
+  Setup:       781.903
+  Run:         5158.21
+  Verify:      0.008115
+  Teardown:    0.70345
+
+  Sustained GB/s: 333.059
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00025
+  Setup:       690.258
+  Run:         5152.59
+  Verify:      0.023715
+  Teardown:    0.598181
+
+  Sustained GB/s: 333.422
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00023
+  Setup:       672.46
+  Run:         5159.43
+  Verify:      0.009207
+  Teardown:    0.901364
+
+  Sustained GB/s: 332.98
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000111
+  Setup:       494.376
+  Run:         5159.16
+  Verify:      0.014858
+  Teardown:    0.493172
+
+  Sustained GB/s: 332.997
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.0001
+  Setup:       491.096
+  Run:         5164.26
+  Verify:      0.004098
+  Teardown:    0.458186
+
+  Sustained GB/s: 332.669
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.00011
+  Setup:       269.8
+  Run:         143.782
+  Verify:      0.003095
+  Teardown:    0.099118
+
+  Sustained GB/s: 492.351
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.0001
+  Setup:       270.856
+  Run:         102.956
+  Verify:      0.002795
+  Teardown:    0.095651
+
+  Sustained GB/s: 687.59
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.0001
+  Setup:       274.822
+  Run:         104.758
+  Verify:      0.003276
+  Teardown:    0.0901
+
+  Sustained GB/s: 675.757
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.0001
+  Setup:       278.516
+  Run:         103.278
+  Verify:      0.002935
+  Teardown:    0.106932
+
+  Sustained GB/s: 685.444
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.0001
+  Setup:       273.405
+  Run:         102.03
+  Verify:      0.002765
+  Teardown:    0.08989
+
+  Sustained GB/s: 693.828
+--------------------------------------------------------------------------------
