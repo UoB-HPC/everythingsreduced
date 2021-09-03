@@ -1,0 +1,1346 @@
+Fri  3 Sep 17:57:16 BST 2021
+gpu-q-22
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is GNU 8.4.0
+-- Check for working CXX compiler: /usr/local/software/master/gcc/8/bin/g++
+-- Check for working CXX compiler: /usr/local/software/master/gcc/8/bin/g++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The C compiler identification is GNU 8.4.0
+-- Check for working C compiler: /usr/local/software/master/gcc/8/bin/gcc
+-- Check for working C compiler: /usr/local/software/master/gcc/8/bin/gcc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+Using C++ standard: c++14
+-- BLT Version: 0.4.1
+-- CMake Version: 3.17.0
+-- CMake Executable: /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake
+-- Found Git: /usr/local/software/global/bin/git (found version "2.26.0") 
+-- Git Support is ON
+-- Git Executable: /usr/local/software/global/bin/git
+-- Git Version: 2.26.0
+-- MPI Support is OFF
+-- OpenMP Support is On
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- OpenMP Compile Flags: $<$<NOT:$<COMPILE_LANGUAGE:CUDA>>:-fopenmp>;$<$<COMPILE_LANGUAGE:CUDA>:-Xcompiler=-fopenmp>
+-- OpenMP Link Flags:    -fopenmp
+-- CUDA Support is On
+-- The CUDA compiler identification is NVIDIA 11.2.67
+-- Check for working CUDA compiler: /usr/local/software/cuda/11.2/bin/nvcc
+-- Check for working CUDA compiler: /usr/local/software/cuda/11.2/bin/nvcc - works
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/software/cuda/11.2 (found version "11.2") 
+-- CUDA Version:       11.2
+-- CUDA Toolkit Root Dir: /usr/local/software/cuda/11.2
+-- CUDA Compiler:      /usr/local/software/cuda/11.2/bin/nvcc
+-- CUDA Host Compiler: /usr/local/software/master/gcc/8/bin/g++
+-- CUDA Include Path:  /usr/local/software/cuda/11.2/include
+-- CUDA Libraries:     /usr/local/software/cuda/11.2/lib64/libcudart_static.a;Threads::Threads;dl;/usr/lib64/librt.so
+-- CUDA Compile Flags: --expt-extended-lambda
+-- CUDA Link Flags:    -L/usr/local/software/cuda/11.2/lib64
+-- CUDA Separable Compilation:  OFF
+-- CUDA Link with NVCC:         
+-- CUDA Implicit Link Libraries:   rt;pthread;dl;stdc++;m;gcc_s;gcc;c;gcc_s;gcc
+-- CUDA Implicit Link Directories: /usr/local/software/cuda/11.2/targets/x86_64-linux/lib/stubs;/usr/local/software/cuda/11.2/targets/x86_64-linux/lib;/usr/local/software/master/gcc/8/lib64;/usr/local/software/cuda/11.2/nvvm/lib64;/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-4.8.5/gcc-5.4.0-fis24ggupugiobii56fesif2y3qulpdr/lib64;/usr/local/Cluster-Apps/cuda/8.0/lib64;/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-8.4.0-cmt6vj7mvn5mqvomwknaujmkbzggomki/lib/gcc/x86_64-pc-linux-gnu/8.4.0;/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-8.4.0-cmt6vj7mvn5mqvomwknaujmkbzggomki/lib64;/lib64;/usr/lib64;/usr/local/Cluster-Apps/boost/1.49.0/lib;/usr/local/software/master/gcc/8/lib;/usr/local/software/cuda/11.2/lib64;/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/openmpi-1.10.7-jdc7f4fjdq5roxhadufd6h66xkwuytss/lib;/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-4.8.5/gcc-5.4.0-fis24ggupugiobii56fesif2y3qulpdr/lib;/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-8.4.0-cmt6vj7mvn5mqvomwknaujmkbzggomki/lib
+-- HIP Support is OFF
+-- HCC Support is OFF
+-- Found Doxygen: /usr/bin/doxygen (found version "1.8.14") found components: doxygen dot 
+-- Sphinx support is ON
+-- Failed to locate Sphinx executable (missing: SPHINX_EXECUTABLE) 
+-- Valgrind support is ON
+-- Found Valgrind: /usr/bin/valgrind  
+-- AStyle support is ON
+-- Failed to locate AStyle executable (missing: ASTYLE_EXECUTABLE) 
+-- ClangFormat support is ON
+-- Found ClangFormat: /usr/bin/clang-format  
+-- Uncrustify support is ON
+-- Failed to locate Uncrustify executable (missing: UNCRUSTIFY_EXECUTABLE) 
+-- Yapf support is ON
+-- Failed to locate Yapf executable (missing: YAPF_EXECUTABLE) 
+-- CMakeFormat support is ON
+-- Failed to locate CMakeFormat executable (missing: CMAKEFORMAT_EXECUTABLE) 
+-- Cppcheck support is ON
+-- Failed to locate Cppcheck executable (missing: CPPCHECK_EXECUTABLE) 
+-- ClangQuery support is ON
+-- Found ClangQuery: /usr/bin/clang-query  
+-- ClangTidy support is ON
+-- Found ClangTidy: /usr/bin/clang-tidy  
+-- C Compiler family is GNU
+-- Adding optional BLT definitions and compiler flags
+-- Standard C++14 selected
+-- Enabling all compiler warnings on all targets.
+-- Fortran support disabled.
+-- CMAKE_C_FLAGS flags are:    -Wall -Wextra 
+-- CMAKE_CXX_FLAGS flags are:       -Wall -Wextra 
+-- CMAKE_EXE_LINKER_FLAGS flags are:  
+-- OpenMP Enabled
+-- Found CUB: /usr/local/software/cuda/11.2/include  
+-- Using RAJA CAMP submodule.
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for std::aligned_alloc
+-- Looking for std::aligned_alloc - not found
+-- Looking for _mm_malloc
+-- Looking for _mm_malloc - not found
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    NO_COMPLEX_MIN
+
+
+-- Build files have been written to: /home/hpcdeak1/codes/everythingsreduced/src/build_raja
+sed: preserving permissions for ‘build_raja/sed1E01GO’: Operation not supported
+sed: preserving permissions for ‘build_raja/raja/CMakeFiles/RAJA.dir/sedRhxHrV’: Operation not supported
+sed: preserving permissions for ‘build_raja/CMakeFiles/Reduced.dir/sednvCEBZ’: Operation not supported
+sed: preserving permissions for ‘build_raja/CMakeFiles/implement_raja.dir/sedRcTKT3’: Operation not supported
+/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -P /home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/VerifyGlobs.cmake
+/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -S/home/hpcdeak1/codes/everythingsreduced/src -B/home/hpcdeak1/codes/everythingsreduced/src/build_raja --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -E cmake_progress_start /home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles /home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/progress.marks
+/usr/bin/gmake -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+/usr/bin/gmake -f raja/CMakeFiles/RAJA.dir/build.make raja/CMakeFiles/RAJA.dir/depend
+gmake[2]: Entering directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja && /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -E cmake_depends "Unix Makefiles" /home/hpcdeak1/codes/everythingsreduced/src /home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0 /home/hpcdeak1/codes/everythingsreduced/src/build_raja /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/CMakeFiles/RAJA.dir/DependInfo.cmake --color=
+Dependee "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/CMakeFiles/RAJA.dir/DependInfo.cmake" is newer than depender "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/CMakeFiles/RAJA.dir/depend.internal".
+Dependee "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/CMakeFiles/RAJA.dir/depend.internal".
+Scanning dependencies of target RAJA
+gmake[2]: Leaving directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+/usr/bin/gmake -f raja/CMakeFiles/RAJA.dir/build.make raja/CMakeFiles/RAJA.dir/build
+gmake[2]: Entering directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+[  5%] Building CUDA object raja/CMakeFiles/RAJA.dir/src/AlignedRangeIndexSetBuilders.cpp.o
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja && /usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda -restrict -arch sm_80 --expt-extended-lambda --expt-relaxed-constexpr -Xcudafe "--display_error_number" -O2 -Xcompiler=-fPIC   -Xcompiler=-fopenmp -std=c++11 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/src/AlignedRangeIndexSetBuilders.cpp -o CMakeFiles/RAJA.dir/src/AlignedRangeIndexSetBuilders.cpp.o
+[ 11%] Building CUDA object raja/CMakeFiles/RAJA.dir/src/DepGraphNode.cpp.o
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja && /usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda -restrict -arch sm_80 --expt-extended-lambda --expt-relaxed-constexpr -Xcudafe "--display_error_number" -O2 -Xcompiler=-fPIC   -Xcompiler=-fopenmp -std=c++11 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/src/DepGraphNode.cpp -o CMakeFiles/RAJA.dir/src/DepGraphNode.cpp.o
+[ 17%] Building CUDA object raja/CMakeFiles/RAJA.dir/src/LockFreeIndexSetBuilders.cpp.o
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja && /usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda -restrict -arch sm_80 --expt-extended-lambda --expt-relaxed-constexpr -Xcudafe "--display_error_number" -O2 -Xcompiler=-fPIC   -Xcompiler=-fopenmp -std=c++11 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/src/LockFreeIndexSetBuilders.cpp -o CMakeFiles/RAJA.dir/src/LockFreeIndexSetBuilders.cpp.o
+[ 23%] Building CUDA object raja/CMakeFiles/RAJA.dir/src/MemUtils_CUDA.cpp.o
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja && /usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda -restrict -arch sm_80 --expt-extended-lambda --expt-relaxed-constexpr -Xcudafe "--display_error_number" -O2 -Xcompiler=-fPIC   -Xcompiler=-fopenmp -std=c++11 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/src/MemUtils_CUDA.cpp -o CMakeFiles/RAJA.dir/src/MemUtils_CUDA.cpp.o
+[ 29%] Building CUDA object raja/CMakeFiles/RAJA.dir/src/MemUtils_HIP.cpp.o
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja && /usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda -restrict -arch sm_80 --expt-extended-lambda --expt-relaxed-constexpr -Xcudafe "--display_error_number" -O2 -Xcompiler=-fPIC   -Xcompiler=-fopenmp -std=c++11 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/src/MemUtils_HIP.cpp -o CMakeFiles/RAJA.dir/src/MemUtils_HIP.cpp.o
+[ 35%] Building CUDA object raja/CMakeFiles/RAJA.dir/src/MemUtils_SYCL.cpp.o
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja && /usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda -restrict -arch sm_80 --expt-extended-lambda --expt-relaxed-constexpr -Xcudafe "--display_error_number" -O2 -Xcompiler=-fPIC   -Xcompiler=-fopenmp -std=c++11 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/src/MemUtils_SYCL.cpp -o CMakeFiles/RAJA.dir/src/MemUtils_SYCL.cpp.o
+[ 41%] Building CUDA object raja/CMakeFiles/RAJA.dir/src/PluginStrategy.cpp.o
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja && /usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda -restrict -arch sm_80 --expt-extended-lambda --expt-relaxed-constexpr -Xcudafe "--display_error_number" -O2 -Xcompiler=-fPIC   -Xcompiler=-fopenmp -std=c++11 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/src/PluginStrategy.cpp -o CMakeFiles/RAJA.dir/src/PluginStrategy.cpp.o
+[ 47%] Linking CUDA static library lib/libRAJA.a
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja && /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -P CMakeFiles/RAJA.dir/cmake_clean_target.cmake
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja && /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -E cmake_link_script CMakeFiles/RAJA.dir/link.txt --verbose=1
+/usr/bin/ar qc lib/libRAJA.a  CMakeFiles/RAJA.dir/src/AlignedRangeIndexSetBuilders.cpp.o CMakeFiles/RAJA.dir/src/DepGraphNode.cpp.o CMakeFiles/RAJA.dir/src/LockFreeIndexSetBuilders.cpp.o CMakeFiles/RAJA.dir/src/MemUtils_CUDA.cpp.o CMakeFiles/RAJA.dir/src/MemUtils_HIP.cpp.o CMakeFiles/RAJA.dir/src/MemUtils_SYCL.cpp.o CMakeFiles/RAJA.dir/src/PluginStrategy.cpp.o
+/usr/bin/ranlib lib/libRAJA.a
+gmake[2]: Leaving directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+[ 47%] Built target RAJA
+/usr/bin/gmake -f CMakeFiles/implement_raja.dir/build.make CMakeFiles/implement_raja.dir/depend
+gmake[2]: Entering directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja && /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -E cmake_depends "Unix Makefiles" /home/hpcdeak1/codes/everythingsreduced/src /home/hpcdeak1/codes/everythingsreduced/src /home/hpcdeak1/codes/everythingsreduced/src/build_raja /home/hpcdeak1/codes/everythingsreduced/src/build_raja /home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/implement_raja.dir/DependInfo.cmake --color=
+Dependee "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/implement_raja.dir/DependInfo.cmake" is newer than depender "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/implement_raja.dir/depend.internal".
+Dependee "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/implement_raja.dir/depend.internal".
+Scanning dependencies of target implement_raja
+gmake[2]: Leaving directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+/usr/bin/gmake -f CMakeFiles/implement_raja.dir/build.make CMakeFiles/implement_raja.dir/build
+gmake[2]: Entering directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+[ 52%] Building CUDA object CMakeFiles/implement_raja.dir/raja/complex_min.cpp.o
+/usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda --expt-relaxed-constexpr   -Xcompiler=-fopenmp -std=c++14 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/raja/complex_min.cpp -o CMakeFiles/implement_raja.dir/raja/complex_min.cpp.o
+[ 58%] Building CUDA object CMakeFiles/implement_raja.dir/raja/complex_sum.cpp.o
+/usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda --expt-relaxed-constexpr   -Xcompiler=-fopenmp -std=c++14 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/raja/complex_sum.cpp -o CMakeFiles/implement_raja.dir/raja/complex_sum.cpp.o
+/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include/RAJA/util/Operators.hpp(334): warning: calling a __host__ function from a __host__ __device__ function is not allowed
+
+[ 64%] Building CUDA object CMakeFiles/implement_raja.dir/raja/complex_sum_soa.cpp.o
+/usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda --expt-relaxed-constexpr   -Xcompiler=-fopenmp -std=c++14 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/raja/complex_sum_soa.cpp -o CMakeFiles/implement_raja.dir/raja/complex_sum_soa.cpp.o
+[ 70%] Building CUDA object CMakeFiles/implement_raja.dir/raja/describe.cpp.o
+/usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda --expt-relaxed-constexpr   -Xcompiler=-fopenmp -std=c++14 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/raja/describe.cpp -o CMakeFiles/implement_raja.dir/raja/describe.cpp.o
+[ 76%] Building CUDA object CMakeFiles/implement_raja.dir/raja/dot.cpp.o
+/usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda --expt-relaxed-constexpr   -Xcompiler=-fopenmp -std=c++14 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/raja/dot.cpp -o CMakeFiles/implement_raja.dir/raja/dot.cpp.o
+[ 82%] Building CUDA object CMakeFiles/implement_raja.dir/raja/field_summary.cpp.o
+/usr/local/software/cuda/11.2/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/local/software/master/gcc/8/bin/g++  -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -I/usr/local/software/cuda/11.2/include  --expt-extended-lambda --expt-relaxed-constexpr   -Xcompiler=-fopenmp -std=c++14 -x cu -c /home/hpcdeak1/codes/everythingsreduced/src/raja/field_summary.cpp -o CMakeFiles/implement_raja.dir/raja/field_summary.cpp.o
+/home/hpcdeak1/codes/everythingsreduced/src/raja/field_summary.cpp(99): warning: variable "N" is used before its value is set
+
+/home/hpcdeak1/codes/everythingsreduced/src/raja/field_summary.cpp(99): warning: variable "N" is used before its value is set
+
+[ 88%] Linking CUDA static library raja/lib/libimplement_raja.a
+/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -P CMakeFiles/implement_raja.dir/cmake_clean_target.cmake
+/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -E cmake_link_script CMakeFiles/implement_raja.dir/link.txt --verbose=1
+/usr/bin/ar qc raja/lib/libimplement_raja.a  CMakeFiles/implement_raja.dir/raja/complex_min.cpp.o CMakeFiles/implement_raja.dir/raja/complex_sum.cpp.o CMakeFiles/implement_raja.dir/raja/complex_sum_soa.cpp.o CMakeFiles/implement_raja.dir/raja/describe.cpp.o CMakeFiles/implement_raja.dir/raja/dot.cpp.o CMakeFiles/implement_raja.dir/raja/field_summary.cpp.o
+/usr/bin/ranlib raja/lib/libimplement_raja.a
+gmake[2]: Leaving directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+[ 88%] Built target implement_raja
+/usr/bin/gmake -f CMakeFiles/Reduced.dir/build.make CMakeFiles/Reduced.dir/depend
+gmake[2]: Entering directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+cd /home/hpcdeak1/codes/everythingsreduced/src/build_raja && /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -E cmake_depends "Unix Makefiles" /home/hpcdeak1/codes/everythingsreduced/src /home/hpcdeak1/codes/everythingsreduced/src /home/hpcdeak1/codes/everythingsreduced/src/build_raja /home/hpcdeak1/codes/everythingsreduced/src/build_raja /home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/Reduced.dir/DependInfo.cmake --color=
+Dependee "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/Reduced.dir/DependInfo.cmake" is newer than depender "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/Reduced.dir/depend.internal".
+Dependee "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles/Reduced.dir/depend.internal".
+Scanning dependencies of target Reduced
+gmake[2]: Leaving directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+/usr/bin/gmake -f CMakeFiles/Reduced.dir/build.make CMakeFiles/Reduced.dir/build
+gmake[2]: Entering directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+[ 94%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+/usr/local/software/master/gcc/8/bin/g++   -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/include -I/home/hpcdeak1/codes/everythingsreduced/src/build_raja/raja/include -I/home/hpcdeak1/codes/everythingsreduced/src/RAJA-v0.14.0/tpl/camp/include -isystem /usr/local/software/cuda/11.2/include  -O3 -DNDEBUG   -fopenmp -std=gnu++14 -o CMakeFiles/Reduced.dir/main.cpp.o -c /home/hpcdeak1/codes/everythingsreduced/src/main.cpp
+[100%] Linking CXX executable Reduced
+/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -E cmake_link_script CMakeFiles/Reduced.dir/link.txt --verbose=1
+/usr/local/software/master/gcc/8/bin/g++  -O3 -DNDEBUG  -fopenmp -L/usr/local/software/cuda/11.2/lib64 CMakeFiles/Reduced.dir/main.cpp.o  -o Reduced   -L/usr/local/software/cuda/11.2/targets/x86_64-linux/lib/stubs  raja/lib/libimplement_raja.a raja/lib/libRAJA.a /usr/local/software/cuda/11.2/lib64/libcudart_static.a -lpthread /usr/lib64/librt.so -ldl -lcudadevrt -lcudart_static -lrt -lpthread -ldl 
+gmake[2]: Leaving directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+[100%] Built target Reduced
+gmake[1]: Leaving directory '/home/hpcdeak1/codes/everythingsreduced/src/build_raja'
+/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/cmake-3.17.0-lq3oza37gob3conzl7pwcnouhblstno4/bin/cmake -E cmake_progress_start /home/hpcdeak1/codes/everythingsreduced/src/build_raja/CMakeFiles 0
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000391
+  Setup:       3179.86
+  Run:         1664.87
+  Verify:      0.000511
+  Teardown:    279.419
+
+  Sustained GB/s: 1031.9
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000381
+  Setup:       2321.45
+  Run:         1653.04
+  Verify:      0.00044
+  Teardown:    278.997
+
+  Sustained GB/s: 1039.29
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000942
+  Setup:       1206.49
+  Run:         1662.92
+  Verify:      0.000892
+  Teardown:    278.837
+
+  Sustained GB/s: 1033.12
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000391
+  Setup:       2328.2
+  Run:         1661.58
+  Verify:      0.000691
+  Teardown:    278.853
+
+  Sustained GB/s: 1033.95
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000361
+  Setup:       2343.14
+  Run:         1661.61
+  Verify:      0.000491
+  Teardown:    279.581
+
+  Sustained GB/s: 1033.93
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000481
+  Setup:       2674.45
+  Run:         2045.94
+  Verify:      0.013285
+  Teardown:    279.865
+
+  Sustained GB/s: 839.705
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000601
+  Setup:       2672.09
+  Run:         2046.21
+  Verify:      0.02129
+  Teardown:    278.837
+
+  Sustained GB/s: 839.596
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000701
+  Setup:       2701.37
+  Run:         2045.59
+  Verify:      0.012895
+  Teardown:    279.349
+
+  Sustained GB/s: 839.849
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000381
+  Setup:       2708.39
+  Run:         2046.63
+  Verify:      0.013074
+  Teardown:    278.979
+
+  Sustained GB/s: 839.422
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000541
+  Setup:       2748.02
+  Run:         2046.36
+  Verify:      0.013786
+  Teardown:    279.132
+
+  Sustained GB/s: 839.531
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000701
+  Setup:       2113.06
+  Run:         2774.5
+  Verify:      0.000321
+  Teardown:    279.588
+
+  Sustained GB/s: 619.206
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000621
+  Setup:       2099.82
+  Run:         2774.82
+  Verify:      0.000691
+  Teardown:    279.458
+
+  Sustained GB/s: 619.134
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000842
+  Setup:       2101.59
+  Run:         2775.65
+  Verify:      0.000591
+  Teardown:    278.762
+
+  Sustained GB/s: 618.948
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.002985
+  Setup:       1112.53
+  Run:         2777.05
+  Verify:      0.000701
+  Teardown:    278.953
+
+  Sustained GB/s: 618.638
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000641
+  Setup:       2102.9
+  Run:         2775.1
+  Verify:      0.000721
+  Teardown:    279.126
+
+  Sustained GB/s: 619.071
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.002504
+  Setup:       280.924
+  Run:         72.0559
+  Verify:      0.000942
+  Teardown:    7.63497
+
+  Sustained GB/s: 982.448
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.002825
+  Setup:       262.621
+  Run:         73.1821
+  Verify:      0.000732
+  Teardown:    10.7426
+
+  Sustained GB/s: 967.329
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.002935
+  Setup:       260.316
+  Run:         72.1065
+  Verify:      0.000922
+  Teardown:    7.74439
+
+  Sustained GB/s: 981.759
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.003215
+  Setup:       261.891
+  Run:         72.6815
+  Verify:      0.000721
+  Teardown:    7.67865
+
+  Sustained GB/s: 973.991
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.009538
+  Setup:       250.326
+  Run:         74.8589
+  Verify:      0.001312
+  Teardown:    8.94685
+
+  Sustained GB/s: 945.662
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is GNU 8.4.0
+-- Check for working CXX compiler: /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-8.4.0-cmt6vj7mvn5mqvomwknaujmkbzggomki/bin/g++
+-- Check for working CXX compiler: /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-8.4.0-cmt6vj7mvn5mqvomwknaujmkbzggomki/bin/g++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Setting default Kokkos CXX standard to 14
+-- Setting policy CMP0074 to use <Package>_ROOT variables
+-- The project name is: Kokkos
+-- Compiler Version: 11.2.67
+-- kokkos_launch_compiler (/home/hpcdeak1/codes/everythingsreduced/src/kokkos-3.4.01/bin/kokkos_launch_compiler) is enabled...
+-- SERIAL backend is being turned on to ensure there is at least one Host space. To change this, you must enable another host execution space and configure with -DKokkos_ENABLE_SERIAL=OFF or change CMakeCache.txt
+-- Using -std=c++14 for C++14 standard as feature
+-- Built-in Execution Spaces:
+--     Device Parallel: Kokkos::Cuda
+--     Host Parallel: NoTypeDefined
+--       Host Serial: SERIAL
+-- 
+-- Architectures:
+--  AMPERE80
+-- Found CUDAToolkit: /usr/local/software/cuda/11.2/include (found version "11.2.67") 
+-- Looking for C++ include pthread.h
+-- Looking for C++ include pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found TPLCUDA: TRUE  
+-- Found TPLLIBDL: /usr/lib64/libdl.so  
+-- Kokkos Devices: CUDA;SERIAL, Kokkos Backends: CUDA;SERIAL
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    USING_CSD3
+
+
+-- Build files have been written to: /home/hpcdeak1/codes/everythingsreduced/src/build_kokkos
+Scanning dependencies of target kokkoscore
+[  2%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_CPUDiscovery.cpp.o
+[  5%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Core.cpp.o
+[  8%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Error.cpp.o
+[ 11%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_ExecPolicy.cpp.o
+[ 14%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostBarrier.cpp.o
+[ 17%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace.cpp.o
+[ 20%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostSpace_deepcopy.cpp.o
+[ 23%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_HostThreadTeam.cpp.o
+[ 26%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemoryPool.cpp.o
+[ 29%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_MemorySpace.cpp.o
+[ 32%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_NumericTraits.cpp.o
+[ 35%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Profiling.cpp.o
+[ 38%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial.cpp.o
+[ 41%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Serial_Task.cpp.o
+[ 44%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_SharedAlloc.cpp.o
+[ 47%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Spinwait.cpp.o
+[ 50%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_Stacktrace.cpp.o
+[ 52%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/impl/Kokkos_hwloc.cpp.o
+[ 55%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/Cuda/Kokkos_CudaSpace.cpp.o
+[ 58%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/Cuda/Kokkos_Cuda_Instance.cpp.o
+[ 61%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/Cuda/Kokkos_Cuda_Locks.cpp.o
+[ 64%] Building CXX object kokkos-3.4.01/core/src/CMakeFiles/kokkoscore.dir/Cuda/Kokkos_Cuda_Task.cpp.o
+[ 67%] Linking CXX static library libkokkoscore.a
+[ 67%] Built target kokkoscore
+Scanning dependencies of target kokkoscontainers
+[ 70%] Building CXX object kokkos-3.4.01/containers/src/CMakeFiles/kokkoscontainers.dir/impl/Kokkos_UnorderedMap_impl.cpp.o
+[ 73%] Linking CXX static library libkokkoscontainers.a
+[ 73%] Built target kokkoscontainers
+Scanning dependencies of target implement_kokkos
+[ 76%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_min.cpp.o
+nvcc_wrapper has been given GNU extension standard flag -std=gnu++14 - reverting flag to -std=c++14
+[ 79%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum.cpp.o
+nvcc_wrapper has been given GNU extension standard flag -std=gnu++14 - reverting flag to -std=c++14
+[ 82%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/complex_sum_soa.cpp.o
+nvcc_wrapper has been given GNU extension standard flag -std=gnu++14 - reverting flag to -std=c++14
+[ 85%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/describe.cpp.o
+nvcc_wrapper has been given GNU extension standard flag -std=gnu++14 - reverting flag to -std=c++14
+[ 88%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/dot.cpp.o
+nvcc_wrapper has been given GNU extension standard flag -std=gnu++14 - reverting flag to -std=c++14
+[ 91%] Building CXX object CMakeFiles/implement_kokkos.dir/kokkos/field_summary.cpp.o
+nvcc_wrapper has been given GNU extension standard flag -std=gnu++14 - reverting flag to -std=c++14
+[ 94%] Linking CXX static library libimplement_kokkos.a
+[ 94%] Built target implement_kokkos
+Scanning dependencies of target Reduced
+[ 97%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+nvcc_wrapper has been given GNU extension standard flag -std=gnu++14 - reverting flag to -std=c++14
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos4CudaE
+
+ Dot Product
+  Constructor: 243.928
+  Setup:       55.3864
+  Run:         1350.75
+  Verify:      0.0003
+  Teardown:    10.4159
+
+  Sustained GB/s: 1271.88
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos4CudaE
+
+ Dot Product
+  Constructor: 297.119
+  Setup:       57.015
+  Run:         1358.95
+  Verify:      0.00029
+  Teardown:    15.9293
+
+  Sustained GB/s: 1264.2
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos4CudaE
+
+ Dot Product
+  Constructor: 292.701
+  Setup:       57.0104
+  Run:         1362.15
+  Verify:      0.000321
+  Teardown:    16.3395
+
+  Sustained GB/s: 1261.24
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos4CudaE
+
+ Dot Product
+  Constructor: 293.297
+  Setup:       57.0172
+  Run:         1358.6
+  Verify:      0.00031
+  Teardown:    15.0695
+
+  Sustained GB/s: 1264.53
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Dot is using Kokkos with N6Kokkos4CudaE
+
+ Dot Product
+  Constructor: 286.822
+  Setup:       57.0121
+  Run:         1359.94
+  Verify:      0.000371
+  Teardown:    15.0016
+
+  Sustained GB/s: 1263.28
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 288.899
+  Setup:       41.2739
+  Run:         2780.95
+  Verify:      0.03162
+  Teardown:    31.2498
+
+  Sustained GB/s: 617.77
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 271.976
+  Setup:       40.1549
+  Run:         2780.86
+  Verify:      0.024747
+  Teardown:    34.1648
+
+  Sustained GB/s: 617.789
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 284.096
+  Setup:       41.2794
+  Run:         2780.84
+  Verify:      0.033714
+  Teardown:    35.2518
+
+  Sustained GB/s: 617.795
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 281.891
+  Setup:       40.2389
+  Run:         2781.91
+  Verify:      0.036899
+  Teardown:    34.5055
+
+  Sustained GB/s: 617.558
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 282.669
+  Setup:       41.2847
+  Run:         2780.72
+  Verify:      0.034796
+  Teardown:    35.2545
+
+  Sustained GB/s: 617.82
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 285.984
+  Setup:       57.0054
+  Run:         3033.25
+  Verify:      0.003757
+  Teardown:    19.5363
+
+  Sustained GB/s: 566.385
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 291.737
+  Setup:       57.0006
+  Run:         3050.3
+  Verify:      0.003347
+  Teardown:    15.3115
+
+  Sustained GB/s: 563.219
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 292.215
+  Setup:       57.0042
+  Run:         3053.05
+  Verify:      0.008546
+  Teardown:    15.1711
+
+  Sustained GB/s: 562.713
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 273.308
+  Setup:       56.9362
+  Run:         3049.83
+  Verify:      0.003566
+  Teardown:    15.0948
+
+  Sustained GB/s: 563.305
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Sum SoA is using Kokkos with N6Kokkos4CudaE
+
+ Complex Sum
+  Constructor: 286.515
+  Setup:       56.9986
+  Run:         3052.9
+  Verify:      0.007444
+  Teardown:    15.1038
+
+  Sustained GB/s: 562.74
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos4CudaE
+
+ Complex Min
+  Constructor: 275.802
+  Setup:       41.1942
+  Run:         3000.23
+  Verify:      0.023805
+  Teardown:    30.2531
+
+  Sustained GB/s: 572.618
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos4CudaE
+
+ Complex Min
+  Constructor: 271.289
+  Setup:       41.3261
+  Run:         2999.67
+  Verify:      0.028474
+  Teardown:    35.5024
+
+  Sustained GB/s: 572.726
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos4CudaE
+
+ Complex Min
+  Constructor: 270.57
+  Setup:       40.1462
+  Run:         3002.08
+  Verify:      0.023224
+  Teardown:    34.5167
+
+  Sustained GB/s: 572.266
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos4CudaE
+
+ Complex Min
+  Constructor: 270.939
+  Setup:       41.2038
+  Run:         3002.03
+  Verify:      0.046097
+  Teardown:    35.2141
+
+  Sustained GB/s: 572.276
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Complex Min is using Kokkos with N6Kokkos4CudaE
+
+ Complex Min
+  Constructor: 270.616
+  Setup:       40.1715
+  Run:         3002.03
+  Verify:      0.03178
+  Teardown:    34.6174
+
+  Sustained GB/s: 572.275
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos4CudaE
+
+ Field Summary
+  Constructor: 274.444
+  Setup:       7.39332
+  Run:         1426.39
+  Verify:      0.001693
+  Teardown:    9.63322
+
+  Sustained GB/s: 49.6298
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos4CudaE
+
+ Field Summary
+  Constructor: 238.776
+  Setup:       3.7629
+  Run:         1417.1
+  Verify:      0.000671
+  Teardown:    1.49417
+
+  Sustained GB/s: 49.955
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos4CudaE
+
+ Field Summary
+  Constructor: 236.775
+  Setup:       3.77553
+  Run:         1416.56
+  Verify:      0.001213
+  Teardown:    1.48859
+
+  Sustained GB/s: 49.974
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos4CudaE
+
+ Field Summary
+  Constructor: 248.461
+  Setup:       3.76708
+  Run:         1416.04
+  Verify:      0.001272
+  Teardown:    1.49003
+
+  Sustained GB/s: 49.9925
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Field Summary is using Kokkos with N6Kokkos4CudaE
+
+ Field Summary
+  Constructor: 246.061
+  Setup:       3.74942
+  Run:         1416.61
+  Verify:      0.001282
+  Teardown:    1.4221
+
+  Sustained GB/s: 49.9724
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos4CudaE
+
+ Describe
+  Constructor: 237.26
+  Setup:       35.418
+  Run:         4434.02
+  Verify:      1495.45
+  Teardown:    5.41753
+
+  Sustained GB/s: 387.455
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos4CudaE
+
+ Describe
+  Constructor: 251.677
+  Setup:       35.4429
+  Run:         4435.05
+  Verify:      1495.28
+  Teardown:    5.66041
+
+  Sustained GB/s: 387.366
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos4CudaE
+
+ Describe
+  Constructor: 245.056
+  Setup:       35.4251
+  Run:         4434.03
+  Verify:      1494.74
+  Teardown:    5.37803
+
+  Sustained GB/s: 387.455
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos4CudaE
+
+ Describe
+  Constructor: 238.805
+  Setup:       35.3957
+  Run:         4434.67
+  Verify:      1495.28
+  Teardown:    5.41969
+
+  Sustained GB/s: 387.399
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+Describe is using Kokkos with N6Kokkos4CudaE
+
+ Describe
+  Constructor: 235.36
+  Setup:       35.3882
+  Run:         4434.77
+  Verify:      1495.01
+  Teardown:    5.44311
+
+  Sustained GB/s: 387.39
+--------------------------------------------------------------------------------
+-- CMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is PGI 21.7.0
+-- Check for working CXX compiler: /usr/local/software/nvhpc-rhel8/Linux_x86_64/21.7/compilers/bin/nvc++
+-- Check for working CXX compiler: /usr/local/software/nvhpc-rhel8/Linux_x86_64/21.7/compilers/bin/nvc++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found OpenMP_CXX: -mp  
+-- Found OpenMP: TRUE   
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    NO_COMPLEX_MIN
+    NO_COMPLEX_SUM
+
+
+-- Build files have been written to: /home/hpcdeak1/codes/everythingsreduced/src/build_omp
+Scanning dependencies of target implement_omp_target
+[ 14%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/complex_sum_soa.cpp.o
+[ 28%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/describe.cpp.o
+[ 42%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/dot.cpp.o
+[ 57%] Building CXX object CMakeFiles/implement_omp_target.dir/omp-target/field_summary.cpp.o
+[ 71%] Linking CXX static library libimplement_omp_target.a
+[ 71%] Built target implement_omp_target
+Scanning dependencies of target Reduced
+[ 85%] Building CXX object CMakeFiles/Reduced.dir/main.cpp.o
+[100%] Linking CXX executable Reduced
+[100%] Built target Reduced
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00013
+  Setup:       5925.6
+  Run:         969.582
+  Verify:      0.000251
+  Teardown:    22.7867
+
+  Sustained GB/s: 1771.88
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00014
+  Setup:       5825.1
+  Run:         970.46
+  Verify:      0.000701
+  Teardown:    22.6691
+
+  Sustained GB/s: 1770.28
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00011
+  Setup:       5831.19
+  Run:         970.022
+  Verify:      0.000631
+  Teardown:    22.9717
+
+  Sustained GB/s: 1771.08
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.000121
+  Setup:       5949.13
+  Run:         968.749
+  Verify:      0.00021
+  Teardown:    22.79
+
+  Sustained GB/s: 1773.41
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Dot Product
+  Constructor: 0.00011
+  Setup:       5979.51
+  Run:         969.269
+  Verify:      0.00022
+  Teardown:    22.7366
+
+  Sustained GB/s: 1772.46
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.000191
+  Setup:       4270.87
+  Run:         988.669
+  Verify:      0.000551
+  Teardown:    22.4637
+
+  Sustained GB/s: 1737.68
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00012
+  Setup:       4263.98
+  Run:         989.564
+  Verify:      0.00035
+  Teardown:    23.0232
+
+  Sustained GB/s: 1736.1
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.0001
+  Setup:       4290.57
+  Run:         988.972
+  Verify:      0.000511
+  Teardown:    22.4463
+
+  Sustained GB/s: 1737.14
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 0.00014
+  Setup:       4267.99
+  Run:         988.782
+  Verify:      0.000781
+  Teardown:    23.0495
+
+  Sustained GB/s: 1737.48
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+
+ Complex Sum
+  Constructor: 9e-05
+  Setup:       4258.73
+  Run:         988.458
+  Verify:      0.000601
+  Teardown:    23.3617
+
+  Sustained GB/s: 1738.05
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.000151
+  Setup:       685.819
+  Run:         61.6762
+  Verify:      0.001583
+  Teardown:    1.94023
+
+  Sustained GB/s: 1147.79
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.00014
+  Setup:       611.233
+  Run:         61.4273
+  Verify:      0.001883
+  Teardown:    1.82718
+
+  Sustained GB/s: 1152.44
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.00015
+  Setup:       634.32
+  Run:         61.7285
+  Verify:      0.001753
+  Teardown:    1.89815
+
+  Sustained GB/s: 1146.82
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.000111
+  Setup:       623.293
+  Run:         61.3412
+  Verify:      0.001923
+  Teardown:    1.99804
+
+  Sustained GB/s: 1154.06
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+
+ Field Summary
+  Constructor: 0.00011
+  Setup:       625.386
+  Run:         61.8026
+  Verify:      0.001904
+  Teardown:    2.07853
+
+  Sustained GB/s: 1145.44
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+./run_a100.sh: line 83: 666186 Aborted                 (core dumped) ./build_omp/Reduced $b 1gib
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+./run_a100.sh: line 83: 666207 Aborted                 (core dumped) ./build_omp/Reduced $b 1gib
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+./run_a100.sh: line 83: 666228 Aborted                 (core dumped) ./build_omp/Reduced $b 1gib
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+./run_a100.sh: line 83: 666248 Aborted                 (core dumped) ./build_omp/Reduced $b 1gib
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1073741824
+./run_a100.sh: line 83: 666267 Aborted                 (core dumped) ./build_omp/Reduced $b 1gib

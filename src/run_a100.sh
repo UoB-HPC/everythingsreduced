@@ -88,3 +88,15 @@ else
   echo "Build failed"
 fi
 
+
+# Build SYCL
+#module load boost/1.49.0
+#if $build; then
+#export PATH=$PATH:$HOME/codes/hipsycl-install/bin:$HOME/codes/llvm-install/bin
+#export CPATH=$CPATH:$HOME/codes/hipsycl-install/include:$HOME/codes/hipsycl-install/include/sycl
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/codes/llvm-install/lib
+#export LIBRARY_PATH=$LIBRARY_PATH:$HOME/codes/llvm-install/lib
+#mkdir build_sycl
+#syclcc -O3 -std=c++17 --hipsycl-platform=cuda --hipsycl-targets=cuda:sm_80 main.cpp sycl/*.cpp -o build_sycl/Reduced
+#fi
+
