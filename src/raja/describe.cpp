@@ -79,8 +79,8 @@ void describe::teardown() {
 
 describe::result describe::run() {
 
-#ifdef RAJA_ENABLE_HIP
-  std::cout << "RAJA HIP fails because cannot use intermediate mean values" << std::endl;
+#if defined(RAJA_ENABLE_HIP) || defined(RAJA_ENABLE_CUDA)
+  std::cout << "RAJA on GPU fails because cannot use intermediate mean values" << std::endl;
   return {-1, -1, -1, -1, -1};
 #else
 
