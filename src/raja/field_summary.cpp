@@ -17,7 +17,7 @@
 #include "RAJA/policy/cuda/raja_cudaerrchk.hpp"
 const size_t CUDA_BLOCK_SIZE = 256;
 typedef RAJA::cuda_reduce reduce_policy;
-using exec_pol = RAJA::KernelPolicy<RAJA::CudaKernel<RAJA::statement::Tile<
+using exec_pol = RAJA::KernelPolicy<RAJA::statement::CudaKernel<RAJA::statement::Tile<
     1, RAJA::tile_fixed<CUDA_BLOCK_SIZE>, RAJA::cuda_block_y_loop,
     RAJA::statement::Tile<
         0, RAJA::tile_fixed<CUDA_BLOCK_SIZE>, RAJA::cuda_block_x_loop,
@@ -28,7 +28,7 @@ using exec_pol = RAJA::KernelPolicy<RAJA::CudaKernel<RAJA::statement::Tile<
 #include "RAJA/policy/hip/raja_hiperrchk.hpp"
 const int HIP_BLOCK_SIZE = 256;
 typedef RAJA::hip_reduce reduce_policy;
-using exec_pol = RAJA::KernelPolicy<RAJA::HipKernel<RAJA::statement::Tile<
+using exec_pol = RAJA::KernelPolicy<RAJA::statement::HipKernel<RAJA::statement::Tile<
     1, RAJA::tile_fixed<HIP_BLOCK_SIZE>, RAJA::hip_block_y_loop,
     RAJA::statement::Tile<
         0, RAJA::tile_fixed<HIP_BLOCK_SIZE>, RAJA::hip_block_x_loop,
@@ -104,7 +104,7 @@ void field_summary::setup() {
 
   RAJA::kernel<exec_pol>(
     RAJA::make_tuple(RAJA::RangeSegment(0, nx), RAJA::RangeSegment(0, ny)),
-    [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
+    [=, nx = this->nx] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
       volume[j + k * nx] = dx * dy;
       density[j + k * nx] = 0.2;
       energy[j + k * nx] = 1.0;
@@ -113,7 +113,7 @@ void field_summary::setup() {
 
   RAJA::kernel<exec_pol>(
     RAJA::make_tuple(RAJA::RangeSegment(0, nx / 2), RAJA::RangeSegment(0, ny / 5)),
-    [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
+    [=, nx = this->nx] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
       density[j + k * nx] = 1.0;
       energy[j + k * nx] = 2.5;
       pressure[j + k * nx] = (1.4 - 1.0) * density[j + k * nx] * energy[j + k * nx];
@@ -121,7 +121,7 @@ void field_summary::setup() {
 
   RAJA::kernel<exec_pol>(
     RAJA::make_tuple(RAJA::RangeSegment(0, nx + 1), RAJA::RangeSegment(0, ny + 1)),
-    [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
+    [=, nx = this->nx] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
       xvel[j + k * (nx + 1)] = 0.0;
       yvel[j + k * (nx + 1)] = 0.0;
     });
@@ -165,15 +165,15 @@ field_summary::reduction_vars field_summary::run() {
   double *RAJA_RESTRICT pressure = pdata->pressure;
 
   // Reduction variables
-  RAJA::ReduceSum<reduce_policy, double> vol = 0.0;
-  RAJA::ReduceSum<reduce_policy, double> mass = 0.0;
-  RAJA::ReduceSum<reduce_policy, double> ie = 0.0;
-  RAJA::ReduceSum<reduce_policy, double> ke = 0.0;
-  RAJA::ReduceSum<reduce_policy, double> press = 0.0;
+  RAJA::ReduceSum<reduce_policy, double> vol{0.0};
+  RAJA::ReduceSum<reduce_policy, double> mass{0.0};
+  RAJA::ReduceSum<reduce_policy, double> ie{0.0};
+  RAJA::ReduceSum<reduce_policy, double> ke{0.0};
+  RAJA::ReduceSum<reduce_policy, double> press{0.0};
 
   RAJA::kernel<exec_pol>(
     RAJA::make_tuple(RAJA::RangeSegment(0, nx), RAJA::RangeSegment(0, ny)),
-    [=] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
+    [=, nx = this->nx] RAJA_DEVICE(RAJA::Index_type j, RAJA::Index_type k) {
       double vsqrd = 0.0;
       for (long kv = k; kv <= k + 1; ++kv) {
         for (long jv = j; jv <= j + 1; ++jv) {
