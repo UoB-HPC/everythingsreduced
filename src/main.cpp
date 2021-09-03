@@ -17,7 +17,9 @@ const auto LINE = "------------------------------------------------------------"
 #ifndef NO_COMPLEX_MIN
 #include "complex_min.hpp"
 #endif
+#ifndef NO_COMPLEX_SUM
 #include "complex_sum.hpp"
+#endif
 #include "complex_sum_soa.hpp"
 #include "describe.hpp"
 #include "dot.hpp"
@@ -167,6 +169,7 @@ int main(int argc, char *argv[]) {
   // Run Complex Sum Benchmark
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::complex_sum) {
+#ifndef NO_COMPLEX_SUM
     check_for_option(argc);
     long N = get_problem_size(argv[2]);
 
@@ -209,6 +212,7 @@ int main(int argc, char *argv[]) {
     print_timing("Complex Sum", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
                  static_cast<double>(NITERS)*csum.gigabytes());
+#endif
   }
 
   //////////////////////////////////////////////////////////////////////////////

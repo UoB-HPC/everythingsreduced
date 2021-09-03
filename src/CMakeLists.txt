@@ -53,6 +53,17 @@ if (MODEL STREQUAL "OpenMP")
 
 elseif (MODEL STREQUAL "OpenMP-target")
   file(GLOB omp_target_bench_src CONFIGURE_DEPENDS omp-target/*.cpp)
+
+  # Declare reduction clause is not supported by NVHPC, so exclude the benchmarks which use it
+  if (DEFINED NO_COMPLEX_MIN)
+    list(REMOVE_ITEM omp_target_bench_src ${CMAKE_CURRENT_SOURCE_DIR}/omp-target/complex_min.cpp)
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNO_COMPLEX_MIN")
+  endif()
+  if (DEFINED NO_COMPLEX_SUM)
+    list(REMOVE_ITEM omp_target_bench_src ${CMAKE_CURRENT_SOURCE_DIR}/omp-target/complex_sum.cpp)
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNO_COMPLEX_SUM")
+  endif()
+
   add_library(implement_omp_target ${omp_target_bench_src})
 
   # Add OpenMP flags
@@ -63,6 +74,8 @@ elseif (MODEL STREQUAL "OpenMP-target")
 
   if(OMP_TARGET STREQUAL "Intel")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fiopenmp -fopenmp-targets=spir64")
+  elseif(OMP_TARGET STREQUAL "NVIDIA")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DUSING_NVHPC")
   endif()
 
   target_link_libraries(Reduced PUBLIC implement_omp_target)
@@ -90,6 +103,11 @@ elseif(MODEL STREQUAL "Kokkos")
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNO_COMPLEX_MIN")
   endif()
   add_library(implement_kokkos ${kokkos_bench_src})
+
+  # Cambridge A100 system has a problem with the default isystem flag
+  if (DEFINED USING_CSD3)
+    set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX "-I")
+  endif()
 
   # Build Kokkos inline
   if (NOT DEFINED KOKKOS_SRC)
