@@ -59,11 +59,11 @@ rome, kokkos, cce, describe, 256.828
 rome, kokkos, cce, describe, 257.258
 rome, kokkos, cce, describe, 256.161
 rome, kokkos, cce, describe, 257.064
-rome, raja, cce, raja, 326.48
-rome, raja, cce, raja, 326.414
-rome, raja, cce, raja, 322.372
-rome, raja, cce, raja, 321.135
-rome, raja, cce, raja, 324.991
+rome, raja, cce, dot, 326.48
+rome, raja, cce, dot, 326.414
+rome, raja, cce, dot, 322.372
+rome, raja, cce, dot, 321.135
+rome, raja, cce, dot, 324.991
 rome, raja, cce, complex_sum, 37.1792
 rome, raja, cce, complex_sum, 37.1713
 rome, raja, cce, complex_sum, 37.5024
