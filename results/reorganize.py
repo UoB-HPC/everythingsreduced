@@ -18,10 +18,13 @@ for f in files:
 
 df = pd.concat(csv_frames, axis=0, ignore_index=True)
 
+df.loc[df['model'] == 'kokkos-sycl',['model']] = 'kokkos'
+
 df.set_index(["kernel", "model", "arch", "compiler"], inplace=True)
 df.sort_index(inplace=True)
 
 avg = df.groupby(level=["kernel", "model", "arch", "compiler"]).mean()
+
 
 
 peaks = pd.read_csv("peaks.csv", skipinitialspace=True)
@@ -79,7 +82,10 @@ for kernel in avg.index.unique(level='kernel'):
     with open(f"{kernel}.csv", "w") as fp:
         ocsv = csv.writer(fp)
 
-        models = avg.loc[kernel].index.unique(level='model')
+        kslice = avg.loc[kernel]
+
+        kslice.index.remove_unused_levels()
+        models = kslice.index.unique(level='model')
         ocsv.writerow(["Device"] + list([app_name_map[x] for x in  models]))
         for arch in arches:
             res = [platform_name_map[arch]]
