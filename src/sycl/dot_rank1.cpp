@@ -9,12 +9,13 @@
 #include <sycl.hpp>
 
 struct dot_rank1::data {
-  data(long N) : r(N), d(N), dp(N), norm2(1), q(sycl::default_selector{}) {}
+  data(long N) : r(N), d(N), dp(N), norm2(1), beta(1), q(sycl::default_selector{}) {}
 
   sycl::buffer<double> r;
   sycl::buffer<double> d;
   sycl::buffer<double> dp;
   sycl::buffer<double> norm2;
+  sycl::buffer<double> beta;
   sycl::queue q;
 };
 
@@ -28,6 +29,11 @@ void dot_rank1::setup() {
   pdata->q.submit([&](sycl::handler &h) {
     sycl::accessor norm2(pdata->norm2, h, sycl::write_only);
     h.single_task([=]() { norm2[0] = 0.0; });
+  });
+  pdata->q.wait();
+  pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor beta(pdata->beta, h, sycl::write_only);
+    h.single_task([=]() { beta[0] = 0.0; });
   });
   pdata->q.wait();
 
@@ -62,14 +68,20 @@ double dot_rank1::run() {
       });
   });
   pdata->q.submit([&](sycl::handler &h) {
+    sycl::accessor norm2(pdata->norm2, h, sycl::read_only);
+    sycl::accessor beta(pdata->beta, h, sycl::write_only);
+    double norm2_prev = 1024.0;
+    h.single_task([=]() { beta[0] = norm2[0]/norm2_prev; });
+  });
+  pdata->q.submit([&](sycl::handler &h) {
     sycl::accessor r(pdata->r, h, sycl::read_only);
     sycl::accessor d(pdata->d, h, sycl::read_only);
     sycl::accessor dp(pdata->d, h, sycl::write_only);
-    sycl::accessor norm2(pdata->norm2, h, sycl::read_only);
+    sycl::accessor beta(pdata->beta, h, sycl::read_only);
     h.parallel_for(
       sycl::range<1>(N),
       [=](sycl::id<1> i) {
-        dp[i] = r[i] + norm2[0] * d[i];
+        dp[i] = r[i] + beta[0] * d[i];
       });
   });
 

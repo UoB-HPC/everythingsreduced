@@ -33,7 +33,7 @@ struct dot_rank1 {
   // Return expected result
   double expect() {
     double r_exp = 1024.0 * 1024.0 / static_cast<double>(N);
-    double d = 2.0 * 1024.0 / static_cast<double>(N)  + r_exp * 1024.0 / static_cast<double>(N);
+    double d = 2.0 * 1024.0 / static_cast<double>(N)  + r_exp  / static_cast<double>(N);
     return d;
   }
 
