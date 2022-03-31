@@ -110,7 +110,7 @@ int main(int argc, char *argv[]) {
               << std::endl
               << "Valid benchmarks:" << std::endl
               << "  dot, complex_sum, complex_sum_soa, complex_min, "
-                 "field_summary, describe"
+                 "field_summary, describe, dot_rank1"
               << std::endl;
     exit(EXIT_FAILURE);
   }
