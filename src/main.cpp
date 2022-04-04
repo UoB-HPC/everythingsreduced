@@ -24,12 +24,13 @@ const auto LINE = "------------------------------------------------------------"
 #include "describe.hpp"
 #include "dot.hpp"
 #include "field_summary.hpp"
+#include "matvec_inner_product.hpp"
 
 #define NITERS 100
 
 #include "util.hpp"
 
-enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe };
+enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe, matvec_inner_product };
 
 // Choose the benchmark based on the input argument given from the command line
 Benchmark select_benchmark(const std::string name) {
@@ -46,6 +47,8 @@ Benchmark select_benchmark(const std::string name) {
     return Benchmark::field_summary;
   else if (name == "describe")
     return Benchmark::describe;
+  else if (name == "matvec_inner_product")
+    return Benchmark::matvec_inner_product;
   else {
     std::cerr << "Invalid benchmark: " << name << std::endl;
     exit(EXIT_FAILURE);
@@ -481,6 +484,55 @@ int main(int argc, char *argv[]) {
     print_timing("Describe", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
                  static_cast<double>(NITERS)*d.gigabytes());
+  }
+  //////////////////////////////////////////////////////////////////////////////
+  // Run MatVec Inner Product Benchmark
+  //////////////////////////////////////////////////////////////////////////////
+  else if (run == Benchmark::matvec_inner_product) {
+    check_for_option<2>(argc);
+    long N = get_problem_size(argv[2]);
+    long M = get_problem_size(argv[3]);
+
+    std::vector<double> res(NITERS);
+
+    auto construct_start = clock::now();
+    matvec_inner_product matvec(N, M);
+    auto construct_stop = clock::now();
+
+    auto setup_start = clock::now();
+    matvec.setup();
+    auto setup_stop = clock::now();
+
+    auto run_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      res[i] = matvec.run();
+    }
+    auto run_stop = clock::now();
+
+    // Check solution
+    auto check_start = clock::now();
+    std::vector<double> result = matvec.expect();
+    double *r = matvec.get_result();
+    for (int i = 0; i < N; ++i) {
+      if (std::abs(r[i] - result[i]) > std::numeric_limits<double>::epsilon() * 100.0) {
+        std::cerr << "MatVec Inner Product: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
+                  << "Expected: " << dotty.expect() << std::endl
+                  << "Result: " << r << std::endl
+                  << "Difference: " << std::abs(r - dotty.expect()) << std::endl
+                  << "Eps: " << std::numeric_limits<double>::epsilon() << std::endl;
+        break;
+      }
+    }
+    auto check_stop = clock::now();
+
+    auto teardown_start = clock::now();
+    dotty.teardown();
+    auto teardown_stop = clock::now();
+
+    print_timing("MatVec Inner Product", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
+                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
+                 static_cast<double>(NITERS)*matvec.gigabytes());
   }
 
   return EXIT_SUCCESS;
