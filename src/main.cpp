@@ -52,11 +52,12 @@ Benchmark select_benchmark(const std::string name) {
   }
 }
 
-// Checks there are 3 command line arguments.
-// Specifically, a safety check on argv[2] before benchmarks
+// Checks there are N command line arguments.
+// Specifically, a safety check on argv[2], etc before benchmarks
 // which require a problem size
-void check_for_option(int argc) {
-  if (argc != 3) {
+template <int N>
+void check_for_option<N>(int argc) {
+  if (argc != N+1) {
     std::cerr << "Missing problem size" << std::endl;
     exit(EXIT_FAILURE);
   }
@@ -120,7 +121,7 @@ int main(int argc, char *argv[]) {
   // Run Dot Product Benchmark
   //////////////////////////////////////////////////////////////////////////////
   if (run == Benchmark::dot) {
-    check_for_option(argc);
+    check_for_option<1>(argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<double> res(NITERS);
@@ -170,7 +171,7 @@ int main(int argc, char *argv[]) {
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::complex_sum) {
 #ifndef NO_COMPLEX_SUM
-    check_for_option(argc);
+    check_for_option<1>(argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<std::complex<double>> res(NITERS);
@@ -219,7 +220,7 @@ int main(int argc, char *argv[]) {
   // Run Complex Sum SoA Benchmark
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::complex_sum_soa) {
-    check_for_option(argc);
+    check_for_option<1>(argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<std::tuple<double, double>> res(NITERS);
@@ -270,7 +271,7 @@ int main(int argc, char *argv[]) {
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::complex_min) {
 #ifndef NO_COMPLEX_MIN
-    check_for_option(argc);
+    check_for_option<1>(argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<std::complex<double>> res(NITERS);
@@ -400,7 +401,7 @@ int main(int argc, char *argv[]) {
   // Describe Benchmark
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::describe) {
-    check_for_option(argc);
+    check_for_option<1>(argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<describe::result> res(NITERS);
