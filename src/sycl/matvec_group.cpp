@@ -17,6 +17,7 @@ struct matvec_group::data {
   double *x;
   double *r;
   sycl::queue q;
+  int max_work_group_size;
 };
 
 matvec_group::matvec_group(long N_, long M_) : N(N_), M(M_), pdata{std::make_unique<data>(N, M)} {
@@ -30,6 +31,10 @@ void matvec_group::setup() {
   double *A = pdata->A;
   double *x = pdata->x;
   double *r = pdata->r;
+
+  // Get max work-group size
+  sycl::device dev = pdata->q.get_device();
+  pdata->max_work_group_size = dev.get_info<sycl::info::device::max_work_group_size>();
 
   pdata->q.submit([&, N = this->N, M = this->M](sycl::handler &h) {
     h.parallel_for(N, [=](const long i) {
@@ -58,22 +63,25 @@ double matvec_group::run() {
   double *r = pdata->r;
 
   pdata->q.submit([&, N = this->N, M = this->M](sycl::handler &h) {
-    h.parallel_for(sycl::nd_range<1>(N * M, M), [=](sycl::nd_item<1> id) {
-      auto i = id.get_group(0);
-      auto j = id.get_local_id(0);
-      sycl::group grp = id.get_group();
+    h.parallel_for(sycl::nd_range<1>(N * pdata->max_work_group_size, pdata->max_work_group_size),
+                   [=](sycl::nd_item<1> id) {
+                     auto i = id.get_group(0);
+                     sycl::group grp = id.get_group();
 
-      // Compute private value to be reduced over the group
-      double my_r = A[i * M + j] * x[j];
+                     // Compute private value to be reduced over the group
+                     double my_r = 0.0;
+                     for (auto j = id.get_local_id(0); j < M; j += grp.get_local_range(0)) {
+                       my_r += A[i * M + j] * x[j];
+                     }
 
-      // Cooperate with work-items in group to reduce
-      my_r = sycl::reduce_over_group(grp, my_r, 0.0, sycl::plus<>());
+                     // Cooperate with work-items in group to reduce
+                     my_r = sycl::reduce_over_group(grp, my_r, 0.0, sycl::plus<>());
 
-      // Group leader saves the result to global memory
-      // if (grp.leader())
-      if (j == 0)
-        r[i] = my_r;
-    });
+                     // Group leader saves the result to global memory
+                     // if (grp.leader())
+                     if (id.get_local_id(0) == 0)
+                       r[i] = my_r;
+                   });
   });
   pdata->q.wait();
 
