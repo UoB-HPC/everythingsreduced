@@ -618,13 +618,13 @@ int main(int argc, char *argv[]) {
     auto check_start = clock::now();
     for (int i = 0; i < NITERS; ++i) {
       auto r = res[i];
-      if (std::abs(r - norm.expect()) > 1.0E-12) {
+      if (std::abs(r - norm.expect()) > 1.0E-11) {
         std::cerr << "Matrix Infinite Norm: result incorrect" << std::endl
                   << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << norm.expect() << std::endl
                   << "Result: " << r << std::endl
                   << "Difference: " << std::abs(r - norm.expect()) << std::endl
-                  << "Eps: " << 1.0E-12 << std::endl;
+                  << "Eps: " << 1.0E-11 << std::endl;
         break;
       }
     }
