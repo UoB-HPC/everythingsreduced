@@ -76,8 +76,8 @@ double matvec_group::run() {
                      my_r = sycl::reduce_over_group(grp, my_r, 0.0, sycl::plus<>());
 
                      // Group leader saves the result to global memory
-                     //if (grp.leader())
-                     if (id.get_local_id(0) == 0)
+                     //if (id.get_local_id(0) == 0)
+                     if (grp.leader())
                        r[i] = my_r;
                    }
   );
