@@ -32,16 +32,15 @@ void matvec_inner_product::setup() {
   double *x = pdata->x;
   double *r = pdata->r;
 
-  pdata->q.submit([&, N = this->N, M = this->M](sycl::handler &h) {
-    h.parallel_for(N, [=](const long i) {
+  pdata->q.parallel_for(N, [=, N = this->N, M = this->M](const long i) {
       for (long j = 0; j < M; ++j) {
         A[i * M + j] = 1.0 * 1024.0 / static_cast<double>(M);
         if (i == 0)
           x[j] = 2.0 * 1024.0 / static_cast<double>(M);
       }
       r[i] = 0.0;
-    });
-  });
+    }
+  );
   pdata->q.wait();
 }
 
@@ -58,10 +57,9 @@ double matvec_inner_product::run() {
   double *x = pdata->x;
   double *r = pdata->r;
 
-  pdata->q.submit([&, N = this->N, M = this->M](sycl::handler &h) {
-    h.parallel_for(sycl::range<1>(N),
-                   [=](const long i) { r[i] = std::inner_product(A + (i * M), A + (i * M) + M, x, 0.0); });
-  });
+  pdata->q.parallel_for(sycl::range<1>(N),
+                   [=, N = this->N, M = this->M](const long i) { r[i] = std::inner_product(A + (i * M), A + (i * M) + M, x, 0.0); }
+  );
   pdata->q.wait();
 
   return r[0];
