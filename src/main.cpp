@@ -26,12 +26,13 @@ const auto LINE = "------------------------------------------------------------"
 #include "field_summary.hpp"
 #include "matvec_inner_product.hpp"
 #include "matvec_group.hpp"
+#include "inf_norm.hpp"
 
 #define NITERS 100
 
 #include "util.hpp"
 
-enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe, matvec_inner_product, matvec_group };
+enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe, matvec_inner_product, matvec_group, inf_norm };
 
 // Choose the benchmark based on the input argument given from the command line
 Benchmark select_benchmark(const std::string name) {
@@ -52,6 +53,8 @@ Benchmark select_benchmark(const std::string name) {
     return Benchmark::matvec_inner_product;
   else if (name == "matvec_group")
     return Benchmark::matvec_group;
+  else if (name == "inf_norm")
+    return Benchmark::inf_norm;
   else {
     std::cerr << "Invalid benchmark: " << name << std::endl;
     exit(EXIT_FAILURE);
@@ -586,6 +589,55 @@ int main(int argc, char *argv[]) {
     print_timing("MatVec Group Reduction", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
                  static_cast<double>(NITERS) * matvec.gigabytes());
+  }
+  //////////////////////////////////////////////////////////////////////////////
+  // Run Matrix Infinite Norm Benchmark
+  //////////////////////////////////////////////////////////////////////////////
+  else if (run == Benchmark::inf_norm) {
+    check_for_option(2, argc);
+    long N = get_problem_size(argv[2]);
+    long M = get_problem_size(argv[3]);
+
+    std::vector<double> res(NITERS);
+
+    auto construct_start = clock::now();
+    inf_norm norm(N, M);
+    auto construct_stop = clock::now();
+
+    auto setup_start = clock::now();
+    norm.setup();
+    auto setup_stop = clock::now();
+
+    auto run_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      res[i] = norm.run();
+    }
+    auto run_stop = clock::now();
+
+    // Check solution
+    auto check_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      auto r = res[i];
+      if (std::abs(r - norm.expect()) > 1.0E-12) {
+        std::cerr << "Matrix Infinite Norm: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
+                  << "Expected: " << norm.expect() << std::endl
+                  << "Result: " << r << std::endl
+                  << "Difference: " << std::abs(r - norm.expect()) << std::endl
+                  << "Eps: " << 1.0E-12 << std::endl;
+        break;
+      }
+    }
+    auto check_stop = clock::now();
+
+    auto teardown_start = clock::now();
+    norm.teardown();
+    auto teardown_stop = clock::now();
+
+    print_timing("Matrix Infinite Norm", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
+                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
+                 static_cast<double>(NITERS) * norm.gigabytes());
+
   }
 
   return EXIT_SUCCESS;
