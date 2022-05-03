@@ -62,7 +62,7 @@ double histogram::run() {
     int *A = pdata->A;
     h.parallel_for(
       sycl::range<1>(N),
-      sycl::reduction(sycl::span<int>(pdata->histogram,16), std::plus<>()),
+      sycl::reduction(sycl::span<int>(pdata->histogram,16), std::plus<>(), sycl::property::reduction::initialize_to_identity{}),
       [=](sycl::id<1> i, auto &histo) {
         histo[A[i]] += 1;
       });
