@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Everything's Reduced authors
+// Copyright (c) 2022 Everything's Reduced authors
 // SPDX-License-Identifier: MIT
 
 #include <chrono>
@@ -24,12 +24,14 @@ const auto LINE = "------------------------------------------------------------"
 #include "describe.hpp"
 #include "dot.hpp"
 #include "field_summary.hpp"
+#include "dot_rank1.hpp"
+#include "histogram.hpp"
 
 #define NITERS 100
 
 #include "util.hpp"
 
-enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe };
+enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe, dot_rank1, histogram };
 
 // Choose the benchmark based on the input argument given from the command line
 Benchmark select_benchmark(const std::string name) {
@@ -46,6 +48,10 @@ Benchmark select_benchmark(const std::string name) {
     return Benchmark::field_summary;
   else if (name == "describe")
     return Benchmark::describe;
+  else if (name == "dot_rank1")
+    return Benchmark::dot_rank1;
+  else if (name == "histogram")
+    return Benchmark::histogram;
   else {
     std::cerr << "Invalid benchmark: " << name << std::endl;
     exit(EXIT_FAILURE);
@@ -107,7 +113,7 @@ int main(int argc, char *argv[]) {
               << std::endl
               << "Valid benchmarks:" << std::endl
               << "  dot, complex_sum, complex_sum_soa, complex_min, "
-                 "field_summary, describe"
+                 "field_summary, describe, dot_rank1, histogram"
               << std::endl;
     exit(EXIT_FAILURE);
   }
@@ -478,6 +484,101 @@ int main(int argc, char *argv[]) {
     auto teardown_stop = clock::now();
 
     print_timing("Describe", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
+                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
+                 static_cast<double>(NITERS)*d.gigabytes());
+  }
+  else if (run == Benchmark::dot_rank1) {
+    check_for_option(argc);
+    long N = get_problem_size(argv[2]);
+
+    std::vector<double> res(NITERS);
+
+    auto construct_start = clock::now();
+    dot_rank1 ranky(N);
+    auto construct_stop = clock::now();
+
+    auto setup_start = clock::now();
+    ranky.setup();
+    auto setup_stop = clock::now();
+
+    auto run_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      res[i] = ranky.run();
+    }
+    auto run_stop = clock::now();
+
+    // Check solution
+    auto check_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      auto r = res[i];
+      const double eps = std::numeric_limits<double>::epsilon() * N * 1.0e6;
+      if (std::abs(r - ranky.expect()) > eps) {
+        std::cerr << "Dot_rank1: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
+                  << "Expected: " << ranky.expect() << std::endl
+                  << "Result: " << r << std::endl
+                  << "Difference: " << std::abs(r - ranky.expect()) << std::endl
+                  << "Eps: " << eps << std::endl;
+        break;
+      }
+    }
+    auto check_stop = clock::now();
+
+    auto teardown_start = clock::now();
+    ranky.teardown();
+    auto teardown_stop = clock::now();
+
+    print_timing("Dot rank1", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
+                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
+                 static_cast<double>(NITERS)*ranky.gigabytes());
+
+  }
+  //////////////////////////////////////////////////////////////////////////////
+  // histogram Benchmark
+  //////////////////////////////////////////////////////////////////////////////
+  else if (run == Benchmark::histogram) {
+    check_for_option(argc);
+    long N = get_problem_size(argv[2]);
+
+    std::vector<double> res(NITERS);
+
+    auto construct_start = clock::now();
+    histogram d(N);
+    auto construct_stop = clock::now();
+
+    auto setup_start = clock::now();
+    d.setup();
+    auto setup_stop = clock::now();
+
+    auto run_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      res[i] = d.run();
+    }
+    auto run_stop = clock::now();
+
+    // Check solution
+    auto check_start = clock::now();
+    double expected = d.expect();
+    for (int i = 0; i < NITERS; ++i) {
+      auto r = res[i];
+      bool wrong = false;
+      if (std::abs(r - expected) > std::numeric_limits<double>::epsilon() * 100.0) {
+        std::cerr << "Histogram: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
+                  << "Expected: " << expected << std::endl
+                  << "Result: " << r << std::endl
+                  << "Difference: " << std::abs(r - expected) << std::endl;
+        wrong = true;
+      }
+      if (wrong) break;
+    }
+    auto check_stop = clock::now();
+
+    auto teardown_start = clock::now();
+    d.teardown();
+    auto teardown_stop = clock::now();
+
+    print_timing("Histogram", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
                  static_cast<double>(NITERS)*d.gigabytes());
   }
