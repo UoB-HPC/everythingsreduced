@@ -30,6 +30,7 @@ List of benchmark kernels, and their sources.
 | Reduction                  | Original benchmark                        |
 | -------------------------- | ----------------------------------------- |
 | r += a[i] * b[i]           | Dot product                               |
+| dp[i] = r[i] + r'*r * d[i] | Dot product->daxpy                        |
 | r += c[i]                  | Sum of complex numbers                    |
 | (r1,r2) += (c1[i],c2[i])   | Sum of complex numbers, stored as SoA     |
 | min(abs(c[i]))             | Minimum absolute value of complex numbers |
