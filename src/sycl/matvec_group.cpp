@@ -63,8 +63,8 @@ double matvec_group::run() {
 
   pdata->q.parallel_for(sycl::nd_range<1>(N * pdata->max_work_group_size, pdata->max_work_group_size),
                    [=, N = this->N, M = this->M](sycl::nd_item<1> id) {
-                     auto i = id.get_group(0);
                      sycl::group grp = id.get_group();
+                     auto i = grp.get_group_id()[0];
 
                      // Compute private value to be reduced over the group
                      double my_r = 0.0;
