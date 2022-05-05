@@ -24,6 +24,9 @@ const auto LINE = "------------------------------------------------------------"
 #include "describe.hpp"
 #include "dot.hpp"
 #include "field_summary.hpp"
+#include "matvec_inner_product.hpp"
+#include "matvec_group.hpp"
+#include "inf_norm.hpp"
 #include "dot_rank1.hpp"
 #include "histogram.hpp"
 
@@ -31,7 +34,7 @@ const auto LINE = "------------------------------------------------------------"
 
 #include "util.hpp"
 
-enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe, dot_rank1, histogram };
+enum class Benchmark { dot, complex_sum, complex_sum_soa, complex_min, field_summary, describe, matvec_inner_product, matvec_group, inf_norm, dot_rank1, histogram };
 
 // Choose the benchmark based on the input argument given from the command line
 Benchmark select_benchmark(const std::string name) {
@@ -48,6 +51,12 @@ Benchmark select_benchmark(const std::string name) {
     return Benchmark::field_summary;
   else if (name == "describe")
     return Benchmark::describe;
+  else if (name == "matvec_inner_product")
+    return Benchmark::matvec_inner_product;
+  else if (name == "matvec_group")
+    return Benchmark::matvec_group;
+  else if (name == "inf_norm")
+    return Benchmark::inf_norm;
   else if (name == "dot_rank1")
     return Benchmark::dot_rank1;
   else if (name == "histogram")
@@ -58,11 +67,11 @@ Benchmark select_benchmark(const std::string name) {
   }
 }
 
-// Checks there are 3 command line arguments.
-// Specifically, a safety check on argv[2] before benchmarks
+// Checks there are N command line arguments.
+// Specifically, a safety check on argv[2], etc before benchmarks
 // which require a problem size
-void check_for_option(int argc) {
-  if (argc != 3) {
+void check_for_option(int N, int argc) {
+  if (argc != N + 2) {
     std::cerr << "Missing problem size" << std::endl;
     exit(EXIT_FAILURE);
   }
@@ -126,7 +135,7 @@ int main(int argc, char *argv[]) {
   // Run Dot Product Benchmark
   //////////////////////////////////////////////////////////////////////////////
   if (run == Benchmark::dot) {
-    check_for_option(argc);
+    check_for_option(1, argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<double> res(NITERS);
@@ -167,7 +176,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Dot Product", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 static_cast<double>(NITERS)*dotty.gigabytes());
+                 static_cast<double>(NITERS) * dotty.gigabytes());
 
   }
 
@@ -176,7 +185,7 @@ int main(int argc, char *argv[]) {
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::complex_sum) {
 #ifndef NO_COMPLEX_SUM
-    check_for_option(argc);
+    check_for_option(1, argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<std::complex<double>> res(NITERS);
@@ -206,7 +215,7 @@ int main(int argc, char *argv[]) {
                   << "Result: " << r << std::endl
                   << "Difference: " << std::abs(r - csum.expect()) << std::endl
                   << "Eps: " << std::numeric_limits<double>::epsilon() << std::endl;
-      break;
+        break;
       }
     }
     auto check_stop = clock::now();
@@ -225,7 +234,7 @@ int main(int argc, char *argv[]) {
   // Run Complex Sum SoA Benchmark
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::complex_sum_soa) {
-    check_for_option(argc);
+    check_for_option(1, argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<std::tuple<double, double>> res(NITERS);
@@ -268,7 +277,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Complex Sum", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 static_cast<double>(NITERS)*csum.gigabytes());
+                 static_cast<double>(NITERS) * csum.gigabytes());
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -276,7 +285,7 @@ int main(int argc, char *argv[]) {
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::complex_min) {
 #ifndef NO_COMPLEX_MIN
-    check_for_option(argc);
+    check_for_option(1, argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<std::complex<double>> res(NITERS);
@@ -317,7 +326,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Complex Min", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 static_cast<double>(NITERS)*cmin.gigabytes());
+                 static_cast<double>(NITERS) * cmin.gigabytes());
 #endif
   }
 
@@ -388,7 +397,8 @@ int main(int argc, char *argv[]) {
                   << "Difference: " << std::abs(r.press - expected.press) << std::endl;
         wrong = true;
       }
-      if (wrong) break;
+      if (wrong)
+        break;
     }
     auto check_stop = clock::now();
 
@@ -398,7 +408,7 @@ int main(int argc, char *argv[]) {
 
     print_timing("Field Summary", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 static_cast<double>(NITERS)*summary.gigabytes());
+                 static_cast<double>(NITERS) * summary.gigabytes());
 
   }
 
@@ -406,7 +416,7 @@ int main(int argc, char *argv[]) {
   // Describe Benchmark
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::describe) {
-    check_for_option(argc);
+    check_for_option(1, argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<describe::result> res(NITERS);
@@ -475,7 +485,8 @@ int main(int argc, char *argv[]) {
                   << "Difference: " << std::abs(r.max - expected.max) << std::endl;
         wrong = true;
       }
-      if (wrong) break;
+      if (wrong)
+        break;
     }
     auto check_stop = clock::now();
 
@@ -485,7 +496,154 @@ int main(int argc, char *argv[]) {
 
     print_timing("Describe", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
-                 static_cast<double>(NITERS)*d.gigabytes());
+                 static_cast<double>(NITERS) * d.gigabytes());
+  }
+  //////////////////////////////////////////////////////////////////////////////
+  // Run MatVec Inner Product Benchmark
+  //////////////////////////////////////////////////////////////////////////////
+  else if (run == Benchmark::matvec_inner_product) {
+    check_for_option(2, argc);
+    long N = get_problem_size(argv[2]);
+    long M = get_problem_size(argv[3]);
+
+    std::vector<double> res(NITERS);
+
+    auto construct_start = clock::now();
+    matvec_inner_product matvec(N, M);
+    auto construct_stop = clock::now();
+
+    auto setup_start = clock::now();
+    matvec.setup();
+    auto setup_stop = clock::now();
+
+    auto run_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      res[i] = matvec.run();
+    }
+    auto run_stop = clock::now();
+
+    // Check solution
+    auto check_start = clock::now();
+    std::vector<double> result = matvec.expect();
+    double *r = matvec.get_result();
+    for (int i = 0; i < N; ++i) {
+      if (std::abs(r[i] - result[i]) > 1.0E-10) {
+        std::cerr << "MatVec Inner Product: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
+                  << "Expected: " << result[i] << std::endl
+                  << "Result: " << r[i] << std::endl
+                  << "Difference: " << std::abs(r[i] - result[i]) << std::endl
+                  << "Eps: " << 1.0E-10 << std::endl;
+        break;
+      }
+    }
+    auto check_stop = clock::now();
+
+    auto teardown_start = clock::now();
+    matvec.teardown();
+    auto teardown_stop = clock::now();
+
+    print_timing("MatVec Inner Product", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
+                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
+                 static_cast<double>(NITERS) * matvec.gigabytes());
+  }
+  //////////////////////////////////////////////////////////////////////////////
+  // Run MatVec Group Reduction Benchmark
+  //////////////////////////////////////////////////////////////////////////////
+  else if (run == Benchmark::matvec_group) {
+    check_for_option(2, argc);
+    long N = get_problem_size(argv[2]);
+    long M = get_problem_size(argv[3]);
+
+    std::vector<double> res(NITERS);
+
+    auto construct_start = clock::now();
+    matvec_group matvec(N, M);
+    auto construct_stop = clock::now();
+
+    auto setup_start = clock::now();
+    matvec.setup();
+    auto setup_stop = clock::now();
+
+    auto run_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      res[i] = matvec.run();
+    }
+    auto run_stop = clock::now();
+
+    // Check solution
+    auto check_start = clock::now();
+    std::vector<double> result = matvec.expect();
+    double *r = matvec.get_result();
+    for (int i = 0; i < N; ++i) {
+      if (std::abs(r[i] - result[i]) > 1.0E-10) {
+        std::cerr << "MatVec Group Reduction: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
+                  << "Expected: " << result[i] << std::endl
+                  << "Result: " << r[i] << std::endl
+                  << "Difference: " << std::abs(r[i] - result[i]) << std::endl
+                  << "Eps: " << 1.0E-10 << std::endl;
+        break;
+      }
+    }
+    auto check_stop = clock::now();
+
+    auto teardown_start = clock::now();
+    matvec.teardown();
+    auto teardown_stop = clock::now();
+
+    print_timing("MatVec Group Reduction", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
+                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
+                 static_cast<double>(NITERS) * matvec.gigabytes());
+  }
+  //////////////////////////////////////////////////////////////////////////////
+  // Run Matrix Infinite Norm Benchmark
+  //////////////////////////////////////////////////////////////////////////////
+  else if (run == Benchmark::inf_norm) {
+    check_for_option(2, argc);
+    long N = get_problem_size(argv[2]);
+    long M = get_problem_size(argv[3]);
+
+    std::vector<double> res(NITERS);
+
+    auto construct_start = clock::now();
+    inf_norm norm(N, M);
+    auto construct_stop = clock::now();
+
+    auto setup_start = clock::now();
+    norm.setup();
+    auto setup_stop = clock::now();
+
+    auto run_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      res[i] = norm.run();
+    }
+    auto run_stop = clock::now();
+
+    // Check solution
+    auto check_start = clock::now();
+    for (int i = 0; i < NITERS; ++i) {
+      auto r = res[i];
+      if (std::abs(r - norm.expect()) > 1.0E-11) {
+        std::cerr << "Matrix Infinite Norm: result incorrect" << std::endl
+                  << "Result: " << i << " (skipping rest)" << std::endl
+                  << "Expected: " << norm.expect() << std::endl
+                  << "Result: " << r << std::endl
+                  << "Difference: " << std::abs(r - norm.expect()) << std::endl
+                  << "Eps: " << 1.0E-11 << std::endl;
+        break;
+      }
+    }
+    auto check_stop = clock::now();
+
+    auto teardown_start = clock::now();
+    norm.teardown();
+    auto teardown_stop = clock::now();
+
+    print_timing("Matrix Infinite Norm", elapsed(construct_start, construct_stop), elapsed(setup_start, setup_stop),
+                 elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
+                 static_cast<double>(NITERS) * norm.gigabytes());
+
   }
   else if (run == Benchmark::dot_rank1) {
     check_for_option(argc);
