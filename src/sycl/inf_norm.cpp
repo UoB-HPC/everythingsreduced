@@ -54,8 +54,8 @@ double inf_norm::run() {
       cgh.parallel_for(sycl::nd_range<1>(N * pdata->max_work_group_size, pdata->max_work_group_size),
                        sycl::reduction(inf_normBuf, cgh, sycl::maximum<>()),
                        [=, N = this->N, M = this->M](sycl::nd_item<1> id, auto &norm) {
-                         auto i = id.get_group(0);
-                         sycl::group grp = id.get_group();
+                     sycl::group grp = id.get_group();
+                     auto i = grp.get_group_id()[0];
 
                          // Cooperate with work-items in the group to compute the row sum
                          // Matrix is positive so can omit the absolute value
