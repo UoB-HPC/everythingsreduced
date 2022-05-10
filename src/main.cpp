@@ -646,7 +646,7 @@ int main(int argc, char *argv[]) {
 
   }
   else if (run == Benchmark::dot_rank1) {
-    check_for_option(argc);
+    check_for_option(1, argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<double> res(NITERS);
@@ -695,7 +695,7 @@ int main(int argc, char *argv[]) {
   // histogram Benchmark
   //////////////////////////////////////////////////////////////////////////////
   else if (run == Benchmark::histogram) {
-    check_for_option(argc);
+    check_for_option(1, argc);
     long N = get_problem_size(argv[2]);
 
     std::vector<double> res(NITERS);
