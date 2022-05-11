@@ -1,0 +1,17 @@
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 
+Problem size: 1600000000
+Dot STDPAR
+
+ Dot Product
+  Constructor: 3087.7
+  Setup:       3285.39
+  Run:         1733.3
+  Verify:      0.000191
+  Teardown:    935.68
+
+  Sustained GB/s: 1476.95
+--------------------------------------------------------------------------------
