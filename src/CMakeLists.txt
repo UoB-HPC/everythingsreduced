@@ -9,6 +9,8 @@ elseif (MODEL STREQUAL "oneDPL")
   set(CMAKE_CXX_STANDARD 17)
 elseif (Kokkos_ENABLE_SYCL STREQUAL "On")
   set(CMAKE_CXX_STANDARD 17)
+elseif (MODEL STREQUAL "STDPAR")
+  set(CMAKE_CXX_STANDARD 17)
 else()
   set(CMAKE_CXX_STANDARD 14)
 endif()
@@ -167,6 +169,13 @@ elseif(MODEL STREQUAL "RAJA")
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
   target_link_libraries(Reduced PUBLIC implement_raja)
+
+elseif (MODEL STREQUAL "STDPAR")
+  file(GLOB stdpar_bench_src CONFIGURE_DEPENDS stdpar/*.cpp)
+  add_library(implement_stdpar ${stdpar_bench_src})
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdpar -gpu=cc80")
+
+  target_link_libraries(Reduced PUBLIC implement_stdpar)
 
 else()
   message(FATAL_ERROR "Please select a model to build: -DMODEL=<model>")
