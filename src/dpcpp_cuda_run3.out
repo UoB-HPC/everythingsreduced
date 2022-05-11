@@ -1,0 +1,83 @@
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1600000000
+Dot is using SYCL with Platform NVIDIA CUDA BACKEND and Device NVIDIA A100-SXM4-40GB
+
+ Dot Product
+  Constructor: 268.611
+  Setup:       31.8244
+  Run:         1783.08
+  Verify:      0.005771
+  Teardown:    17.7922
+
+  Sustained GB/s: 1435.72
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 1600000000
+histogram is using SYCL with Platform NVIDIA CUDA BACKEND and Device NVIDIA A100-SXM4-40GB
+
+ Histogram
+  Constructor: 294.022
+  Setup:       527.946
+  Run:         669.402
+  Verify:      0.002645
+  Teardown:    0.012714
+
+  Sustained GB/s: 956.077
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 40000
+Problem size: 40000
+MatVec std::inner_product is using SYCL with Platform NVIDIA CUDA BACKEND and Device NVIDIA A100-SXM4-40GB
+
+ MatVec Inner Product
+  Constructor: 253.648
+  Setup:       96.9147
+  Run:         3029.84
+  Verify:      0.237886
+  Teardown:    8.27707
+
+  Sustained GB/s: 422.486
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 40000
+Problem size: 40000
+MatVec sycl::reduce_over_group is using SYCL with Platform NVIDIA CUDA BACKEND and Device NVIDIA A100-SXM4-40GB
+
+ MatVec Group Reduction
+  Constructor: 268.903
+  Setup:       96.921
+  Run:         929.427
+  Verify:      0.54906
+  Teardown:    8.36007
+
+  Sustained GB/s: 1377.26
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 40000
+Problem size: 40000
+Matrix Infinite Norm is using SYCL with Platform NVIDIA CUDA BACKEND and Device NVIDIA A100-SXM4-40GB
+
+ Matrix Infinite Norm
+  Constructor: 263.029
+  Setup:       100.295
+  Run:         969.621
+  Verify:      0.00526
+  Teardown:    7.97175
+
+  Sustained GB/s: 1320.1
+--------------------------------------------------------------------------------

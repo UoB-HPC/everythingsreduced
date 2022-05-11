@@ -1,0 +1,170 @@
+DUAL SOCKET
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 64000000
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ Dot Product
+  Constructor: 423.13
+  Setup:       23.9454
+  Run:         1361.03
+  Verify:      0.023566
+  Teardown:    4.2891
+
+  Sustained GB/s: 75.237
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 64000000
+histogram is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ Histogram
+  Constructor: 353.103
+  Setup:       13.9398
+  Run:         580.343
+  Verify:      0.010841
+  Teardown:    0.018535
+
+  Sustained GB/s: 44.1118
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 8000
+Problem size: 8000
+MatVec std::inner_product is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ MatVec Inner Product
+  Constructor: 360.715
+  Setup:       15.3112
+  Run:         726.376
+  Verify:      0.03957
+  Teardown:    1.24025
+
+  Sustained GB/s: 70.5045
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 8000
+Problem size: 8000
+MatVec sycl::reduce_over_group is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ MatVec Group Reduction
+  Constructor: 294.162
+  Setup:       14.0397
+  Run:         686.358
+  Verify:      0.034879
+  Teardown:    1.28179
+
+  Sustained GB/s: 74.6153
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 8000
+Problem size: 8000
+Matrix Infinite Norm is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+MANUALLY SETTING MAX_WG_SIZE to 2048
+
+ Matrix Infinite Norm
+  Constructor: 320.001
+  Setup:       18.3694
+  Run:         711.529
+  Verify:      0.012654
+  Teardown:    1.24855
+
+  Sustained GB/s: 71.9577
+--------------------------------------------------------------------------------
+SINGLE SOCKET
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 64000000
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ Dot Product
+  Constructor: 261.994
+  Setup:       33.6225
+  Run:         772.214
+  Verify:      0.012455
+  Teardown:    3.28677
+
+  Sustained GB/s: 132.606
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 64000000
+histogram is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ Histogram
+  Constructor: 249.925
+  Setup:       14.2211
+  Run:         715.772
+  Verify:      0.010663
+  Teardown:    0.017975
+
+  Sustained GB/s: 35.7656
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 8000
+Problem size: 8000
+MatVec std::inner_product is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ MatVec Inner Product
+  Constructor: 243.104
+  Setup:       16.6692
+  Run:         340.586
+  Verify:      0.032428
+  Teardown:    1.0247
+
+  Sustained GB/s: 150.367
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 8000
+Problem size: 8000
+MatVec sycl::reduce_over_group is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ MatVec Group Reduction
+  Constructor: 226.158
+  Setup:       21.6706
+  Run:         318.432
+  Verify:      0.031759
+  Teardown:    1.14957
+
+  Sustained GB/s: 160.828
+--------------------------------------------------------------------------------
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 8000
+Problem size: 8000
+Matrix Infinite Norm is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+MANUALLY SETTING MAX_WG_SIZE to 2048
+
+ Matrix Infinite Norm
+  Constructor: 235.751
+  Setup:       19.1337
+  Run:         344.99
+  Verify:      0.009378
+  Teardown:    0.992357
+
+  Sustained GB/s: 148.41
+--------------------------------------------------------------------------------
