@@ -1,0 +1,36 @@
+DUAL SOCKET
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 
+Problem size: 64000000
+Dot STDPAR
+
+ Dot Product
+  Constructor: 158.141
+  Setup:       15.6944
+  Run:         724.582
+  Verify:      0.000559
+  Teardown:    2.0202
+
+  Sustained GB/s: 141.323
+--------------------------------------------------------------------------------
+SINGLE SOCKET
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 
+Problem size: 64000000
+Dot STDPAR
+
+ Dot Product
+  Constructor: 175.458
+  Setup:       18.0678
+  Run:         559.807
+  Verify:      0.000438
+  Teardown:    2.00391
+
+  Sustained GB/s: 182.92
+--------------------------------------------------------------------------------
