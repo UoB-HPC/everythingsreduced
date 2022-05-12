@@ -1,0 +1,34 @@
+SINGLE SOCKET
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 64000000
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ Dot Product
+  Constructor: 1.66127
+  Setup:       119.186
+  Run:         721.403
+  Verify:      0.011545
+  Teardown:    2.05365
+
+  Sustained GB/s: 141.946
+--------------------------------------------------------------------------------
+DUAL SOCKET
+Everything's Reduced (v0.6)
+
+Unit of time: milliseconds
+
+Problem size: 64000000
+Dot is using SYCL with Platform Intel(R) OpenCL and Device Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz
+
+ Dot Product
+  Constructor: 1.64803
+  Setup:       106.882
+  Run:         1399.76
+  Verify:      0.016222
+  Teardown:    2.55447
+
+  Sustained GB/s: 73.1553
+--------------------------------------------------------------------------------
