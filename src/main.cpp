@@ -14,21 +14,22 @@ const auto LINE = "------------------------------------------------------------"
 #include "config.hpp"
 
 // Benchmarks:
-#ifndef NO_COMPLEX_MIN
-#include "complex_min.hpp"
-#endif
-#ifndef NO_COMPLEX_SUM
-#include "complex_sum.hpp"
-#endif
-#include "complex_sum_soa.hpp"
-#include "describe.hpp"
+//#ifndef NO_COMPLEX_MIN
+//#include "complex_min.hpp"
+//#endif
+//#ifndef NO_COMPLEX_SUM
+//#include "complex_sum.hpp"
+//#endif
+//#include "complex_sum_soa.hpp"
+//#include "describe.hpp"
+//#include "field_summary.hpp"
+//#include "matvec_inner_product.hpp"
+//#include "matvec_group.hpp"
+//#include "inf_norm.hpp"
+//#include "dot_rank1.hpp"
+//#include "histogram.hpp"
+
 #include "dot.hpp"
-#include "field_summary.hpp"
-#include "matvec_inner_product.hpp"
-#include "matvec_group.hpp"
-#include "inf_norm.hpp"
-#include "dot_rank1.hpp"
-#include "histogram.hpp"
 
 #define NITERS 100
 
@@ -79,7 +80,8 @@ void check_for_option(int N, int argc) {
 
 // Parse the input size
 long get_problem_size(const std::string option) {
-  const long N = suffixed_atoll(option.c_str());
+  std::cout << "Problem size: " << std::endl;
+  const long N = atoll(option.c_str());
   std::cout << "Problem size: " << N << std::endl;
   return N;
 }
@@ -183,6 +185,7 @@ int main(int argc, char *argv[]) {
   //////////////////////////////////////////////////////////////////////////////
   // Run Complex Sum Benchmark
   //////////////////////////////////////////////////////////////////////////////
+#if 0
   else if (run == Benchmark::complex_sum) {
 #ifndef NO_COMPLEX_SUM
     check_for_option(1, argc);
@@ -624,7 +627,7 @@ int main(int argc, char *argv[]) {
     auto check_start = clock::now();
     for (int i = 0; i < NITERS; ++i) {
       auto r = res[i];
-      if (std::abs(r - norm.expect()) > 1.0E-11) {
+      if (std::abs(r - norm.expect()) > 1.0E-10) {
         std::cerr << "Matrix Infinite Norm: result incorrect" << std::endl
                   << "Result: " << i << " (skipping rest)" << std::endl
                   << "Expected: " << norm.expect() << std::endl
@@ -740,6 +743,7 @@ int main(int argc, char *argv[]) {
                  elapsed(run_start, run_stop), elapsed(check_start, check_stop), elapsed(teardown_start, teardown_stop),
                  static_cast<double>(NITERS)*d.gigabytes());
   }
+#endif
 
   return EXIT_SUCCESS;
 }
