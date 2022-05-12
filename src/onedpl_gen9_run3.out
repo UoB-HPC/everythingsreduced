@@ -1,0 +1,16 @@
+Everything's Reduced (v0.5)
+
+Unit of time: milliseconds
+
+Problem size: 64000000
+Dot is using SYCL with Platform Intel(R) Level-Zero and Device Intel(R) Iris(TM) Pro Graphics 580 [0x193b]
+
+ Dot Product
+  Constructor: 6.31312
+  Setup:       193.544
+  Run:         3962.17
+  Verify:      0.01815
+  Teardown:    9.08278
+
+  Sustained GB/s: 25.8444
+--------------------------------------------------------------------------------
