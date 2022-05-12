@@ -32,7 +32,7 @@ void complex_min<T>::setup() {
   oneapi::dpl::transform(exec_p,
                          oneapi::dpl::counting_iterator(0L), oneapi::dpl::counting_iterator(N),
                          oneapi::dpl::begin(pdata->C),
-                         [=](const auto &i) {
+                         [=,N=this->N](const auto &i) {
                            const T v = fabs(static_cast<T>(N) / 2.0 - static_cast<T>(i));
                            return std::complex<T>{v, v};
                          });

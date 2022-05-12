@@ -27,7 +27,7 @@ void describe::setup() {
   auto exec_p = oneapi::dpl::execution::make_device_policy(pdata->q);
   oneapi::dpl::transform(exec_p, oneapi::dpl::counting_iterator(0L), oneapi::dpl::counting_iterator(N),
                          oneapi::dpl::begin(pdata->D),
-                         [=](const auto &i) { return fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i)); });
+                         [=, N=this->N](const auto &i) { return fabs(static_cast<double>(N) / 2.0 - static_cast<double>(i)); });
 }
 
 void describe::teardown() {
